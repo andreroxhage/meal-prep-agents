@@ -27,36 +27,52 @@
 
 ## Alla recept (utdrag)
 
+Varje recept i `04` är ett komplett standardrecept enligt
+`.claude/rules/recipe-style.md`, så att receptkontrollen kan läsa det.
+
 ---
 
-## 1. Chili con carne
+# Recept — Chili con carne för 6 portioner
 
-> Källa: [Köket.se](https://example.com) | Portioner: 6 (original 4 × 1,5)
+> Källa: [Köket.se](https://example.com) | 6 portioner (original 4 × 1,5)
 
-### Ingredienser
+Färsen bryns i omgångar så att den får stekyta i stället för att koka i sin vätska.
 
-#### Bas
+## Ingredienser (6 portioner)
+
+### Bas
 - 2 msk rapsolja
-- 2 gula lökar, finhackade
-- 4 vitlöksklyftor, pressade
+- 2 gula lökar (finhackade)
+- 4 vitlöksklyftor (pressade)
 
-#### Protein
+### Protein
 - 600 g nötfärs
 
-#### Sås
+### Sås
 - 2 burkar krossade tomater (à 400 g)
 - 2 msk tomatpuré
 
-### Gör så här
+## Gör så här
 
-1. Hetta upp **2 msk** rapsolja i en stor gryta. Fräs **2** finhackade gula lökar och
-   **4** pressade vitlöksklyftor på medelvärme 3–4 min, tills löken är mjuk men inte brun.
-2. Höj värmen. Bryn **600 g** nötfärs i två omgångar, 5 min per omgång, tills den fått
-   mörk stekyta.
-3. Fräs ner **2 msk** tomatpuré 1 min och häll i **2 burkar** krossade tomater (à 400 g).
+### 1) Fräs grunden
+- Hetta upp **2 msk** rapsolja i en stor gryta. Fräs **2** gula lökar och
+  **4** vitlöksklyftor på medelvärme 3–4 min tills löken är mjuk men inte brun.
 
-### Noteringar
-- Smakar bättre dag 2
+### 2) Bryn färsen
+- Höj värmen. Bryn **600 g** nötfärs i två omgångar, **300 g** per omgång
+  (hälften av 600 g), ca 5 min per omgång tills den fått fin stekyta.
+
+### 3) Sjud
+- Rör ner **2 msk** tomatpuré och fräs 1 min. Häll i **2 burkar** krossade
+  tomater och låt sjuda under lock 30 min.
+
+## Matlåda / förvaring
+- Kyl: 4 dagar. Smakar bättre dag 2.
+- Frys: 3 månader.
+- Uppvärmning: kastrull på medelvärme, eller mikro 3–4 min.
+
+## Källor
+- Köket.se: https://example.com
 
 ---
 
