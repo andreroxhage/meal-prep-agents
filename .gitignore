@@ -32,6 +32,9 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 
+# Agentverktyg: skärmdumpar och sidinnehåll från Playwright-MCP
+.playwright-mcp/
+
 # Editorer
 .cursor/
 .vscode/
