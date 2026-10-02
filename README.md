@@ -40,6 +40,12 @@ walks you through the phases below, stopping for your approval between them.
 
 ## How it works
 
+<p align="center">
+  <img src="docs/workflow.svg" width="600" alt="Workflow diagram. /setup saves a household profile once. Each week: Phase 1, brainstorming-agent suggests 10–20 dishes and you pick; Phase 2, one recipe-researcher per dish runs in parallel, plus recipe-creator, and you approve the recipes; Phase 3, shopping-list-generator pools the list and you approve it; Phases 4 and 5, the recipe collection and the meal-prep plan, run on their own. Notion export and Mathem cart are optional extras, off by default.">
+</p>
+
+The same flow in plain text:
+
 ```
 Phase 1  Brainstorming       brainstorming-agent suggests 10–20 dishes        ── you pick
 Phase 2  Recipe research     one recipe-researcher per dish, in parallel,     ── you approve
