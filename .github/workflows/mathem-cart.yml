@@ -1,0 +1,29 @@
+name: mathem-cart
+
+on:
+  pull_request:
+    paths:
+      - "tools/mathem_cart/**"
+      - ".github/workflows/mathem-cart.yml"
+      - ".claude/agents/mathem-*.md"
+      - ".claude/skills/mathem-cart/**"
+
+  # Manuell körning, så ett jobb som fallit på något utanför repot går att köra om
+  # utan skrivrättigheter på Actions.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/mathem_cart
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      # Enhetstesterna går utan nätverk (conftest blockerar riktiga anrop). Inga hemligheter behövs och ska inte läggas till här.
+      - name: Kör testerna
+        run: uv run --frozen pytest -q

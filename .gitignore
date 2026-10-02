@@ -1,0 +1,38 @@
+# OS
+.DS_Store
+
+# Hemligheter: .env är alltid lokal. .env.example är mallen och committas.
+.env
+.env.*
+!.env.example
+
+# Din egen konfiguration (skrivs av /setup). meal-prep.example.yaml är mallen.
+meal-prep.local.yaml
+*.local.yaml
+*.local.md
+CLAUDE.local.md
+
+# Claude Code lokala filer
+.claude/settings.local.json
+.claude/agent-memory*/
+.claude/memory/
+
+# Veckomappar (skapas per vecka). Exempel som ska committas ligger under examples/.
+/20??-??-??/
+
+# Mathem-cart: sökcache och matchningsfiler, var de än hamnar
+.mathem-cache/
+.mathem-matchning/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Editorer
+.cursor/
+.vscode/
+.idea/

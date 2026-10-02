@@ -1,0 +1,3146 @@
+{
+ "type": "product",
+ "attributes": {
+  "items": 30,
+  "page": 1,
+  "has_more_items": true,
+  "request_types": [
+   {
+    "count": 1630,
+    "type": "mixed",
+    "display_name": "Toppresultat",
+    "tracking_properties": {
+     "location": "Search",
+     "location_detail": "tab",
+     "location_id": null,
+     "location_type": null,
+     "list_name": "Mixed Search",
+     "list_id": null,
+     "list_item_position": null,
+     "recipe_list_name": null,
+     "recipe_list_id": null,
+     "recipe_list_item_position": null,
+     "model_name": null,
+     "model_variant": null,
+     "model_version": null,
+     "model_timestamp": null,
+     "prediction_version": null,
+     "prediction_timestamp": null,
+     "product_collection": null,
+     "purpose_name": null,
+     "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+     "builder_session_uuid": null,
+     "dinner_list_context": null,
+     "click_event": {
+      "action": "navigate_to",
+      "resource_type": "location",
+      "element_type": null,
+      "element_id": null,
+      "resource_value": "Search"
+     },
+     "banner_properties": null,
+     "sponsored_products": null,
+     "placement_id": null,
+     "placement_is_promoted": null
+    }
+   },
+   {
+    "count": 991,
+    "type": "product",
+    "display_name": "Varor",
+    "tracking_properties": {
+     "location": "Search",
+     "location_detail": "tab",
+     "location_id": null,
+     "location_type": null,
+     "list_name": "Mixed Search",
+     "list_id": null,
+     "list_item_position": null,
+     "recipe_list_name": null,
+     "recipe_list_id": null,
+     "recipe_list_item_position": null,
+     "model_name": null,
+     "model_variant": null,
+     "model_version": null,
+     "model_timestamp": null,
+     "prediction_version": null,
+     "prediction_timestamp": null,
+     "product_collection": null,
+     "purpose_name": null,
+     "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+     "builder_session_uuid": null,
+     "dinner_list_context": null,
+     "click_event": {
+      "action": "navigate_to",
+      "resource_type": "location",
+      "element_type": null,
+      "element_id": null,
+      "resource_value": "Product"
+     },
+     "banner_properties": null,
+     "sponsored_products": null,
+     "placement_id": null,
+     "placement_is_promoted": null
+    }
+   },
+   {
+    "count": 639,
+    "type": "recipe",
+    "display_name": "Recept",
+    "tracking_properties": {
+     "location": "Search",
+     "location_detail": "tab",
+     "location_id": null,
+     "location_type": null,
+     "list_name": "Mixed Search",
+     "list_id": null,
+     "list_item_position": null,
+     "recipe_list_name": null,
+     "recipe_list_id": null,
+     "recipe_list_item_position": null,
+     "model_name": null,
+     "model_variant": null,
+     "model_version": null,
+     "model_timestamp": null,
+     "prediction_version": null,
+     "prediction_timestamp": null,
+     "product_collection": null,
+     "purpose_name": null,
+     "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+     "builder_session_uuid": null,
+     "dinner_list_context": null,
+     "click_event": {
+      "action": "navigate_to",
+      "resource_type": "location",
+      "element_type": null,
+      "element_id": null,
+      "resource_value": "Recipe"
+     },
+     "banner_properties": null,
+     "sponsored_products": null,
+     "placement_id": null,
+     "placement_is_promoted": null
+    }
+   }
+  ],
+  "query_string": "kycklingfilé",
+  "filters": "",
+  "meta": null,
+  "uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b"
+ },
+ "items": [
+  {
+   "id": 3827,
+   "type": "product",
+   "attributes": {
+    "id": 3827,
+    "full_name": "Kronfågel Kycklingfilé Fryst",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Kycklingfilé Fryst",
+    "name_extra": "1000 g",
+    "front_url": "https://www.mathem.se/se/products/3827-kronfagel-kycklingfile-fryst/",
+    "absolute_url": "/se/products/3827-kronfagel-kycklingfile-fryst/",
+    "gross_price": "96.95",
+    "gross_unit_price": "96.95",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": {
+     "title": "Prismatch",
+     "description_short": "price_match",
+     "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+     "display_style": "price_match"
+    },
+    "promotions": [
+     {
+      "title": "Prismatch",
+      "description_short": "price_match",
+      "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+      "display_style": "price_match"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Prismatch",
+       "variant": "promotion-3",
+       "size": "extra-small",
+       "accessibility_text": "product.promotion.is_price_match.accessibility_text"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 1,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3827"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 11670,
+   "type": "product",
+   "attributes": {
+    "id": 11670,
+    "full_name": "Garant Kyckling Bröstfilé Fryst",
+    "brand": "Garant",
+    "brand_id": 5,
+    "brand_slug": "garant",
+    "name": "Kyckling Bröstfilé Fryst",
+    "name_extra": "1000 g",
+    "front_url": "https://www.mathem.se/se/products/11670-garant-kyckling-brostfile-fryst/",
+    "absolute_url": "/se/products/11670-garant-kyckling-brostfile-fryst/",
+    "gross_price": "91.50",
+    "gross_unit_price": "91.50",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 2,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "11670"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 2513,
+   "type": "product",
+   "attributes": {
+    "id": 2513,
+    "full_name": "Garant Innerfilé av Svensk Kyckling Fryst",
+    "brand": "Garant",
+    "brand_id": 5,
+    "brand_slug": "garant",
+    "name": "Innerfilé av Svensk Kyckling Fryst",
+    "name_extra": "700 g",
+    "front_url": "https://www.mathem.se/se/products/2513-garant-innerfile-av-svensk-kyckling-fryst/",
+    "absolute_url": "/se/products/2513-garant-innerfile-av-svensk-kyckling-fryst/",
+    "gross_price": "60.95",
+    "gross_unit_price": "87.07",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 3,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "2513"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 66315,
+   "type": "product",
+   "attributes": {
+    "id": 66315,
+    "full_name": "Kronfågel Kycklinginnerfilé Fryst",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Kycklinginnerfilé Fryst",
+    "name_extra": "700 g",
+    "front_url": "https://www.mathem.se/se/products/66315-kronfagel-kycklinginnerfile-fryst/",
+    "absolute_url": "/se/products/66315-kronfagel-kycklinginnerfile-fryst/",
+    "gross_price": "58.50",
+    "gross_unit_price": "83.57",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": {
+     "title": "Prismatch",
+     "description_short": "price_match",
+     "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+     "display_style": "price_match"
+    },
+    "promotions": [
+     {
+      "title": "Prismatch",
+      "description_short": "price_match",
+      "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+      "display_style": "price_match"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Prismatch",
+       "variant": "promotion-3",
+       "size": "extra-small",
+       "accessibility_text": "product.promotion.is_price_match.accessibility_text"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 4,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "66315"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 2391,
+   "type": "product",
+   "attributes": {
+    "id": 2391,
+    "full_name": "Eldorado Kycklingbröstfilé Fryst",
+    "brand": "Eldorado",
+    "brand_id": 135,
+    "brand_slug": "eldorado",
+    "name": "Kycklingbröstfilé Fryst",
+    "name_extra": "900 g",
+    "front_url": "https://www.mathem.se/se/products/2391-eldorado-kycklingbrostfile-fryst/",
+    "absolute_url": "/se/products/2391-eldorado-kycklingbrostfile-fryst/",
+    "gross_price": "74.50",
+    "gross_unit_price": "82.78",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 5,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "2391"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 66316,
+   "type": "product",
+   "attributes": {
+    "id": 66316,
+    "full_name": "Kronfågel Kycklinglårfilé Fryst",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Kycklinglårfilé Fryst",
+    "name_extra": "Max 2 per kund, 700 g",
+    "front_url": "https://www.mathem.se/se/products/66316-kronfagel-kycklinglarfile-fryst/",
+    "absolute_url": "/se/products/66316-kronfagel-kycklinglarfile-fryst/",
+    "gross_price": "72.50",
+    "gross_unit_price": "103.57",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": {
+     "is_discounted": true,
+     "discount_source": "CAMPAIGN",
+     "discount_id": 415743,
+     "undiscounted_gross_price": "72.50",
+     "undiscounted_gross_unit_price": "103.57",
+     "description_short": "2 för 99 kr",
+     "discount_type": "price_discount",
+     "maximum_quantity": 2,
+     "remaining_quantity": null,
+     "active_until": null,
+     "has_related_discount_products": false,
+     "is_silent": false
+    },
+    "promotion": {
+     "title": "2 för 99 kr",
+     "description_short": "2 för 99 kr",
+     "accessibility_text": "2 för 99 kr",
+     "display_style": "regular_discount"
+    },
+    "promotions": [
+     {
+      "title": "2 för 99 kr",
+      "description_short": "2 för 99 kr",
+      "accessibility_text": "2 för 99 kr",
+      "display_style": "regular_discount"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "badge",
+      "placement": "on-image",
+      "item": {
+       "label": "2 för 99 kr",
+       "variant": "sale",
+       "size": "extra-small",
+       "accessibility_text": "2 för 99 kr"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 6,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "66316"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 3929,
+   "type": "product",
+   "attributes": {
+    "id": 3929,
+    "full_name": "Reko Kycklingbröstfilé Fryst EKO/KRAV",
+    "brand": "Reko",
+    "brand_id": 1093,
+    "brand_slug": "reko",
+    "name": "Kycklingbröstfilé Fryst EKO/KRAV",
+    "name_extra": "ca 430 g",
+    "front_url": "https://www.mathem.se/se/products/3929-reko-kycklingbrostfile-fryst-eko-krav/",
+    "absolute_url": "/se/products/3929-reko-kycklingbrostfile-fryst-eko-krav/",
+    "gross_price": "150.77",
+    "gross_unit_price": "350.63",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Ekologiskt",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/organic.8cd2f16bb368.png",
+      "is_important": false,
+      "description": "Varan är ekologisk"
+     },
+     {
+      "name": "KRAV",
+      "image_url": "https://images.mathem.se/prod/certifications/a4b8cf1b-a35c-4abe-9da3-18948b4cf568.png?fit=bounds&format=auto&optimize=medium&width=56&s=0xd07af5e9b3ab452c7d52ff5ff1ab77edb39b4ecc",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "EU Organic Farming",
+      "image_url": "https://images.mathem.se/prod/certifications/4fbc23ed-5708-48c8-8c94-f920db9077f5.jpg?fit=bounds&format=auto&optimize=medium&width=60&s=0x9ed0741140e13cefa525cf1c3b00a7b044bc213c",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": {
+     "is_discounted": true,
+     "discount_source": "CAMPAIGN",
+     "discount_id": 380192,
+     "undiscounted_gross_price": "167.52",
+     "undiscounted_gross_unit_price": "389.58",
+     "description_short": "-10%",
+     "discount_type": "price_discount",
+     "maximum_quantity": null,
+     "remaining_quantity": null,
+     "active_until": null,
+     "has_related_discount_products": false,
+     "is_silent": false
+    },
+    "promotion": {
+     "title": "-10%",
+     "description_short": "-10%",
+     "accessibility_text": "-10%",
+     "display_style": "regular_discount"
+    },
+    "promotions": [
+     {
+      "title": "-10%",
+      "description_short": "-10%",
+      "accessibility_text": "-10%",
+      "display_style": "regular_discount"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "badge",
+      "placement": "on-image",
+      "item": {
+       "label": "-10%",
+       "variant": "sale",
+       "size": "extra-small",
+       "accessibility_text": "-10%"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 7,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3929"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 10758,
+   "type": "product",
+   "attributes": {
+    "id": 10758,
+    "full_name": "Guldfågeln Lagat & Klart Kycklingbröstfilé Grillkryddad",
+    "brand": "Guldfågeln",
+    "brand_id": 365,
+    "brand_slug": "guldfageln",
+    "name": "Lagat & Klart Kycklingbröstfilé Grillkryddad",
+    "name_extra": "200 g",
+    "front_url": "https://www.mathem.se/se/products/10758-guldfageln-lagat-klart-kycklingbrostfile-grillkryd/",
+    "absolute_url": "/se/products/10758-guldfageln-lagat-klart-kycklingbrostfile-grillkryd/",
+    "gross_price": "47.95",
+    "gross_unit_price": "239.75",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 8,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "10758"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 2662,
+   "type": "product",
+   "attributes": {
+    "id": 2662,
+    "full_name": "Guldfågeln Kycklingbröstfilé",
+    "brand": "Guldfågeln",
+    "brand_id": 365,
+    "brand_slug": "guldfageln",
+    "name": "Kycklingbröstfilé",
+    "name_extra": "ca 900 g",
+    "front_url": "https://www.mathem.se/se/products/2662-guldfageln-kycklingbrostfile/",
+    "absolute_url": "/se/products/2662-guldfageln-kycklingbrostfile/",
+    "gross_price": "155.00",
+    "gross_unit_price": "172.22",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "Tillgänglig 26. sep",
+     "description_short": "Tillgänglig 26. sep",
+     "code": "available_later"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Tillgänglig 26. sep",
+       "variant": "neutral",
+       "size": "extra-small",
+       "accessibility_text": "Tillgänglig 26. sep"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 9,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "2662"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 3082,
+   "type": "product",
+   "attributes": {
+    "id": 3082,
+    "full_name": "Bosarp Kycklinginnerfilé EKO/KRAV",
+    "brand": "Bosarp",
+    "brand_id": 896,
+    "brand_slug": "bosarp",
+    "name": "Kycklinginnerfilé EKO/KRAV",
+    "name_extra": "ca 300 g",
+    "front_url": "https://www.mathem.se/se/products/3082-bosarp-kycklinginnerfile-eko-krav/",
+    "absolute_url": "/se/products/3082-bosarp-kycklinginnerfile-eko-krav/",
+    "gross_price": "116.00",
+    "gross_unit_price": "386.67",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Ekologiskt",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/organic.8cd2f16bb368.png",
+      "is_important": false,
+      "description": "Varan är ekologisk"
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "KRAV",
+      "image_url": "https://images.mathem.se/prod/certifications/a4b8cf1b-a35c-4abe-9da3-18948b4cf568.png?fit=bounds&format=auto&optimize=medium&width=56&s=0xd07af5e9b3ab452c7d52ff5ff1ab77edb39b4ecc",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "EU Organic Farming",
+      "image_url": "https://images.mathem.se/prod/certifications/4fbc23ed-5708-48c8-8c94-f920db9077f5.jpg?fit=bounds&format=auto&optimize=medium&width=60&s=0x9ed0741140e13cefa525cf1c3b00a7b044bc213c",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 10,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3082"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 64351,
+   "type": "product",
+   "attributes": {
+    "id": 64351,
+    "full_name": "Garant Kyckling Grillad",
+    "brand": "Garant",
+    "brand_id": 5,
+    "brand_slug": "garant",
+    "name": "Kyckling Grillad",
+    "name_extra": "100 g",
+    "front_url": "https://www.mathem.se/se/products/64351-garant-kyckling-grillad/",
+    "absolute_url": "/se/products/64351-garant-kyckling-grillad/",
+    "gross_price": "23.61",
+    "gross_unit_price": "236.10",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 5 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-5.503f47d76f75.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 5 dagar"
+     },
+     {
+      "name": "Kött från Sverige",
+      "image_url": "https://images.mathem.se/prod/certifications/c8484453-5df7-4d4f-adbf-f407e14564b0.png?fit=bounds&format=auto&optimize=medium&width=56&s=0xeb0ea96291d8a29787176e3f48c9bdae89461349",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 11,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "64351"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 2866,
+   "type": "product",
+   "attributes": {
+    "id": 2866,
+    "full_name": "Bjärefågel Bjärekyckling Bröstfilé Färska",
+    "brand": "Bjärefågel",
+    "brand_id": 134,
+    "brand_slug": "bjarefagel",
+    "name": "Bjärekyckling Bröstfilé Färska",
+    "name_extra": "ca 400 g",
+    "front_url": "https://www.mathem.se/se/products/2866-bjarefagel-bjarekyckling-brostfile-farska/",
+    "absolute_url": "/se/products/2866-bjarefagel-bjarekyckling-brostfile-farska/",
+    "gross_price": "138.00",
+    "gross_unit_price": "345.00",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Svenskt Sigill Klimatcertifierad",
+      "image_url": "https://images.mathem.se/prod/certifications/8b31e337-5ef9-4151-a29f-391e14585a2c.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x3e38a22aaa069825bed3102c52edcaf4e53aa07f",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 12,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "2866"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 12164,
+   "type": "product",
+   "attributes": {
+    "id": 12164,
+    "full_name": "Eldorado Kycklingkebab Fryst",
+    "brand": "Eldorado",
+    "brand_id": 135,
+    "brand_slug": "eldorado",
+    "name": "Kycklingkebab Fryst",
+    "name_extra": "700 g",
+    "front_url": "https://www.mathem.se/se/products/12164-eldorado-kycklingkebab-fryst/",
+    "absolute_url": "/se/products/12164-eldorado-kycklingkebab-fryst/",
+    "gross_price": "66.95",
+    "gross_unit_price": "95.64",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 13,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "12164"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 4220,
+   "type": "product",
+   "attributes": {
+    "id": 4220,
+    "full_name": "Reko Kycklinglårfilé EKO/KRAV Fryst",
+    "brand": "Reko",
+    "brand_id": 1093,
+    "brand_slug": "reko",
+    "name": "Kycklinglårfilé EKO/KRAV Fryst",
+    "name_extra": "ca 350 g",
+    "front_url": "https://www.mathem.se/se/products/4220-reko-kycklinglarfile-eko-krav-fryst/",
+    "absolute_url": "/se/products/4220-reko-kycklinglarfile-eko-krav-fryst/",
+    "gross_price": "120.95",
+    "gross_unit_price": "345.57",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Ekologiskt",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/organic.8cd2f16bb368.png",
+      "is_important": false,
+      "description": "Varan är ekologisk"
+     },
+     {
+      "name": "KRAV",
+      "image_url": "https://images.mathem.se/prod/certifications/a4b8cf1b-a35c-4abe-9da3-18948b4cf568.png?fit=bounds&format=auto&optimize=medium&width=56&s=0xd07af5e9b3ab452c7d52ff5ff1ab77edb39b4ecc",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "EU Organic Farming",
+      "image_url": "https://images.mathem.se/prod/certifications/4fbc23ed-5708-48c8-8c94-f920db9077f5.jpg?fit=bounds&format=auto&optimize=medium&width=60&s=0x9ed0741140e13cefa525cf1c3b00a7b044bc213c",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": {
+     "is_discounted": true,
+     "discount_source": "CAMPAIGN",
+     "discount_id": 380193,
+     "undiscounted_gross_price": "134.39",
+     "undiscounted_gross_unit_price": "383.97",
+     "description_short": "-10%",
+     "discount_type": "price_discount",
+     "maximum_quantity": null,
+     "remaining_quantity": null,
+     "active_until": null,
+     "has_related_discount_products": false,
+     "is_silent": false
+    },
+    "promotion": {
+     "title": "-10%",
+     "description_short": "-10%",
+     "accessibility_text": "-10%",
+     "display_style": "regular_discount"
+    },
+    "promotions": [
+     {
+      "title": "-10%",
+      "description_short": "-10%",
+      "accessibility_text": "-10%",
+      "display_style": "regular_discount"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "badge",
+      "placement": "on-image",
+      "item": {
+       "label": "-10%",
+       "variant": "sale",
+       "size": "extra-small",
+       "accessibility_text": "-10%"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 14,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "4220"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 66275,
+   "type": "product",
+   "attributes": {
+    "id": 66275,
+    "full_name": "Kronfågel Ätklar Kyckling BBQ Tärnad",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Ätklar Kyckling BBQ Tärnad",
+    "name_extra": "200 g",
+    "front_url": "https://www.mathem.se/se/products/66275-kronfagel-atklar-kyckling-bbq-tarnad/",
+    "absolute_url": "/se/products/66275-kronfagel-atklar-kyckling-bbq-tarnad/",
+    "gross_price": "45.50",
+    "gross_unit_price": "227.50",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 15,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "66275"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 10085,
+   "type": "product",
+   "attributes": {
+    "id": 10085,
+    "full_name": "Kronfågel Kycklingben Frysta",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Kycklingben Frysta",
+    "name_extra": "1000 g",
+    "front_url": "https://www.mathem.se/se/products/10085-kronfagel-kycklingben-frysta/",
+    "absolute_url": "/se/products/10085-kronfagel-kycklingben-frysta/",
+    "gross_price": "41.50",
+    "gross_unit_price": "41.50",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 16,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "10085"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 3441,
+   "type": "product",
+   "attributes": {
+    "id": 3441,
+    "full_name": "Guldfågeln Färsk Majskyckling Bröstfilé 4-p",
+    "brand": "Guldfågeln",
+    "brand_id": 365,
+    "brand_slug": "guldfageln",
+    "name": "Färsk Majskyckling Bröstfilé 4-p",
+    "name_extra": "ca 700 g",
+    "front_url": "https://www.mathem.se/se/products/3441-guldfageln-farsk-majskyckling-brostfile-4-p/",
+    "absolute_url": "/se/products/3441-guldfageln-farsk-majskyckling-brostfile-4-p/",
+    "gross_price": "146.00",
+    "gross_unit_price": "208.57",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 17,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3441"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 3385,
+   "type": "product",
+   "attributes": {
+    "id": 3385,
+    "full_name": "Guldfågeln Kycklingbröstfilé Fryst",
+    "brand": "Guldfågeln",
+    "brand_id": 365,
+    "brand_slug": "guldfageln",
+    "name": "Kycklingbröstfilé Fryst",
+    "name_extra": "2 kg",
+    "front_url": "https://www.mathem.se/se/products/3385-guldfageln-kycklingbrostfile-fryst/",
+    "absolute_url": "/se/products/3385-guldfageln-kycklingbrostfile-fryst/",
+    "gross_price": "199.00",
+    "gross_unit_price": "99.50",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": {
+     "title": "Prismatch",
+     "description_short": "price_match",
+     "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+     "display_style": "price_match"
+    },
+    "promotions": [
+     {
+      "title": "Prismatch",
+      "description_short": "price_match",
+      "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+      "display_style": "price_match"
+     }
+    ],
+    "availability": {
+     "is_available": false,
+     "description": "Slut hos leverantör",
+     "description_short": "Slut hos leverantör",
+     "code": "sold_out_supplier"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Slut hos leverantör",
+       "variant": "critical-subdued",
+       "size": "extra-small",
+       "accessibility_text": "Slut hos leverantör"
+      }
+     },
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Prismatch",
+       "variant": "promotion-3",
+       "size": "extra-small",
+       "accessibility_text": "product.promotion.is_price_match.accessibility_text"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 18,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3385"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 69092,
+   "type": "product",
+   "attributes": {
+    "id": 69092,
+    "full_name": "Kronfågel Kycklinglårfilé",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Kycklinglårfilé",
+    "name_extra": "900 g",
+    "front_url": "https://www.mathem.se/se/products/69092-kronfagel-kycklinglarfile/",
+    "absolute_url": "/se/products/69092-kronfagel-kycklinglarfile/",
+    "gross_price": "135.00",
+    "gross_unit_price": "150.00",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": {
+     "title": "Prismatch",
+     "description_short": "price_match",
+     "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+     "display_style": "price_match"
+    },
+    "promotions": [
+     {
+      "title": "Prismatch",
+      "description_short": "price_match",
+      "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+      "display_style": "price_match"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Prismatch",
+       "variant": "promotion-3",
+       "size": "extra-small",
+       "accessibility_text": "product.promotion.is_price_match.accessibility_text"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 19,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "69092"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 62925,
+   "type": "product",
+   "attributes": {
+    "id": 62925,
+    "full_name": "Guldfågeln Färsk Kyckling Hel",
+    "brand": "Guldfågeln",
+    "brand_id": 365,
+    "brand_slug": "guldfageln",
+    "name": "Färsk Kyckling Hel",
+    "name_extra": "ca 1400 g",
+    "front_url": "https://www.mathem.se/se/products/62925-guldfageln-farsk-kyckling-hel/",
+    "absolute_url": "/se/products/62925-guldfageln-farsk-kyckling-hel/",
+    "gross_price": "81.50",
+    "gross_unit_price": "58.21",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": {
+     "title": "Prismatch",
+     "description_short": "price_match",
+     "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+     "display_style": "price_match"
+    },
+    "promotions": [
+     {
+      "title": "Prismatch",
+      "description_short": "price_match",
+      "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+      "display_style": "price_match"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Prismatch",
+       "variant": "promotion-3",
+       "size": "extra-small",
+       "accessibility_text": "product.promotion.is_price_match.accessibility_text"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 20,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "62925"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 1929,
+   "type": "product",
+   "attributes": {
+    "id": 1929,
+    "full_name": "Bjärefågel Bjärekyckling Hel Färsk",
+    "brand": "Bjärefågel",
+    "brand_id": 134,
+    "brand_slug": "bjarefagel",
+    "name": "Bjärekyckling Hel Färsk",
+    "name_extra": "ca 1600 g",
+    "front_url": "https://www.mathem.se/se/products/1929-bjarefagel-bjarekyckling-hel-farsk/",
+    "absolute_url": "/se/products/1929-bjarefagel-bjarekyckling-hel-farsk/",
+    "gross_price": "224.00",
+    "gross_unit_price": "140.00",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Svenskt Sigill Klimatcertifierad",
+      "image_url": "https://images.mathem.se/prod/certifications/8b31e337-5ef9-4151-a29f-391e14585a2c.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x3e38a22aaa069825bed3102c52edcaf4e53aa07f",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 21,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "1929"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 26935,
+   "type": "product",
+   "attributes": {
+    "id": 26935,
+    "full_name": "Eldorado Kycklinggrillkorv 10-p",
+    "brand": "Eldorado",
+    "brand_id": 135,
+    "brand_slug": "eldorado",
+    "name": "Kycklinggrillkorv 10-p",
+    "name_extra": "400 g",
+    "front_url": "https://www.mathem.se/se/products/26935-eldorado-kycklinggrillkorv-10-p/",
+    "absolute_url": "/se/products/26935-eldorado-kycklinggrillkorv-10-p/",
+    "gross_price": "22.50",
+    "gross_unit_price": "56.25",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 6 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-6.1deeb099efd9.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 6 dagar"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 22,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "26935"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 66273,
+   "type": "product",
+   "attributes": {
+    "id": 66273,
+    "full_name": "Kronfågel Ätklar Kyckling Classic Skivad",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Ätklar Kyckling Classic Skivad",
+    "name_extra": "200 g",
+    "front_url": "https://www.mathem.se/se/products/66273-kronfagel-atklar-kyckling-classic-skivad/",
+    "absolute_url": "/se/products/66273-kronfagel-atklar-kyckling-classic-skivad/",
+    "gross_price": "45.50",
+    "gross_unit_price": "227.50",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 23,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "66273"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 8781,
+   "type": "product",
+   "attributes": {
+    "id": 8781,
+    "full_name": "Kronfågel Kycklingklubbor Mörade Frysta",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Kycklingklubbor Mörade Frysta",
+    "name_extra": "1000 g",
+    "front_url": "https://www.mathem.se/se/products/8781-kronfagel-kycklingklubbor-morade-frysta/",
+    "absolute_url": "/se/products/8781-kronfagel-kycklingklubbor-morade-frysta/",
+    "gross_price": "41.95",
+    "gross_unit_price": "41.95",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 24,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "8781"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 3395,
+   "type": "product",
+   "attributes": {
+    "id": 3395,
+    "full_name": "Kronfågel Kycklingsteak",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Kycklingsteak",
+    "name_extra": "ca 900 g",
+    "front_url": "https://www.mathem.se/se/products/3395-kronfagel-kycklingsteak/",
+    "absolute_url": "/se/products/3395-kronfagel-kycklingsteak/",
+    "gross_price": "109.00",
+    "gross_unit_price": "121.11",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 2 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-2.50468588d601.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 2 dagar"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 25,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3395"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 10780,
+   "type": "product",
+   "attributes": {
+    "id": 10780,
+    "full_name": "Guldfågeln Lagat & Klart Grillad Skivad Kycklingbröstfilé Citron & Vitlök",
+    "brand": "Guldfågeln",
+    "brand_id": 365,
+    "brand_slug": "guldfageln",
+    "name": "Lagat & Klart Grillad Skivad Kycklingbröstfilé Citron & Vitlök",
+    "name_extra": "200 g",
+    "front_url": "https://www.mathem.se/se/products/10780-guldfageln-lagat-klart-grillad-skivad-kycklingbros/",
+    "absolute_url": "/se/products/10780-guldfageln-lagat-klart-grillad-skivad-kycklingbros/",
+    "gross_price": "47.95",
+    "gross_unit_price": "239.75",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 26,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "10780"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 3857,
+   "type": "product",
+   "attributes": {
+    "id": 3857,
+    "full_name": "Kronfågel Kycklingfärs Fryst",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Kycklingfärs Fryst",
+    "name_extra": "800 g",
+    "front_url": "https://www.mathem.se/se/products/3857-kronfagel-kycklingfars-fryst/",
+    "absolute_url": "/se/products/3857-kronfagel-kycklingfars-fryst/",
+    "gross_price": "84.95",
+    "gross_unit_price": "106.19",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 27,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3857"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 2546,
+   "type": "product",
+   "attributes": {
+    "id": 2546,
+    "full_name": "Guldfågeln Majskyckling Hel Färsk",
+    "brand": "Guldfågeln",
+    "brand_id": 365,
+    "brand_slug": "guldfageln",
+    "name": "Majskyckling Hel Färsk",
+    "name_extra": "ca 1300 g",
+    "front_url": "https://www.mathem.se/se/products/2546-guldfageln-majskyckling-hel-farsk/",
+    "absolute_url": "/se/products/2546-guldfageln-majskyckling-hel-farsk/",
+    "gross_price": "109.00",
+    "gross_unit_price": "83.85",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "Tillgänglig 26. sep",
+     "description_short": "Tillgänglig 26. sep",
+     "code": "available_later"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Tillgänglig 26. sep",
+       "variant": "neutral",
+       "size": "extra-small",
+       "accessibility_text": "Tillgänglig 26. sep"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 28,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "2546"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 69097,
+   "type": "product",
+   "attributes": {
+    "id": 69097,
+    "full_name": "Kronfågel Kycklingbröstfilé",
+    "brand": "Kronfågel",
+    "brand_id": 107,
+    "brand_slug": "kronfagel",
+    "name": "Kycklingbröstfilé",
+    "name_extra": "900 g",
+    "front_url": "https://www.mathem.se/se/products/69097-kronfagel-kycklingbrostfile/",
+    "absolute_url": "/se/products/69097-kronfagel-kycklingbrostfile/",
+    "gross_price": "135.00",
+    "gross_unit_price": "150.00",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Keyhole",
+      "image_url": "https://images.mathem.se/prod/certifications/5f5c5430-c904-4eac-95c2-0ca3fcd3a22a.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x051f08078c9e1de8442281008925f278a52ae672",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": {
+     "title": "Prismatch",
+     "description_short": "price_match",
+     "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+     "display_style": "price_match"
+    },
+    "promotions": [
+     {
+      "title": "Prismatch",
+      "description_short": "price_match",
+      "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+      "display_style": "price_match"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Prismatch",
+       "variant": "promotion-3",
+       "size": "extra-small",
+       "accessibility_text": "product.promotion.is_price_match.accessibility_text"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 29,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "69097"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 9024,
+   "type": "product",
+   "attributes": {
+    "id": 9024,
+    "full_name": "Guldfågeln Drumsticks Grillkryddad Fryst",
+    "brand": "Guldfågeln",
+    "brand_id": 365,
+    "brand_slug": "guldfageln",
+    "name": "Drumsticks Grillkryddad Fryst",
+    "name_extra": "500 g",
+    "front_url": "https://www.mathem.se/se/products/9024-guldfageln-drumsticks-grillkryddad-fryst/",
+    "absolute_url": "/se/products/9024-guldfageln-drumsticks-grillkryddad-fryst/",
+    "gross_price": "42.95",
+    "gross_unit_price": "85.90",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Svensk Fågel",
+      "image_url": "https://images.mathem.se/prod/certifications/2f00c67d-d69f-4706-b060-298d533c54b3.png?fit=bounds&format=auto&optimize=medium&width=56&s=0x2b648d1bc446fb2775f83816e309fc502484d06b",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 30,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "9121a66f-8b70-4796-b1e2-f5565e491e4b",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "9024"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  }
+ ],
+ "filters": [
+  {
+   "type": "filter",
+   "content_type": "product",
+   "name": "badges",
+   "value": "is_organic",
+   "display_value": "Ekologisk",
+   "count": 50,
+   "active": false,
+   "query_param": {
+    "filters": "badges:is_organic",
+    "type": "product"
+   }
+  },
+  {
+   "type": "filter",
+   "content_type": "product",
+   "name": "badges",
+   "value": "is_vegan",
+   "display_value": "Vegansk",
+   "count": 21,
+   "active": false,
+   "query_param": {
+    "filters": "badges:is_vegan",
+    "type": "product"
+   }
+  },
+  {
+   "type": "filter",
+   "content_type": "product",
+   "name": "allergens_free",
+   "value": "gluten_free",
+   "display_value": "Gluten",
+   "count": 41,
+   "active": false,
+   "query_param": {
+    "filters": "allergens_free:gluten_free",
+    "type": "product"
+   }
+  }
+ ]
+}

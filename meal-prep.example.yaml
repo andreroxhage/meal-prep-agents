@@ -1,0 +1,58 @@
+# Hushållsprofil för meal-prep-agents.
+#
+# Den här filen är mallen och standardvärdena. Din egen profil ligger i
+# meal-prep.local.yaml (gitignorerad), som /setup skriver. Värden i den lokala filen
+# går före värdena här, nyckel för nyckel. Saknas den lokala filen gäller den här.
+#
+# Ändra genom att köra /setup igen, eller redigera meal-prep.local.yaml direkt.
+
+config_version: 1
+
+household:
+  portions_per_recipe: 4        # portioner per recept
+  meals: [middag]               # [middag] eller [lunch, middag]
+  dishes_per_week: 5
+
+cook:
+  # hemmakock: tydliga steg, få samtidiga moment
+  # van:       bekväm med teknik, vill ha precision (standard)
+  # yrkeskock: proffston, kräver teknik och kvalitet över bekvämlighet
+  experience: van
+
+diet:
+  protein_focus: varierat       # varierat | högt protein | vegetariskt | pescetariskt
+  allergies: []                 # hårda krav, t.ex. [nötter, laktos]
+  avoid: []                     # ogillas, t.ex. [koriander, svamp]
+  likes: []                     # gärna, t.ex. [asiatiskt, långkok]
+
+kitchen:
+  equipment: [ugn, spis 4 plattor]   # t.ex. airfryer, slow cooker, wok, sous vide
+  weekend_prep: true            # laga det mesta i ett pass (meal prep)
+  max_weekday_minutes: 45
+
+# Förslag när användaren inte anger veckans nivåmix (summan blir dishes_per_week).
+# Nivåerna definieras i .claude/skills/meal-planning-hello-fresh/reference.md.
+level_mix: {vardag: 3, standard: 1, avancerad: 1}
+
+pantry:
+  # Räknas som hemma och listas separat under "Skafferi-antaganden" i handlingslistan.
+  always_have: [salt, svartpeppar, neutral olja, olivolja, sojasås, vinäger, buljong]
+
+shopping:
+  # Nivåer där bladörter (koriander, persilja, dill, gräslök, basilika) köps frysta.
+  frozen_herbs_for_levels: [vardag, standard]
+
+sources:
+  extra: []                     # fler receptkällor att prioritera, t.ex. [seriouseats.com]
+  avoid: []                     # källor att undvika
+
+# Tillval. Allt är avstängt tills du aktiverar det med /setup.
+integrations:
+  notion:
+    enabled: false
+    # Data source-URL:er (collection://...) till dina egna databaser. /setup hittar
+    # eller skapar dem.
+    weeks_data_source: null     # veckosidor (översikt + handlingslista + meal prep-plan)
+    recipes_data_source: null   # receptdatabasen
+  mathem:
+    enabled: false              # experimentellt; kräver uv, Python 3.11+ och .env

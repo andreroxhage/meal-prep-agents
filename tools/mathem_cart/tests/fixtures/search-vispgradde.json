@@ -1,0 +1,3063 @@
+{
+ "type": "product",
+ "attributes": {
+  "items": 30,
+  "page": 1,
+  "has_more_items": true,
+  "request_types": [
+   {
+    "count": 967,
+    "type": "mixed",
+    "display_name": "Toppresultat",
+    "tracking_properties": {
+     "location": "Search",
+     "location_detail": "tab",
+     "location_id": null,
+     "location_type": null,
+     "list_name": "Mixed Search",
+     "list_id": null,
+     "list_item_position": null,
+     "recipe_list_name": null,
+     "recipe_list_id": null,
+     "recipe_list_item_position": null,
+     "model_name": null,
+     "model_variant": null,
+     "model_version": null,
+     "model_timestamp": null,
+     "prediction_version": null,
+     "prediction_timestamp": null,
+     "product_collection": null,
+     "purpose_name": null,
+     "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+     "builder_session_uuid": null,
+     "dinner_list_context": null,
+     "click_event": {
+      "action": "navigate_to",
+      "resource_type": "location",
+      "element_type": null,
+      "element_id": null,
+      "resource_value": "Search"
+     },
+     "banner_properties": null,
+     "sponsored_products": null,
+     "placement_id": null,
+     "placement_is_promoted": null
+    }
+   },
+   {
+    "count": 31,
+    "type": "product",
+    "display_name": "Varor",
+    "tracking_properties": {
+     "location": "Search",
+     "location_detail": "tab",
+     "location_id": null,
+     "location_type": null,
+     "list_name": "Mixed Search",
+     "list_id": null,
+     "list_item_position": null,
+     "recipe_list_name": null,
+     "recipe_list_id": null,
+     "recipe_list_item_position": null,
+     "model_name": null,
+     "model_variant": null,
+     "model_version": null,
+     "model_timestamp": null,
+     "prediction_version": null,
+     "prediction_timestamp": null,
+     "product_collection": null,
+     "purpose_name": null,
+     "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+     "builder_session_uuid": null,
+     "dinner_list_context": null,
+     "click_event": {
+      "action": "navigate_to",
+      "resource_type": "location",
+      "element_type": null,
+      "element_id": null,
+      "resource_value": "Product"
+     },
+     "banner_properties": null,
+     "sponsored_products": null,
+     "placement_id": null,
+     "placement_is_promoted": null
+    }
+   },
+   {
+    "count": 936,
+    "type": "recipe",
+    "display_name": "Recept",
+    "tracking_properties": {
+     "location": "Search",
+     "location_detail": "tab",
+     "location_id": null,
+     "location_type": null,
+     "list_name": "Mixed Search",
+     "list_id": null,
+     "list_item_position": null,
+     "recipe_list_name": null,
+     "recipe_list_id": null,
+     "recipe_list_item_position": null,
+     "model_name": null,
+     "model_variant": null,
+     "model_version": null,
+     "model_timestamp": null,
+     "prediction_version": null,
+     "prediction_timestamp": null,
+     "product_collection": null,
+     "purpose_name": null,
+     "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+     "builder_session_uuid": null,
+     "dinner_list_context": null,
+     "click_event": {
+      "action": "navigate_to",
+      "resource_type": "location",
+      "element_type": null,
+      "element_id": null,
+      "resource_value": "Recipe"
+     },
+     "banner_properties": null,
+     "sponsored_products": null,
+     "placement_id": null,
+     "placement_is_promoted": null
+    }
+   }
+  ],
+  "query_string": "vispgrädde",
+  "filters": "",
+  "meta": null,
+  "uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a"
+ },
+ "items": [
+  {
+   "id": 2380,
+   "type": "product",
+   "attributes": {
+    "id": 2380,
+    "full_name": "Arla Köket® Vispgrädde 36%",
+    "brand": "Arla Köket®",
+    "brand_id": 3715,
+    "brand_slug": "arla-koket-r",
+    "name": "Vispgrädde 36%",
+    "name_extra": "5 dl",
+    "front_url": "https://www.mathem.se/se/products/2380-arla-koket-r-vispgradde-36/",
+    "absolute_url": "/se/products/2380-arla-koket-r-vispgradde-36/",
+    "gross_price": "28.60",
+    "gross_unit_price": "57.20",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 5 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-5.503f47d76f75.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 5 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": {
+     "title": "Prismatch",
+     "description_short": "price_match",
+     "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+     "display_style": "price_match"
+    },
+    "promotions": [
+     {
+      "title": "Prismatch",
+      "description_short": "price_match",
+      "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+      "display_style": "price_match"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Prismatch",
+       "variant": "promotion-3",
+       "size": "extra-small",
+       "accessibility_text": "product.promotion.is_price_match.accessibility_text"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 1,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "2380"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 6851,
+   "type": "product",
+   "attributes": {
+    "id": 6851,
+    "full_name": "Garant Vispgrädde 36%",
+    "brand": "Garant",
+    "brand_id": 5,
+    "brand_slug": "garant",
+    "name": "Vispgrädde 36%",
+    "name_extra": "5 dl",
+    "front_url": "https://www.mathem.se/se/products/6851-garant-vispgradde-36/",
+    "absolute_url": "/se/products/6851-garant-vispgradde-36/",
+    "gross_price": "27.20",
+    "gross_unit_price": "54.40",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 4 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-4.4f3528f72d28.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 4 dagar"
+     },
+     {
+      "name": "Från Sverige",
+      "image_url": "https://images.mathem.se/prod/certifications/7968cf6d-233c-4876-a819-860952485072.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x0855339f011408d2ed0877723deffa89d2797c26",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 2,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "6851"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 7003,
+   "type": "product",
+   "attributes": {
+    "id": 7003,
+    "full_name": "Valio Vispgrädde Laktosfri 35%",
+    "brand": "Valio",
+    "brand_id": 74,
+    "brand_slug": "valio",
+    "name": "Vispgrädde Laktosfri 35%",
+    "name_extra": "5 dl",
+    "front_url": "https://www.mathem.se/se/products/7003-valio-vispgradde-laktosfri-35/",
+    "absolute_url": "/se/products/7003-valio-vispgradde-laktosfri-35/",
+    "gross_price": "32.50",
+    "gross_unit_price": "65.00",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 4 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-4.4f3528f72d28.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 4 dagar"
+     },
+     {
+      "name": "Lactose free",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/lactose-free.e8340100b1ab.png",
+      "is_important": false,
+      "description": "Varan är laktosfri"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": {
+     "title": "Prismatch",
+     "description_short": "price_match",
+     "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+     "display_style": "price_match"
+    },
+    "promotions": [
+     {
+      "title": "Prismatch",
+      "description_short": "price_match",
+      "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+      "display_style": "price_match"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Prismatch",
+       "variant": "promotion-3",
+       "size": "extra-small",
+       "accessibility_text": "product.promotion.is_price_match.accessibility_text"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 3,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "7003"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 1187,
+   "type": "product",
+   "attributes": {
+    "id": 1187,
+    "full_name": "Arla Ko® Vispgrädde 40%",
+    "brand": "Arla Ko®",
+    "brand_id": 3692,
+    "brand_slug": "arla-ko-r",
+    "name": "Vispgrädde 40%",
+    "name_extra": "5 dl",
+    "front_url": "https://www.mathem.se/se/products/1187-arla-ko-r-vispgradde-40/",
+    "absolute_url": "/se/products/1187-arla-ko-r-vispgradde-40/",
+    "gross_price": "33.95",
+    "gross_unit_price": "67.90",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 4 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-4.4f3528f72d28.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 4 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 4,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "1187"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 3339,
+   "type": "product",
+   "attributes": {
+    "id": 3339,
+    "full_name": "Arla Ko® Vispgrädde Färsk 40%",
+    "brand": "Arla Ko®",
+    "brand_id": 3692,
+    "brand_slug": "arla-ko-r",
+    "name": "Vispgrädde Färsk 40%",
+    "name_extra": "3 dl",
+    "front_url": "https://www.mathem.se/se/products/3339-arla-ko-r-vispgradde-farsk-40/",
+    "absolute_url": "/se/products/3339-arla-ko-r-vispgradde-farsk-40/",
+    "gross_price": "23.50",
+    "gross_unit_price": "78.33",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 4 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-4.4f3528f72d28.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 4 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 5,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3339"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 4852,
+   "type": "product",
+   "attributes": {
+    "id": 4852,
+    "full_name": "Garant Vispgrädde Laktosfri 36%",
+    "brand": "Garant",
+    "brand_id": 5,
+    "brand_slug": "garant",
+    "name": "Vispgrädde Laktosfri 36%",
+    "name_extra": "3 dl",
+    "front_url": "https://www.mathem.se/se/products/4852-garant-vispgradde-laktosfri-36/",
+    "absolute_url": "/se/products/4852-garant-vispgradde-laktosfri-36/",
+    "gross_price": "21.50",
+    "gross_unit_price": "71.67",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 5 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-5.503f47d76f75.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 5 dagar"
+     },
+     {
+      "name": "Från Sverige",
+      "image_url": "https://images.mathem.se/prod/certifications/7968cf6d-233c-4876-a819-860952485072.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x0855339f011408d2ed0877723deffa89d2797c26",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Lactose free",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/lactose-free.e8340100b1ab.png",
+      "is_important": false,
+      "description": "Varan är laktosfri"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 6,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "4852"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 64362,
+   "type": "product",
+   "attributes": {
+    "id": 64362,
+    "full_name": "Garant Eko Vispgrädde 40% EKO",
+    "brand": "Garant Eko",
+    "brand_id": 141,
+    "brand_slug": "garant-eko",
+    "name": "Vispgrädde 40% EKO",
+    "name_extra": "3 dl",
+    "front_url": "https://www.mathem.se/se/products/64362-garant-eko-vispgradde-40-eko/",
+    "absolute_url": "/se/products/64362-garant-eko-vispgradde-40-eko/",
+    "gross_price": "22.50",
+    "gross_unit_price": "75.00",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 2 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-2.50468588d601.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 2 dagar"
+     },
+     {
+      "name": "Ekologiskt",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/organic.8cd2f16bb368.png",
+      "is_important": false,
+      "description": "Varan är ekologisk"
+     },
+     {
+      "name": "KRAV",
+      "image_url": "https://images.mathem.se/prod/certifications/a4b8cf1b-a35c-4abe-9da3-18948b4cf568.png?fit=bounds&format=auto&optimize=medium&width=56&s=0xd07af5e9b3ab452c7d52ff5ff1ab77edb39b4ecc",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Från Sverige",
+      "image_url": "https://images.mathem.se/prod/certifications/7968cf6d-233c-4876-a819-860952485072.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x0855339f011408d2ed0877723deffa89d2797c26",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "EU Organic Farming",
+      "image_url": "https://images.mathem.se/prod/certifications/4fbc23ed-5708-48c8-8c94-f920db9077f5.jpg?fit=bounds&format=auto&optimize=medium&width=60&s=0x9ed0741140e13cefa525cf1c3b00a7b044bc213c",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 7,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "64362"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 2656,
+   "type": "product",
+   "attributes": {
+    "id": 2656,
+    "full_name": "Arla Köket® Vispgrädde 36%",
+    "brand": "Arla Köket®",
+    "brand_id": 3715,
+    "brand_slug": "arla-koket-r",
+    "name": "Vispgrädde 36%",
+    "name_extra": "2,5 dl",
+    "front_url": "https://www.mathem.se/se/products/2656-arla-koket-r-vispgradde-36/",
+    "absolute_url": "/se/products/2656-arla-koket-r-vispgradde-36/",
+    "gross_price": "20.50",
+    "gross_unit_price": "82.00",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 4 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-4.4f3528f72d28.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 4 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 8,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "2656"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 8507,
+   "type": "product",
+   "attributes": {
+    "id": 8507,
+    "full_name": "Arla Ko® Vispgrädde 40% EKO",
+    "brand": "Arla Ko®",
+    "brand_id": 3692,
+    "brand_slug": "arla-ko-r",
+    "name": "Vispgrädde 40% EKO",
+    "name_extra": "5 dl",
+    "front_url": "https://www.mathem.se/se/products/8507-arla-ko-r-vispgradde-40-eko/",
+    "absolute_url": "/se/products/8507-arla-ko-r-vispgradde-40-eko/",
+    "gross_price": "43.50",
+    "gross_unit_price": "87.00",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 4 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-4.4f3528f72d28.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 4 dagar"
+     },
+     {
+      "name": "Ekologiskt",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/organic.8cd2f16bb368.png",
+      "is_important": false,
+      "description": "Varan är ekologisk"
+     },
+     {
+      "name": "KRAV",
+      "image_url": "https://images.mathem.se/prod/certifications/a4b8cf1b-a35c-4abe-9da3-18948b4cf568.png?fit=bounds&format=auto&optimize=medium&width=56&s=0xd07af5e9b3ab452c7d52ff5ff1ab77edb39b4ecc",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "EU Organic Farming",
+      "image_url": "https://images.mathem.se/prod/certifications/4fbc23ed-5708-48c8-8c94-f920db9077f5.jpg?fit=bounds&format=auto&optimize=medium&width=60&s=0x9ed0741140e13cefa525cf1c3b00a7b044bc213c",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 9,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "8507"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 6671,
+   "type": "product",
+   "attributes": {
+    "id": 6671,
+    "full_name": "Skånemejerier Vispgrädde 36%",
+    "brand": "Skånemejerier",
+    "brand_id": 50,
+    "brand_slug": "skanemejerier",
+    "name": "Vispgrädde 36%",
+    "name_extra": "5 dl",
+    "front_url": "https://www.mathem.se/se/products/6671-skanemejerier-vispgradde-36/",
+    "absolute_url": "/se/products/6671-skanemejerier-vispgradde-36/",
+    "gross_price": "27.50",
+    "gross_unit_price": "55.00",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 4 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-4.4f3528f72d28.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 4 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": {
+     "title": "Prismatch",
+     "description_short": "price_match",
+     "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+     "display_style": "price_match"
+    },
+    "promotions": [
+     {
+      "title": "Prismatch",
+      "description_short": "price_match",
+      "accessibility_text": "product.promotion.is_price_match.accessibility_text",
+      "display_style": "price_match"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Prismatch",
+       "variant": "promotion-3",
+       "size": "extra-small",
+       "accessibility_text": "product.promotion.is_price_match.accessibility_text"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 10,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "6671"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 5377,
+   "type": "product",
+   "attributes": {
+    "id": 5377,
+    "full_name": "Arla® Vispgrädde Laktosfri 36%",
+    "brand": "Arla®",
+    "brand_id": 3707,
+    "brand_slug": "arla-r",
+    "name": "Vispgrädde Laktosfri 36%",
+    "name_extra": "3 dl",
+    "front_url": "https://www.mathem.se/se/products/5377-arla-r-vispgradde-laktosfri-36/",
+    "absolute_url": "/se/products/5377-arla-r-vispgradde-laktosfri-36/",
+    "gross_price": "24.50",
+    "gross_unit_price": "81.67",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 5 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-5.503f47d76f75.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 5 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Lactose free",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/lactose-free.e8340100b1ab.png",
+      "is_important": false,
+      "description": "Varan är laktosfri"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 11,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "5377"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 64027,
+   "type": "product",
+   "attributes": {
+    "id": 64027,
+    "full_name": "Garant Vispgrädde 40% Laktosfri",
+    "brand": "Garant",
+    "brand_id": 5,
+    "brand_slug": "garant",
+    "name": "Vispgrädde 40% Laktosfri",
+    "name_extra": "3 dl",
+    "front_url": "https://www.mathem.se/se/products/64027-garant-vispgradde-40-laktosfri/",
+    "absolute_url": "/se/products/64027-garant-vispgradde-40-laktosfri/",
+    "gross_price": "22.50",
+    "gross_unit_price": "75.00",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 2 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-2.50468588d601.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 2 dagar"
+     },
+     {
+      "name": "Från Sverige",
+      "image_url": "https://images.mathem.se/prod/certifications/7968cf6d-233c-4876-a819-860952485072.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x0855339f011408d2ed0877723deffa89d2797c26",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Lactose free",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/lactose-free.e8340100b1ab.png",
+      "is_important": false,
+      "description": "Varan är laktosfri"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 12,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "64027"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 4763,
+   "type": "product",
+   "attributes": {
+    "id": 4763,
+    "full_name": "Skånemejerier Vispgrädde 36%",
+    "brand": "Skånemejerier",
+    "brand_id": 50,
+    "brand_slug": "skanemejerier",
+    "name": "Vispgrädde 36%",
+    "name_extra": "2,5 dl",
+    "front_url": "https://www.mathem.se/se/products/4763-skanemejerier-vispgradde-36/",
+    "absolute_url": "/se/products/4763-skanemejerier-vispgradde-36/",
+    "gross_price": "19.95",
+    "gross_unit_price": "79.80",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 13,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "4763"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 3270,
+   "type": "product",
+   "attributes": {
+    "id": 3270,
+    "full_name": "Valio Vispgrädde Laktosfri 35%",
+    "brand": "Valio",
+    "brand_id": 74,
+    "brand_slug": "valio",
+    "name": "Vispgrädde Laktosfri 35%",
+    "name_extra": "3 dl",
+    "front_url": "https://www.mathem.se/se/products/3270-valio-vispgradde-laktosfri-35/",
+    "absolute_url": "/se/products/3270-valio-vispgradde-laktosfri-35/",
+    "gross_price": "23.19",
+    "gross_unit_price": "77.30",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 4 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-4.4f3528f72d28.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 4 dagar"
+     },
+     {
+      "name": "Lactose free",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/lactose-free.e8340100b1ab.png",
+      "is_important": false,
+      "description": "Varan är laktosfri"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 14,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3270"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 3505,
+   "type": "product",
+   "attributes": {
+    "id": 3505,
+    "full_name": "Garant Vispgrädde 36% Laktosfri",
+    "brand": "Garant",
+    "brand_id": 5,
+    "brand_slug": "garant",
+    "name": "Vispgrädde 36% Laktosfri",
+    "name_extra": "5 dl",
+    "front_url": "https://www.mathem.se/se/products/3505-garant-vispgradde-36-laktosfri/",
+    "absolute_url": "/se/products/3505-garant-vispgradde-36-laktosfri/",
+    "gross_price": "33.95",
+    "gross_unit_price": "67.90",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 5 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-5.503f47d76f75.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 5 dagar"
+     },
+     {
+      "name": "Från Sverige",
+      "image_url": "https://images.mathem.se/prod/certifications/7968cf6d-233c-4876-a819-860952485072.png?fit=bounds&format=auto&optimize=medium&width=60&s=0x0855339f011408d2ed0877723deffa89d2797c26",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Lactose free",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/lactose-free.e8340100b1ab.png",
+      "is_important": false,
+      "description": "Varan är laktosfri"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 15,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3505"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 2201,
+   "type": "product",
+   "attributes": {
+    "id": 2201,
+    "full_name": "Arla Ko® Vispgrädde Färsk 40% EKO/KRAV",
+    "brand": "Arla Ko®",
+    "brand_id": 3692,
+    "brand_slug": "arla-ko-r",
+    "name": "Vispgrädde Färsk 40% EKO/KRAV",
+    "name_extra": "3 dl",
+    "front_url": "https://www.mathem.se/se/products/2201-arla-ko-r-vispgradde-farsk-40-eko-krav/",
+    "absolute_url": "/se/products/2201-arla-ko-r-vispgradde-farsk-40-eko-krav/",
+    "gross_price": "28.87",
+    "gross_unit_price": "96.23",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "Ekologiskt",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/organic.8cd2f16bb368.png",
+      "is_important": false,
+      "description": "Varan är ekologisk"
+     },
+     {
+      "name": "KRAV",
+      "image_url": "https://images.mathem.se/prod/certifications/a4b8cf1b-a35c-4abe-9da3-18948b4cf568.png?fit=bounds&format=auto&optimize=medium&width=56&s=0xd07af5e9b3ab452c7d52ff5ff1ab77edb39b4ecc",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "EU Organic Farming",
+      "image_url": "https://images.mathem.se/prod/certifications/4fbc23ed-5708-48c8-8c94-f920db9077f5.jpg?fit=bounds&format=auto&optimize=medium&width=60&s=0x9ed0741140e13cefa525cf1c3b00a7b044bc213c",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 16,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "2201"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 67313,
+   "type": "product",
+   "attributes": {
+    "id": 67313,
+    "full_name": "Dairy Foods Vispgrädde Lång Hållbarhet 30%",
+    "brand": "Dairy Foods",
+    "brand_id": 4743,
+    "brand_slug": "dairy-oods",
+    "name": "Vispgrädde Lång Hållbarhet 30%",
+    "name_extra": "250 ml",
+    "front_url": "https://www.mathem.se/se/products/67313-dairy-foods-vispgradde-lang-hallbarhet-30/",
+    "absolute_url": "/se/products/67313-dairy-foods-vispgradde-lang-hallbarhet-30/",
+    "gross_price": "16.50",
+    "gross_unit_price": "66.00",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 17,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "67313"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 6710,
+   "type": "product",
+   "attributes": {
+    "id": 6710,
+    "full_name": "Chantibic Spraygrädde Vispgrädde",
+    "brand": "Chantibic",
+    "brand_id": 1288,
+    "brand_slug": "chantibic",
+    "name": "Spraygrädde Vispgrädde",
+    "name_extra": "250 ml",
+    "front_url": "https://www.mathem.se/se/products/6710-chantibic-spraygradde-vispgradde/",
+    "absolute_url": "/se/products/6710-chantibic-spraygradde-vispgradde/",
+    "gross_price": "34.97",
+    "gross_unit_price": "139.88",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Säkerhetsinformation",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/dangerous-goods.bf97c30aace0.png",
+      "is_important": true,
+      "description": "Säkerhetsinformation"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 18,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "6710"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 9457,
+   "type": "product",
+   "attributes": {
+    "id": 9457,
+    "full_name": "Skånemejerier Vispgrädde Laktosfri 36%",
+    "brand": "Skånemejerier",
+    "brand_id": 50,
+    "brand_slug": "skanemejerier",
+    "name": "Vispgrädde Laktosfri 36%",
+    "name_extra": "5 dl",
+    "front_url": "https://www.mathem.se/se/products/9457-skanemejerier-vispgradde-laktosfri-36/",
+    "absolute_url": "/se/products/9457-skanemejerier-vispgradde-laktosfri-36/",
+    "gross_price": "34.95",
+    "gross_unit_price": "69.90",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 4 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-4.4f3528f72d28.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 4 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Lactose free",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/lactose-free.e8340100b1ab.png",
+      "is_important": false,
+      "description": "Varan är laktosfri"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 19,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "9457"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 67315,
+   "type": "product",
+   "attributes": {
+    "id": 67315,
+    "full_name": "Dairy Food Vispgrädde Lång Hållbarhet 30%",
+    "brand": "Dairy Food",
+    "brand_id": 4874,
+    "brand_slug": "dairy-food",
+    "name": "Vispgrädde Lång Hållbarhet 30%",
+    "name_extra": "500 ml",
+    "front_url": "https://www.mathem.se/se/products/67315-dairy-food-vispgradde-lang-hallbarhet-30/",
+    "absolute_url": "/se/products/67315-dairy-food-vispgradde-lang-hallbarhet-30/",
+    "gross_price": "27.95",
+    "gross_unit_price": "55.90",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 20,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "67315"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 66201,
+   "type": "product",
+   "attributes": {
+    "id": 66201,
+    "full_name": "Flora by Milda Gräddalternativ Visp 31%",
+    "brand": "Flora by Milda",
+    "brand_id": 4751,
+    "brand_slug": "flora-by-milda",
+    "name": "Gräddalternativ Visp 31%",
+    "name_extra": "250 ml",
+    "front_url": "https://www.mathem.se/se/products/66201-flora-by-milda-graddalternativ-visp-31/",
+    "absolute_url": "/se/products/66201-flora-by-milda-graddalternativ-visp-31/",
+    "gross_price": "15.10",
+    "gross_unit_price": "60.40",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 6 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-6.1deeb099efd9.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 6 dagar"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 21,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "66201"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 68787,
+   "type": "product",
+   "attributes": {
+    "id": 68787,
+    "full_name": "Roslagsmjölk Roslagsgrädde 40% EKO/KRAV",
+    "brand": "Roslagsmjölk",
+    "brand_id": 5019,
+    "brand_slug": "roslagsmjolk",
+    "name": "Roslagsgrädde 40% EKO/KRAV",
+    "name_extra": "5 dl",
+    "front_url": "https://www.mathem.se/se/products/68787-roslagsmjolk-roslagsgradde-40-eko-krav/",
+    "absolute_url": "/se/products/68787-roslagsmjolk-roslagsgradde-40-eko-krav/",
+    "gross_price": "36.95",
+    "gross_unit_price": "73.90",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 6 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-6.1deeb099efd9.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 6 dagar"
+     },
+     {
+      "name": "Ekologiskt",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/organic.8cd2f16bb368.png",
+      "is_important": false,
+      "description": "Varan är ekologisk"
+     },
+     {
+      "name": "Svenskt Ursprung",
+      "image_url": "https://images.mathem.se/prod/certifications/5e1d6929-a535-499b-9ecc-1a05268df784.jpg?fit=bounds&format=auto&optimize=medium&width=60&s=0x22ece4286f8e58048d8502e8ef95fe53f1665973",
+      "is_important": false,
+      "description": "Svenskt ursprung, minst 70% av artikelns innehåll."
+     },
+     {
+      "name": "KRAV",
+      "image_url": "https://images.mathem.se/prod/certifications/a4b8cf1b-a35c-4abe-9da3-18948b4cf568.png?fit=bounds&format=auto&optimize=medium&width=56&s=0xd07af5e9b3ab452c7d52ff5ff1ab77edb39b4ecc",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "EU Organic Farming",
+      "image_url": "https://images.mathem.se/prod/certifications/4fbc23ed-5708-48c8-8c94-f920db9077f5.jpg?fit=bounds&format=auto&optimize=medium&width=60&s=0x9ed0741140e13cefa525cf1c3b00a7b044bc213c",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": {
+     "title": "Noga utvald",
+     "description_short": null,
+     "accessibility_text": "Noga utvald",
+     "display_style": "recommended"
+    },
+    "promotions": [
+     {
+      "title": "Noga utvald",
+      "description_short": null,
+      "accessibility_text": "Noga utvald",
+      "display_style": "recommended"
+     }
+    ],
+    "availability": {
+     "is_available": false,
+     "description": "Slut i lager",
+     "description_short": "Slut i lager",
+     "code": "sold_out"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Slut i lager",
+       "variant": "critical-subdued",
+       "size": "extra-small",
+       "accessibility_text": "Slut i lager"
+      }
+     },
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Noga utvald",
+       "variant": "neutral",
+       "size": "extra-small",
+       "accessibility_text": "Noga utvald"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 22,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "68787"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 5779,
+   "type": "product",
+   "attributes": {
+    "id": 5779,
+    "full_name": "Oatly iMat Visp 23%",
+    "brand": "Oatly",
+    "brand_id": 346,
+    "brand_slug": "oatly",
+    "name": "iMat Visp 23%",
+    "name_extra": "250 ml",
+    "front_url": "https://www.mathem.se/se/products/5779-oatly-imat-visp-23/",
+    "absolute_url": "/se/products/5779-oatly-imat-visp-23/",
+    "gross_price": "20.35",
+    "gross_unit_price": "81.40",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 5 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-5.503f47d76f75.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 5 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "Veganskt",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/vegan.c0a8bf457926.png",
+      "is_important": false,
+      "description": "Varan är vegansk"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 23,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "5779"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 3582,
+   "type": "product",
+   "attributes": {
+    "id": 3582,
+    "full_name": "Kelda® Mellangrädde 27%",
+    "brand": "Kelda®",
+    "brand_id": 3695,
+    "brand_slug": "kelda-r",
+    "name": "Mellangrädde 27%",
+    "name_extra": "2,5 dl",
+    "front_url": "https://www.mathem.se/se/products/3582-kelda-r-mellangradde-27/",
+    "absolute_url": "/se/products/3582-kelda-r-mellangradde-27/",
+    "gross_price": "16.95",
+    "gross_unit_price": "67.80",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 6 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-6.1deeb099efd9.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 6 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 24,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "3582"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 2611,
+   "type": "product",
+   "attributes": {
+    "id": 2611,
+    "full_name": "Arla Ko® Grädde Syrad 30%",
+    "brand": "Arla Ko®",
+    "brand_id": 3692,
+    "brand_slug": "arla-ko-r",
+    "name": "Grädde Syrad 30%",
+    "name_extra": "3 dl",
+    "front_url": "https://www.mathem.se/se/products/2611-arla-ko-r-gradde-syrad-30/",
+    "absolute_url": "/se/products/2611-arla-ko-r-gradde-syrad-30/",
+    "gross_price": "25.50",
+    "gross_unit_price": "85.00",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 4 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-4.4f3528f72d28.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 4 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 25,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "2611"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 11403,
+   "type": "product",
+   "attributes": {
+    "id": 11403,
+    "full_name": "Bake My Day Budapestbakelse 2-p",
+    "brand": "Bake My Day",
+    "brand_id": 489,
+    "brand_slug": "bake-my-day",
+    "name": "Budapestbakelse 2-p",
+    "name_extra": "300 g",
+    "front_url": "https://www.mathem.se/se/products/11403-bake-my-day-budapestbakelse-2-p/",
+    "absolute_url": "/se/products/11403-bake-my-day-budapestbakelse-2-p/",
+    "gross_price": "70.93",
+    "gross_unit_price": "236.43",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 2 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-2.50468588d601.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 2 dagar"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": false,
+     "description": "Slut i lager",
+     "description_short": "Slut i lager",
+     "code": "sold_out"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Slut i lager",
+       "variant": "critical-subdued",
+       "size": "extra-small",
+       "accessibility_text": "Slut i lager"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 26,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "11403"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 68219,
+   "type": "product",
+   "attributes": {
+    "id": 68219,
+    "full_name": "Kringlan Prinsesstårta Grön 12-bit",
+    "brand": "Kringlan",
+    "brand_id": 4968,
+    "brand_slug": "kringlan",
+    "name": "Prinsesstårta Grön 12-bit",
+    "name_extra": "1400 g",
+    "front_url": "https://www.mathem.se/se/products/68219-kringlan-prinsesstarta-gron-12-bit/",
+    "absolute_url": "/se/products/68219-kringlan-prinsesstarta-gron-12-bit/",
+    "gross_price": "491.20",
+    "gross_unit_price": "350.86",
+    "unit_price_quantity_abbreviation": "kg",
+    "unit_price_quantity_name": "kilogram",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 1 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-1.0ffb759984af.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 1 dagar"
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "Tillgänglig 28. sep",
+     "description_short": "Tillgänglig 28. sep",
+     "code": "available_later"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Tillgänglig 28. sep",
+       "variant": "neutral",
+       "size": "extra-small",
+       "accessibility_text": "Tillgänglig 28. sep"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 27,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "68219"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 11067,
+   "type": "product",
+   "attributes": {
+    "id": 11067,
+    "full_name": "Österhagen Glass Gräddglass Salt Gräddkola EKO/KRAV",
+    "brand": "Österhagen Glass",
+    "brand_id": 1541,
+    "brand_slug": "osterhagen-glass",
+    "name": "Gräddglass Salt Gräddkola EKO/KRAV",
+    "name_extra": "500 ml",
+    "front_url": "https://www.mathem.se/se/products/11067-osterhagen-glass-graddglass-salt-graddkola-eko-kra/",
+    "absolute_url": "/se/products/11067-osterhagen-glass-graddglass-salt-graddkola-eko-kra/",
+    "gross_price": "59.58",
+    "gross_unit_price": "119.16",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Ekologiskt",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/organic.8cd2f16bb368.png",
+      "is_important": false,
+      "description": "Varan är ekologisk"
+     },
+     {
+      "name": "KRAV",
+      "image_url": "https://images.mathem.se/prod/certifications/a4b8cf1b-a35c-4abe-9da3-18948b4cf568.png?fit=bounds&format=auto&optimize=medium&width=56&s=0xd07af5e9b3ab452c7d52ff5ff1ab77edb39b4ecc",
+      "is_important": false,
+      "description": ""
+     },
+     {
+      "name": "EU Organic Farming",
+      "image_url": "https://images.mathem.se/prod/certifications/4fbc23ed-5708-48c8-8c94-f920db9077f5.jpg?fit=bounds&format=auto&optimize=medium&width=60&s=0x9ed0741140e13cefa525cf1c3b00a7b044bc213c",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": {
+     "is_discounted": true,
+     "discount_source": "CAMPAIGN",
+     "discount_id": 380255,
+     "undiscounted_gross_price": "66.20",
+     "undiscounted_gross_unit_price": "132.40",
+     "description_short": "-10%",
+     "discount_type": "price_discount",
+     "maximum_quantity": null,
+     "remaining_quantity": null,
+     "active_until": null,
+     "has_related_discount_products": false,
+     "is_silent": false
+    },
+    "promotion": {
+     "title": "-10%",
+     "description_short": "-10%",
+     "accessibility_text": "-10%",
+     "display_style": "regular_discount"
+    },
+    "promotions": [
+     {
+      "title": "-10%",
+      "description_short": "-10%",
+      "accessibility_text": "-10%",
+      "display_style": "regular_discount"
+     },
+     {
+      "title": "Noga utvald",
+      "description_short": null,
+      "accessibility_text": "Noga utvald",
+      "display_style": "recommended"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "badge",
+      "placement": "on-image",
+      "item": {
+       "label": "-10%",
+       "variant": "sale",
+       "size": "extra-small",
+       "accessibility_text": "-10%"
+      }
+     },
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Noga utvald",
+       "variant": "neutral",
+       "size": "extra-small",
+       "accessibility_text": "Noga utvald"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 28,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "11067"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 68187,
+   "type": "product",
+   "attributes": {
+    "id": 68187,
+    "full_name": "Österhagen Glass Gräddglass Mocca EKO",
+    "brand": "Österhagen Glass",
+    "brand_id": 1541,
+    "brand_slug": "osterhagen-glass",
+    "name": "Gräddglass Mocca EKO",
+    "name_extra": "500 ml",
+    "front_url": "https://www.mathem.se/se/products/68187-osterhagen-glass-graddglass-mocca-eko/",
+    "absolute_url": "/se/products/68187-osterhagen-glass-graddglass-mocca-eko/",
+    "gross_price": "59.58",
+    "gross_unit_price": "119.16",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Fryst",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/frozen.c0e10914d59a.png",
+      "is_important": true,
+      "description": "Detta är en frysvara"
+     },
+     {
+      "name": "Ekologiskt",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/organic.8cd2f16bb368.png",
+      "is_important": false,
+      "description": "Varan är ekologisk"
+     },
+     {
+      "name": "EU Organic Farming",
+      "image_url": "https://images.mathem.se/prod/certifications/4fbc23ed-5708-48c8-8c94-f920db9077f5.jpg?fit=bounds&format=auto&optimize=medium&width=60&s=0x9ed0741140e13cefa525cf1c3b00a7b044bc213c",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": {
+     "is_discounted": true,
+     "discount_source": "CAMPAIGN",
+     "discount_id": 380253,
+     "undiscounted_gross_price": "66.20",
+     "undiscounted_gross_unit_price": "132.40",
+     "description_short": "-10%",
+     "discount_type": "price_discount",
+     "maximum_quantity": null,
+     "remaining_quantity": null,
+     "active_until": null,
+     "has_related_discount_products": false,
+     "is_silent": false
+    },
+    "promotion": {
+     "title": "-10%",
+     "description_short": "-10%",
+     "accessibility_text": "-10%",
+     "display_style": "regular_discount"
+    },
+    "promotions": [
+     {
+      "title": "-10%",
+      "description_short": "-10%",
+      "accessibility_text": "-10%",
+      "display_style": "regular_discount"
+     },
+     {
+      "title": "Noga utvald",
+      "description_short": null,
+      "accessibility_text": "Noga utvald",
+      "display_style": "recommended"
+     }
+    ],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": [
+     {
+      "type": "badge",
+      "placement": "on-image",
+      "item": {
+       "label": "-10%",
+       "variant": "sale",
+       "size": "extra-small",
+       "accessibility_text": "-10%"
+      }
+     },
+     {
+      "type": "pill",
+      "placement": "default",
+      "item": {
+       "label": "Noga utvald",
+       "variant": "neutral",
+       "size": "extra-small",
+       "accessibility_text": "Noga utvald"
+      }
+     }
+    ]
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 29,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "68187"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  },
+  {
+   "id": 13443,
+   "type": "product",
+   "attributes": {
+    "id": 13443,
+    "full_name": "Skånemejerier Mellangrädde 27%",
+    "brand": "Skånemejerier",
+    "brand_id": 50,
+    "brand_slug": "skanemejerier",
+    "name": "Mellangrädde 27%",
+    "name_extra": "2,5 dl",
+    "front_url": "https://www.mathem.se/se/products/13443-skanemejerier-mellangradde-27/",
+    "absolute_url": "/se/products/13443-skanemejerier-mellangradde-27/",
+    "gross_price": "17.95",
+    "gross_unit_price": "71.80",
+    "unit_price_quantity_abbreviation": "l",
+    "unit_price_quantity_name": "liter",
+    "client_classifiers": [
+     {
+      "name": "Färskvarugaranti i 3 dagar",
+      "image_url": "https://www.mathem.se/static/products/img/classifier_icons/expiry-3.b2649eefb5d1.png",
+      "is_important": true,
+      "description": "Färskvarugaranti i 3 dagar"
+     },
+     {
+      "name": "FSC Forest Steward Council Mix",
+      "image_url": "https://images.mathem.se/prod/certifications/78457bed-dbfc-4909-9a0f-ea5d9d1a324f.jpg?fit=bounds&format=auto&optimize=medium&width=58&s=0xf253a03a4c3b2caed3b1c8cee6f96d3f06b47810",
+      "is_important": false,
+      "description": ""
+     }
+    ],
+    "currency": "SEK",
+    "discount": null,
+    "promotion": null,
+    "promotions": [],
+    "availability": {
+     "is_available": true,
+     "description": "",
+     "description_short": "",
+     "code": "available"
+    },
+    "metadata": {
+     "is_sponsor_labeled": null,
+     "source_uuid": null,
+     "is_promoted": null,
+     "placement_id": null
+    },
+    "is_exempt_from_third_party_marketing": false,
+    "bonus_info": null,
+    "pills": []
+   },
+   "tracking_properties": {
+    "location": "Search",
+    "location_detail": null,
+    "location_id": null,
+    "location_type": null,
+    "list_name": "Product Search",
+    "list_id": null,
+    "list_item_position": 30,
+    "recipe_list_name": null,
+    "recipe_list_id": null,
+    "recipe_list_item_position": null,
+    "model_name": null,
+    "model_variant": null,
+    "model_version": null,
+    "model_timestamp": null,
+    "prediction_version": null,
+    "prediction_timestamp": null,
+    "product_collection": null,
+    "purpose_name": null,
+    "source_uuid": "74417932-1de0-487e-96fd-d9ca93ccbb1a",
+    "builder_session_uuid": null,
+    "dinner_list_context": null,
+    "click_event": {
+     "action": "navigate_to",
+     "resource_type": "product",
+     "element_type": null,
+     "element_id": null,
+     "resource_value": "13443"
+    },
+    "banner_properties": null,
+    "sponsored_products": null,
+    "placement_id": null,
+    "placement_is_promoted": null
+   }
+  }
+ ],
+ "filters": [
+  {
+   "type": "filter",
+   "content_type": "product",
+   "name": "badges",
+   "value": "is_organic",
+   "display_value": "Ekologisk",
+   "count": 6,
+   "active": false,
+   "query_param": {
+    "filters": "badges:is_organic",
+    "type": "product"
+   }
+  },
+  {
+   "type": "filter",
+   "content_type": "product",
+   "name": "badges",
+   "value": "is_vegan",
+   "display_value": "Vegansk",
+   "count": 1,
+   "active": false,
+   "query_param": {
+    "filters": "badges:is_vegan",
+    "type": "product"
+   }
+  }
+ ]
+}

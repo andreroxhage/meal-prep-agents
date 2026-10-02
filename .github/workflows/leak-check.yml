@@ -1,0 +1,19 @@
+name: Läckkontroll
+
+# Repot är publikt: personliga id:n, adresser och lokala filer får inte committas.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  leak-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sök efter personliga data
+        run: bash .github/scripts/leak_check.sh

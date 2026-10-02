@@ -1,0 +1,5 @@
+# Fästa produkter per ingrediens. Skrivs av `mathem-cart pin` och av frågorna i
+# `plan`. Nyckel = ingrediensens namn i gemener.
+#   godkända: [id, …]  godkända produkter; billigaste tillgängliga vinner
+#   fast: id           alltid exakt den här produkten
+#   sök: term          egen sökterm

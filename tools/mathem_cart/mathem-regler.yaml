@@ -1,0 +1,62 @@
+# Regler för mathem-cart (Fas 6, experimentell). Se
+# docs/design/mathem-varukorg.md §6–§8 och
+# docs/design/mathem-matchning.md (matchning med agenter).
+säkerhet:
+  max_antal_per_rad: 10
+  plan_max_ålder_h: 24
+standard:
+  max_överköp: 0.25
+  # Storpack: varor som är frysbara eller bra att ha hemma (storpack: ja nedan, eller
+  # storpack_varor). Där väljs lägst jämförpris (kr per kg/l/st som faktiskt köps, kampanjer
+  # inräknade) bland alternativen som kostar högst så här mycket mer än det billigaste sättet
+  # att täcka behovet: andelen eller kronbeloppet, det som är minst. Inget tak för överköp.
+  # Övriga varor (färskvaror) väljs som förut: lägst totalkostnad inom max_överköp.
+  storpack_max_merkostnad: 0.5
+  storpack_max_merkostnad_kr: 100
+kategorier:
+  Kött & Fisk:
+    frysbar: ja
+    storpack: ja
+    # Svenskt föredras, men finns inget svenskt (t.ex. lax) går importerat bra; raden
+    # flaggas då "ej föredragen". Använd kräv_någon_av för ett hårt krav utan reserv.
+    # Mathem märker svenskt kött "Svensk Fågel" / "Kött från Sverige" / "Svenskt Kött",
+    # och "märkning:" kräver exakt märkning, så alla behöver stå här.
+    föredra_någon_av: ["märkning:Från Sverige", "märkning:Svensk Fågel", "märkning:Kött från Sverige",
+                       "märkning:Svenskt Kött", "namn:svensk"]
+    uteslut: [fryst, marinerad, grillkryddad, "lagat & klart"]
+  Grönsaker:
+    uteslut: [fryst]
+  Skafferi: { frysbar: ja, storpack: ja }
+  Kryddor & Såser: { frysbar: ja, storpack: ja }
+  Fryst: { frysbar: ja, storpack: ja }
+# Storpack för enskilda varor utanför kategorierna ovan. Matchas på varans huvudord, sista
+# ordet före ett eventuellt kommatecken: "smör" träffar "osaltat smör" och "smör, osaltat".
+# Startlista: varor som många hushåll köper nästan varje vecka och som håller sig. Ändra
+# efter eget hushåll. "ost" träffar hårdost; färskost, fetaost och
+# mozzarella är egna ord. "bregott" behövs eftersom "smör & raps" slutar på "raps".
+storpack_varor: [smör, bregott, parmesan, ost, grevé, gouda, halloumi, ägg, kaffe,
+                 lök, rödlök, vitlök, potatis, morot, morötter, tortilla, tortillas, pitabröd]
+# Varor där en fryst produkt duger trots "fryst" i kategorins uteslut (samma huvudord-
+# matchning). Står "färsk" i listan väljs ändå färskt: matcharen läser det som ett krav.
+# Bladörter till Vardag/Standard står redan som "<ört>, fryst" under Fryst (Fas 3).
+tillåt_fryst: [kycklingfilé, kycklingbröstfilé, kycklinginnerfilé, torskfilé, laxfilé, laxfärs]
+# Varor som inte beställs på Mathem: listas under "Ej med" som "köps på <ställe>" och
+# matchas aldrig. Ordet ska vara varans huvudord, sista ordet före ett eventuellt kommatecken:
+# "vin" träffar "torrt vitt vin" och "vin, torrt vitt", men inte "sherry vinäger",
+# "cider-vinäger" eller "matlagningsvin".
+köps_inte_på_mathem:
+  Systembolaget: [vin, rödvin, vitvin, rosévin, mousserande, cava, prosecco, champagne, öl, lager, ale,
+                  ipa, porter, stout, cider, sherry, portvin, madeira, marsala, vermouth, likör, vodka, gin,
+                  whisky, konjak, cognac, brandy, calvados, grappa, snaps, akvavit]
+omräkning:
+  # Gram per styck. En förpackning som säljs per vikt räknas som sin vikt i hela styck
+  # (minst ett): "Gurka, 270 g" är en gurka, ett avokado-2-pack på 325 g är två.
+  # Vikterna är typiska medelvikter för svenska butiksvaror: för lågt värde gör att en påse
+  # räknas som fler styck än den innehåller.
+  styckvikt_g: { gul lök: 175, rödlök: 165, vitlöksklyfta: 5, citron: 160, vitlök: 50, ingefära: 60,
+                 jalapeño: 30, jalapeno: 30, chili: 25, gurka: 300, isbergssallad: 650, morot: 110,
+                 schalottenlök: 40, avokado: 200, lime: 90, päron: 170, äpple: 175, apelsin: 200,
+                 paprika: 200, tomat: 130, zucchini: 300, aubergine: 350, purjolök: 250, potatis: 100,
+                 sötpotatis: 300, fänkål: 300, banan: 170,
+                 pak choi: 200, spetskål: 1100, rotselleri: 1100, pepparrot: 160 }
+  densitet_g_per_dl: { vetemjöl: 60, strösocker: 85, jasminris: 85 }
