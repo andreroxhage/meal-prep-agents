@@ -45,12 +45,20 @@ orsaken `matchning saknas`. Detaljer: [matchningsspec](../../docs/design/mathem-
   och listas under "Ej med" som
   "köps på Systembolaget". Lägg till egna ställen för varor Mathem inte har.
 - `storpack: ja` (per kategori: Kött & Fisk, Skafferi, Kryddor & Såser, Fryst) och
-  `storpack_varor` (huvudord: smör, ost, ägg, lök, potatis, morötter, tortillas …): varor som håller sig. Där väljs
+  `storpack_varor` (huvudord: smör, ost, ägg, vitlök, tortillas …): varor som håller sig. Där väljs
   lägst jämförpris för det som faktiskt köps (kampanjer inräknade) bland alternativen som
   kostar högst `storpack_max_merkostnad` (50 %) eller `storpack_max_merkostnad_kr` (100 kr),
   det som är minst, mer än det billigaste. Raden flaggas `storpack` när en större förpackning
   valdes. Övriga varor: lägst totalkostnad inom `max_överköp`. Agenterna får också upp till 5
   extra kandidater med lägst jämförpris, så storpack hittar storförpackningar längre ner i sökningen.
+- `basvaror` (huvudord: potatis, lök, morötter, ris, pasta, couscous, linser, havregryn …):
+  billiga baslivsmedel som köps i storpack. Storpackens 50 % räcker aldrig för en påse för
+  20 kr, så här gäller bara `max_merkostnad_kr` (150 kr) mer än det billigaste, och den större
+  förpackningen måste sänka jämförpriset med minst `min_besparing` (15 %) och får vara högst
+  `max_gånger_behovet` (20) gånger behovet. Värdet per vara är största mängd att köpa totalt
+  (`potatis: 5 kg`); tomt = inget tak, `nej` = stängd. Går före `storpack_varor` och
+  kategorins `storpack`, utom när ett ord i namnet står i `utom` (färsk, picklad, inlagd …:
+  "färsk pasta" köps som färskvara). Raden flaggas `storpack`. Nya varor läggs till i listan.
 - `tillåt_fryst` (huvudord: kycklingfilé, torskfilé, laxfilé …): fryst produkt duger trots
   `uteslut: [fryst]` i Kött & Fisk. Står "färsk" i listan väljs ändå färskt. Bladörter till
   Vardag/Standard skriver Fas 3 som `<ört>, fryst` under Fryst (se `## Nivåer` i

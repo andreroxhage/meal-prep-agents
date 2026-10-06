@@ -11,7 +11,8 @@ from ruamel.yaml import YAML
 
 from .mathem.models import Product
 from .quantity import StockUp
-from .units import Conversions
+from .shopping_list import _parse_amount
+from .units import Amount, Conversions, to_base
 
 REQUIRE_PREFIXES = ("märkning:", "namn:")
 
@@ -49,6 +50,8 @@ class Rules:
     stock_up: StockUp = field(default_factory=StockUp)                       # storpack limits
     stock_up_words: tuple[str, ...] = ()                                     # storpack_varor
     frozen_ok_words: tuple[str, ...] = ()                                    # tillåt_fryst
+    staples: Mapping[str, StockUp] = field(default_factory=dict)             # basvaror: head noun -> limits
+    staple_exceptions: tuple[str, ...] = ()                                  # basvaror.utom, casefolded
 
     def bought_elsewhere(self, item_name: str) -> str | None:
         """The place an item is bought instead of Mathem, when its head noun is a listed word.
@@ -75,8 +78,14 @@ class Rules:
         return rule
 
     def stock_up_for(self, item_name: str, category: str) -> StockUp | None:
-        """Storpack limits when the item's category is `storpack: ja` or its head noun is in `storpack_varor`."""
-        if self.for_category(category).storpack or head_noun(item_name) in {w.casefold() for w in self.stock_up_words}:
+        """Basvaror limits when the item's head noun is in `basvaror.varor` and no word of its name
+        is in `basvaror.utom` ("färsk pasta" stays fresh); else storpack limits when the item's
+        category is `storpack: ja` or its head noun is in `storpack_varor`."""
+        head = head_noun(item_name)
+        staple = self.staples.get(head)
+        if staple is not None and not set(re.split(r"[\s,-]+", item_name.casefold())) & set(self.staple_exceptions):
+            return staple
+        if self.for_category(category).storpack or head in {w.casefold() for w in self.stock_up_words}:
             return self.stock_up
         return None
 
@@ -135,6 +144,58 @@ def _strings(value: Any, where: str) -> tuple[str, ...]:
     return tuple(str(x) for x in value)
 
 
+STAPLE_KEYS = {"max_merkostnad_kr", "min_besparing", "max_gånger_behovet", "utom", "varor"}
+DEFAULT_STAPLE_EXCEPTIONS = ("färsk", "färska", "färskt", "picklad", "picklade", "inlagd", "inlagda",
+                             "syltad", "syltade", "rostad", "rostade", "friterad", "friterade")
+
+
+def _amount(value: Any, where: str) -> Amount:
+    """"5 kg", "2,5 l", "12 st": the shopping list's own amount parser, with a unit required."""
+    text = str(value).strip()
+    amount, unit, rest = _parse_amount(text) if isinstance(value, str) else (None, None, text)
+    base = to_base(amount, unit) if amount is not None and unit and not rest.strip() \
+        and re.search(r"[^\d\s.,]", text) else None
+    if base is None or base.value <= 0 or base.dim == "förp":
+        raise RulesError(f"{where} måste vara en mängd som \"5 kg\", \"2 l\" eller \"12 st\", inte {value!r}")
+    return base
+
+
+def _staples(data: Any) -> tuple[dict[str, StockUp], tuple[str, ...]]:
+    """`basvaror`: staples bought in bulk, and the qualifier words that make an item not one.
+
+    Kronor cap only (no share), a minimum saving, a max multiple of the need, and an
+    optional max amount per item (`potatis: 5 kg`; `ja` or nothing = no max, `nej` = not a
+    staple after all).
+    """
+    data = _mapping(data, "basvaror")
+    unknown = sorted(set(map(str, data)) - STAPLE_KEYS)
+    if unknown:
+        raise RulesError(f"basvaror: okänd nyckel {', '.join(unknown)} (giltiga: {', '.join(sorted(STAPLE_KEYS))})")
+    extra_kr = _number(data.get("max_merkostnad_kr", 150), "basvaror.max_merkostnad_kr")
+    saving = _number(data.get("min_besparing", 0.15), "basvaror.min_besparing")
+    multiple = _number(data.get("max_gånger_behovet", 20), "basvaror.max_gånger_behovet")
+    if extra_kr < 0 or not 0 <= saving < 1 or multiple < 1:
+        raise RulesError("basvaror: max_merkostnad_kr får inte vara negativ, min_besparing ska vara 0–0,99 "
+                         "och max_gånger_behovet minst 1")
+    raw = data.get("varor")
+    items = {str(w): None for w in _strings(raw, "basvaror.varor")} if isinstance(raw, (list, tuple, str)) \
+        else _mapping(raw, "basvaror.varor")
+    staples: dict[str, StockUp] = {}
+    for word, cap in items.items():
+        where = f"basvaror.varor.{word}"
+        if isinstance(cap, str) and not cap.strip():
+            cap = None
+        elif isinstance(cap, bool) or (isinstance(cap, str) and cap.strip().casefold() in _TRUE | _FALSE):
+            if not _truthy(cap, where):
+                continue
+            cap = None
+        staples[str(word).casefold()] = StockUp(max_extra_share=None, max_extra_kr=extra_kr, min_saving=saving,
+                                                max_amount=None if cap is None else _amount(cap, where),
+                                                max_multiple=multiple)
+    exceptions = _strings(data["utom"], "basvaror.utom") if "utom" in data else DEFAULT_STAPLE_EXCEPTIONS
+    return staples, tuple(w.casefold() for w in exceptions)
+
+
 def parse_rules(data: Mapping[str, Any]) -> Rules:
     data = _mapping(data, "regelfilen")
     matching = _mapping(data.get("matchning"), "matchning")
@@ -169,6 +230,7 @@ def parse_rules(data: Mapping[str, Any]) -> Rules:
             prefer_any=prefer,
             storpack=_truthy(raw.get("storpack", False), f"{name}.storpack"),
         )
+    staples, staple_exceptions = _staples(data.get("basvaror"))
     conv = _mapping(data.get("omräkning"), "omräkning")
     piece = _mapping(conv.get("styckvikt_g"), "omräkning.styckvikt_g")
     density = _mapping(conv.get("densitet_g_per_dl"), "omräkning.densitet_g_per_dl")
@@ -188,6 +250,8 @@ def parse_rules(data: Mapping[str, Any]) -> Rules:
         stock_up=stock_up,
         stock_up_words=_strings(data.get("storpack_varor"), "storpack_varor"),
         frozen_ok_words=_strings(data.get("tillåt_fryst"), "tillåt_fryst"),
+        staples=staples,
+        staple_exceptions=staple_exceptions,
         elsewhere={str(place): _strings(words, f"köps_inte_på_mathem.{place}")
                    for place, words in _mapping(data.get("köps_inte_på_mathem"), "köps_inte_på_mathem").items()},
     )

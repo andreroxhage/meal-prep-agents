@@ -4,6 +4,7 @@ import pytest
 
 from mathem_cart.mathem.models import Product
 from mathem_cart.rules import CategoryRule, RulesError, filter_candidates, load_rules, meets_preference, parse_rules
+from mathem_cart.units import Amount
 
 REPO_RULES = Path(__file__).parents[1] / "mathem-regler.yaml"
 
@@ -201,6 +202,45 @@ def test_storpack_categories_words_and_limits():
     assert rules.stock_up_for("smör, osaltat", "Mejeri & Ägg") == rules.stock_up
     assert rules.stock_up_for("vispgrädde", "Mejeri & Ägg") is None
     assert (rules.stock_up.max_extra_share, rules.stock_up.max_extra_kr) == (0.5, 100)
+
+
+def test_basvaror_bulk_staples_before_storpack():
+    rules = load_rules(REPO_RULES)
+    potatoes = rules.stock_up_for("fast potatis", "Grönsaker")
+    assert potatoes.max_extra_share is None and potatoes.max_amount == Amount(5000, "g")
+    rice = rules.stock_up_for("jasminris", "Skafferi")
+    assert rice.max_amount is None and rice.allowance(20) == rice.max_extra_kr
+    assert rules.stock_up_for("kapris", "Skafferi") == rules.stock_up          # not "ris"
+    assert rules.stock_up_for("färskpotatis", "Grönsaker") is None              # doesn't keep
+    assert rules.stock_up_for("färsk potatis", "Grönsaker") is None             # nor do these
+    assert rules.stock_up_for("potatis, färsk", "Grönsaker") is None
+    assert rules.stock_up_for("färsk pasta", "Mejeri & Ägg") is None
+    assert rules.stock_up_for("picklad rödlök", "Skafferi") == rules.stock_up  # category storpack, not basvara
+    assert rules.stock_up_for("röd lök", "Grönsaker") == rules.stock_up_for("rödlök", "Grönsaker")
+    assert rules.stock_up_for("kokosmjölk", "Skafferi") == rules.stock_up      # cartons: storpack's share
+    assert potatoes.max_multiple == 20
+
+
+def test_basvaror_accepts_a_list_and_rejects_bad_amounts():
+    rules = parse_rules({"basvaror": {"max_merkostnad_kr": 80, "varor": ["ris", "Pasta"]}})
+    assert set(rules.staples) == {"ris", "pasta"} and rules.staples["ris"].max_extra_kr == 80
+    rules = parse_rules({"basvaror": {"varor": {"potatis": "2,5 kg", "ris": "ja", "lök": True}}})
+    assert rules.staples["potatis"].max_amount == Amount(2500, "g")
+    assert rules.staples["ris"].max_amount is None and rules.staples["lök"].max_amount is None
+    rules = parse_rules({"basvaror": {"varor": {"ris": "nej", "pasta": False, "bulgur": ""}}})
+    assert set(rules.staples) == {"bulgur"} and rules.staples["bulgur"].max_amount is None
+    for bad in ("mycket", "2 förp", "5", "5 kg potatis", 5):
+        with pytest.raises(RulesError):
+            parse_rules({"basvaror": {"varor": {"potatis": bad}}})
+    for bad in ({"min_besparing": 1}, {"max_gånger_behovet": 0.5}, {"max_merkostnad": 50}):
+        with pytest.raises(RulesError):
+            parse_rules({"basvaror": bad})
+
+
+def test_basvaror_utom_is_configurable():
+    rules = parse_rules({"basvaror": {"utom": ["färsk"], "varor": ["pasta"]}})
+    assert rules.stock_up_for("färsk pasta", "Skafferi") is None
+    assert rules.stock_up_for("rostad pasta", "Skafferi") is rules.staples["pasta"]
 
 
 def test_storpack_limits_are_configurable_and_never_negative():

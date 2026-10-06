@@ -196,7 +196,8 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
    - raden `Beslut: pin … · fast … · haiku … · sonnet …` från senaste `plan`/`decide`,
    - rader med flaggor: `överköp` (med procent), `ungefärlig`, `verifiera`,
      `storlek_osäker`, `ej föredragen` (inget svenskt fanns, så en importerad vara valdes),
-     `storpack` (en större förpackning med lägre jämförpris valdes; den kostar lite mer nu),
+     `storpack` (en större förpackning med lägre jämförpris valdes; den kostar mer nu — för
+     basvaror som potatis och ris är det en hel säck, se `basvaror` i `mathem-regler.yaml`),
      med modellens `motivering` för rader vars beslut är `haiku` eller `sonnet`,
    - hoppade varor (`hoppade`), varor som inte är med (`ej_med`, t.ex. salt och
      skafferivaror, och vin/öl markerade `köps på Systembolaget`) och eventuella varningar
