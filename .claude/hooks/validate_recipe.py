@@ -527,9 +527,12 @@ BATCH_TRIGGER = re.compile(
 )
 BATCH_RESOLVED = re.compile(r"\bper omgång\b|\bvarje omgång\b|\bper sats\b", re.IGNORECASE)
 
-# Forsta meningen ar handlingen (Regel 8). Langsta i guldexemplen ar 24 ord.
+# Forsta meningen ar handlingen (Regel 8). Fetmarkerade mangder raknas inte, sa en
+# kryddlista som Regel 1 kraver i steget fäller inte tipset. Langsta i guldexemplen ar 20.
 MAX_ACTION_WORDS = 25
-SENTENCE_END = re.compile(r"(?<=[.!?])\s+(?=[A-ZÅÄÖ])")
+SENTENCE_END = re.compile(r"(?<=[.!?])\s+(?=[A-ZÅÄÖ\d])")
+STEP_MARKER = re.compile(r"^([-*]|\d+[.)])\s+")
+BOLD_AMOUNT = re.compile(r"\*\*[\d½¼¾][^*]*\*\*")
 
 
 def check_step_shape(lines: list[str], rep: Report) -> None:
@@ -548,7 +551,8 @@ def check_step_shape(lines: list[str], rep: Report) -> None:
             )
 
     for line_no, step in parse_steps(lines):
-        action = SENTENCE_END.split(step.replace("**", ""))[0]
+        action = SENTENCE_END.split(BOLD_AMOUNT.sub("", STEP_MARKER.sub("", step)))[0]
+        action = action.replace("**", "")
         words = len(action.split())
         if words > MAX_ACTION_WORDS:
             rep.tip(

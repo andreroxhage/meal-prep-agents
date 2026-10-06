@@ -68,8 +68,8 @@ De sex regler som oftast missas:
    som får det att gå över. Annars "räddar" läsaren en sats som var på väg att
    lyckas, och räddningen är det som förstör den.
 6. **Handlingen först, detaljer efter** (Regel 8). Första meningen i varje punkt
-   säger vad du gör och hur — mängd, värme, tid, klartecken — på högst 25 ord.
-   Varför och tips kommer i meningen efter. Vardag: högst 6 steg.
+   säger vad du gör och hur: mängd, värme, tid, klartecken. Varför och tips kommer
+   i meningen efter.
 
 ## Kvalitetskontroll
 

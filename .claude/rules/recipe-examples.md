@@ -241,7 +241,7 @@ det normala mellanläget är billigare än en omgjord deg.
 - ❌ Steget arbetar in smöret, och sist i steget står `Mät degtemperaturen: målet är
   24–25 °C.`
 - ✅ `Mät degtemperaturen innan smöret går i: under 26 °C fortsätter du, över 27 °C
-  ställer du bunken kallt 15 min först — varmare än så smälter smöret ut i stället för
+  ställer du bunken kallt 15 min först. Varmare än så smälter smöret ut i stället för
   att emulgera.`
 
 *Varför:* en kontroll som står sist besvarar frågan efter att läsaren redan fattat sitt

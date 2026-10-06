@@ -310,6 +310,15 @@ DETAIL_AFTER = GOOD.replace(
 )
 check("lång första mening ger tips", any("Regel 8" in tip for tip in tips_for(LONG_STEP)), True)
 check("kort punkt ger inget tips", any("Regel 8" in tip for tip in tips_for(GOOD)), False)
+SPICE_LIST = GOOD.replace(
+    "- Häll **1,5 dl** mjölk",
+    "- Rör ner " + ", ".join(f"**{n} tsk** krydda{n}" for n in range(1, 11)) + ".\n- Häll **1,5 dl** mjölk",
+)
+check(
+    "fetmarkerade mängder räknas inte",
+    any("Regel 8" in tip for tip in tips_for(SPICE_LIST)),
+    False,
+)
 check(
     "detaljer efter handlingen ger inget tips",
     any("Regel 8" in tip for tip in tips_for(DETAIL_AFTER)),

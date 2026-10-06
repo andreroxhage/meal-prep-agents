@@ -83,6 +83,6 @@ Skapa en tillagningsplan som minimerar total arbetstid genom att parallellisera 
   annars `meal-prep.example.yaml`); standard är 1 ugn och 4 spisplattor
 - **Säkerhet**: Flagga matförvaring och temperaturer
 - **Skriv inte om recepten**: stegen finns i `04-alla-recept.md`. Hänvisa
-  (`Lax, steg 1–2`) och skriv bara det som är nytt för planen: ordning och samtidighet.
+  med rätt och moment (`Lax: förbered och baka`), inte stegnummer, och skriv bara det som är nytt för planen: ordning och samtidighet.
 - **Handlingen först**: en uppgift per rad som börjar med vad du gör, samma krav
   som Regel 8 i `.claude/rules/recipe-style.md`.

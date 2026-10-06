@@ -217,7 +217,7 @@ den står efter smörinarbetningen i stället för i den.
 Skriv kontrollen som ett utfall med åtgärd, inte bara ett måltal:
 
 - ✅ `Mät degtemperaturen innan smöret går i: under 26 °C fortsätter du, över 27 °C
-  ställer du bunken kallt 15 min först — varmare än så smälter smöret ut i stället
+  ställer du bunken kallt 15 min först. Varmare än så smälter smöret ut i stället
   för att emulgera.`
 - ❌ `Degtemperaturen ska vara 24–25 °C.`
 
@@ -263,14 +263,16 @@ moment. Varje punkt börjar därför med **vad du gör och hur**: verbet, mängd
 värmen, tiden och hur du ser att det är klart. Den som har bråttom läser första
 meningen och går vidare. Den som vill förstå läser vidare.
 
-- **Första meningen är handlingen**, högst 25 ord. Kontrollen tipsar om längre.
+- **Första meningen är handlingen**, högst 25 ord utöver mängderna. Kontrollen
+  tipsar om längre.
 - **Detaljerna kommer efter**, i nästa mening: varför, vad som ser fel ut men är
   rätt (Regel 5a), tips. De får gärna stå kvar, så länge de inte står först.
 - **Inget varför före hur.** En förklaring mitt i handlingen skjuter värmen och
   tiden till slutet av meningen, där läsaren inte hinner fram.
 - **Fyllnad stryks**: "ingen brådska här" och "kritiskt för djupet" säger inget som
   tiden och klartecknet inte redan säger.
-- **Vardag:** högst 6 steg, och detaljmeningar bara där risken finns.
+- **Vardag:** detaljmeningar bara där risken finns. Antalet steg per nivå står i
+  `## Nivåer` i `.claude/skills/meal-planning-hello-fresh/reference.md`.
 
 - ✅ `Stek **800 g** kycklinglår i två omgångar på hög värme, 4 min per sida, till
   72 °C. Vänd dem inte förrän de släpper pannan, då har stekytan bildats.`
