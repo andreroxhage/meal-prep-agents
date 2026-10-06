@@ -290,8 +290,13 @@ Tie → lower cost → smaller overshoot. The line is flagged `storpack` when it
 `basvaror.max_merkostnad_kr` alone (a share of a 20 kr bag never admits a 5 kg sack, which is
 how small packs ended up in the cart); the pick must lower the effective jämförpris by at
 least `basvaror.min_besparing` compared with the cheapest option, else the cheapest stays;
-and an optional per-item max amount (`potatis: 5 kg`) drops options that buy more in total,
-except the cheapest. Basvaror go before `storpack_varor` and the category's `storpack`.
+an optional per-item max amount (`potatis: 5 kg`) and `max_gånger_behovet` (default 20 × the
+need) drop options that buy more in total. An option whose amount can't be checked against a
+set limit (no size, another dimension, spoon fallback) is dropped too, and without a known
+jämförpris for the cheapest option no saving can be shown, so it stays. The cheapest option is
+always allowed. Basvaror go before `storpack_varor` and the category's `storpack`, unless a
+word of the item's name is in `basvaror.utom` (färsk, picklad, inlagd …): "färsk pasta" and
+"picklad lök" keep their category's rule.
 
 Otherwise: pick the lowest `cost`; tie → lower jämförpris → smaller overshoot. If every option exceeds
 the cap, pick the smallest overshoot and flag `överköp`. One product type per item.

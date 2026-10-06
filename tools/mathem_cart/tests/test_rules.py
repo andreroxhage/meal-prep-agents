@@ -212,6 +212,13 @@ def test_basvaror_bulk_staples_before_storpack():
     assert rice.max_amount is None and rice.allowance(20) == rice.max_extra_kr
     assert rules.stock_up_for("kapris", "Skafferi") == rules.stock_up          # not "ris"
     assert rules.stock_up_for("färskpotatis", "Grönsaker") is None              # doesn't keep
+    assert rules.stock_up_for("färsk potatis", "Grönsaker") is None             # nor do these
+    assert rules.stock_up_for("potatis, färsk", "Grönsaker") is None
+    assert rules.stock_up_for("färsk pasta", "Mejeri & Ägg") is None
+    assert rules.stock_up_for("picklad rödlök", "Skafferi") == rules.stock_up  # category storpack, not basvara
+    assert rules.stock_up_for("röd lök", "Grönsaker") == rules.stock_up_for("rödlök", "Grönsaker")
+    assert rules.stock_up_for("kokosmjölk", "Skafferi") == rules.stock_up      # cartons: storpack's share
+    assert potatoes.max_multiple == 20
 
 
 def test_basvaror_accepts_a_list_and_rejects_bad_amounts():
@@ -220,11 +227,20 @@ def test_basvaror_accepts_a_list_and_rejects_bad_amounts():
     rules = parse_rules({"basvaror": {"varor": {"potatis": "2,5 kg", "ris": "ja", "lök": True}}})
     assert rules.staples["potatis"].max_amount == Amount(2500, "g")
     assert rules.staples["ris"].max_amount is None and rules.staples["lök"].max_amount is None
-    for bad in ("mycket", "2 förp", 5):
+    rules = parse_rules({"basvaror": {"varor": {"ris": "nej", "pasta": False, "bulgur": ""}}})
+    assert set(rules.staples) == {"bulgur"} and rules.staples["bulgur"].max_amount is None
+    for bad in ("mycket", "2 förp", "5", "5 kg potatis", 5):
         with pytest.raises(RulesError):
             parse_rules({"basvaror": {"varor": {"potatis": bad}}})
-    with pytest.raises(RulesError):
-        parse_rules({"basvaror": {"min_besparing": 1}})
+    for bad in ({"min_besparing": 1}, {"max_gånger_behovet": 0.5}, {"max_merkostnad": 50}):
+        with pytest.raises(RulesError):
+            parse_rules({"basvaror": bad})
+
+
+def test_basvaror_utom_is_configurable():
+    rules = parse_rules({"basvaror": {"utom": ["färsk"], "varor": ["pasta"]}})
+    assert rules.stock_up_for("färsk pasta", "Skafferi") is None
+    assert rules.stock_up_for("rostad pasta", "Skafferi") is rules.staples["pasta"]
 
 
 def test_storpack_limits_are_configurable_and_never_negative():

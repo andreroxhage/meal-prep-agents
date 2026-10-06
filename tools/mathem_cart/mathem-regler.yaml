@@ -35,21 +35,27 @@ kategorier:
 # efter eget hushåll. "ost" träffar hårdost; färskost, fetaost och
 # mozzarella är egna ord. "bregott" behövs eftersom "smör & raps" slutar på "raps".
 storpack_varor: [smör, bregott, parmesan, ost, grevé, gouda, halloumi, ägg, kaffe,
-                 rödlök, vitlök, tortilla, tortillas, pitabröd]
+                 vitlök, tortilla, tortillas, pitabröd]
 # Basvaror: billiga baslivsmedel som köps i storpack (5 kg potatis, 5 kg ris) för jämförpriset.
 # Storpack ovan tillåter bara 50 % mer än det billigaste, och för en påse potatis för 20 kr
 # räcker det aldrig till en större säck. Här gäller bara kronbeloppet: storförpackningen med
 # lägst jämförpris väljs om den kostar högst max_merkostnad_kr mer än det billigaste sättet
-# att täcka behovet och sänker jämförpriset med minst min_besparing (0,15 = 15 %).
+# att täcka behovet, sänker jämförpriset med minst min_besparing (0,15 = 15 %) och inte är
+# mer än max_gånger_behovet gånger behovet (1 dl ris ska inte bli en 10 kg-säck).
 # Varorna matchas på huvudord som storpack_varor och går före både storpack_varor och
-# kategorins storpack. Värdet är största mängd att köpa totalt (för det som inte håller hur
-# länge som helst); tomt betyder inget tak. Lägg till nya varor här.
+# kategorins storpack, utom när ett ord i namnet står i utom ("färsk pasta", "picklad lök").
+# Värdet är största mängd att köpa totalt (för det som inte håller hur länge som helst);
+# tomt betyder inget tak, nej stänger av varan. Lägg till nya varor här.
 basvaror:
   max_merkostnad_kr: 150
   min_besparing: 0.15
+  max_gånger_behovet: 20
+  utom: [färsk, färska, färskt, picklad, picklade, inlagd, inlagda, syltad, syltade,
+         rostad, rostade, friterad, friterade]
   varor:
     potatis: 5 kg          # svalt och mörkt några veckor
-    lök: 3 kg              # gul lök
+    lök: 3 kg              # gul lök, "röd lök"
+    rödlök: 3 kg           # samma regel oavsett stavning
     morot: 2 kg            # kyl 2–3 veckor
     morötter: 2 kg
     ris:
@@ -81,7 +87,6 @@ basvaror:
     havregryn:
     vetemjöl:
     strösocker:
-    kokosmjölk:
 # Varor där en fryst produkt duger trots "fryst" i kategorins uteslut (samma huvudord-
 # matchning). Står "färsk" i listan väljs ändå färskt: matcharen läser det som ett krav.
 # Bladörter till Vardag/Standard står redan som "<ört>, fryst" under Fryst (Fas 3).

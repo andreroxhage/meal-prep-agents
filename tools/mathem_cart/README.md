@@ -54,9 +54,11 @@ orsaken `matchning saknas`. Detaljer: [matchningsspec](../../docs/design/mathem-
 - `basvaror` (huvudord: potatis, lök, morötter, ris, pasta, couscous, linser, havregryn …):
   billiga baslivsmedel som köps i storpack. Storpackens 50 % räcker aldrig för en påse för
   20 kr, så här gäller bara `max_merkostnad_kr` (150 kr) mer än det billigaste, och den större
-  förpackningen måste sänka jämförpriset med minst `min_besparing` (15 %). Värdet per vara är
-  största mängd att köpa totalt (`potatis: 5 kg`); tomt = inget tak. Går före `storpack_varor`
-  och kategorins `storpack`. Raden flaggas `storpack`. Nya varor läggs till i listan.
+  förpackningen måste sänka jämförpriset med minst `min_besparing` (15 %) och får vara högst
+  `max_gånger_behovet` (20) gånger behovet. Värdet per vara är största mängd att köpa totalt
+  (`potatis: 5 kg`); tomt = inget tak, `nej` = stängd. Går före `storpack_varor` och
+  kategorins `storpack`, utom när ett ord i namnet står i `utom` (färsk, picklad, inlagd …:
+  "färsk pasta" köps som färskvara). Raden flaggas `storpack`. Nya varor läggs till i listan.
 - `tillåt_fryst` (huvudord: kycklingfilé, torskfilé, laxfilé …): fryst produkt duger trots
   `uteslut: [fryst]` i Kött & Fisk. Står "färsk" i listan väljs ändå färskt. Bladörter till
   Vardag/Standard skriver Fas 3 som `<ört>, fryst` under Fryst (se `## Nivåer` i

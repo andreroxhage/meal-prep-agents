@@ -231,3 +231,32 @@ def test_staples_keep_the_cheapest_when_the_saving_is_too_small():
     kilo, five = offer(1, 1000, 30.0, 30.0), offer(2, 5000, 140.0, 28.0)
     choice = choose(Amount(500, "g"), [kilo, five], max_overshoot=None, stock_up=STAPLE)
     assert choice.option.offer.product_id == 1 and "storpack" not in choice.option.flags
+
+
+def test_staples_never_buy_more_than_the_max_multiple_of_the_need():
+    # 1 dl ris (85 g): a 10 kg sack is 32 % cheaper per kg and within 150 kr, but 117 x the need.
+    kilo, sack = offer(1, 1000, 25.0, 25.0), offer(2, 10000, 169.0, 16.9)
+    multiple = StockUp(None, 150, 0.15, max_multiple=20)
+    assert choose(Amount(85, "g"), [kilo, sack], max_overshoot=None,
+                  stock_up=multiple).option.offer.product_id == 1
+    assert choose(Amount(600, "g"), [kilo, sack], max_overshoot=None,
+                  stock_up=multiple).option.offer.product_id == 2      # 16,7 x: fine
+
+
+def test_staples_drop_options_the_max_amount_cant_measure():
+    # "lök: 3 kg", but the net is sold per piece: its amount can't be checked, so it's out.
+    bag = offer(1, 1000, 20.0, 20.0)
+    net = offer(2, 40, 60.0, 1.5, dim="st")
+    capped = StockUp(None, 150, 0.0, Amount(3000, "g"))
+    choice = choose(Amount(800, "g"), [bag, net], max_overshoot=None, stock_up=capped,
+                    convert=lambda a, d, o: Amount(a.value / 150, "st") if d == "st" else a)
+    assert choice.option.offer.product_id == 1 and "storpack" not in choice.option.flags
+
+
+def test_staples_keep_the_cheapest_when_its_jamforpris_is_unknown():
+    # Spoon fallback: the cheapest has no size, so no saving can be shown.
+    unsized = Offer(1, "påse", 15.0, None, Package(None), Pricing())
+    sack = offer(2, 2000, 60.0, 30.0, dim="ml")
+    choice = choose(Amount(15, "ml"), [unsized, sack], max_overshoot=None, spoon_measure=True,
+                    stock_up=StockUp(None, 150, 0.15))
+    assert choice.option.offer.product_id == 1 and "storpack" not in choice.option.flags
