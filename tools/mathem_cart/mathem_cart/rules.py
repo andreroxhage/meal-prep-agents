@@ -11,7 +11,7 @@ from ruamel.yaml import YAML
 
 from .mathem.models import Product
 from .quantity import StockUp
-from .units import Conversions
+from .units import Amount, Conversions, to_base
 
 REQUIRE_PREFIXES = ("märkning:", "namn:")
 
@@ -49,6 +49,7 @@ class Rules:
     stock_up: StockUp = field(default_factory=StockUp)                       # storpack limits
     stock_up_words: tuple[str, ...] = ()                                     # storpack_varor
     frozen_ok_words: tuple[str, ...] = ()                                    # tillåt_fryst
+    staples: Mapping[str, StockUp] = field(default_factory=dict)             # basvaror: head noun -> limits
 
     def bought_elsewhere(self, item_name: str) -> str | None:
         """The place an item is bought instead of Mathem, when its head noun is a listed word.
@@ -75,7 +76,11 @@ class Rules:
         return rule
 
     def stock_up_for(self, item_name: str, category: str) -> StockUp | None:
-        """Storpack limits when the item's category is `storpack: ja` or its head noun is in `storpack_varor`."""
+        """Basvaror limits when the item's head noun is in `basvaror.varor`; else storpack limits when
+        the item's category is `storpack: ja` or its head noun is in `storpack_varor`."""
+        staple = self.staples.get(head_noun(item_name))
+        if staple is not None:
+            return staple
         if self.for_category(category).storpack or head_noun(item_name) in {w.casefold() for w in self.stock_up_words}:
             return self.stock_up
         return None
@@ -135,6 +140,37 @@ def _strings(value: Any, where: str) -> tuple[str, ...]:
     return tuple(str(x) for x in value)
 
 
+_AMOUNT_RE = re.compile(r"^\s*(\d+(?:[.,]\d+)?)\s*([a-zåäö]+)\s*$", re.IGNORECASE)
+
+
+def _amount(value: Any, where: str) -> Amount:
+    m = _AMOUNT_RE.match(str(value))
+    amount = to_base(float(m.group(1).replace(",", ".")), m.group(2)) if m else None
+    if amount is None or amount.value <= 0 or amount.dim == "förp":
+        raise RulesError(f"{where} måste vara en mängd som \"5 kg\", \"2 l\" eller \"12 st\", inte {value!r}")
+    return amount
+
+
+def _staples(data: Mapping[str, Any]) -> dict[str, StockUp]:
+    """`basvaror`: staples bought in bulk. Kronor cap only (no share), a minimum saving, and an
+    optional max amount per item (`potatis: 5 kg`; `ja` or nothing = no max)."""
+    data = _mapping(data, "basvaror")
+    extra_kr = _number(data.get("max_merkostnad_kr", 150), "basvaror.max_merkostnad_kr")
+    saving = _number(data.get("min_besparing", 0.15), "basvaror.min_besparing")
+    if extra_kr < 0 or not 0 <= saving < 1:
+        raise RulesError("basvaror.max_merkostnad_kr får inte vara negativ och min_besparing ska vara 0–0,99")
+    raw = data.get("varor")
+    items = {str(w): None for w in _strings(raw, "basvaror.varor")} if isinstance(raw, (list, tuple, str)) \
+        else _mapping(raw, "basvaror.varor")
+    staples: dict[str, StockUp] = {}
+    for word, cap in items.items():
+        where = f"basvaror.varor.{word}"
+        no_cap = cap is None or cap is True or (isinstance(cap, str) and cap.strip().casefold() in _TRUE)
+        staples[str(word).casefold()] = StockUp(max_extra_share=None, max_extra_kr=extra_kr, min_saving=saving,
+                                                max_amount=None if no_cap else _amount(cap, where))
+    return staples
+
+
 def parse_rules(data: Mapping[str, Any]) -> Rules:
     data = _mapping(data, "regelfilen")
     matching = _mapping(data.get("matchning"), "matchning")
@@ -188,6 +224,7 @@ def parse_rules(data: Mapping[str, Any]) -> Rules:
         stock_up=stock_up,
         stock_up_words=_strings(data.get("storpack_varor"), "storpack_varor"),
         frozen_ok_words=_strings(data.get("tillåt_fryst"), "tillåt_fryst"),
+        staples=_staples(data.get("basvaror")),
         elsewhere={str(place): _strings(words, f"köps_inte_på_mathem.{place}")
                    for place, words in _mapping(data.get("köps_inte_på_mathem"), "köps_inte_på_mathem").items()},
     )

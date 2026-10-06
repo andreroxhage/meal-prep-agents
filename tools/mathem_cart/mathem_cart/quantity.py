@@ -36,13 +36,30 @@ class Option:
 
 @dataclass(frozen=True, slots=True)
 class StockUp:
-    """Stock-up mode: a bigger pack may cost this much more than the cheapest option (whichever is smaller)."""
+    """Stock-up mode: a bigger pack may cost this much more than the cheapest option (whichever is smaller).
 
-    max_extra_share: float = 0.5
+    `max_extra_share` None: only the kronor cap applies (basvaror: a 5 kg sack of potatoes
+    costs several times the 1 kg bag, so a share of the cheapest never lets it in).
+    `min_saving`: the bigger pack's jämförpris must be at least this share below the
+    cheapest option's, or the cheapest stays. `max_amount`: never buy more than this in
+    total (in the package's dimension), unless the cheapest option already does.
+    """
+
+    max_extra_share: float | None = 0.5
     max_extra_kr: float = 100.0
+    min_saving: float = 0.0
+    max_amount: Amount | None = None
 
     def allowance(self, cheapest: float) -> float:
+        if self.max_extra_share is None:
+            return self.max_extra_kr
         return min(cheapest * self.max_extra_share, self.max_extra_kr)
+
+    def fits(self, option: "Option") -> bool:
+        size = option.offer.package.size
+        if self.max_amount is None or size is None or size.dim != self.max_amount.dim:
+            return True
+        return option.count * size.value <= self.max_amount.value + EPS
 
 
 @dataclass(frozen=True, slots=True)
@@ -138,9 +155,10 @@ def choose(need: Amount, offers: Sequence[Offer], *, max_overshoot: float | None
     `spoon_measure`: the need came from msk/tsk/krm, so an offer the need can't be
     converted to (a jar sold by weight) counts as one package (spec §7).
 
-    `stock_up` (storpack): items worth having at home. No overshoot cap; among the
-    options costing at most `stock_up.allowance(cheapest)` more than the cheapest, the
-    lowest effective jämförpris wins (tie → lower cost → smaller overshoot), flagged
+    `stock_up` (storpack, basvaror): items worth having at home. No overshoot cap; among
+    the options costing at most `stock_up.allowance(cheapest)` more than the cheapest and
+    within `stock_up.max_amount`, the lowest effective jämförpris wins (tie → lower cost →
+    smaller overshoot), unless it saves less than `stock_up.min_saving` per unit. Flagged
     `storpack` when it isn't the cheapest.
     """
     options: list[Option] = []
@@ -182,7 +200,11 @@ def choose(need: Amount, offers: Sequence[Offer], *, max_overshoot: float | None
     if stock_up is not None:
         cheapest = ranked[0]
         ceiling = cheapest.cost + stock_up.allowance(cheapest.cost) + EPS
-        best = min((o for o in ranked if o.cost <= ceiling), key=_stock_key)
+        best = min((o for o in ranked if o.cost <= ceiling and (o is cheapest or stock_up.fits(o))),
+                   key=_stock_key)
+        if (stock_up.min_saving > 0 and math.isfinite(cheapest.unit_cost)
+                and best.unit_cost > cheapest.unit_cost * (1 - stock_up.min_saving) + EPS):
+            best = cheapest
         if best is not cheapest and best.cost > cheapest.cost + EPS:
             best = replace(best, flags=best.flags + ("storpack",))
         return Choice(best, None, ranked)

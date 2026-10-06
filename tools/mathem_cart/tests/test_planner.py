@@ -384,6 +384,18 @@ def test_storpack_line_picks_the_big_pack_and_fresh_items_keep_lowest_cost(tmp_p
     assert (line.product_id, line.count) == (3, 2)
 
 
+def test_basvara_line_buys_the_potato_sack_within_its_max_amount(tmp_path):
+    def p(pid, extra, price, unit_price):
+        return Product.from_api({"id": pid, "full_name": f"Potatis {pid}", "name_extra": extra,
+                                 "gross_price": str(price), "gross_unit_price": str(unit_price),
+                                 "unit_price_quantity_abbreviation": "kg", "availability": {"is_available": True}})
+    planner = Planner(deps(tmp_path))
+    potatoes = Item(name="fast potatis", key="fast potatis", amount=800, unit="g", category="Grönsaker")
+    offers = [p(1, "1 kg", 20, 20), p(2, "5 kg", 59, 11.8), p(3, "10 kg", 99, 9.9)]
+    line = planner.line_for(potatoes, offers, "haiku")
+    assert (line.product_id, line.count, "storpack" in line.flags) == (2, 1, True)   # 10 kg is over 5 kg
+
+
 def test_frozen_chicken_reaches_the_agents_when_tillat_fryst_lists_it(tmp_path):
     frozen = Product.from_api({"id": 900, "full_name": "Garant Kyckling Bröstfilé Fryst", "name_extra": "1000 g",
                                "gross_price": "91.50", "availability": {"is_available": True},

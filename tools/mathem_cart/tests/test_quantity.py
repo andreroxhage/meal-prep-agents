@@ -198,3 +198,36 @@ def test_stock_up_compares_within_the_majority_unit():
     small, big, odd = _jar(1, 25.0, 1000.0, "kg"), _jar(2, 35.0, 350.0, "kg"), _jar(3, 24.0, 24.0, "st")   # cheapest: cap 24 + 12 kr
     choice = choose(Amount(1, "förp"), [small, big, odd], max_overshoot=None, stock_up=STOCK)
     assert choice.option.offer.product_id == 2 and "storpack" in choice.option.flags
+
+
+STAPLE = StockUp(max_extra_share=None, max_extra_kr=150, min_saving=0.15)
+
+
+def test_staples_buy_the_big_sack_that_a_share_of_a_cheap_bag_never_allows():
+    # 1 kg potatis: 1 kg for 20 kr, 2 kg for 32 kr, 5 kg for 59 kr. Storpack's 50 % (10 kr) keeps the bag.
+    bag, two, sack = offer(1, 1000, 20.0, 20.0), offer(2, 2000, 32.0, 16.0), offer(3, 5000, 59.0, 11.8)
+    assert choose(Amount(1000, "g"), [bag, two, sack], max_overshoot=None,
+                  stock_up=STOCK).option.offer.product_id == 1
+    choice = choose(Amount(1000, "g"), [bag, two, sack], max_overshoot=None, stock_up=STAPLE)
+    assert choice.option.offer.product_id == 3 and "storpack" in choice.option.flags
+    # The kronor cap still holds: 150 kr over 20 kr is 170 kr.
+    huge = offer(4, 25000, 199.0, 7.96)
+    assert choose(Amount(1000, "g"), [bag, huge], max_overshoot=None,
+                  stock_up=STAPLE).option.offer.product_id == 1
+
+
+def test_staples_respect_the_max_amount_unless_the_need_is_bigger():
+    bag, two, sack = offer(1, 1000, 20.0, 20.0), offer(2, 2000, 32.0, 16.0), offer(3, 5000, 59.0, 11.8)
+    capped = StockUp(None, 150, 0.15, Amount(3000, "g"))
+    assert choose(Amount(1000, "g"), [bag, two, sack], max_overshoot=None,
+                  stock_up=capped).option.offer.product_id == 2
+    # Needing 6 kg: the cheapest way already exceeds 3 kg and is always allowed.
+    choice = choose(Amount(6000, "g"), [bag, sack], max_overshoot=None, stock_up=capped)
+    assert choice.option is not None and choice.option.cost == pytest.approx(min(6 * 20.0, 2 * 59.0))
+
+
+def test_staples_keep_the_cheapest_when_the_saving_is_too_small():
+    # 1 kg ris 30 kr vs 5 kg for 140 kr (28 kr/kg, 7 % cheaper): not worth 4 kg in the cupboard.
+    kilo, five = offer(1, 1000, 30.0, 30.0), offer(2, 5000, 140.0, 28.0)
+    choice = choose(Amount(500, "g"), [kilo, five], max_overshoot=None, stock_up=STAPLE)
+    assert choice.option.offer.product_id == 1 and "storpack" not in choice.option.flags
