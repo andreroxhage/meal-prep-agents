@@ -50,7 +50,7 @@ Följ `.claude/rules/recipe-style.md` — den är den enda källan för receptfo
 Läs den innan du skriver, och `.claude/rules/recipe-examples.md` för ett komplett
 exempel att kopiera. Regeln laddas automatiskt när du öppnar en receptfil.
 
-De fem regler som oftast missas:
+De sex regler som oftast missas:
 
 1. **Mängden ska stå i instruktionssteget**, fetmarkerad, första gången
    ingrediensen används: `Häll **1,5 dl** mjölk över **1 dl** ströbröd`.
@@ -67,6 +67,9 @@ De fem regler som oftast missas:
    fast det är rätt — degen skär sig, emulsionen separerar — säg det och säg vad
    som får det att gå över. Annars "räddar" läsaren en sats som var på väg att
    lyckas, och räddningen är det som förstör den.
+6. **Handlingen först, detaljer efter** (Regel 8). Första meningen i varje punkt
+   säger vad du gör och hur: mängd, värme, tid, klartecken. Varför och tips kommer
+   i meningen efter.
 
 ## Kvalitetskontroll
 

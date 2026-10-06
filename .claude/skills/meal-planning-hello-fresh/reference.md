@@ -68,6 +68,7 @@ teknik, aldrig mot tråkig mat.
 | Protein | kycklinglår, kycklingfilé, hel kyckling, färs (nöt, fläsk, bland, kyckling), fläskkarré, fläskbog, fläsksida, korv, ägg, baljväxter, halloumi, billig fisk (sej, torsk, fryst lax) | allt i Vardag + färsk lax, räkor, högrev, grytbitar, lammfärs | fritt: oxfilé, entrecote, lammracks, anka, skaldjur |
 | Inte i nivån | oxfilé, entrecote, ryggbiff, lammracks, hälleflundra, pilgrimsmussla, dyra ostar som bas | premiumdetaljer som huvudprotein | — |
 | Komponenter | en huvudkomponent + tillbehör | 2–3 | flera, med teknikmoment (fond, emulsion, konfit, jäsning, lång marinad) |
+| Numrerade steg i receptet | högst 6 | — | — |
 | Bladörter (koriander, persilja, dill, gräslök, basilika) | frysta, finhackade¹ | frysta, finhackade¹ | färska |
 
 ¹ Standard. Styrs av `shopping.frozen_herbs_for_levels` i hushållsprofilen; nivåer som

@@ -527,6 +527,13 @@ BATCH_TRIGGER = re.compile(
 )
 BATCH_RESOLVED = re.compile(r"\bper omgång\b|\bvarje omgång\b|\bper sats\b", re.IGNORECASE)
 
+# Forsta meningen ar handlingen (Regel 8). Fetmarkerade mangder raknas inte, sa en
+# kryddlista som Regel 1 kraver i steget fäller inte tipset. Langsta i guldexemplen ar 20.
+MAX_ACTION_WORDS = 25
+SENTENCE_END = re.compile(r"(?<=[.!?])\s+(?=[A-ZÅÄÖ\d])")
+STEP_MARKER = re.compile(r"^([-*]|\d+[.)])\s+")
+BOLD_AMOUNT = re.compile(r"\*\*[\d½¼¾][^*]*\*\*")
+
 
 def check_step_shape(lines: list[str], rep: Report) -> None:
     bounds = section_bounds(lines, r"^##\s+Gör så här")
@@ -541,6 +548,17 @@ def check_step_shape(lines: list[str], rep: Report) -> None:
                 "en tidsplan eller bakgrund snarare än ett moment. Ett numrerat steg är "
                 "något du gör, en gång, i tur och ordning — flytta resten till "
                 "'## Noter' (Regel 4c)."
+            )
+
+    for line_no, step in parse_steps(lines):
+        action = SENTENCE_END.split(BOLD_AMOUNT.sub("", STEP_MARKER.sub("", step)))[0]
+        action = action.replace("**", "")
+        words = len(action.split())
+        if words > MAX_ACTION_WORDS:
+            rep.tip(
+                f"rad {line_no}: första meningen har {words} ord. Börja med vad läsaren "
+                f"gör och hur (mängd, värme, tid, klartecken) på högst {MAX_ACTION_WORDS} "
+                "ord, och lägg förklaringar i meningen efter (Regel 8)."
             )
 
     body = "\n".join(lines[bounds[0]: bounds[1]])

@@ -20,7 +20,7 @@ Ett recept läses i tre lägen, och standarden ska bära alla tre:
 |---|---|---|
 | Inköp | Hur mycket behöver jag totalt? | Regel 3, Regel 4a |
 | Planering | När börjar jag med vad? | Regel 4b, Regel 7 |
-| Utförande | Vad gör jag nu, och gick det rätt? | Regel 1, Regel 5, Regel 6 |
+| Utförande | Vad gör jag nu, och gick det rätt? | Regel 1, Regel 5, Regel 6, Regel 8 |
 
 ## Regel 1 — mängden står i instruktionen (viktigast)
 
@@ -217,7 +217,7 @@ den står efter smörinarbetningen i stället för i den.
 Skriv kontrollen som ett utfall med åtgärd, inte bara ett måltal:
 
 - ✅ `Mät degtemperaturen innan smöret går i: under 26 °C fortsätter du, över 27 °C
-  ställer du bunken kallt 15 min först — varmare än så smälter smöret ut i stället
+  ställer du bunken kallt 15 min först. Varmare än så smälter smöret ut i stället
   för att emulgera.`
 - ❌ `Degtemperaturen ska vara 24–25 °C.`
 
@@ -255,6 +255,30 @@ mängden först används**, inte där varianten råkar beskrivas.
 
 Beskrivningen av varianten ligger i `## Noter`; **pekaren** till den ligger i steget,
 eller i en kort valruta först under `## Gör så här` när valet gäller hela receptet.
+
+## Regel 8 — handlingen först, detaljer efter
+
+Läsaren har flera kastruller igång och tittar upp från spisen för att hitta nästa
+moment. Varje punkt börjar därför med **vad du gör och hur**: verbet, mängden,
+värmen, tiden och hur du ser att det är klart. Den som har bråttom läser första
+meningen och går vidare. Den som vill förstå läser vidare.
+
+- **Första meningen är handlingen**, högst 25 ord utöver mängderna. Kontrollen
+  tipsar om längre.
+- **Detaljerna kommer efter**, i nästa mening: varför, vad som ser fel ut men är
+  rätt (Regel 5a), tips. De får gärna stå kvar, så länge de inte står först.
+- **Inget varför före hur.** En förklaring mitt i handlingen skjuter värmen och
+  tiden till slutet av meningen, där läsaren inte hinner fram.
+- **Fyllnad stryks**: "ingen brådska här" och "kritiskt för djupet" säger inget som
+  tiden och klartecknet inte redan säger.
+- **Vardag:** detaljmeningar bara där risken finns. Antalet steg per nivå står i
+  `## Nivåer` i `.claude/skills/meal-planning-hello-fresh/reference.md`.
+
+- ✅ `Stek **800 g** kycklinglår i två omgångar på hög värme, 4 min per sida, till
+  72 °C. Vänd dem inte förrän de släpper pannan, då har stekytan bildats.`
+- ❌ `Stek **800 g** kycklinglår i två omgångar så att de får ordentlig stekyta istället
+  för att koka i sin egen vätska — det är här smaken byggs, så ha tålamod och vänd
+  inte för tidigt, 4 min per sida.`
 
 ## Filnamn
 

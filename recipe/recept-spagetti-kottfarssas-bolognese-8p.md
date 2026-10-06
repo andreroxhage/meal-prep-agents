@@ -42,14 +42,13 @@ Maillard istället för att koka i grönsakerna, och såsen rundas av med mjölk
 - Stek **100 g** tärnad pancetta 3–4 min tills fettet smält ut och tärningarna
   börjar få färg.
 - Lägg i **2** finhackade gula lökar, **2** finrivna morötter och **200 g** finriven
-  rotselleri. Stek 8–10 min tills grönsakerna är mjuka och lätt karamelliserade —
-  ingen brådska här, det är smakbygget.
+  rotselleri. Stek 8–10 min tills grönsakerna är mjuka och lätt karamelliserade.
 
 ### 2) Vitlök, sardeller och tomatpuré
 - Tillsätt **5** finhackade vitlöksklyftor och **2** finhackade sardellfiléer och
   fräs 1 min tills sardellerna smält ner.
 - Vänd ner **4 msk** tomatpuré och rosta den 2–3 min tills den mörknar och doftar
-  sött — kritiskt för djupet.
+  sött.
 
 ### 3) Bryn färsen separat
 - Bryn **800 g** nötfärs i en het torr panna i två omgångar, 4–5 min per omgång.
@@ -64,16 +63,14 @@ Maillard istället för att koka i grönsakerna, och såsen rundas av med mjölk
 ### 5) Sjud såsen
 - Tillsätt **2 burkar** krossade tomater, **7 dl** kalvfond, **2** lagerblad och
   **2 tsk** torkad oregano.
-- Sänk till svag sjudning (ca 95 °C, enstaka bubblor) och låt gå under lock minst
-  45–60 min, gärna 90 min. Rör om var 15:e min och spä med vatten om såsen blir
-  tjockare än en grov ragù.
+- Sjud under lock på svag värme (ca 95 °C, enstaka bubblor) 45–90 min.
+- Rör om var 15:e min. Spä med vatten om såsen blir tjockare än en grov ragù.
 
 ### 6) Smaka av
 - Fiska upp lagerbladen. Smaka av med salt och svartpeppar, och **2 tsk** strösocker
   om tomaterna är sura.
 - Rör ner **1,5 dl** mjölk och låt gå 5 min till för rundhet.
-- Vänd ner **2 nävar** strimlad färsk basilika precis före servering — den ska vara
-  färsk, inte bortkokt.
+- Vänd ner **2 nävar** strimlad färsk basilika precis före servering.
 
 ### 7) Pasta och servering
 - Koka **800 g** spaghetti i rikligt med vatten med **1 msk** salt per liter,
