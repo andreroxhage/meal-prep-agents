@@ -527,6 +527,10 @@ BATCH_TRIGGER = re.compile(
 )
 BATCH_RESOLVED = re.compile(r"\bper omgång\b|\bvarje omgång\b|\bper sats\b", re.IGNORECASE)
 
+# Forsta meningen ar handlingen (Regel 8). Langsta i guldexemplen ar 24 ord.
+MAX_ACTION_WORDS = 25
+SENTENCE_END = re.compile(r"(?<=[.!?])\s+(?=[A-ZÅÄÖ])")
+
 
 def check_step_shape(lines: list[str], rep: Report) -> None:
     bounds = section_bounds(lines, r"^##\s+Gör så här")
@@ -541,6 +545,16 @@ def check_step_shape(lines: list[str], rep: Report) -> None:
                 "en tidsplan eller bakgrund snarare än ett moment. Ett numrerat steg är "
                 "något du gör, en gång, i tur och ordning — flytta resten till "
                 "'## Noter' (Regel 4c)."
+            )
+
+    for line_no, step in parse_steps(lines):
+        action = SENTENCE_END.split(step.replace("**", ""))[0]
+        words = len(action.split())
+        if words > MAX_ACTION_WORDS:
+            rep.tip(
+                f"rad {line_no}: första meningen har {words} ord. Börja med vad läsaren "
+                f"gör och hur (mängd, värme, tid, klartecken) på högst {MAX_ACTION_WORDS} "
+                "ord, och lägg förklaringar i meningen efter (Regel 8)."
             )
 
     body = "\n".join(lines[bounds[0]: bounds[1]])

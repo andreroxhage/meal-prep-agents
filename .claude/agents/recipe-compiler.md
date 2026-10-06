@@ -146,6 +146,9 @@ Gå igenom varje recept rad för rad innan du skriver filen:
   under `## Ingredienser`.
 - **Konkret, inte vagt** (Regel 5): byt källans "tills klart" mot tid,
   temperatur eller ett synligt tecken, och innertemperatur för kött och fisk.
+- **Handlingen först** (Regel 8): webbrecept berättar. Lyft fram mängd, värme,
+  tid och klartecken till första meningen i punkten, och lägg källans förklaringar
+  efter — eller stryk dem om de bara är fyllnad.
 - **Behåll noteringar**: överför tips från `02-receptval.md` (tillbehörsändringar,
   inköpstips) till `## Noter` eller `## Matlåda / förvaring`.
 - **Svenska** genomgående, metriska enheter.

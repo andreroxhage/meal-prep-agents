@@ -67,17 +67,6 @@ Skapa en tillagningsplan som minimerar total arbetstid genom att parallellisera 
 
 ---
 
-## Per recept: Tillagningssteg
-
-### [Rätt 1]
-1. [steg]
-2. [steg]
-
-**Kritiska temperaturer/tider**: [lista]
-**Förvaring**: Kyl [X] dagar, Frys [Y] månader
-
----
-
 ## Förvaringsöversikt
 
 | Rätt | Kyl | Frys | Hållbarhet kyl | Hållbarhet frys |
@@ -93,3 +82,7 @@ Skapa en tillagningsplan som minimerar total arbetstid genom att parallellisera 
 - **Realism**: Utgå från `kitchen.equipment` i hushållsprofilen (`meal-prep.local.yaml`,
   annars `meal-prep.example.yaml`); standard är 1 ugn och 4 spisplattor
 - **Säkerhet**: Flagga matförvaring och temperaturer
+- **Skriv inte om recepten**: stegen finns i `04-alla-recept.md`. Hänvisa
+  (`Lax, steg 1–2`) och skriv bara det som är nytt för planen: ordning och samtidighet.
+- **Handlingen först**: en uppgift per rad som börjar med vad du gör, samma krav
+  som Regel 8 i `.claude/rules/recipe-style.md`.
