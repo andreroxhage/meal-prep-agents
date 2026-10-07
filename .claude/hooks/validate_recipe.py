@@ -407,6 +407,9 @@ def qty_near(step: str, pos: int) -> tuple[bool, bool]:
     return False, False
 
 
+NOT_INGREDIENTS = {"min", "minut", "minuter", "sek", "tim", "timme", "timmar", "grader"}
+
+
 def find_mention(step: str, headwords: list[str]) -> int | None:
     """Position for forsta omnamnandet, eller None.
 
@@ -416,6 +419,9 @@ def find_mention(step: str, headwords: list[str]) -> int | None:
     i 'peppar'.
     """
     words = [(m.start(), fold(m.group(0))) for m in re.finditer(r"[A-Za-zÀ-öø-ÿ]+", step)]
+    # Tids- och mattord ar aldrig en ingrediens. Utan det traffar efterledet 'min' i
+    # 'spiskummin' varje '20 min'.
+    words = [(pos, word) for pos, word in words if word not in NOT_INGREDIENTS]
     for headword in headwords:
         folded = fold(headword)
         candidates = [folded[:5] if len(folded) >= 5 else folded]

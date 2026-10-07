@@ -95,6 +95,8 @@ MENTION_CASES = [
     ("Vänd ner smöret", ["smör"], True),
     ("Blanda alla ingredienser", ["kokosmjölk"], False),  # ska INTE matcha
     ("Stek kycklingen", ["kycklinglårfilé"], True),
+    ("Låt puttra 20 min", ["spiskummin"], False),         # efterledet 'min' ar en tid
+    ("Rosta spiskumminet 1 min", ["spiskummin"], True),
 ]
 
 for step, heads, should_match in MENTION_CASES:
