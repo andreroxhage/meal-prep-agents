@@ -46,5 +46,5 @@ och rapportera resultatet till användaren.
   skrivs eller redigeras, och som `SubagentStop`-gate för `recipe-creator` och
   `recipe-compiler`. Den här skillen är för manuell körning över redan befintliga
   filer.
-- Äldre recept i `recipe/` följer ännu inte standarden fullt ut. Konvertera bara
-  det användaren ber om — kör inte en massmigrering oombedd.
+- Alla recept i `recipe/` följer standarden, och CI kontrollerar hela biblioteket vid
+  varje körning. Ett `FEL` i `recipe/` är därför en regression som ska rättas.

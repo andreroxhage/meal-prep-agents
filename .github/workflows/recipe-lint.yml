@@ -37,18 +37,25 @@ jobs:
           python3 .claude/hooks/test_validate.py
           python3 .claude/hooks/test_validate_week.py
 
-      # Endast filer som ändras i denna PR kontrolleras. Äldre recept som inte
-      # följer standarden ska inte blockera orelaterade ändringar.
+      # Receptbiblioteket är migrerat till standarden och kontrolleras i sin helhet
+      # vid varje körning, så en ändring i validatorn som fäller ett befintligt
+      # recept syns direkt.
+      - name: Validera hela receptbiblioteket
+        run: find recipe -name '*.md' -print0 | xargs -0 python3 .claude/hooks/validate_recipe.py
+
+      # Övriga receptfiler (veckomappar) kontrolleras bara när de ändras i PR:en.
       - name: Hitta ändrade receptfiler
         id: changed
         run: |
           # Vid pull_request är base_ref målgrenen. Vid workflow_dispatch är den
           # tom — jämför då mot default-grenen, så en manuell körning kontrollerar
-          # samma sak som PR:en hade gjort och inte hela det omigrerade repot.
+          # samma sak som PR:en hade gjort. recipe/ filtreras bort eftersom
+          # föregående steg redan har validerat hela biblioteket.
           base="${{ github.base_ref || github.event.repository.default_branch }}"
           git diff --name-only --diff-filter=d \
             "origin/$base...${{ github.sha }}" \
-            | grep -E '^recipe/.*\.md$|(^|/)recept-[^/]*\.md$|(^|/)04-alla-recept\.md$' \
+            | grep -E '(^|/)recept-[^/]*\.md$|(^|/)04-alla-recept\.md$' \
+            | grep -v '^recipe/' \
             > changed.txt || true
           echo "count=$(wc -l < changed.txt)" >> "$GITHUB_OUTPUT"
           cat changed.txt
