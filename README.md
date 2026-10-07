@@ -178,6 +178,9 @@ uv run --project tools/mathem_cart pytest -q            # Mathem CLI (offline)
 Recipes added to `recipe/` must pass `/verify-recipes` and be written in your own words,
 with sources listed under `## Källor`.
 
+Optional: `git config core.hooksPath .githooks` runs the CI leak check (personal IDs,
+paths, emails) before each commit. `git commit --no-verify` skips it.
+
 ## License
 
 [MIT](LICENSE). Third-party code:
