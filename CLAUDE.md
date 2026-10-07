@@ -138,7 +138,7 @@ place and is enforced mechanically:
 | Enforcement | `.claude/hooks/recipe_guard.sh` (PostToolUse on `Write`/`Edit`/`MultiEdit`) | Normalizes mechanical issues in place, feeds remaining errors back to Claude. |
 | Gate | `.claude/hooks/subagent_recipe_gate.sh` (SubagentStop) | `recipe-creator` / `recipe-compiler` can't finish while their recipes have errors. Releases after 2 blocked attempts so it can't loop. |
 | Cross-check | `.claude/hooks/validate_week.py` | Every ingredient in `04` must appear in `03` (FEL). A pooled amount that looks too small is a TIPS, because units like `paket` and `st` can't be compared safely. |
-| Manual + CI | `/verify-recipes`, `.github/workflows/recipe-lint.yml` | Same validator on demand and on PRs (changed files only). |
+| Manual + CI | `/verify-recipes`, `.github/workflows/recipe-lint.yml` | Same validator on demand and on PRs (all of `recipe/`, plus changed recipe files elsewhere). |
 
 **The rule that matters most:** every instruction step repeats the amount inline
 (`Häll **1,5 dl** mjölk över **1 dl** ströbröd`), because the reader is standing at
@@ -160,8 +160,8 @@ only; amounts and steps stay governed by the rules above.
 When the hook reports `RÄTTAT`, the file on disk was already changed — re-read it
 before editing further. `FEL` must be fixed, not explained away. `TIPS` is advisory.
 
-Recipes in `recipe/` predate the standard and are not yet migrated; convert one only
-when asked, rather than running a mass migration.
+Every recipe in `recipe/` follows the standard, and CI validates the whole library on
+every run, so a library recipe that breaks the standard fails the build.
 
 ## Core Workflow & Architecture
 
