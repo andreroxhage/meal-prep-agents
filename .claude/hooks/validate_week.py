@@ -6,7 +6,8 @@ Anvandning:
     validate_week.py 03-handlingslista.md 04-alla-recept.md
 
 Kontrollerar att varje ingrediens i 04-alla-recept.md finns i
-03-handlingslista.md, och att den poolade mangden racker. Skafferivaror
+03-handlingslista.md (FEL om den saknas), och att den poolade mangden racker
+(TIPS, eftersom 'paket' och 'st' inte gar att jamfora sakert). Skafferivaror
 (salt, peppar, olja, vatten) rapporteras som TIPS, aldrig som FEL.
 
 Exitkoder: 0 = inga FEL, 1 = minst ett FEL, 2 = anropsfel.
@@ -76,6 +77,8 @@ def parse_amount(raw: str) -> float | None:
 
 def parse_item(line: str, line_no: int) -> Item | None:
     body = re.sub(r"^\s*[-*]\s+", "", flip_ingredient_line(line) or line).strip()
+    # Bockrutor i skafferi-antagandena: '- [ ] Salt'.
+    body = re.sub(r"^\[[ xX]\]\s*", "", body)
     body = re.sub(r"<!--.*?-->", "", body)
     if not body or body.startswith(("#", "|", ">")):
         return None
@@ -132,13 +135,36 @@ def collect_list_items(path: Path) -> list[Item]:
     return items
 
 
-def keys_for(name: str) -> list[str]:
-    """Jamforelsenycklar: karnord foldat till prefix."""
-    out = []
+# Plural- och singularandelser som tas bort fore prefixet, sa att 'gula lökar' och
+# 'gul lök' (eller 'gurka' och 'gurkor') far samma nyckel.
+PLURAL_ENDINGS = ("ar", "or", "er", "a")
+
+# Bojningar som fortfarande ar samma skafferivara: 'oljan', 'smöret', 'saltet'.
+PANTRY_INFLECTIONS = {"", "n", "t", "en", "et", "ar", "er", "or", "na", "erna"}
+
+
+def stem(folded: str) -> str:
+    for ending in PLURAL_ENDINGS:
+        if folded.endswith(ending) and len(folded) - len(ending) >= 3:
+            return folded[: -len(ending)]
+    return folded
+
+
+def is_pantry(name: str) -> bool:
+    """Hela ordet jamfors, inte nyckeln: 'salta jordnötter', 'oliver' och
+    'vattenkastanjer' ar inga skafferivaror fast nycklarna borjar likadant."""
     for head in extract_headwords(name):
-        folded = fold(head)
-        out.append(folded[:5] if len(folded) >= 5 else folded)
-    return out
+        word = fold(head)
+        for pantry in PANTRY:
+            p = fold(pantry)
+            if word.startswith(p) and word[len(p):] in PANTRY_INFLECTIONS:
+                return True
+    return False
+
+
+def keys_for(name: str) -> list[str]:
+    """Jamforelsenycklar: karnord foldat, utan andelse, till prefix."""
+    return [stem(fold(head))[:5] for head in extract_headwords(name)]
 
 
 def cross_check(recipe_items: list[Item], list_items: list[Item]) -> tuple[list[str], list[str]]:
@@ -161,7 +187,7 @@ def cross_check(recipe_items: list[Item], list_items: list[Item]) -> tuple[list[
         name = group[0].name
         matches = shopping.get(key, [])
         if not matches:
-            target = tips if any(fold(p).startswith(key) for p in PANTRY) else errors
+            target = tips if is_pantry(name) else errors
             target.append(
                 f"{name!r} används i recepten (rad {group[0].line_no}) men finns inte i "
                 "handlingslistan. Lägg till den, eller flagga den som skafferivara."

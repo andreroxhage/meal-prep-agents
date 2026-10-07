@@ -5,7 +5,7 @@
 PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
 
 if ! command -v python3 >/dev/null 2>&1; then
-  echo "Varning: python3 saknas. Receptstandarden kontrolleras inte förrän python3 (3.8+) är installerat — säg det till användaren."
+  echo "Varning: python3 saknas. Receptstandarden kontrolleras inte förrän python3 (3.9+) är installerat — säg det till användaren."
 fi
 if ! git -C "$PROJECT_DIR" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Notis: projektet är inte ett git-repo (t.ex. nedladdat som zip). Klona hellre med git; receptgrinden fungerar sämre utan."
