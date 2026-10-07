@@ -51,6 +51,7 @@ tools/mathem_cart/                   # Experimental Python CLI: shopping list �
 │   ├── recipe_guard.sh              # PostToolUse wrapper
 │   ├── subagent_recipe_gate.sh      # SubagentStop wrapper
 │   ├── test_validate.py             # Regression test for the recipe validator
+│   ├── test_validate_week.py        # Regression test for the 03 ↔ 04 cross-check
 │   ├── first_run_nudge.sh           # SessionStart: suggests /setup when no profile exists
 │   └── mathem_answer_guard.sh       # PreToolUse (Write) in the Mathem agents: answer file only
 ├── settings.json                    # Hook registration + permissions: ask before apply, deny .env (committed)
@@ -136,7 +137,7 @@ place and is enforced mechanically:
 | Few-shot | `.claude/rules/recipe-examples.md` | Two gold recipes (one-session and two-day) + good/bad pairs with reasoning. |
 | Enforcement | `.claude/hooks/recipe_guard.sh` (PostToolUse on `Write`/`Edit`/`MultiEdit`) | Normalizes mechanical issues in place, feeds remaining errors back to Claude. |
 | Gate | `.claude/hooks/subagent_recipe_gate.sh` (SubagentStop) | `recipe-creator` / `recipe-compiler` can't finish while their recipes have errors. Releases after 2 blocked attempts so it can't loop. |
-| Cross-check | `.claude/hooks/validate_week.py` | Every ingredient in `04` must appear in `03` with sufficient quantity. |
+| Cross-check | `.claude/hooks/validate_week.py` | Every ingredient in `04` must appear in `03` (FEL). A pooled amount that looks too small is a TIPS, because units like `paket` and `st` can't be compared safely. |
 | Manual + CI | `/verify-recipes`, `.github/workflows/recipe-lint.yml` | Same validator on demand and on PRs (changed files only). |
 
 **The rule that matters most:** every instruction step repeats the amount inline
