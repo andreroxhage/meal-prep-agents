@@ -19,6 +19,10 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    # 3.9 är python3 i macOS och golvet README:n lovar; senaste för att fånga det som tas bort.
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.14"]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,10 +30,12 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: ${{ matrix.python-version }}
 
       - name: Kör validatorns egna test
-        run: python3 .claude/hooks/test_validate.py
+        run: |
+          python3 .claude/hooks/test_validate.py
+          python3 .claude/hooks/test_validate_week.py
 
       # Endast filer som ändras i denna PR kontrolleras. Äldre recept som inte
       # följer standarden ska inte blockera orelaterade ändringar.

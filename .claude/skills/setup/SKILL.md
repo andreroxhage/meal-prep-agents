@@ -42,7 +42,7 @@ git rev-parse --is-inside-work-tree 2>/dev/null || echo "inte ett git-repo"
 test -f meal-prep.local.yaml && echo "profil: finns" || echo "profil: saknas"
 ```
 
-- `python3` (3.8+) krävs: hookarna som håller receptstandarden använder den. Saknas den,
+- `python3` (3.9+) krävs: hookarna som håller receptstandarden använder den. Saknas den,
   säg det och ge installationstips (macOS: `brew install python`, Debian/Ubuntu:
   `sudo apt install python3`, Windows: kör i WSL).
 - `git` krävs: klona repot i stället för att ladda ner en zip.

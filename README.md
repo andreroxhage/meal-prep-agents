@@ -13,7 +13,7 @@ that gets everything done as quickly as possible.
 
 ## Quickstart
 
-You need [Claude Code](https://claude.com/claude-code), `git` and `python3` (3.8+).
+You need [Claude Code](https://claude.com/claude-code), `git` and `python3` (3.9+).
 
 ```bash
 git clone https://github.com/andreroxhage/meal-prep-agents.git
@@ -172,6 +172,7 @@ Issues and pull requests are welcome. Before opening a PR:
 
 ```bash
 python3 .claude/hooks/test_validate.py                  # recipe validator
+python3 .claude/hooks/test_validate_week.py             # shopping list ↔ recipes check
 uv run --project tools/mathem_cart pytest -q            # Mathem CLI (offline)
 ```
 
