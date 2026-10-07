@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Valfri lokal läckkontroll före commit, samma kontroll som körs i CI.
+# Slå på en gång per klon: git config core.hooksPath .githooks
+# Hoppa över vid behov: git commit --no-verify (CI kör ändå kontrollen).
+# Git kör hooken från repots rot, och skriptet hittar roten själv.
+exec bash .github/scripts/leak_check.sh

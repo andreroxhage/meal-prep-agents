@@ -16,7 +16,7 @@ $tracked"
 # Innehåll. Skriptet självt undantas.
 files="$(git ls-files | grep -v '^\.github/scripts/leak_check\.sh$')"
 check() {  # $1 = beskrivning, $2 = regex
-  hits="$(printf '%s\n' "$files" | xargs -d '\n' grep -nIE "$2" -- 2>/dev/null || true)"
+  hits="$(printf '%s\n' "$files" | tr '\n' '\0' | xargs -0 grep -nIE "$2" -- 2>/dev/null || true)"
   [ -n "$hits" ] && fail "$1:
 $hits"
 }
