@@ -1,17 +1,33 @@
 # Recept — Kycklingshawarma i pita med hummus, tahini och zhoug för 8 portioner
 
-En israelisk hummustallrik med allt på: krämig hummus kokad på torkade kikärter, mörkt
-stekt shawarma på lårfilé, kolad aubergine, tahinidressad vitkål, pickles och två såser
-på bordet — gul amba och het grön zhoug. Aktiv tid ca 75 min, total tid ca 3 h plus
-blötläggning över natten. Alla delar görs separat och sätts ihop på tallriken, vilket
-gör rätten idealisk som matlåda.
+**8 portioner · ca 75 min aktivt · ca 3 h plus blötläggning över natten**
+
+En israelisk hummustallrik: hummus kokad på torkade kikärter, mörkstekt shawarma på
+lårfilé, kolad aubergine, tahinidressad vitkål, pickles, gul amba och het grön zhoug.
+Allt görs separat och sätts ihop först på tallriken, så delarna håller sig var för sig
+i matlådan.
 
 ## Ingredienser (8 portioner)
+
+### Totalt att handla
+
+| Vara | Totalt | Varav |
+| --- | --- | --- |
+| Citroner | ca 7 st | ca 5 till 14 msk saft (3 kyckling · 3 hummus · 4 tahinisås · 2 vitkål · 1 aubergine · 1 zhoug) · 2 i klyftor till servering |
+| Ljus tahini | 3 dl | 1,5 hummus · 1,5 tahinisås |
+| Vitlök | 10 klyftor | 4 kyckling · 2 hummus · 1 tahinisås · 3 zhoug |
+| Malen spiskummin | 2 msk + 1½ tsk | 2 msk kyckling · ½ tsk hummus · 1 tsk zhoug |
+| Malen koriander | 1 msk + ½ tsk | 1 msk kyckling · ½ tsk zhoug |
+| Paprikapulver | 1 msk + 1 tsk | 1 msk kyckling · 1 tsk hummus |
+| Olivolja | 2,5 dl | 5 msk kyckling · 3 msk hummus · 2 msk aubergine · 1 dl zhoug |
+| Salt | 7 tsk | 3 kyckling · 2 hummus · ½ tahinisås · 1 vitkål · ½ zhoug |
+| Flingsalt | 1 tsk + efter smak | 1 tsk aubergine · efter smak till servering |
+| Svartpeppar | 2 tsk + 1 krm | 2 tsk kyckling · 1 krm vitkål |
 
 ### Kyckling
 - 1,6 kg kycklinglårfilé (benfri, utan skinn)
 - 5 msk olivolja
-- 3 msk citronsaft (räkna med ca 6 citroner till hela receptet)
+- 3 msk citronsaft
 - 1 msk vitvinsvinäger
 - 4 klyftor vitlök (rivna)
 - 2 msk spiskummin (mald)
@@ -78,14 +94,20 @@ gör rätten idealisk som matlåda.
 
 ## Gör så här
 
-### 1) Kvällen innan — blötlägg kikärterna
+**Ett val innan du börjar.** Torkade kikärter enligt stegen nedan, eller burk utan
+blötläggning, se Noter. Med burk faller steg 1 bort och dag 1 består bara av marinaden
+i steg 2; steg 3 kokar då burkkikärterna kort i stället.
+
+### Dag 1 — kväll · ca 20 min aktivt
+
+#### 1) Blötlägg kikärterna
 
 - Lägg **300 g** torkade kikärter i en stor bunke med **1 tsk** av bikarbonaten och
   vatten som täcker med god marginal, minst 3 gånger kikärternas volym.
 - Låt stå i rumstemperatur 12–16 timmar. Bikarbonaten mjukar upp skalen, vilket är hela
   skillnaden mellan grynig och silkeslen hummus.
 
-### 2) Marinera kycklingen
+#### 2) Marinera kycklingen
 
 - Blanda **5 msk** olivolja, **3 msk** citronsaft och **1 msk** vitvinsvinäger i en stor
   bunke.
@@ -96,13 +118,14 @@ gör rätten idealisk som matlåda.
 - Vänd ner **1,6 kg** kycklinglårfilé och massera in marinaden ordentligt. Täck och låt
   marinera i kylen minst 2 timmar, gärna över natten.
 
-### 3) Koka kikärterna och mixa hummusen
+### Dag 2 — dagen efter · ca 55 min aktivt
+
+#### 3) Koka kikärterna och mixa hummusen
 
 - Häll av och skölj kikärterna. Lägg dem i en rymlig kastrull med resterande **1 tsk**
   bikarbonat och vatten som täcker 4 cm över ytan.
-- Koka upp, skumma av, sänk till svag sjudning och koka 60–90 min tills kikärterna faller
-  isär mellan fingrarna — de ska vara direkt överkokta, inte al dente. Fyll på med hett
-  vatten om de blottas.
+- Koka upp, skumma av och sjud svagt 60–90 min tills kikärterna faller isär mellan
+  fingrarna. De ska vara överkokta, inte al dente. Fyll på med hett vatten om de blottas.
 - Spara 3 dl av kokvattnet. Häll av kikärterna och mixa dem varma i en kraftig mixer till
   en styv pasta, 1 min.
 - Tillsätt **1,5 dl** ljus tahini, **3 msk** citronsaft, **2 klyftor** vitlök, **2 tsk**
@@ -113,25 +136,21 @@ gör rätten idealisk som matlåda.
   sked, gör en djup grop i mitten, häll i **3 msk** olivolja och strö **1 tsk**
   paprikapulver över.
 
-> **Genväg med burk:** ersätt torkade kikärter med 3 burkar kikärter (400 g styck).
-> Skölj dem, sjud 20 min i vatten med **1 tsk** bikarbonat tills skalen lossnar, häll av
-> och mixa varma som ovan. Resultatet blir bra, men något mindre nötigt i smaken.
-
-### 4) Tahinisås
+#### 4) Tahinisås
 
 - Mixa **1,5 dl** ljus tahini med **4 msk** citronsaft, **1 klyfta** riven vitlök och
   **½ tsk** salt. Blandningen tjocknar och griper ihop sig — det ska den.
 - Tillsätt **2 dl** isvatten lite i taget under fortsatt mixning tills såsen blir vit,
   blank och rinner av skeden som tjock grädde. Ställ i kylen.
 
-### 5) Vitkålssallad
+#### 5) Vitkålssallad
 
 - Strimla **600 g** vitkål så tunt du förmår, helst på mandolin. Lägg i en bunke med
   **1 tsk** salt och knåda lätt 1 min, låt stå 10 min och krama ur vätskan.
 - Vänd kålen med **2 msk** citronsaft, **1 dl** tahinisås från satsen ovan och **1 krm**
   svartpeppar. Salladen ska vara ljust dressad, inte dränkt.
 
-### 6) Kola auberginen
+#### 6) Kola auberginen
 
 - Lägg **2 auberginer** direkt på gaslågan, eller på ett galler högst upp under
   grillelementet på 275 °C.
@@ -140,7 +159,7 @@ gör rätten idealisk som matlåda.
 - Låt svalna 10 min, dra av skalet och riv köttet i grova bitar. Vänd med **2 msk**
   olivolja, **1 msk** citronsaft och **1 tsk** flingsalt.
 
-### 7) Zhoug
+#### 7) Zhoug
 
 - Mixa **100 g** färsk koriander (stjälkar och allt), **3** gröna chili, **3 klyftor**
   vitlök, **1 tsk** mald spiskummin, **½ tsk** mald koriander, **¼ tsk** mald kardemumma,
@@ -148,34 +167,30 @@ gör rätten idealisk som matlåda.
 - Tillsätt **1 dl** olivolja i en stråle och pulsa till en tjock, grön sås. Häll upp i en
   flaska eller burk och täck ytan med ett tunt lager olja.
 
-### 8) Stek kycklingen
+#### 8) Stek kycklingen
 
 - Sätt ugnen på 250 °C med en plåt inne. Lägg lårfiléerna i ett lager på den heta plåten
   och stek 20–25 min, till 75 °C i den tjockaste biten.
 - Slå på grillelementet de sista 3–5 min tills ytan mörknar och kanterna börjar bränna.
-- Låt vila 5 min, skiva i 1 cm breda strimlor och stek strimlorna i omgångar i en
-  glödhet, torr stekpanna 2–3 min per omgång tills kanterna blir krispiga och nästan
-  svarta. Det är det steget som gör kycklingen till shawarma.
+- Låt vila 5 min och skiva i 1 cm breda strimlor.
+- Stek strimlorna i omgångar i en glödhet, torr stekpanna, 2–3 min per omgång, tills
+  kanterna är krispiga och nästan svarta. Det steget gör kycklingen till shawarma.
 
-### 9) Pitabröden
+#### 9) Pitabröden
 
 - Värm ugnen till 250 °C med plåt eller pizzasten inne i minst 20 min.
 - Lägg **16 st** pitabröd direkt på den heta ytan och värm 2–3 min tills de puffar upp och
   är ljust gyllene. Lägg dem i en skål under en kökshandduk så ångan håller dem mjuka.
 
-### 10) Lägg upp
+#### 10) Lägg upp
 
 - Bred hummusen i en bred rand på varje tallrik och lägg kycklingen bredvid.
 - Fördela vitkålssalladen, auberginen, **300 g** halverade körsbärstomater, **1** tunt
   skivad rödlök och **200 g** skivad picklad gurka runt om.
 - Ringla resterande tahinisås rikligt över allt, strö över lite flingsalt och lägg på
   **2 citroner** i klyftor.
-- Ställ fram **1 dl** amba och zhougen i varsin flaska på bordet, tillsammans med
-  pitabröden.
-
-> **Amba:** köpt går utmärkt. Finns i mellanösternbutiker och i större ICA Maxi
-> (verifiera). Hittar du ingen, byt mot mango-chutney rörd med 1 tsk currypulver och
-> 1 msk citronsaft.
+- Ställ fram **1 dl** amba (ersättning, se Noter) och zhougen i varsin flaska på bordet,
+  tillsammans med pitabröden.
 
 ## Matlåda / förvaring
 
@@ -191,6 +206,20 @@ gör rätten idealisk som matlåda.
   krispiga igen — mikrovågsugn gör den seg. Hummus och tahinisås serveras rumstempererade,
   ta ut dem 20 min innan. Pitabröden värms 1 min i 250 °C ugn eller 30 sek i torr panna
   per sida.
+
+## Noter
+
+### Kikärter på burk — beslutas före steg 1
+
+Ersätt de torkade kikärterna med 3 burkar kikärter (400 g styck) och hoppa över steg 1.
+I steg 3: skölj dem, sjud 20 min i vatten med 1 tsk bikarbonat tills skalen lossnar,
+häll av och mixa varma som i stegen. Resultatet blir bra, men något mindre nötigt i
+smaken.
+
+### Amba
+
+Köpt går utmärkt. Finns i mellanösternbutiker och i större ICA Maxi (verifiera).
+Hittar du ingen, byt mot mango-chutney rörd med 1 tsk currypulver och 1 msk citronsaft.
 
 ## Källor
 
