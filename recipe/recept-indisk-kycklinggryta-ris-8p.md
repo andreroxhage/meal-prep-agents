@@ -1,8 +1,18 @@
 # Recept — Murgh curry, indisk kycklinggryta med basmatiris för 8 portioner
 
-En nordindisk kycklinggryta byggd på rätt sätt: hela kryddor rostade i ghee, mörkbrynt lök och en tomatmasala som steks tills fettet skiljer sig — ingen currypulverskuggning, ingen äppelklyfta. Aktiv tid ca 20 min, total tid ca 1 h 15 min, varav det mesta är passiv sjudning.
+**8 portioner · ca 20 min aktivt · ca 1 h 15 min totalt**
+
+Hela kryddor rostas i ghee, löken bryns djupt gyllenbrun och tomatmasalan steks tills
+fettet lägger sig i blanka pärlor längs kanten. Kycklinglåren marineras i yoghurt och
+sjuder sedan i masalan tills bitarna delar sig mot skedkanten.
 
 ## Ingredienser (8 portioner)
+
+### Totalt att handla
+
+| Vara | Totalt | Varav |
+| --- | --- | --- |
+| Salt | 3 tsk + efter smak | 2 tsk marinad · efter smak gryta · 1 tsk ris |
 
 ### Kyckling och marinad
 - 1,6 kg kycklinglårfilé (i 3 cm bitar)
@@ -23,7 +33,7 @@ En nordindisk kycklinggryta byggd på rätt sätt: hela kryddor rostade i ghee, 
 - 2 gröna chili (finhackade)
 - 2 msk tomatpuré
 - 2 msk malen koriander
-- 1 msk malen spiskummin <!-- no-qty: namnkrock med spiskumminfrön i steg 2; mängden står fetmarkerad i steg 4 -->
+- 1 msk malen spiskummin
 - 2 tsk kashmirisk chilipulver
 - 800 g krossade tomater
 - 3 dl vatten
@@ -58,14 +68,13 @@ En nordindisk kycklinggryta byggd på rätt sätt: hela kryddor rostade i ghee, 
 ### 4) Stek masalan tills fettet skiljer sig
 
 - Tillsätt **2 msk** tomatpuré och fräs 1 min så den karamelliserar och tappar sin syrliga kant.
-- Rör ner **2 msk** malen koriander, **1 msk** malen spiskummin och **2 tsk** kashmirisk chilipulver. Fräs 30 sek i fettet — torra kryddor ska aldrig i vätskan direkt.
+- Rör ner **2 msk** malen koriander, **1 msk** malen spiskummin och **2 tsk** kashmirisk chilipulver (ersättning, se Noter). Fräs 30 sek i fettet — torra kryddor ska aldrig i vätskan direkt.
 - Häll i **800 g** krossade tomater och koka på medelhög värme 8–10 min tills massan tjocknat och fettet skiljer sig ut i blanka pärlor längs kanten. Det är signalen att masalan är färdig.
-- Not: kashmirisk chilipulver ger färg utan hetta och finns i välsorterade butiker och asiatiska livsmedelsaffärer (verifiera). Ersätt annars med 2 tsk sött paprikapulver plus ½ tsk cayennepeppar.
 
 ### 5) Sjud kycklingen
 
 - Vänd ner den marinerade kycklingen med all yoghurt, höj värmen och stek 5 min under omrörning tills bitarna vitnat på utsidan.
-- Häll i **3 dl** vatten, koka upp, lägg på lock och sjud på låg värme 25–30 min tills kycklingen håller 75 °C i mitten och bitarna lätt delar sig mot skedkanten. Rör om var tionde minut.
+- Häll i **3 dl** vatten, koka upp och sjud under lock på låg värme 25–30 min, till 75 °C i mitten. Bitarna ska dela sig lätt mot skedkanten. Rör om var tionde minut.
 
 ### 6) Koka riset under tiden
 
@@ -85,6 +94,12 @@ En nordindisk kycklinggryta byggd på rätt sätt: hela kryddor rostade i ghee, 
 - Kyl: grytan 4 dagar i tät burk, riset 3 dagar. Kyl ner riset inom 1 timme efter kokning och förvara det separat från grytan, annars suger det åt sig sås och blir grötigt. Smaken på grytan är märkbart rundare dag 2.
 - Frys: grytan 3 månader. Grädd- och tomatbasen skär sig inte vid frysning, till skillnad från en ren yoghurtsås. Frys i portionsburkar om 350 g direkt när grytan svalnat — lagar du "allt eftersom" under två veckor: ställ in hälften av satsen i frysen samma dag, behåll resten i kyl. Riset fryser bra i 3 månader i platta påsar och tinar snabbast så.
 - Uppvärmning: mikro 800 W i 3–4 min med lock, rör om halvvägs. Eller i kastrull på medelvärme 6–8 min med 1–2 msk vatten. Värm riset separat med 1 msk vatten så ångar det upp sig. Servera med extra färsk koriander — den tappar all doft i matlådan.
+
+## Noter
+
+### Kashmirisk chilipulver — beslutas före steg 4
+
+Kashmirisk chilipulver ger färg utan hetta och finns i välsorterade butiker och asiatiska livsmedelsaffärer (verifiera). Ersätt annars med 2 tsk sött paprikapulver plus ½ tsk cayennepeppar.
 
 ## Källor
 
