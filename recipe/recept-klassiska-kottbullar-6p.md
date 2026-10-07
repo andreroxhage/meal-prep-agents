@@ -1,84 +1,107 @@
 # Recept — Klassiska svenska köttbullar för 6 portioner
 
-Riktigt goda hemlagade köttbullar med gräddsås, pressgurka och lingon — den ultimata husmanskosten. Hemligheten ligger i att blöta brödet ordentligt, inte överarbeta färsen och steka på lagom hög värme så att köttbullarna blir saftiga inuti med en fin yta.
+Ströbrödet sväller i mjölk innan det går i färsen, färsen rörs bara tills den hänger ihop
+och köttbullarna steks på medelhög värme. Då blir de saftiga inuti med brynt yta, och
+stekresterna blir grunden till gräddsåsen.
 
 ## Ingredienser (6 portioner)
 
+### Totalt att handla
+
+| Vara | Totalt | Varav |
+| --- | --- | --- |
+| Smör | 4 msk + till potatisen | 2 msk stekning · 2 msk gräddsås · efter smak till potatisen |
+| Salt | 2,5 tsk + efter smak | 2 tsk köttbullar · ½ tsk pressgurka · efter smak gräddsås |
+| Svartpeppar | 1 tsk + efter smak | 1 tsk köttbullar · efter smak gräddsås |
+
 ### Köttbullar
-- Blandfärs (50/50 nöt och fläsk) — 800 g
-- Ströbröd — 1 dl
-- Mjölk — 1,5 dl
-- Ägg — 1 st
-- Gul lök — 1 st (finriven)
-- Salt — 2 tsk
-- Svartpeppar — 1 tsk (nymalen)
-- Kryddpeppar — ½ tsk (malen)
-- Smör — 2 msk (till stekning)
+- 800 g blandfärs (50/50 nöt och fläsk)
+- 1 dl ströbröd
+- 1,5 dl mjölk
+- 1 st ägg
+- 1 st gul lök (finriven)
+- 2 tsk salt
+- 1 tsk svartpeppar (nymalen)
+- ½ tsk kryddpeppar (malen)
+- 2 msk smör (till stekning)
 
 ### Gräddsås
-- Smör — 2 msk
-- Vetemjöl — 2 msk
-- Köttbuljong — 4 dl
-- Vispgrädde — 2 dl
-- Soja — 1 msk (japansk, för färg och smak)
-- Salt och peppar — efter smak
+- 2 msk smör
+- 2 msk vetemjöl
+- 4 dl köttbuljong
+- 2 dl vispgrädde
+- 1 msk soja (japansk, för färg och smak)
+- salt och peppar efter smak
 
 ### Pressgurka
-- Gurka — 1 st
-- Ättiksprit 12 % — 2 msk
-- Vatten — 1 dl
-- Strösocker — 3 msk
-- Persilja — en handfull (finhackad)
-- Salt — ½ tsk
+- 1 st gurka
+- 2 msk ättiksprit 12 %
+- 1 dl vatten
+- 3 msk strösocker
+- 1 näve persilja (finhackad)
+- ½ tsk salt
 
 ### Tillbehör
-- Kokt potatis eller potatismos — ca 1,2 kg potatis
-- Lingonsylt — att servera till
-- Smör — till potatisen
+- 1,2 kg potatis
+- lingonsylt att servera till
+- smör till servering (till potatisen)
 
 ## Gör så här
 
-### 1) Pressgurka (gör först — ska dra minst 30 min)
-- Skiva gurkan tunt, gärna med mandolin.
-- Lägg gurkskivorna i en skål och salta lätt. Låt stå 10 min, krama sedan ur vätskan ordentligt.
-- Blanda ättika, vatten och socker tills sockret löst sig.
-- Häll över gurkan och vänd. Strö över persilja. Ställ kallt.
+### 1) Pressgurka — gör först, den ska dra minst 30 min
+- Skiva **1** gurka tunt, gärna på mandolin.
+- Lägg skivorna i en skål med **½ tsk** salt, låt stå 10 min och krama sedan ur vätskan
+  ordentligt.
+- Rör ihop **2 msk** ättiksprit 12 %, **1 dl** vatten och **3 msk** strösocker tills
+  sockret löst sig.
+- Häll lagen över gurkan, vänd och strö över **1 näve** finhackad persilja. Ställ kallt
+  minst 30 min.
 
 ### 2) Färsen
-- Häll mjölken över ströbrödet i en skål och låt svälla i ca 10 minuter.
-- Riv löken fint på rivjärn.
-- Blanda det uppblötta brödet med färs, ägg, lök, salt, peppar och kryddpeppar.
-- Rör ihop ordentligt men undvik att överarbeta — färsen ska hänga ihop men inte bli seg.
-- Forma köttbullar, ca 3 cm i diameter (ger ungefär 35–40 st). Blöt händerna med kallt vatten så fastnar inte färsen.
+- Häll **1,5 dl** mjölk över **1 dl** ströbröd och låt svälla 10 min.
+- Riv **1** gul lök fint på rivjärn.
+- Lägg **800 g** blandfärs i en bunke och tillsätt brödblandningen, löken, **1** ägg,
+  **2 tsk** salt, **1 tsk** svartpeppar och **½ tsk** kryddpeppar.
+- Rör ihop tills färsen precis hänger ihop. Överarbetad färs blir seg.
+- Forma färsen till 35–40 bullar, ca 3 cm i diameter. Blöt händerna med kallt vatten så fastnar
+  inte färsen.
 
 ### 3) Stek köttbullarna
-- Värm smör i en stor stekpanna på medelhög värme.
-- Stek köttbullarna i omgångar — trängsel i pannan ger dålig stekyta.
-- Stek ca 4–5 minuter, vänd regelbundet så de blir jämnt gyllenbruna.
-- Lägg de färdiga köttbullarna på ett fat med hushållspapper.
+- Smält **2 msk** smör i en stor stekpanna på medelhög värme.
+- Stek bullarna i omgångar 4–5 min per omgång och vänd dem regelbundet tills de är
+  jämnt gyllenbruna. Trängsel i pannan ger dålig stekyta.
+- Lägg de färdiga bullarna på ett fat med hushållspapper. Diska inte pannan.
 
 ### 4) Gräddsås
-- Använd samma panna som köttbullarna stektes i — skyfonderna ger smak.
-- Smält smöret, rör i mjölet och låt fräsa i ca 1 minut.
-- Tillsätt buljongen lite i taget under omrörning så att såsen blir slät.
-- Låt koka ihop några minuter på låg värme.
-- Häll i grädden och sojasåsen. Smaka av med salt och peppar.
-- Lägg tillbaka köttbullarna i såsen och låt sjuda på svag värme i 5 minuter.
+- Smält **2 msk** smör i samma panna, rör i **2 msk** vetemjöl och fräs 1 min.
+  Stekresterna i pannan ger såsen smak.
+- Vispa i **4 dl** köttbuljong lite i taget så att såsen blir slät, och låt koka ihop
+  3–4 min på låg värme.
+- Rör ner **2 dl** vispgrädde och **1 msk** soja. Smaka av med salt och peppar.
+- Lägg tillbaka köttbullarna och sjud på svag värme 5 min, till 72 °C i mitten.
 
 ### 5) Potatis
-- Koka potatisen mjuk i saltat vatten.
-- Servera hel med en klick smör, eller mosa med smör och mjölk.
+- Koka **1,2 kg** potatis i saltat vatten 15–20 min tills en sticka går lätt igenom.
+- Häll av och servera med en klick smör. Vill du ha mos i stället, se Noter.
 
 ### 6) Servering
-- Lägg upp köttbullar med gräddsås, potatis, pressgurka och en klick lingonsylt.
+- Lägg upp köttbullarna med gräddsåsen, potatisen, pressgurkan och en klick lingonsylt.
 
-## Matlåda / prep
-- Köttbullarna går utmärkt att frysa (utan sås) i upp till 3 månader.
-- Gräddsåsen kan göras i förväg och värmas upp — tillsätt en skvätt buljong om den tjocknat.
-- Pressgurkan håller 2–3 dagar i kylen men blir godast samma dag.
-- Värm köttbullar i sås i kastrull på spisen eller i mikro — undvik att koka.
+## Matlåda / förvaring
+- Kyl: köttbullar i sås 3 dagar. Pressgurkan håller 2–3 dagar men är godast samma dag.
+- Frys: köttbullarna fryses utan sås i upp till 3 månader. Gräddsåsen kan göras i förväg.
+- Uppvärmning: värm köttbullarna i såsen i kastrull eller mikro utan att koka. Har såsen
+  tjocknat, späd med en skvätt buljong.
 
-## Källor (research)
-- ICA — Klassiska köttbullar: `https://www.ica.se/recept/klassiska-kottbullar-722178/`
-- Leila Lindholm — Köttbullar med gräddsås: `https://www.leilalindhom.se/recept/kottbullar-med-graddsas/`
-- Zeinas Kitchen — Svenska köttbullar: `https://zfrancis.se/recept/svenska-kottbullar/`
+## Noter
+
+### Potatismos i stället för kokt potatis
+
+Mosa den kokta potatisen med smör och varm mjölk efter smak. Mjölken står inte i
+ingredienslistan.
+
+## Källor
+- ICA — Klassiska köttbullar: https://www.ica.se/recept/klassiska-kottbullar-722178/
+- Livsmedelsverket — Salmonella (köttfärs är genomstekt vid 70 °C): https://www.livsmedelsverket.se/livsmedel-och-innehall/bakterier-virus-parasiter-och-mogelsvampar1/bakterier/salmonella/
+- Livsmedelsverket — Förvaring av kylvaror (tillagad mat håller flera dagar vid 4 °C): https://www.livsmedelsverket.se/livsmedel-och-innehall/tillagning-forvaring-hallbarhet/forvaring-av-kyld-mat/
+- Livsmedelsverket — Frysa mat (fryst mat blir inte farlig men tappar kvalitet med tiden): https://www.livsmedelsverket.se/livsmedel-och-innehall/tillagning-forvaring-hallbarhet/frysa-mat/
