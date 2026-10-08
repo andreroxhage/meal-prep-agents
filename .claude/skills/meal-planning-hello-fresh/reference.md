@@ -64,7 +64,7 @@ teknik, aldrig mot tråkig mat.
 
 | | Vardag | Standard | Avancerad |
 |---|---|---|---|
-| Tid (totalt, från start till tallrik) | max 30–45 min | 45–60 min | fritt, gärna helgprojekt |
+| Tid (totalt, från start till tallrik, räknad ur stegen enligt Regel 9e) | max 30–45 min | 45–60 min | fritt, gärna helgprojekt |
 | Protein | kycklinglår, kycklingfilé, hel kyckling, färs (nöt, fläsk, bland, kyckling), fläskkarré, fläskbog, fläsksida, korv, ägg, baljväxter, halloumi, billig fisk (sej, torsk, fryst lax) | allt i Vardag + färsk lax, räkor, högrev, grytbitar, lammfärs | fritt: oxfilé, entrecote, lammracks, anka, skaldjur |
 | Inte i nivån | oxfilé, entrecote, ryggbiff, lammracks, hälleflundra, pilgrimsmussla, dyra ostar som bas | premiumdetaljer som huvudprotein | — |
 | Komponenter | en huvudkomponent + tillbehör | 2–3 | flera, med teknikmoment (fond, emulsion, konfit, jäsning, lång marinad) |

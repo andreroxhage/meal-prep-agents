@@ -87,7 +87,9 @@ vilken, så användaren kan ändra den.
 Efter alla researchers returnerat:
 1. Syntetisera resultat till `02-receptval.md`
 2. Beräkna skalningsfaktorer
-3. Om eget recept behövs: spawna `recipe-creator` med rättens nivå
+3. Om eget recept behövs: spawna `recipe-creator` med rättens nivå, och kör sedan
+   kockgranskningen enligt steg 3 i `.claude/skills/create-recipe/SKILL.md`
+   (`kockgranskare` per nytt recept, parallellt)
 
 ### STOPP (obligatorisk)
 Fråga: **"Vill du att jag skapar handlingslista nu?"**

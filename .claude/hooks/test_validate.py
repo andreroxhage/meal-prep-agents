@@ -112,6 +112,8 @@ for step, heads, should_match in MENTION_CASES:
 
 GOOD = """# Recept — Testrätt för 4 portioner
 
+**4 portioner · ca 5 min aktivt · ca 5 min totalt**
+
 En testrätt som följer standarden.
 
 ## Ingredienser (4 portioner)
@@ -314,6 +316,12 @@ DETAIL_AFTER = GOOD.replace(
 )
 check("lång första mening ger tips", any("Regel 8" in tip for tip in tips_for(LONG_STEP)), True)
 check("kort punkt ger inget tips", any("Regel 8" in tip for tip in tips_for(GOOD)), False)
+
+# Regel 9e: tidsraden under H1.
+check("tidsrad finns, inget tips", any("Regel 9e" in tip for tip in tips_for(GOOD)), False)
+NO_TIME_LINE = GOOD.replace("**4 portioner · ca 5 min aktivt · ca 5 min totalt**\n\n", "")
+check("saknad tidsrad ger tips", any("Regel 9e" in tip for tip in tips_for(NO_TIME_LINE)), True)
+
 SPICE_LIST = GOOD.replace(
     "- Häll **1,5 dl** mjölk",
     "- Rör ner " + ", ".join(f"**{n} tsk** krydda{n}" for n in range(1, 11)) + ".\n- Häll **1,5 dl** mjölk",

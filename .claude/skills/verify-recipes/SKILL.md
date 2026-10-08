@@ -37,7 +37,12 @@ och rapportera resultatet till användaren.
      steget. Detta är hela poängen med standarden — läsaren ska slippa scrolla.
    - `TIPS` är förslag: rätta dem om de är rimliga, annars låt dem stå.
 
-5. **Rapportera** till användaren: hur många filer som kontrollerades, vad som
+5. **Kockgranskning (på begäran)**: den maskinella kontrollen ser inte om stegen står i
+   rätt tidsordning eller om tidsraden stämmer (Regel 9). Ber användaren om det, eller
+   ska ett recept in i `recipe/`, spawna en `kockgranskare` per recept, parallellt, och
+   för in fynden. Den kostar en modellkörning per recept, så den körs inte annars.
+
+6. **Rapportera** till användaren: hur många filer som kontrollerades, vad som
    rättades automatiskt, vad som rättades manuellt och vad som eventuellt kvarstår.
 
 ## Noteringar

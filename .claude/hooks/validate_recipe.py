@@ -217,6 +217,9 @@ def flip_ingredient_line(line: str) -> str | None:
 # Struktur
 # --------------------------------------------------------------------------
 
+TIME_LINE = re.compile(r"^\*\*[^*\n]*\bca\b[^*\n]*\d[^*\n]*\*\*\s*$", re.M)
+
+
 def check_structure(path: Path, lines: list[str], rep: Report) -> int | None:
     text = "\n".join(lines)
     portions: int | None = None
@@ -246,6 +249,15 @@ def check_structure(path: Path, lines: list[str], rep: Report) -> int | None:
     ):
         if not re.search(heading, text, re.M):
             rep.error(f"saknar rubriken '{label}' (Regel 4).")
+
+    if h1:
+        intro = text[h1.end(): ing.start() if ing else len(text)]
+        if not TIME_LINE.search(intro):
+            rep.tip(
+                "saknar tidsrad under H1, t.ex. '**4 portioner · ca 35 min aktivt · "
+                "ca 45 min totalt**'. Räkna fram den ur stegen, inklusive uppvärmning "
+                "(Regel 9e)."
+            )
 
     fn = re.search(r"-(\d+)p\.md$", path.name)
     if fn and portions is not None and int(fn.group(1)) != portions:

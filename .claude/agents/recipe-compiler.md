@@ -45,6 +45,8 @@ receptkontrollen kan läsa varje recept för sig.
 
 > Källa: [namn](URL) | [X] portioner (original [Y] × [faktor])
 
+**[X] portioner · ca [aktiv tid] aktivt · ca [total tid] totalt**
+
 [1–2 meningar om rätten och vad som gör den bra]
 
 ## Ingredienser ([X] portioner)
@@ -149,6 +151,12 @@ Gå igenom varje recept rad för rad innan du skriver filen:
 - **Handlingen först** (Regel 8): webbrecept berättar. Lyft fram mängd, värme,
   tid och klartecken till första meningen i punkten, och lägg källans förklaringar
   efter — eller stryk dem om de bara är fyllnad.
+- **Tidsordning** (Regel 9): webbrecept skrivs ofta en komponent i taget, med
+  potatisen eller riset sist. Ordna om stegen efter den kritiska vägen: det
+  långsamma startar först, hackning och kalla komponenter före rått kött, det som
+  ska ätas varmt blir klart sist. Räkna sedan fram tidsraden ur stegen, inklusive
+  uppvärmning. Skalning ändrar tiderna: mer vatten tar längre att koka upp och fler
+  omgångar i pannan tar längre tid.
 - **Behåll noteringar**: överför tips från `02-receptval.md` (tillbehörsändringar,
   inköpstips) till `## Noter` eller `## Matlåda / förvaring`.
 - **Svenska** genomgående, metriska enheter.

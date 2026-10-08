@@ -32,15 +32,23 @@ Skapa ett komplett, testat-känsla recept som `YYYY-MM-DD/recept-<slug>.md`.
    - Identifiera bästa tekniker och smakkombinationer
    - Notera alla källor
 
-3. **Skriv receptet** enligt formatet nedan. Redigera ingressen (1–2 meningarna
+3. **Planera tidslinjen innan du skriver stegen** (Regel 9). Lista komponenterna med
+   deras passiva tid (förvärmning, kokvatten, ris, potatis, marinad, ugn, vila) och
+   vad som kallnar eller mjuknar om det väntar. Ordna stegen efter den kritiska vägen:
+   det långsamma startar först, kalla komponenter och all hackning före rått kött,
+   det som ska ätas varmt blir klart sist. Gå sedan igenom stegen minut för minut och
+   räkna fram tidsraden. Ryms den inte i nivån, ändra stegen eller komponenterna,
+   inte siffran.
+
+4. **Skriv receptet** enligt formatet nedan. Redigera ingressen (1–2 meningarna
    under H1) med den förladdade skillen `no-ai-slop` enligt Regel 4d, och kör dess
    eval innan du sparar. Skillen gäller bara ingressen, så rör inte mängder eller
    steg för stilens skull.
 
-4. **Kvalitetskontroll**:
+5. **Kvalitetskontroll**:
    - Stämmer mängderna? (inte 1 kg salt...)
    - Är instruktionerna tydliga och i rätt ordning?
-   - Är tiderna realistiska?
+   - Stämmer tidsraden med stegen i den ordning de står, inklusive uppvärmning?
    - Håller receptet sin nivå (tid, protein, lyft för Vardag)?
    - Finns förvaring/matlådetips?
 
@@ -50,7 +58,7 @@ Följ `.claude/rules/recipe-style.md` — den är den enda källan för receptfo
 Läs den innan du skriver, och `.claude/rules/recipe-examples.md` för ett komplett
 exempel att kopiera. Regeln laddas automatiskt när du öppnar en receptfil.
 
-De sex regler som oftast missas:
+De sju regler som oftast missas:
 
 1. **Mängden ska stå i instruktionssteget**, fetmarkerad, första gången
    ingrediensen används: `Häll **1,5 dl** mjölk över **1 dl** ströbröd`.
@@ -70,6 +78,10 @@ De sex regler som oftast missas:
 6. **Handlingen först, detaljer efter** (Regel 8). Första meningen i varje punkt
    säger vad du gör och hur: mängd, värme, tid, klartecken. Varför och tips kommer
    i meningen efter.
+7. **Stegen följer tiden, inte komponenterna** (Regel 9). Potatisen sätts på före
+   köttbullarna, inte efter såsen. Ett steg som startar ≥ 10 min passiv tid säger vad
+   läsaren gör under tiden. Lägg inget arbete i stekning på hög värme eller i en
+   emulsion, och flytta inget som vinner under 5 min när bytena är inräknade (9d).
 
 ## Kvalitetskontroll
 
