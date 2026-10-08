@@ -408,6 +408,7 @@ def qty_near(step: str, pos: int) -> tuple[bool, bool]:
 
 
 NOT_INGREDIENTS = {"min", "minut", "minuter", "sek", "tim", "timme", "timmar", "grader"}
+INFLECTIONS = {"", "en", "et", "n", "t", "ar", "er", "or", "na", "arna", "erna", "orna", "s", "ens", "ets"}
 
 
 def find_mention(step: str, headwords: list[str]) -> int | None:
@@ -424,15 +425,18 @@ def find_mention(step: str, headwords: list[str]) -> int | None:
     words = [(pos, word) for pos, word in words if word not in NOT_INGREDIENTS]
     for headword in headwords:
         folded = fold(headword)
-        candidates = [folded[:5] if len(folded) >= 5 else folded]
-        if len(folded) >= 6:
-            # Efterled i sammansatta ord, langst forst.
-            candidates += [folded[i:] for i in range(1, len(folded) - 2)]
-        for cand in candidates:
-            if len(cand) < 3:
-                continue
+        prefix = folded[:5] if len(folded) >= 5 else folded
+        # Efterled i sammansatta ord, langst forst.
+        suffixes = [folded[i:] for i in range(1, len(folded) - 2)] if len(folded) >= 6 else []
+        if len(prefix) >= 3:
             for pos, word in words:
-                if word.startswith(cand):
+                if word.startswith(prefix):
+                    return pos
+        for cand in suffixes:
+            for pos, word in words:
+                # Ett efterled matchar bara som eget ord med bojningsandelse:
+                # 'ris' traffar 'riset' men inte 'risvattnet', 'min' inte 'minst'.
+                if word.startswith(cand) and word[len(cand):] in INFLECTIONS:
                     return pos
     return None
 

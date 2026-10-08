@@ -97,6 +97,8 @@ MENTION_CASES = [
     ("Stek kycklingen", ["kycklinglårfilé"], True),
     ("Låt puttra 20 min", ["spiskummin"], False),         # efterledet 'min' ar en tid
     ("Rosta spiskumminet 1 min", ["spiskummin"], True),
+    ("Marinera minst 20 min", ["spiskummin"], False),     # 'min' ar inget ord i 'minst'
+    ("Koka upp risvattnet", ["jasminris"], False),        # efterled bara som eget ord
 ]
 
 for step, heads, should_match in MENTION_CASES:
