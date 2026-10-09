@@ -60,6 +60,7 @@ tools/mathem_cart/                   # Experimental Python CLI: shopping list �
 │   ├── brainstorming-agent.md         # Phase 1: meal candidate generation
 │   ├── recipe-researcher.md           # Phase 2: parallel recipe research (one per dish)
 │   ├── recipe-creator.md              # Phase 2: custom recipe creation
+│   ├── kockgranskare.md               # Phase 2: chef review of a new recipe's timing (read-only)
 │   ├── shopping-list-generator.md     # Phase 3: pooled shopping list
 │   ├── recipe-compiler.md             # Phase 4: standardized recipe compilation
 │   ├── meal-prep-optimizer.md         # Phase 5: time-optimized prep plan
@@ -112,7 +113,7 @@ User
 [Main Conversation / Orchestrator]
   ├── Phase 1: brainstorming-agent (sonnet)
   ├── Phase 2: recipe-researcher × N (sonnet, PARALLEL — one per dish)
-  │            + recipe-creator (on demand)
+  │            + recipe-creator (on demand) → kockgranskare (sonnet, one per new recipe)
   ├── Phase 3: shopping-list-generator (sonnet)
   ├── Phase 4: recipe-compiler (sonnet)
   ├── Phase 5: meal-prep-optimizer (inherit)
@@ -157,11 +158,26 @@ H1 is edited with the `no-ai-slop` skill. It is preloaded into `recipe-creator` 
 its `skills:` field and invoked directly in the main conversation. It covers the intro
 only; amounts and steps stay governed by the rules above.
 
+**Timing (Regel 9) is reviewed, not validated.** Steps follow the critical path, not the
+components: the slow thing starts first, cold prep comes before raw meat, and whatever
+should be eaten hot finishes last. Work only goes into windows the cook can walk away
+from. Each context switch counts as ~1 min (~2 min after raw meat), and a step only
+moves if it still saves ~5 min after those costs (9d is the single source for these
+numbers). New recipes must have a time line under the H1, counted from the steps
+(calendar time for multi-day recipes). A
+validator can't judge order, so `kockgranskare` (sonnet, read-only) reviews every new
+recipe once after `recipe-creator` and returns BEHÅLL / JUSTERA / OMSTRUKTURERA with
+concrete rewrites. The creator applies them in one round. Compiled web recipes (Phase 4)
+and the library get the review on demand through `/verify-recipes`. In a batch-cooking
+week, `05-meal-prep-plan.md` sets the timeline across recipes.
+
 When the hook reports `RÄTTAT`, the file on disk was already changed — re-read it
 before editing further. `FEL` must be fixed, not explained away. `TIPS` is advisory.
 
 Every recipe in `recipe/` follows the standard, and CI validates the whole library on
-every run, so a library recipe that breaks the standard fails the build.
+every run, so a library recipe that breaks the standard fails the build. The exception
+is Regel 9: the library predates it, so a missing time line is a TIPS until each recipe
+is reordered and gets one.
 
 ## Core Workflow & Architecture
 
@@ -294,6 +310,7 @@ Optimize for minimal total time by:
 | `brainstorming-agent` | 1 | sonnet | Generate 10-20 meal candidates | No |
 | `recipe-researcher` | 2 | sonnet | Find best recipe for ONE dish | **Yes — one per dish** |
 | `recipe-creator` | 2 | inherit | Write custom recipe from scratch | Per recipe |
+| `kockgranskare` | 2 | sonnet | Chef review of one recipe's step order and time line (Regel 9); read-only | **Yes — one per new recipe** |
 | `shopping-list-generator` | 3 | sonnet | Pool ingredients into shopping list | No |
 | `recipe-compiler` | 4 | sonnet | Compile all recipes into standardized format | No |
 | `meal-prep-optimizer` | 5 | inherit | Create time-optimized prep plan | No |

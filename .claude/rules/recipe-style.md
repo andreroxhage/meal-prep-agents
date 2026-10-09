@@ -19,7 +19,7 @@ Ett recept läses i tre lägen, och standarden ska bära alla tre:
 | Läge | Frågan läsaren har | Regler som svarar |
 |---|---|---|
 | Inköp | Hur mycket behöver jag totalt? | Regel 3, Regel 4a |
-| Planering | När börjar jag med vad? | Regel 4b, Regel 7 |
+| Planering | När börjar jag med vad? Hur lång tid tar det? | Regel 4b, Regel 7, Regel 9 |
 | Utförande | Vad gör jag nu, och gick det rätt? | Regel 1, Regel 5, Regel 6, Regel 8 |
 
 ## Regel 1 — mängden står i instruktionen (viktigast)
@@ -68,11 +68,12 @@ Format: `- <mängd> <enhet> <ingrediens> (<ev. förberedelse>)` — mängden fö
 
 Exakt dessa rubriker, i denna ordning. Rubriker märkta *(valfri)* utelämnas när
 receptet inte behöver dem — ett vardagsrecept på 20 minuter använder ingen av dem.
+Tidsraden under H1 är däremot obligatorisk i nya recept (Regel 9e).
 
 ```markdown
 # Recept — <Rättens namn> för <X> portioner
 
-**<X portioner> · ca <aktiv tid> · <kalendertid om den skiljer sig>**   (valfri)
+**<X> portioner · ca <aktiv tid> aktivt · ca <total tid> totalt**   (se 9e; flera dagar: <kalendertid> kalendertid)
 
 <1–2 meningar om rätten och vad som gör den bra>
 
@@ -279,6 +280,81 @@ meningen och går vidare. Den som vill förstå läser vidare.
 - ❌ `Stek **800 g** kycklinglår i två omgångar så att de får ordentlig stekyta istället
   för att koka i sin egen vätska — det är här smaken byggs, så ha tålamod och vänd
   inte för tidigt, 4 min per sida.`
+
+## Regel 9 — stegen följer den kritiska vägen, inte komponenterna
+
+Läsaren är en person med en ugn och fyra plattor som gör stegen i den ordning de står.
+Ett recept som går igenom komponenterna en i taget ("riset, sedan såsen, sedan
+kycklingen") låter potatisen starta sist, kycklingen kallna medan dressingen blandas
+och läsaren stå still medan riset kokar. Ordna stegen efter tiden, inte efter
+ingredienslistan. Dellistorna i `## Ingredienser` står kvar per komponent.
+
+### 9a — det långsamma startar först
+
+Förvärmning (ugn, grill, panna, kokvatten), ris, potatis, marinad, svällning och långkok
+startas i det första steg där de kan startas, inte i det steg där de används.
+
+- ✅ `### 1) Sätt på potatisen och ugnen` … `### 2) Gör färsen medan potatisen kokar`
+- ❌ `### 5) Potatis — Koka **1,2 kg** potatis 15–20 min` efter att köttbullarna och såsen
+  redan är klara.
+
+Ett steg som startar ≥ 10 min passiv tid säger vad läsaren gör under tiden:
+`Gör steg 3–4 medan riset kokar`, eller `Paus — inget att göra förrän timern ringer`.
+Ett steg som heter "medan X" står efter steget som startar X, aldrig före. En starttid
+hänger på något läsaren redan har gjort (`när fonden har reducerat 10 min`), inte på
+något som ligger längre fram i receptet.
+
+### 9b — klart när det ska ätas
+
+Det som tappar kvalitet när det väntar blir klart sist: stekt kött och fisk, krispiga
+toppingar, pasta, smörmonterade och äggredda såser, nygräddat bröd. Kalla komponenter
+(dressing, pickles, raita, salsa) och sådant som tål att stå (gryta, ugnsgratäng som
+vilar) görs före. Komponenter som serveras tillsammans blir klara inom ca 10 min från
+varandra.
+
+### 9c — rent före rått
+
+Hacka grönsaker, frukt och örter och gör kalla komponenter **innan** rått kött och
+fågel kommer fram. Då klarar sig receptet med en bräda och ett handtvätt, i stället för
+ett hygienbyte mitt i stekningen.
+
+### 9d — fyll bara fönster som går att släppa
+
+Arbete läggs i ett passivt fönster bara om läsaren kan gå ifrån: ugn, lock på kastrull,
+långkok, marinad, vila, jäsning. Fönstret ska vara minst uppgiftens längd + 2 min.
+**Inget annat arbete** under uppmärksamhetskritiska moment: stekning i omgångar på hög
+värme, emulsion, karamell, fritering, pocherade ägg, sås som reduceras de sista
+minuterna.
+
+Varje byte mellan två uppgifter kostar **ca 1 min**: titta i receptet, byta redskap,
+torka händerna. Ett hygienbyte efter rått kött eller fågel kostar **ca 2 min**. Räkna
+med bytena när två ordningar jämförs, och flytta inte ett moment om vinsten efter
+bytena är under ca 5 min. En tidslinje som är fem minuter kortare på papperet men
+kräver sex byten till är alltså sämre i köket. Låt inte heller läsaren hoppa fram och
+tillbaka mellan två steg mer än en gång per fönster.
+
+### 9e — tidsraden räknas fram ur stegen
+
+Tidsraden under H1 (`**4 portioner · ca 35 min aktivt · ca 45 min totalt**`) är
+**obligatorisk i nya och omskrivna recept** och räknas fram genom att gå igenom stegen i
+ordning, minut för minut, inklusive uppvärmning av ugn och vatten och all skärning. Den
+är inte en önskan.
+
+Ett recept över flera dagar (4b) skriver kalendertid i stället för totaltid:
+`**8 portioner · ca 40 min aktivt · 14–20 h kalendertid**`.
+
+Biblioteket i `recipe/` skrevs före Regel 9 och får sina tidsrader när recepten ordnas
+om. Till dess ger kontrollen ett TIPS, inte ett FEL, när tidsraden saknas.
+
+Ryms totaltiden inte i rättens nivå (`## Nivåer` i
+`.claude/skills/meal-planning-hello-fresh/reference.md`), ändra stegen, komponenterna
+eller nivån — inte siffran.
+
+### Gäller ett recept, inte veckan
+
+Regel 9 ordnar ett recept som lagas för sig, en vardagskväll. När flera rätter lagas i
+ett pass gör `05-meal-prep-plan.md` sin egen tidslinje över alla recept och hänvisar
+till momenten, inte stegordningen.
 
 ## Filnamn
 

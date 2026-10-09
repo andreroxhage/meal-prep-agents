@@ -11,6 +11,8 @@ Följ `.claude/rules/recipe-style.md`. Detta är mönstren att kopiera.
 ```markdown
 # Recept — Ugnsbakad lax med dillpotatis och senapscrème för 6 portioner
 
+**6 portioner · ca 20 min aktivt · ca 40 min totalt**
+
 Laxen bakas långsamt på låg ugnstemperatur så den blir silkig istället för torr.
 Senapscrèmen görs på crème fraiche som inte skär sig när den möter varm fisk.
 
@@ -45,20 +47,22 @@ Senapscrèmen görs på crème fraiche som inte skär sig när den möter varm f
 - Pensla med **2 msk** olivolja, strö över **2 tsk** flingsalt och **1 tsk**
   svartpeppar och riv över skalet från **1** citron.
 
-### 2) Baka
+### 2) Baka laxen och sätt på potatisen
 - Baka laxen i mitten av ugnen 25–30 min, till 48 °C i den tjockaste delen.
-- Fisken är klar när köttet nätt och jämnt släpper mellan flagorna — den fortsätter
+- Sätt på **1,5 kg** färskpotatis i kallt saltat vatten direkt när laxen gått in, och
+  koka 15–18 min efter uppkoket tills en sticka går lätt igenom.
+- Laxen är klar när köttet nätt och jämnt släpper mellan flagorna — den fortsätter
   efterkoka någon grad utanför ugnen.
+- Gör steg 3 medan laxen bakas. Sedan är det paus tills potatisen är klar.
 
-### 3) Dillpotatisen
-- Koka **1,5 kg** färskpotatis i saltat vatten 15–18 min tills en sticka går lätt igenom.
-- Häll av vattnet, låt ångan gå av 1 min och vänd ner **30 g** smör, **1 knippe**
-  hackad dill och **1 tsk** salt.
-
-### 4) Senapscrème
+### 3) Senapscrème medan laxen bakas
 - Blanda **3 dl** crème fraiche med **2 msk** dijonsenap, **1 msk** honung och
   **1 msk** vitvinsvinäger.
 - Smaka av med salt och peppar och pressa i saft från citronen.
+
+### 4) Dillpotatisen
+- Häll av potatisen, låt ångan gå av 1 min och vänd ner **30 g** smör, **1 knippe**
+  hackad dill och **1 tsk** salt.
 
 ### 5) Servera
 - Dela laxen i portionsbitar direkt i formen och servera med potatisen och crèmen.
@@ -71,6 +75,11 @@ Senapscrèmen görs på crème fraiche som inte skär sig när den möter varm f
 ## Källor
 - Köket.se — Långbakad lax: https://www.koket.se/langbakad-lax
 ```
+
+Laxen går in först eftersom den har längst passiv tid, och potatisen sätts på när
+laxen gått in så att båda blir klara samtidigt. Crèmen görs i ugnsfönstret, där det
+inte finns något annat att passa (Regel 9). Tidsraden är räknad ur stegen: ugnen värms
+medan laxen förbereds, 8 min, bakning 28 min, avslut 4 min.
 
 Ingen totaltabell: varje råvara förekommer i exakt en dellista. Ingen dagsgruppering:
 allt görs i ett pass. Inga Noter: det finns inga varianter att beskriva. Lägg inte till
@@ -258,3 +267,21 @@ kontrollen som ett utfall med åtgärd, inte som ett måltal utan konsekvens.
 *Varför:* ett val som ändrar en mängd måste nå läsaren innan mängden vägs upp. Står det
 efteråt är det inte ett val längre, det är ett besked om att satsen redan gick fel.
 Samma sak för alternativ som ligger som ett eget steg efter det de ersätter.
+
+### Par 9 — stegen följer tiden, inte komponenterna (Regel 9)
+
+- ❌ `### 1) Koka riset` (12 min + 10 min vila) → `### 2) Stek kycklingen` →
+  `### 3) Blanda dressingen` → `### 4) Bygg salladen`
+- ✅ `### 1) Sätt på riset` (`Gör steg 2 medan riset kokar och vilar.`) →
+  `### 2) Dressing och salladsbas` → `### 3) Stek kycklingen` → `### 4) Vänd ihop och
+  servera`
+
+*Varför:* i den första ordningen står läsaren still i 22 min medan riset kokar, och
+kycklingen ligger skivad och kallnar medan dressingen och salladen görs. Samma steg i
+en annan ordning sparar ca 20 min, eftersom dressingen och salladen görs medan riset
+kokar och vilar, och kycklingen går direkt från pannan till salladen. Hackningen före kycklingen sparar dessutom ett handtvätt och ett brädbyte.
+
+Det omvända misstaget finns också: ❌ `Hacka salladslöken mellan kycklingomgångarna`.
+Det ser effektivt ut, men stekning på hög värme går inte att lämna, och två minuter
+sparad tid kostar en bränd omgång. Flytta bara arbete in i fönster man kan gå ifrån
+(Regel 9d).

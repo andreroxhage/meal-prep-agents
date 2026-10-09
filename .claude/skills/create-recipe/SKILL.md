@@ -27,8 +27,19 @@ Användaren vill skapa ett eget recept. Delegera till `recipe-creator`-agenten.
    - Anpassningar: [om relevant]
    - Datum-mapp: aktuell veckas `YYYY-MM-DD/`
 
-3. **Leverera resultatet** till användaren:
-   - Visa receptet
+3. **Kockgranskning** — spawna `kockgranskare` med receptfilen, nivån och utrustningen.
+   Den räknar fram tidslinjen ur stegen och returnerar en dom:
+   - `BEHÅLL` → klart.
+   - `JUSTERA` / `OMSTRUKTURERA` → skicka rapporten tillbaka till **samma**
+     `recipe-creator` (SendMessage, så att den har receptet i kontexten) och be den föra
+     in fynden. Går det inte, spawna en ny `recipe-creator` med filen och rapporten.
+     Den följer `FÖR-MÅNGA-BYTEN`-avråden och skriver in granskarens tidsrad. En
+     omgång räcker; granska inte igen.
+   - Ryms den rättade tidsraden inte i nivån: fråga användaren om nivån ska ändras
+     eller en komponent strykas. Sänk aldrig siffran för att den ska passa.
+
+4. **Leverera resultatet** till användaren:
+   - Visa receptet och tidsraden, och säg kort vad kockgranskningen ändrade
    - Fråga om justeringar behövs
 
 ## Format
