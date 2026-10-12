@@ -33,8 +33,8 @@ och rapportera resultatet till användaren.
 4. **Rätta felen**. `FEL` ska åtgärdas, inte förklaras bort:
    - Mekaniska avvikelser (decimalpunkt, saknat mellanslag, fel ordning på
      ingrediensraden): kör om med `--fix` så rättas de automatiskt.
-   - `Regel 1` (mängd saknas i steget) och `Regel 2` (oanvänd ingrediens): skriv om
-     steget. Detta är hela poängen med standarden — läsaren ska slippa scrolla.
+   - `Regel 1` (mängd saknas i steget), `Regel 1a` (alternativet saknas i steget) och
+     `Regel 2` (oanvänd ingrediens): skriv om steget. Detta är hela poängen med standarden — läsaren ska slippa scrolla.
    - `TIPS` är förslag: rätta dem om de är rimliga, annars låt dem stå.
 
 5. **Kockgranskning (på begäran)**: den maskinella kontrollen ser inte om stegen står i

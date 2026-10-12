@@ -143,7 +143,9 @@ place and is enforced mechanically:
 
 **The rule that matters most:** every instruction step repeats the amount inline
 (`Häll **1,5 dl** mjölk över **1 dl** ströbröd`), because the reader is standing at
-the stove and won't scroll back to the ingredient list.
+the stove and won't scroll back to the ingredient list. An alternative on the
+ingredient line (`1,5 dl torrt vitt vin (eller äppelcider)`) is named in the step too
+(Regel 1a), so whoever bought the alternative finds it where it goes in.
 
 **Its necessary companion (Regel 6):** the inline amount must be the one the reader
 actually takes. A step that says "halve every quantity" and then bolds the totals

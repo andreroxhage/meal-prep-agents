@@ -85,7 +85,8 @@ hoppar du över ugnen i steg 1, se Noter.
 - Rör i **2 msk** tomatpuré, **2 tsk** spiskummin, **2 tsk** rökt paprikapulver,
   **1 tsk** torkad oregano, **1–2 tsk** chiliflakes och resten av saltet och pepparn,
   **1 tsk** och **½ tsk**. Fräs 1 min.
-- Häll i **3 dl** krossade tomater, **2 dl** köttbuljong, **1 dl** apelsinjuice,
+- Häll i **3 dl** krossade eller passerade tomater, **2 dl** köttbuljong, **1 dl**
+  apelsinjuice (eller **2 msk** limesaft och **1 dl** vatten),
   **2 msk** äppelcidervinäger, **1 msk** soja och **2** lagerblad.
 - Lägg tillbaka köttet.
 
@@ -110,7 +111,7 @@ hoppar du över ugnen i steg 1, se Noter.
 
 ### 6) Stekt tomatsalsa
 
-- Blanda **400 g** delade körsbärstomater med **½** finhackad rödlök, **1** riven
+- Blanda **400 g** delade körsbärstomater (eller 3–4 stora tomater i tärningar) med **½** finhackad rödlök, **1** riven
   vitlöksklyfta, saften av **1** lime och lite salt. Vänd ner **1 knippe** hackad
   koriander om du vill.
 - Hetta upp **1–2 msk** olja i en panna på hög värme och stek salsan 2–4 min. Tomaterna
