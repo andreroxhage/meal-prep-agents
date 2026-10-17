@@ -72,7 +72,10 @@ Finns den inte: kör alla delar.
   → `diet.protein_focus`
 - Allergier och sådant som ska undvikas: fritext via "Other" (t.ex. "nötter, koriander").
   Fråga om varje sak är en **allergi** (hårt krav → `diet.allergies`) eller bara ogillas
-  (`diet.avoid`) om det inte är uppenbart.
+  (`diet.avoid`) om det inte är uppenbart. Nämns laktos: fråga om det är en allergi
+  (inget laktos alls → `diet.allergies`) eller att basvarorna ska köpas laktosfria
+  (→ `diet.lactose_free`, t.ex. `[mjölk, grädde, crème fraiche, yoghurt, kvarg]`;
+  fråga vilka varor, och att resten som glass och ost köps som vanligt).
 - Utrustning utöver ugn och spis (multiSelect): airfryer, slow cooker, wok, sous vide,
   grill → `kitchen.equipment`
 - Laga det mesta i ett pass (meal prep) eller varje dag? → `kitchen.weekend_prep`

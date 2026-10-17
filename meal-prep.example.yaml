@@ -23,6 +23,9 @@ diet:
   protein_focus: varierat       # varierat | högt protein | vegetariskt | pescetariskt
   allergies: []                 # hårda krav, t.ex. [nötter, laktos]
   avoid: []                     # ogillas, t.ex. [koriander, svamp]
+  # Mejerivaror som köps laktosfria. Ett önskemål om inköp, inte en allergi: recepten
+  # ändras inte, och allt som inte står här (glass, ost, smör …) köps som vanligt.
+  lactose_free: []              # t.ex. [mjölk, grädde, crème fraiche, yoghurt, kvarg]
   likes: []                     # gärna, t.ex. [asiatiskt, långkok]
 
 kitchen:

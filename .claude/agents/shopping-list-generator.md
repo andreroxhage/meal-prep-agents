@@ -57,7 +57,16 @@ Sammanfoga alla ingredienser från de valda recepten till EN konsoliderad, butik
    - Andra örter (mynta, thaibasilika, timjan, rosmarin, salvia, citrongräs) köps färska
      oavsett nivå.
 
-5. **Hantera skafferi**:
+5. **Laktosfritt** (`diet.lactose_free` i hushållsprofilen, standard `[]`):
+   - Mejerivaror vars namn träffar listan skrivs `<vara>, laktosfri` under
+     `## Mejeri & Ägg`, t.ex. `- 6 dl vispgrädde, laktosfri`, `- 5 dl crème fraiche,
+     laktosfri`. "grädde" i listan gäller all grädde (vispgrädde, matlagningsgrädde).
+   - Ordet `laktosfri` efter kommat är ett krav när varukorgen fylls — skriv inte
+     "laktosfri mjölk", då hittar kontrollen mot `04` inte varan.
+   - Allt som inte står i listan köps som vanligt (glass, ost, smör, parmesan …).
+     Ändra inte mängder eller recept — bara inköpsraden.
+
+6. **Hantera skafferi**:
    - Lägg INTE till salt, peppar, olja automatiskt i huvudlistan
    - Varor i `pantry.always_have` i hushållsprofilen hör till skafferi-antagandena
    - Skapa separat "Skafferi-antaganden (verifiera)"-sektion
