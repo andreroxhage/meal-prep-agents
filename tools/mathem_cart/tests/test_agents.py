@@ -14,6 +14,7 @@ REQUIREMENTS = """
    laktosfri, lätt, vegansk ersättning, smaksatt eller kryddad, färdigrätt, eller fel form
    (burgare är inte "högrev i bit", pulver är inte "vitlök").
 2. Listans preciseringar är krav: "i bit", "benfri utan skinn", "lagrad, i block", "15 %".
+   Står "laktosfri" i `anteckning` godkänns bara produkter märkta laktosfri.
 3. Eko, märke och förpackningsstorlek är fria val. **Godkänn alla kandidater som duger** —
    koden väljer pris och storlek (storpack efter jämförpris för det som håller sig).
 4. `vald` = minst en kandidat är tydligt rätt. `osäker` = en kandidat är rimlig men en

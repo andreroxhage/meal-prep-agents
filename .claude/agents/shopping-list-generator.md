@@ -57,7 +57,20 @@ Sammanfoga alla ingredienser från de valda recepten till EN konsoliderad, butik
    - Andra örter (mynta, thaibasilika, timjan, rosmarin, salvia, citrongräs) köps färska
      oavsett nivå.
 
-5. **Hantera skafferi**:
+5. **Laktosfritt** (`diet.lactose_free` i hushållsprofilen — `meal-prep.local.yaml`,
+   annars `meal-prep.example.yaml`; standard `[]`. Beskedet i uppdraget går före):
+   - Gäller bara mejerivaror under `## Mejeri & Ägg`. En vara träffar när namnet före
+     kommat **slutar på** ett ord i listan, med eller utan accent: "grädde" träffar
+     vispgrädde och matlagningsgrädde, "yoghurt" träffar turkisk yoghurt, "crème
+     fraiche" träffar creme fraîche. Det räcker inte att namnet börjar likadant —
+     "grädde" träffar inte gräddfil eller gräddost — och växtbaserade varor
+     (kokosmjölk, havregrädde) är inga mejerivaror.
+   - Varan skrivs `<vara>, laktosfri`, t.ex. `- 6 dl vispgrädde, laktosfri`. Samma form
+     som `<ört>, fryst` i steg 4, av samma skäl — skriv inte "laktosfri vispgrädde".
+   - Allt som inte står i listan köps som vanligt (glass, ost, smör, parmesan …).
+     Ändra inte mängder eller recept — bara inköpsraden.
+
+6. **Hantera skafferi**:
    - Lägg INTE till salt, peppar, olja automatiskt i huvudlistan
    - Varor i `pantry.always_have` i hushållsprofilen hör till skafferi-antagandena
    - Skapa separat "Skafferi-antaganden (verifiera)"-sektion

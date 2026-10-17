@@ -62,7 +62,8 @@ Användaren väljer 5 rätter → spawna 5 recipe-researcher-agenter parallellt:
 
 ### Fas 3 — Handlingslista
 
-1. Spawna `shopping-list-generator` med alla recept och portioner.
+1. Spawna `shopping-list-generator` med alla recept och portioner, och med
+   `diet.lactose_free` från hushållsprofilen.
 2. Agenten skriver `03-handlingslista.md`.
 3. **STOPP**: Fråga "Vill du att jag skapar receptsamling och meal prep-plan nu?"
 

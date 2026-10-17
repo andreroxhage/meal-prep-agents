@@ -14,6 +14,7 @@ konversationen går före profilen.
 | `cook.experience` | tonen och hur mycket teknik som förklaras (se nedan) |
 | `diet.allergies` | **hårda krav**: ingen rätt, inget recept och ingen vara får innehålla dem |
 | `diet.avoid`, `diet.likes`, `diet.protein_focus` | urval i Fas 1 och val av recept i Fas 2 |
+| `diet.lactose_free` | mejerivaror som skrivs `<vara>, laktosfri` i handlingslistan (Fas 3); recepten ändras inte |
 | `kitchen.*` | utrustning och tid i Fas 1 och Fas 5 |
 | `level_mix` | förslaget när användaren inte anger veckans nivåmix |
 | `pantry.always_have` | skafferi-antaganden i Fas 3 |

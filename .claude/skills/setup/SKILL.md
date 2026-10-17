@@ -53,8 +53,9 @@ test -f meal-prep.local.yaml && echo "profil: finns" || echo "profil: saknas"
 Finns `meal-prep.local.yaml`: visa nuvarande värden i en kort tabell och fråga med
 `AskUserQuestion` (multiSelect) vilka delar som ska ändras: Hushåll, Kost, Kök,
 Nivåmix, Tillval. Ställ bara frågorna för de valda delarna. Har den lokala filen en
-äldre `config_version` än mallen: lägg till nya nycklar med mallens värden och höj
-versionen.
+äldre `config_version` än mallen: lägg till nya nycklar med mallens värden, höj
+versionen och nämn de nya nycklarna i tabellen så användaren kan ändra dem direkt
+(version 2 lade till `diet.lactose_free`).
 
 Finns den inte: kör alla delar.
 
@@ -72,7 +73,10 @@ Finns den inte: kör alla delar.
   → `diet.protein_focus`
 - Allergier och sådant som ska undvikas: fritext via "Other" (t.ex. "nötter, koriander").
   Fråga om varje sak är en **allergi** (hårt krav → `diet.allergies`) eller bara ogillas
-  (`diet.avoid`) om det inte är uppenbart.
+  (`diet.avoid`) om det inte är uppenbart. Nämns laktos: fråga om det är en allergi
+  (inget laktos alls → `diet.allergies`) eller att basvarorna ska köpas laktosfria
+  (→ `diet.lactose_free`, t.ex. `[mjölk, grädde, crème fraiche, yoghurt, kvarg]`;
+  fråga vilka varor, och att resten som glass och ost köps som vanligt).
 - Utrustning utöver ugn och spis (multiSelect): airfryer, slow cooker, wok, sous vide,
   grill → `kitchen.equipment`
 - Laga det mesta i ett pass (meal prep) eller varje dag? → `kitchen.weekend_prep`

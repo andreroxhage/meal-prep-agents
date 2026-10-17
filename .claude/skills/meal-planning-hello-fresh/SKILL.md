@@ -101,6 +101,7 @@ Fråga: **"Vill du att jag skapar handlingslista nu?"**
 Ge agenten:
 - Alla recept med portioner och skalningsfaktorer
 - Referens till `02-receptval.md` och `recept-*.md`-filer
+- `diet.lactose_free` från hushållsprofilen
 
 Agenten skriver `03-handlingslista.md`.
 
