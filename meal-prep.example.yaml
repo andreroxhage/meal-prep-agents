@@ -6,7 +6,7 @@
 #
 # Ändra genom att köra /setup igen, eller redigera meal-prep.local.yaml direkt.
 
-config_version: 1
+config_version: 2
 
 household:
   portions_per_recipe: 4        # portioner per recept

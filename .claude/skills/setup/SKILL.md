@@ -53,8 +53,9 @@ test -f meal-prep.local.yaml && echo "profil: finns" || echo "profil: saknas"
 Finns `meal-prep.local.yaml`: visa nuvarande värden i en kort tabell och fråga med
 `AskUserQuestion` (multiSelect) vilka delar som ska ändras: Hushåll, Kost, Kök,
 Nivåmix, Tillval. Ställ bara frågorna för de valda delarna. Har den lokala filen en
-äldre `config_version` än mallen: lägg till nya nycklar med mallens värden och höj
-versionen.
+äldre `config_version` än mallen: lägg till nya nycklar med mallens värden, höj
+versionen och nämn de nya nycklarna i tabellen så användaren kan ändra dem direkt
+(version 2 lade till `diet.lactose_free`).
 
 Finns den inte: kör alla delar.
 

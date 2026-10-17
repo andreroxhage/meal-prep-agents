@@ -46,6 +46,7 @@ just det och skriv hela svarsfilen på nytt.
    laktosfri, lätt, vegansk ersättning, smaksatt eller kryddad, färdigrätt, eller fel form
    (burgare är inte "högrev i bit", pulver är inte "vitlök").
 2. Listans preciseringar är krav: "i bit", "benfri utan skinn", "lagrad, i block", "15 %".
+   Står "laktosfri" i `anteckning` godkänns bara produkter märkta laktosfri.
 3. Eko, märke och förpackningsstorlek är fria val. **Godkänn alla kandidater som duger** —
    koden väljer pris och storlek (storpack efter jämförpris för det som håller sig).
 4. `vald` = minst en kandidat är tydligt rätt. `osäker` = en kandidat är rimlig men en
@@ -56,7 +57,9 @@ just det och skriv hela svarsfilen på nytt.
 
 ## Så bedömer du en vara
 
-- Läs `vara` och `anteckning` först. Form, fetthalt, styckning och "färsk" i dem är krav.
+- Läs `vara` och `anteckning` först. Form, fetthalt, styckning, "färsk" och "laktosfri"
+  i dem är krav. Står det "laktosfri" och ingen kandidat är laktosfri: svara
+  `ingen_passar` med `ny_sökterm` "laktosfri <vara>".
 - Gå igenom **varje** kandidat, inte bara den första. Sökresultatet innehåller ofta
   produkter som bara liknar varan: havrebaserad "iMat Visp" är inte vispgrädde, en korv av
   högrev är inte högrev, malen koriander är inte färsk koriander, en öl är ingen ört.
@@ -69,7 +72,7 @@ just det och skriv hela svarsfilen på nytt.
   sagt att den duger.
 - Märkningen (`Från Sverige`, `EKO`, `Laktosfri` …) beskriver produkten. Den gör inte en
   fel vara rätt, och den gör inte en rätt vara fel — utom när den säger att produkten är en
-  variant listan inte ber om (t.ex. `Laktosfri`).
+  variant listan inte ber om (t.ex. `Laktosfri` när `anteckning` inte säger "laktosfri").
 - `vald`: lägg **alla** kandidater som duger i `godkända`, inte bara den bästa.
 - `osäker`: lägg de rimliga i `godkända` och skriv i `motivering` vilken precisering som är oklar.
 - `ingen_passar`: `godkända` är `[]`. Är `kandidater` tom, eller tror du att en annan term
