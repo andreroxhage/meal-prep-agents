@@ -76,13 +76,13 @@ lunch i matlåda med riset vid sidan.
 ### 3) Blanda dressingen
 
 - Vispa ihop **120 g** jordnötssmör, **2 dl** kokosmjölk, **1 dl** limejuice, **2 msk**
-  fisksås, **1 msk** soja, **1–2 msk** honung, **1 msk** riven ingefära, **1** riven
-  vitlöksklyfta och **1–2 tsk** sriracha.
+  fisksås, **1 msk** soja, **1–2 msk** honung eller socker, **1 msk** riven ingefära, **1** riven
+  vitlöksklyfta och **1–2 tsk** sriracha eller chili.
 - Späd med **1–4 msk** vatten, lite i taget, tills dressingen är hällbar men krämig.
 
 ### 4) Bygg salladen
 
-- Blanda **500–600 g** finstrimlad vitkål, **2** rivna morötter, **1** gurka i halvmånar,
+- Blanda **500–600 g** finstrimlad vitkål eller spetskål, **2** rivna morötter, **1** gurka i halvmånar,
   **1** strimlad röd paprika, **4** skivade salladslökar, **1 knippe** koriander,
   **1 knippe** mynta och **200 g** böngroddar.
 - Vänd ner kycklingen och ringla över ungefär tre fjärdedelar av dressingen. Spara resten

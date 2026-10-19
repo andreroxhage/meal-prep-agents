@@ -61,7 +61,7 @@ Maillard istället för att koka i grönsakerna, och såsen rundas av med mjölk
   Skrapa loss allt som fastnat i botten.
 
 ### 5) Sjud såsen
-- Tillsätt **2 burkar** krossade tomater, **7 dl** kalvfond, **2** lagerblad och
+- Tillsätt **2 burkar** krossade tomater, **7 dl** kalvfond eller mörk oxfond, **2** lagerblad och
   **2 tsk** torkad oregano.
 - Sjud under lock på svag värme (ca 95 °C, enstaka bubblor) 45–90 min.
 - Rör om var 15:e min. Spä med vatten om såsen blir tjockare än en grov ragù.
@@ -69,7 +69,7 @@ Maillard istället för att koka i grönsakerna, och såsen rundas av med mjölk
 ### 6) Smaka av
 - Fiska upp lagerbladen. Smaka av med salt och svartpeppar, och **2 tsk** strösocker
   om tomaterna är sura.
-- Rör ner **1,5 dl** mjölk och låt gå 5 min till för rundhet.
+- Rör ner **1,5 dl** mjölk eller vispgrädde och låt gå 5 min till för rundhet.
 - Vänd ner **2 nävar** strimlad färsk basilika precis före servering.
 
 ### 7) Pasta och servering

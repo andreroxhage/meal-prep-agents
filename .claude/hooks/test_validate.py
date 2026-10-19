@@ -17,7 +17,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from validate_recipe import (  # noqa: E402
     extract_headwords,
+    extract_options,
     find_mention,
+    names_option,
     normalize,
     validate,
 )
@@ -335,6 +337,49 @@ check(
     "detaljer efter handlingen ger inget tips",
     any("Regel 8" in tip for tip in tips_for(DETAIL_AFTER)),
     False,
+)
+
+
+# Regel 1a: ett alternativ pa ingrediensraden ska sta i steget.
+OPTION_CASES = [
+    ("torrt vitt vin", "(eller äppelcider)", ["vin", "äppelcider"]),
+    ("mjölk eller vispgrädde", "", ["mjölk", "vispgrädde"]),
+    ("sriracha/chili", "", ["sriracha", "chili"]),
+    ("socker", "(eller 2 tsk honung, efter smak)", ["socker", "honung"]),
+    ("vitkål", "(1 liten, finstrimlad; eller spetskål)", ["vitkål", "spetskål"]),
+    ("apelsinjuice", "(eller 2 msk limesaft + 1 dl vatten)", ["apelsinjuice", "limesaft"]),
+    # Sorten preciseras, ingen vara byts ut:
+    ("koncentrerad fond", "(kalv, nöt eller höns)", ["koncentrerad"]),
+    ("morötter", "(rivna eller strimlade)", ["morötter"]),
+]
+for name, rest, expected in OPTION_CASES:
+    check(
+        f"extract_options({name!r}, {rest!r})",
+        [head for _, head in extract_options(name, rest)],
+        expected,
+    )
+
+NAMES_OPTION_CASES = [
+    ("Häll i **1,5 dl** torrt vitt vin eller äppelcider", "äppelcider", True),
+    ("Koka upp vinet", "vin", True),
+    ("Skär **1 kg** fläskytterfilé", "fläskfilé", False),   # delar forled
+    ("Rör i **2 msk** tomatpuré", "tomater", False),        # delar forled
+    ("Tillsätt tomaterna", "tomater", True),
+]
+for step, head, expected in NAMES_OPTION_CASES:
+    check(f"names_option({step!r}, {head!r})", names_option(step, head), expected)
+
+WITH_ALT = GOOD.replace("- 1,5 dl mjölk", "- 1,5 dl mjölk (eller havredryck)")
+check("alternativ som saknas i steget upptäcks", len(errors_for(WITH_ALT)), 1)
+check(
+    "alternativ i steget ger inga fel",
+    errors_for(WITH_ALT.replace("**1,5 dl** mjölk", "**1,5 dl** mjölk eller havredryck")),
+    [],
+)
+check(
+    "sortprecisering kräver inget i steget",
+    errors_for(GOOD.replace("- 500 g blandfärs", "- 500 g blandfärs (nöt eller fläsk)")),
+    [],
 )
 
 
