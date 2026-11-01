@@ -169,7 +169,9 @@ validator can't judge order, so `kockgranskare` (sonnet, read-only) reviews ever
 recipe once after `recipe-creator` and returns BEHÅLL / JUSTERA / OMSTRUKTURERA with
 concrete rewrites. The creator applies them in one round. Compiled web recipes (Phase 4)
 and the library get the review on demand through `/verify-recipes`. In a batch-cooking
-week, `05-meal-prep-plan.md` sets the timeline across recipes.
+week, `05-meal-prep-plan.md` sets the timeline across recipes. The prep pass is written
+out in full (inline amounts, heat, time, done-signs), because the cook follows the plan,
+not the recipe pages. Only dishes cooked fresh later in the week are referenced.
 
 When the hook reports `RÄTTAT`, the file on disk was already changed — re-read it
 before editing further. `FEL` must be fixed, not explained away. `TIPS` is advisory.

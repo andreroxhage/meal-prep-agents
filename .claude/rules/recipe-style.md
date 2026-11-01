@@ -353,8 +353,10 @@ eller nivån — inte siffran.
 ### Gäller ett recept, inte veckan
 
 Regel 9 ordnar ett recept som lagas för sig, en vardagskväll. När flera rätter lagas i
-ett pass gör `05-meal-prep-plan.md` sin egen tidslinje över alla recept och hänvisar
-till momenten, inte stegordningen.
+ett pass gör `05-meal-prep-plan.md` sin egen tidslinje över alla recept i stället för
+stegordningen. Momenten i passet skrivs ut fullt, med mängder, värme, tid och klartecken
+(Regel 1, 5, 6 och 8), eftersom läsaren följer planen och inte recepten. Bara rätter som
+lagas färska under veckan får en hänvisning till receptet.
 
 ## Filnamn
 
