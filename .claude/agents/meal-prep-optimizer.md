@@ -82,7 +82,19 @@ Skapa en tillagningsplan som minimerar total arbetstid genom att parallellisera 
 - **Realism**: Utgå från `kitchen.equipment` i hushållsprofilen (`meal-prep.local.yaml`,
   annars `meal-prep.example.yaml`); standard är 1 ugn och 4 spisplattor
 - **Säkerhet**: Flagga matförvaring och temperaturer
-- **Skriv inte om recepten**: stegen finns i `04-alla-recept.md`. Hänvisa
-  med rätt och moment (`Lax: förbered och baka`), inte stegnummer, och skriv bara det som är nytt för planen: ordning och samtidighet.
-- **Handlingen först**: en uppgift per rad som börjar med vad du gör, samma krav
-  som Regel 8 i `.claude/rules/recipe-style.md`.
+- **Planen ska gå att laga efter utan att öppna recepten.** Läsaren står vid spisen
+  med planen i handen. Varje rad är ett fullständigt moment: följ Regel 1, 5, 6 och 8
+  i `.claude/rules/recipe-style.md`.
+- **Hämta momenten ur `04-alla-recept.md`**, ändra inga mängder, tider eller
+  temperaturer utan att säga det. Ändrar planen ett moment mot receptet (annan dag,
+  hoppar över ett steg), skriv det i `Upplägg`.
+- **Ett fullt utskrivet pass, kort hänvisning för resten.** Allt som lagas i
+  meal prep-passet skrivs ut fullt. Rätter som lagas färska under veckan hänvisas till
+  med receptets namn och steg (`Lax: se receptet, steg 1–3`).
+- **Förmät allt som behövs i flera moment.** Kallt block först: hacka, mät upp kryddor
+  och vätskor i skålar märkta per rätt, skölj bönor. Rent före rått (Regel 9c).
+- **Klockslag räknas från ett fast T**, och tider som hänger på något läsaren gör
+  (ugnen i, timer startad) anges relativt det ögonblicket. Kontrollera att varje
+  klockslag stämmer med ugnstiden och att tidsraden går ihop.
+- **Förvaring i planen stämmer med mängderna**: antal burkar, portioner per burk och
+  vikt följer receptens portionering.
