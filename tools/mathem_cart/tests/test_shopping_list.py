@@ -107,6 +107,25 @@ def test_plural_and_abbreviated_units(line, amount, unit, key):
     assert (item.amount, item.unit, item.key) == (amount, unit, key)
 
 
+@pytest.mark.parametrize("line,amount,unit,key", [
+    ("1/2 dl grädde", 0.5, "dl", "grädde"),
+    ("3/4 tsk salt", 0.75, "tsk", "salt"),
+    ("1 1/2 dl grädde", 1.5, "dl", "grädde"),
+    ("1/2–1 dl grädde", 1, "dl", "grädde"),       # range -> upper bound
+    ("1/2 citron", 0.5, "st", "citron"),
+    ("Grädde — 1/2 dl", 0.5, "dl", "grädde"),     # name first
+])
+def test_slash_fractions(line, amount, unit, key):
+    # Issue #13: "1/2 dl grädde" used to parse as 1 st named "/2 dl grädde".
+    item = parse_shopping_list(f"## Mejeri\n- {line}\n").items[0]
+    assert (item.amount, item.unit, item.key) == (pytest.approx(amount), unit, key)
+
+
+def test_slash_between_units_is_not_a_fraction():
+    item = parse_shopping_list("## Skafferi\n| Vara | Mängd |\n|---|---|\n| Lingon | 1 burk/paket |\n").items[0]
+    assert (item.amount, item.unit, item.note) == (1, "burk", "paket")
+
+
 def test_unit_prefix_of_a_word_is_still_not_a_unit():
     items = parse_shopping_list("## Grönsaker\n- 2 burkarsallad\n- 1 stjärnanis\n").items
     assert [(i.unit, i.key) for i in items] == [("st", "burkarsallad"), ("st", "stjärnanis")]

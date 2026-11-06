@@ -47,7 +47,8 @@ NOTE_HEADERS = ("not", "kommentar", "anteckning")
 
 _NUM = r"\d+(?:[.,]\d+)?"
 _FRAC = "[" + "".join(FRACTIONS) + "]"
-_ONE = rf"(?:{_NUM}(?:\s*{_FRAC})?|{_FRAC})"
+_SLASH = r"\d+/[1-9]\d*"   # "1/2"; tried before _NUM, or "1" would match and leave "/2" as the name
+_ONE = rf"(?:(?:\d+\s+)?{_SLASH}|{_NUM}(?:\s*{_FRAC})?|{_FRAC})"
 _UNIT_WORDS = sorted((*UNITS, *UNIT_ALIASES), key=len, reverse=True)
 # The trailing lookahead stops "g" matching the start of "gurka": the engine
 # backtracks to "no unit", which then means pieces ("st"). A unit may end in a
@@ -76,6 +77,9 @@ class ShoppingList:
 
 
 def _value(part: str) -> float:
+    slash = re.match(r"^\s*(?:(\d+)\s+)?(\d+)/(\d+)\s*$", part)
+    if slash:  # "1/2", "1 1/2"
+        return int(slash.group(1) or 0) + int(slash.group(2)) / int(slash.group(3))
     m = re.match(rf"^\s*({_NUM})?\s*({_FRAC})?\s*$", part)
     total = 0.0
     if m and m.group(1):
