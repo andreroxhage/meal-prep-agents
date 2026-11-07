@@ -8,6 +8,12 @@ argument-hint: "[rättens namn] [portioner]"
 
 Användaren vill skapa ett eget recept. Delegera till `recipe-creator`-agenten.
 
+**Läge `enkel`** (`workflow.mode: enkel` i profilen, eller användaren ber om att spara
+tokens): spawna inga agenter. Skriv receptet själv enligt
+`.claude/agents/recipe-creator.md` (steg 2) och gör kockgranskningen som egenkontroll
+mot checklistan i `.claude/agents/kockgranskare.md` (steg 3): en genomgång, fynden förs
+in direkt. Resten av stegen gäller som de står.
+
 ## Steg
 
 1. **Samla information** från användaren:

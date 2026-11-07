@@ -125,6 +125,7 @@ User
 
 - **Parallel recipe research**: Phase 2 spawns one `recipe-researcher` agent per dish, all running in parallel. Each researcher compares 3-5 sources independently.
 - **Subagents can't spawn subagents**: The main conversation acts as orchestrator. Alternatively, use `claude --agent meal-planning-orchestrator` for automated orchestration.
+- **Single-conversation mode (`workflow.mode: enkel`)**: to save tokens, the main conversation does every phase itself, spawning no subagents and following each agent file as its procedure. Same files, standard and stop points; narrower research (recipe library first, then 2–3 sources per dish) and the Regel 9 review as a self-check against `kockgranskare.md`. The `SubagentStop` gate doesn't apply, so the main conversation must clear every `FEL` before moving on and runs `validate_week.py` after Phase 4. Mathem matchers (haiku) still run as subagents. The mode comes from `$ARGUMENTS`, then the user's words this week, then the profile (default `multi`). Details: `## Arbetsläge` in `.claude/skills/meal-planning-hello-fresh/SKILL.md` — edit there, not in the agents.
 - **Orchestrator loads its skill explicitly**: `meal-planning-orchestrator` invokes `meal-planning-hello-fresh` with the Skill tool as its first action. It can't rely on the agent `skills:` field, because that field only preloads into agents spawned as subagents and is ignored when an agent runs as the main session via `claude --agent` (verified on Claude Code 2.1.284). Use `skills:` only on agents that are spawned as subagents.
 
 ## Recipe Standard: Rules + Hooks (deterministic)
@@ -262,7 +263,7 @@ for technique, never for blandness.
 ### Default Parameters
 
 Defaults come from the household profile (`meal-prep.example.yaml`: 4 portions per
-recipe, dinner only, varied protein, oven + 4-ring stove). Language (Swedish) and units
+recipe, dinner only, varied protein, oven + 4-ring stove, `workflow.mode: multi`). Language (Swedish) and units
 (metric) are fixed product choices, not config.
 
 - **Scaling**: Calculate ingredient scaling factors when portions differ from recipe
@@ -325,7 +326,7 @@ Optimize for minimal total time by:
 | Skill | Invocation | Purpose |
 |---|---|---|
 | `setup` | `/setup [notion \| mathem \| visa]` | Create or change the household profile; enable optional integrations |
-| `meal-planning-hello-fresh` | Auto or `/meal-planning-hello-fresh` | Main workflow with orchestration |
+| `meal-planning-hello-fresh` | Auto or `/meal-planning-hello-fresh [enkel \| multi]` | Main workflow with orchestration; `enkel` runs it without subagents |
 | `create-recipe` | `/create-recipe [dish] [portions]` | Create a custom recipe |
 | `verify-recipes` | `/verify-recipes [YYYY-MM-DD]` | Check recipes against the standard and the shopping list against `04` |
 | `export-to-notion` | `/export-to-notion [YYYY-MM-DD]` | Optional: publish a finished week to Notion as overview + subpages |
