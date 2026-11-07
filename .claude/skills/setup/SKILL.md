@@ -52,10 +52,11 @@ test -f meal-prep.local.yaml && echo "profil: finns" || echo "profil: saknas"
 
 Finns `meal-prep.local.yaml`: visa nuvarande värden i en kort tabell och fråga med
 `AskUserQuestion` (multiSelect) vilka delar som ska ändras: Hushåll, Kost, Kök,
-Nivåmix, Tillval. Ställ bara frågorna för de valda delarna. Har den lokala filen en
-äldre `config_version` än mallen: lägg till nya nycklar med mallens värden, höj
-versionen och nämn de nya nycklarna i tabellen så användaren kan ändra dem direkt
-(version 2 lade till `diet.lactose_free`).
+Nivåmix, Arbetsläge, Tillval. Ställ bara frågorna för de valda delarna (Arbetsläge är
+omgång C). Har den lokala filen en äldre `config_version` än mallen: lägg till nya
+nycklar med mallens värden, höj versionen och nämn de nya nycklarna i tabellen så
+användaren kan ändra dem direkt (version 2 lade till `diet.lactose_free`, version 3
+`workflow.mode`).
 
 Finns den inte: kör alla delar.
 
@@ -80,6 +81,15 @@ Finns den inte: kör alla delar.
 - Utrustning utöver ugn och spis (multiSelect): airfryer, slow cooker, wok, sous vide,
   grill → `kitchen.equipment`
 - Laga det mesta i ett pass (meal prep) eller varje dag? → `kitchen.weekend_prep`
+
+**Omgång C — arbetsläge** (egen fråga, eftersom omgång B redan har fyra)
+- Arbetsläge → `workflow.mode`:
+  - `multi` (rekommenderas): specialistagenter per fas, en receptforskare per rätt
+    parallellt. Bredast receptsökning, flest tokens.
+  - `enkel`: allt i huvudkonversationen utan subagenter. Färre tokens och lägre kostnad,
+    smalare receptsökning (2–3 källor per rätt) och kockgranskning som egenkontroll.
+    Nämn att det blir billigast med en mindre modell (`/model sonnet`), och att läget
+    kan väljas per vecka ("kör enkelt den här veckan").
 
 ### 4. Tillval (AskUserQuestion, multiSelect, inget förvalt)
 

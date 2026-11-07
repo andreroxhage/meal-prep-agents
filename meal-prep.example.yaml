@@ -6,7 +6,7 @@
 #
 # Ändra genom att köra /setup igen, eller redigera meal-prep.local.yaml direkt.
 
-config_version: 2
+config_version: 3
 
 household:
   portions_per_recipe: 4        # portioner per recept
@@ -32,6 +32,15 @@ kitchen:
   equipment: [ugn, spis 4 plattor]   # t.ex. airfryer, slow cooker, wok, sous vide
   weekend_prep: true            # laga det mesta i ett pass (meal prep)
   max_weekday_minutes: 45
+
+workflow:
+  # multi: specialistagenter per fas och en receptforskare per rätt, parallellt
+  #        (standard, bredast receptsökning).
+  # enkel: allt i huvudkonversationen, utan subagenter. Färre tokens och lägre kostnad,
+  #        men smalare receptsökning (2–3 källor per rätt i stället för 3–5) och ingen
+  #        separat kockgranskning. Billigast med en mindre modell (/model sonnet).
+  # Ett besked i konversationen ("kör enkelt den här veckan") går före.
+  mode: multi
 
 # Förslag när användaren inte anger veckans nivåmix (summan blir dishes_per_week).
 # Nivåerna definieras i .claude/skills/meal-planning-hello-fresh/reference.md.

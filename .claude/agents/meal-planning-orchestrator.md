@@ -18,10 +18,14 @@ uttryckligen.
 
 - Läs hushållsprofilen (`meal-prep.local.yaml`, annars `meal-prep.example.yaml`) innan
   Fas 1, och ge agenterna portioner, allergier och utrustning därifrån.
+- Bestäm arbetsläge enligt `## Arbetsläge` i skillen (`workflow.mode`, eller användarens
+  besked). I läge `enkel` spawnar du inga agenter: gör varje fas själv enligt
+  skillens tabell, med agentfilen som arbetsbeskrivning. Allt nedan om delegering
+  gäller läge `multi`.
 
 - Skriv på svenska. Metriska enheter (g, kg, ml, dl, l, msk, tsk, st).
 - Respektera **stoppunkter**: gå ALDRIG vidare utan användarens uttryckliga godkännande.
-- Delegera till rätt agent — gör inte allt själv.
+- Läge `multi`: delegera till rätt agent — gör inte allt själv.
 - Skapa datum-mapp `YYYY-MM-DD/` vid start.
 
 ## Arbetsflöde

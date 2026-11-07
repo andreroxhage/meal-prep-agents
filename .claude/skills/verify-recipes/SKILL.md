@@ -41,6 +41,8 @@ och rapportera resultatet till användaren.
    rätt tidsordning eller om tidsraden stämmer (Regel 9). Ber användaren om det, eller
    ska ett recept in i `recipe/`, spawna en `kockgranskare` per recept, parallellt, och
    för in fynden. Den kostar en modellkörning per recept, så den körs inte annars.
+   I läge `enkel` (`workflow.mode` i profilen) spawnas ingen agent: gå själv igenom
+   recepten mot checklistan i `.claude/agents/kockgranskare.md`, ett i taget.
 
 6. **Rapportera** till användaren: hur många filer som kontrollerades, vad som
    rättades automatiskt, vad som rättades manuellt och vad som eventuellt kvarstår.

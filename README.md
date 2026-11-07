@@ -67,6 +67,22 @@ What you get in the week folder:
 | `04-alla-recept.md` | Every recipe in one format, scaled to your portions |
 | `05-meal-prep-plan.md` | A timed plan for cooking everything in one session |
 
+### Saving tokens: single-conversation mode
+
+The multi-agent flow is the default because it researches widest, but every subagent
+starts from scratch with its own context, so a week uses many more tokens than
+doing the same work in one conversation. Set `workflow.mode: enkel` in your profile
+(`/setup` asks), or say *"kör enkelt den här veckan"*, and Claude does every phase itself
+with no subagents:
+
+- same files, same recipe standard and hooks, same stop points;
+- recipe research checks the house library in `recipe/` first, then 2–3 sources per
+  dish instead of 3–5, one dish at a time;
+- new recipes get the chef's timing review as a self-check instead of a separate agent.
+
+All the work then runs on your main model, so the saving is largest with a smaller one
+(`/model sonnet`). The Mathem matchers stay as cheap haiku subagents in both modes.
+
 ### Dish levels
 
 Each week mixes three levels (the default is 3 + 1 + 1, asked every week):
@@ -91,7 +107,7 @@ the shopping list against the recipes. The standard lives in
 |---|---|
 | `/setup` | Create or change your household profile; turn optional extras on or off |
 | `/setup visa` | Show your current profile |
-| `/meal-planning-hello-fresh` | Start the weekly workflow (or just say "Planera mat för veckan") |
+| `/meal-planning-hello-fresh [enkel]` | Start the weekly workflow (or just say "Planera mat för veckan"); `enkel` runs it without subagents |
 | `/create-recipe [dish] [portions]` | Write a recipe from scratch |
 | `/verify-recipes [YYYY-MM-DD]` | Check a week's recipes and shopping list against the standard |
 | `/export-to-notion [YYYY-MM-DD]` | *Optional:* publish a week to Notion |
@@ -112,6 +128,7 @@ To run the whole workflow as a single agent instead: `claude --agent meal-planni
 | `diet.protein_focus` / `allergies` / `avoid` | varierat / none / none |
 | `kitchen.equipment` | oven + 4-ring stove |
 | `level_mix` | 3 Vardag + 1 Standard + 1 Avancerad |
+| `workflow.mode` | `multi` (subagents); `enkel` saves tokens |
 | `integrations.notion.enabled` / `mathem.enabled` | `false` / `false` |
 
 Allergies are hard constraints: every agent receives them, and no suggestion, recipe or shopping
