@@ -159,13 +159,17 @@ exactly one answer file, and return a one-line summary.
 {"kandidat_id": "3f9a1c0e7b2d", "omgång": 1, "batch": 1,
  "svar": [
    {"vara_id": "v34", "beslut": "vald", "godkända": [2737],
-    "motivering": "Scan Högrev Bit — hel bit som listan kräver", "ny_sökterm": null}
+    "motivering": "Scan Högrev Bit — hel bit som listan kräver", "ny_sökterm": null, "byte": null}
  ]}
 ```
 
 `beslut` ∈ {`vald`, `osäker`, `ingen_passar`}. `godkända` lists every acceptable product id.
 `motivering` ≤ 160 characters. `ny_sökterm` is a string only with `ingen_passar` in round 1,
 otherwise `null`. The reviewer writes `"batch": "granskning"` and may not set `ny_sökterm`.
+`byte` is a short reason when the approved products are another kind or variant than the list
+line (spetspaprika for "röda paprikor"), otherwise `null`; a missing key counts as `null`. The
+plan line gets the flag `byte: <reason>`, and the report lists it under `## Byten`. An exact
+product must never be approved next to a substitute, since the code picks the cheapest.
 
 ### 6.3 Requirements (written verbatim, in Swedish, into both agent files)
 

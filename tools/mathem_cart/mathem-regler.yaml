@@ -104,10 +104,12 @@ omräkning:
   # (minst ett): "Gurka, 270 g" är en gurka, ett avokado-2-pack på 325 g är två.
   # Vikterna är typiska medelvikter för svenska butiksvaror: för lågt värde gör att en påse
   # räknas som fler styck än den innehåller.
-  styckvikt_g: { gul lök: 175, rödlök: 165, vitlöksklyfta: 5, citron: 160, vitlök: 50, ingefära: 60,
+  # "klyftor vitlök" står här för sig: annars träffar "vitlök" (ett huvud, 50 g) först.
+  styckvikt_g: { gul lök: 175, rödlök: 165, vitlöksklyfta: 5, klyfta vitlök: 5, klyftor vitlök: 5, citron: 160, vitlök: 50, ingefära: 60,
                  jalapeño: 30, jalapeno: 30, chili: 25, gurka: 300, isbergssallad: 650, morot: 110,
                  schalottenlök: 40, avokado: 200, lime: 90, päron: 170, äpple: 175, apelsin: 200,
                  paprika: 200, tomat: 130, zucchini: 300, aubergine: 350, purjolök: 250, potatis: 100,
                  sötpotatis: 300, fänkål: 300, banan: 170,
                  pak choi: 200, spetskål: 1100, rotselleri: 1100, pepparrot: 160 }
-  densitet_g_per_dl: { vetemjöl: 60, strösocker: 85, jasminris: 85 }
+  # Gram per dl. Pluralformen behövs när den inte går att gissa ("frön" → "frö").
+  densitet_g_per_dl: { vetemjöl: 60, strösocker: 85, jasminris: 85, sesamfrö: 60, sesamfrön: 60 }

@@ -28,6 +28,7 @@ class Verdict:
     approved: tuple[int, ...]
     reason: str
     new_term: str | None = None
+    swap: str | None = None       # "byte": why the approved products aren't exactly the listed item
 
 
 @dataclass
@@ -69,6 +70,7 @@ class _Entry(NamedTuple):
     ids: list[int]
     reason: str
     term: str | None
+    swap: str | None
 
 
 def _entry(index: int, raw: Any) -> _Entry:
@@ -90,7 +92,11 @@ def _entry(index: int, raw: Any) -> _Entry:
     term = raw.get("ny_sökterm")
     if term is not None and not isinstance(term, str):
         raise _Invalid(f"{where}.ny_sökterm måste vara en sträng eller null")
-    return _Entry(vid, decision, list(dict.fromkeys(ids)), reason, (term.strip() or None) if term else None)
+    swap = raw.get("byte")
+    if swap is not None and not isinstance(swap, str):
+        raise _Invalid(f"{where}.byte måste vara en sträng eller null")
+    return _Entry(vid, decision, list(dict.fromkeys(ids)), reason, (term.strip() or None) if term else None,
+                  " ".join(swap.split())[:MAX_REASON] or None if swap else None)
 
 
 def validate_answer(data: Any, part: Mapping[str, Any], *, kandidat_id: str, round_no: int,
@@ -114,7 +120,7 @@ def validate_answer(data: Any, part: Mapping[str, Any], *, kandidat_id: str, rou
 
     result = PartResult(batch, "ok")
     expected = {v["vara_id"]: v for v in part["varor"]}
-    by_item: dict[str, list[tuple[str, str, list[int], str, str | None]]] = {}
+    by_item: dict[str, list[_Entry]] = {}
     for entry in parsed:
         if entry.vara_id not in expected:
             result.warnings.append(f"{name}: svar för okänd vara {entry.vara_id} ignoreras")
@@ -129,7 +135,7 @@ def validate_answer(data: Any, part: Mapping[str, Any], *, kandidat_id: str, rou
         if len(found) > 1:
             result.unresolved[vid] = DUPLICATE
             continue
-        _, decision, ids, reason, term = found[0]
+        _, decision, ids, reason, term, swap = found[0]
         where = f"{name}: {vid} {item.get('vara', '')}".rstrip()
         allowed = {c["produkt_id"] for c in item.get("kandidater", [])}
         outside = [i for i in ids if i not in allowed]
@@ -149,7 +155,7 @@ def validate_answer(data: Any, part: Mapping[str, Any], *, kandidat_id: str, rou
         if len(reason) > MAX_REASON:
             result.warnings.append(f"{where}: motiveringen kortades till {MAX_REASON} tecken")
             reason = reason[:MAX_REASON]
-        result.verdicts[vid] = Verdict(vid, decision, approved, reason, term)
+        result.verdicts[vid] = Verdict(vid, decision, approved, reason, term, swap if approved else None)
     return result
 
 

@@ -68,6 +68,17 @@ just det och skriv hela svarsfilen på nytt.
   kandidat för själva varan: godkänn bara den. Finns bara reserven: svara `vald` med
   reserven i `godkända` och skriv i `motivering` att reserven används — listan har redan
   sagt att den duger.
+- **En sås är inte en pasta, och en pasta är inte en sås.** "Gochujang" är chilipastan;
+  "Chilisås Go-Chu-Jang" är en sås och är ett byte. Samma för currypasta/currysås,
+  tomatpuré/tomatsås, misopasta/misosås.
+- **Exakt vara först.** Finns en kandidat som är exakt listans vara (rätt sort, rätt form):
+  godkänn bara de exakta, aldrig ett byte bredvid — koden tar den billigaste av `godkända`,
+  så ett byte där vinner tyst. Godkänn ett byte bara när ingen exakt kandidat finns.
+- **`byte`**: godkänner du en annan sort eller variant än listan, skriv kort vad som skiljer
+  ("spetspaprika, inte vanlig röd paprika", "linspasta, listan säger proteinpasta",
+  "kapris cocktail, större kapris än vanlig"). Användaren jämför varukorgen med listan för
+  hand, så varje byte måste synas. Exakt vara, eller bara ett annat märke, eko eller annan
+  storlek: `null`.
 - `osäker` bara när det verkligen inte går att avgöra från namn, förpackning och märkning.
   Då frågas användaren — skriv i `motivering` vad användaren behöver ta ställning till.
 - Du föreslår **aldrig** en ny sökterm: `ny_sökterm` är alltid `null` (krav 4 gäller bara
@@ -83,8 +94,8 @@ Varan `v12` "Crème fraiche" (anteckning "34 %") har 5120 "Arla Crème Fraiche 3
 ```json
 {"kandidat_id": "9b0e44d1a7c3", "omgång": 2, "batch": "granskning",
  "svar": [
-  {"vara_id": "v12", "beslut": "vald", "godkända": [5120], "motivering": "34 % som listan kräver; 15 % är lätt-variant", "ny_sökterm": null},
-  {"vara_id": "v20", "beslut": "ingen_passar", "godkända": [], "motivering": "Listan kräver block; enda kandidaten är riven", "ny_sökterm": null}
+  {"vara_id": "v12", "beslut": "vald", "godkända": [5120], "motivering": "34 % som listan kräver; 15 % är lätt-variant", "ny_sökterm": null, "byte": null},
+  {"vara_id": "v20", "beslut": "ingen_passar", "godkända": [], "motivering": "Listan kräver block; enda kandidaten är riven", "ny_sökterm": null, "byte": null}
  ]}
 ```
 
@@ -96,9 +107,10 @@ inget kodblock, ingen text före eller efter:
 - `kandidat_id` och `omgång` exakt som i kandidatfilen (`omgång` är ett tal); `batch` är
   strängen `"granskning"`.
 - `svar`: exakt ett objekt per vara i filens `varor`, i samma ordning, med nycklarna
-  `vara_id`, `beslut`, `godkända`, `motivering`, `ny_sökterm`.
+  `vara_id`, `beslut`, `godkända`, `motivering`, `ny_sökterm`, `byte`.
 - `godkända`: bara `produkt_id`-tal ur just den varans `kandidater`.
 - `ny_sökterm`: alltid `null`.
+- `byte`: en kort sträng när `godkända` är ett byte, annars `null`.
 
 Kontrollera innan du skriver: lika många svar som varor, varje `vara_id` exakt en gång.
 Skriv inga andra filer.

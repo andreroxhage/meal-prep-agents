@@ -18,8 +18,8 @@ from .candidates import EXTRA_UNIT_PRICE_CANDIDATES, SEARCH_ORDER_CANDIDATES, Pe
 from .mathem.models import Product
 from .packaging import parse_package, parse_pricing
 from .pins import Pins
-from .plan_model import AMOUNT_MISSING, NO_CANDIDATES, UNKNOWN_UNIT, Candidate, Need, Plan, PlanLine, Undecided
-from .quantity import Offer, choose, cost_for
+from .plan_model import AMOUNT_MISSING, NO_CANDIDATES, SWAP, UNKNOWN_UNIT, Candidate, Need, Plan, PlanLine, Undecided
+from .quantity import EPS, Offer, choose, cost_for
 from .rules import Rules, filter_candidates, meets_preference
 from .shopping_list import Item, ShoppingList, normalize_key
 from .units import SPOON_UNITS, Amount, convert, to_base
@@ -181,7 +181,8 @@ class Planner:
         return Pending(item=item, vara_id=vid, term=term, products=agent_order(kept))
 
     def line_for(self, item: Item, accepted: Sequence[Product], decision: str,
-                 reason: str | None = None) -> PlanLine | Undecided:
+                 reason: str | None = None, *, swap: str | None = None) -> PlanLine | Undecided:
+        """`swap`: the model's reason why the products aren't exactly the listed item (flag `byte`)."""
         rules = self.deps.rules
         rule = rules.for_category(item.category)
         need = need_for(item)
@@ -200,6 +201,11 @@ class Planner:
         product = next(p for p in accepted if p.id == option.offer.product_id)
         self.offers[product.id] = option.offer
         flags = list(option.flags)
+        # Frysbar and storpack items have no overshoot cap, but a big overbuy must still show.
+        if option.measured and option.overshoot > rule.max_overshoot + EPS and not {"överköp", "storpack"} & set(flags):
+            flags.append("överköp")
+        if swap:
+            flags.append(f"{SWAP}: {swap}")
         if item.verify:
             flags.append("verifiera")
         if decision not in USER_DECISIONS and not meets_preference(product, rule):

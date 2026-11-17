@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from typing import Mapping, Sequence
 
-from .plan_model import ApplyResult, Need, Plan, PlanLine, Undecided
+from .plan_model import SWAP, ApplyResult, Need, Plan, PlanLine, Undecided
 
 SOURCES = ("pin", "fast", "haiku", "sonnet")
 REASON_WIDTH = 80
@@ -49,6 +49,12 @@ def fmt_flags(line: PlanLine) -> str:
         else:
             parts.append(flag)
     return ", ".join(parts) if parts else "—"
+
+
+def swap_reason(line: PlanLine) -> str | None:
+    """The `byte` flag's reason, or None when the product is the listed item."""
+    prefix = f"{SWAP}:"
+    return next((f[len(prefix):].strip() for f in line.flags if f.startswith(prefix)), None)
 
 
 def source_counts(lines: Sequence[PlanLine]) -> dict[str, int]:
@@ -103,6 +109,9 @@ def render_report(plan: Plan, result: ApplyResult | None = None) -> str:
     ]
     if plan.undecided:
         out.append(f"Oavgjorda: {fmt_counts(reason_counts(plan.undecided))}")
+    swapped = sum(swap_reason(line) is not None for line in plan.lines)
+    if swapped:
+        out.append(f"Byten: {swapped} rader har en annan sort eller variant än listan (se Byten)")
     out += [
         "",
         "## I varukorgen",
@@ -124,6 +133,11 @@ def render_report(plan: Plan, result: ApplyResult | None = None) -> str:
             _short(line.reason),
             fmt_flags(line),
         ]))
+
+    swaps = [(line, why) for line in plan.lines if (why := swap_reason(line)) is not None]
+    if swaps:
+        out += ["", "## Byten — annan sort eller variant än listan", ""]
+        out += [f"- {line.item} → {line.name}: {why}" for line, why in swaps]
 
     if plan.undecided:
         out += ["", "## Behöver beslut"]

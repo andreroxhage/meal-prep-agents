@@ -88,3 +88,13 @@ def test_counts():
     assert fmt_counts({"pin": 3, "haiku": 40}) == "pin 3 · haiku 40"
     und = sample_plan().undecided * 3
     assert reason_counts(und) == {"matchning behövs": 3}
+
+
+def test_swaps_are_counted_and_listed():
+    plan = sample_plan()
+    plan.lines[0].flags.append("byte: chilisås, inte pasta")
+    md = render_report(plan)
+    assert "Byten: 1 rader" in md
+    assert "## Byten — annan sort eller variant än listan" in md
+    assert f"- {plan.lines[0].item} → {plan.lines[0].name}: chilisås, inte pasta" in md
+    assert "Byten" not in render_report(sample_plan())

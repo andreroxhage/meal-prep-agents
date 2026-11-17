@@ -17,6 +17,7 @@ from typing import Any
 AMOUNT_MISSING = "mängd saknas"
 UNKNOWN_UNIT = "okänd enhet"
 NO_CANDIDATES = "inga kandidater"
+SWAP = "byte"   # flag "byte: <why>": the product is another kind or variant than the list line
 
 
 def _num(x: float | int | None) -> float | int | None:

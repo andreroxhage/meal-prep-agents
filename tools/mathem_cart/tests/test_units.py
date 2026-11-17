@@ -111,3 +111,22 @@ def test_without_a_package_pieces_convert_through_the_table_weight():
 def test_umlaut_plurals_find_their_singular():
     conv = Conversions(piece_weight_g={"morot": 100}, density_g_per_dl={})
     assert lookup(conv.piece_weight_g, "morötter") == 100
+
+
+def test_committed_rules_count_garlic_cloves_not_heads():
+    # "9 klyftor vitlök" is about one head, not nine 50 g heads.
+    from pathlib import Path
+    from mathem_cart.rules import load_rules
+    conv = load_rules(Path(__file__).parents[1] / "mathem-regler.yaml").conversions
+    got = convert(Amount(9, "st"), "g", "klyftor vitlök", conv, package=Amount(250, "g"))
+    assert got.dim == "g" and got.value == pytest.approx(45)
+    heads = convert(Amount(9, "st"), "st", "klyftor vitlök", conv, product="Vitlök Klass1 Spanien")
+    assert heads.value == pytest.approx(0.9)
+
+
+def test_committed_rules_weigh_sesame_seeds():
+    from pathlib import Path
+    from mathem_cart.rules import load_rules
+    conv = load_rules(Path(__file__).parents[1] / "mathem-regler.yaml").conversions
+    got = convert(Amount(75, "ml"), "g", "sesamfrön", conv)     # 5 msk is about 45 g, more than a 38 g bag
+    assert got.dim == "g" and got.value == pytest.approx(45)

@@ -405,3 +405,44 @@ def test_frozen_chicken_reaches_the_agents_when_tillat_fryst_lists_it(tmp_path):
     beef = Item(name="högrev", key="högrev", amount=1, unit="kg", category="Kött & Fisk")
     assert [p.id for p in planner.candidates_for(chicken, "kycklingfilé")] == [900]
     assert planner.candidates_for(beef, "högrev") == []
+
+
+def _pack(pid, name, extra, price):
+    return Product.from_api({"id": pid, "full_name": name, "name_extra": extra, "gross_price": str(price),
+                             "availability": {"is_available": True}})
+
+
+def test_big_overbuy_is_flagged_even_without_an_overshoot_cap(tmp_path):
+    # Skafferi is frysbar + storpack: no cap, but 900 g for 540 g must still show.
+    planner = Planner(deps(tmp_path))
+    item = parse_shopping_list("## Skafferi\n- 540 g proteinpasta\n").items[0]
+    line = planner.line_for(item, [_pack(6342, "Kungsörnen Linspasta Penne", "450 g", 30)], "sonnet")
+    assert (line.count, line.overshoot) == (2, 0.6667) and "överköp" in line.flags
+
+
+def test_small_overbuy_and_deliberate_storpack_get_no_overkop_flag(tmp_path):
+    planner = Planner(deps(tmp_path))
+    item = parse_shopping_list("## Skafferi\n- 450 g rigatoni\n").items[0]
+    assert "överköp" not in planner.line_for(item, [_pack(1, "Barilla Rigatoni", "500 g", 20)], "haiku").flags
+
+
+def test_swap_becomes_a_byte_flag(tmp_path):
+    planner = Planner(deps(tmp_path))
+    item = parse_shopping_list("## Grönsaker\n- 2 röda paprikor\n").items[0]
+    line = planner.line_for(item, [_pack(6833, "Paprika spetsig röd", "200 g", 15)], "haiku",
+                            "röd spetspaprika", swap="spetspaprika, inte vanlig röd paprika")
+    assert "byte: spetspaprika, inte vanlig röd paprika" in line.flags
+
+
+def test_nine_garlic_cloves_buy_one_net_not_two(tmp_path):
+    planner = Planner(deps(tmp_path))
+    item = parse_shopping_list("## Grönsaker\n- 9 klyftor vitlök, ca 1 huvud\n").items[0]
+    line = planner.line_for(item, [_pack(6883, "Vitlök Klass1 Spanien", "Spanien, 250 g", 25)], "haiku")
+    assert line.count == 1
+
+
+def test_sesame_by_the_spoon_needs_two_small_bags(tmp_path):
+    planner = Planner(deps(tmp_path))
+    item = parse_shopping_list("## Skafferi\n- 5 msk sesamfrön\n").items[0]
+    line = planner.line_for(item, [_pack(8068, "Santa Maria Sesamfrö", "38 g", 20)], "haiku")
+    assert line.count == 2 and "överköp" in line.flags

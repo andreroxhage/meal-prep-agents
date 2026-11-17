@@ -194,7 +194,11 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
    och visa:
    - total (`total_kr`) och antal rader,
    - raden `Beslut: pin … · fast … · haiku … · sonnet …` från senaste `plan`/`decide`,
-   - rader med flaggor: `överköp` (med procent), `ungefärlig`, `verifiera`,
+   - **byten först**: varje rad med flaggan `byte: …` (avsnittet `## Byten` i rapporten),
+     som `vara → produkt: skäl`. Det är en annan sort eller variant än listan, och
+     användaren ska kunna godkänna eller byta den innan `apply`,
+   - rader med flaggor: `överköp` (med procent; sätts över `max_överköp` även för
+     frysbara varor och storpack, utom när `storpack` redan förklarar det), `ungefärlig`, `verifiera`,
      `storlek_osäker`, `ej föredragen` (inget svenskt fanns, så en importerad vara valdes),
      `storpack` (en större förpackning med lägre jämförpris valdes; den kostar mer nu — för
      basvaror som potatis och ris är det en hel säck, se `basvaror` i `mathem-regler.yaml`),

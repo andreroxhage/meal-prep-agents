@@ -31,11 +31,11 @@ class Fake:
         self.searched.append(term)
         return list(self.catalog.get(term, []))
 
-    def line_for(self, item, accepted, decision, reason=None):
+    def line_for(self, item, accepted, decision, reason=None, *, swap=None):
         p = accepted[0]
         return PlanLine(item=item.name, need=Need(1, "st"), category=item.category, product_id=p.id,
                         name=p.full_name, package="1 st", count=1, cost_kr=10.0, unit_price=None, deal=None,
-                        overshoot=0.0, decision=decision, flags=[], reason=reason)
+                        overshoot=0.0, decision=decision, flags=[f"byte: {swap}"] if swap else [], reason=reason)
 
     def undecided_for(self, item, reason, products, note=None):
         self.undecided.append((item.name, reason, [p.id for p in products], note))
@@ -63,8 +63,9 @@ def run(tmp_path, fake, pending):
                              undecided_for=fake.undecided_for))
 
 
-def entry(vid, beslut="vald", ids=(), reason="ok", term=None):
-    return {"vara_id": vid, "beslut": beslut, "godkända": list(ids), "motivering": reason, "ny_sökterm": term}
+def entry(vid, beslut="vald", ids=(), reason="ok", term=None, **extra):
+    return {"vara_id": vid, "beslut": beslut, "godkända": list(ids), "motivering": reason, "ny_sökterm": term,
+            **extra}
 
 
 def write_answer(tmp_path, file, part, entries):
@@ -338,8 +339,17 @@ def test_round_two_cut_candidates_are_logged(tmp_path):
 def test_accepted_products_keep_the_search_order(tmp_path):
     fake, pending, file = setup(tmp_path, [("Grädde", [1, 2, 3])])
     seen = []
-    fake.line_for = lambda item, accepted, decision, reason=None: seen.append([p.id for p in accepted]) or \
+    fake.line_for = lambda item, accepted, decision, reason=None, swap=None: seen.append([p.id for p in accepted]) or \
         fake.undecided_for(item, "ingen förpackning går att räkna", accepted, reason)
     write_answer(tmp_path, file, 1, [entry("v01", ids=[3, 1])])
     run(tmp_path, fake, pending)
     assert seen == [[1, 3]]
+
+
+def test_a_swap_from_the_matcher_reaches_the_plan_line(tmp_path):
+    fake, pending, file = setup(tmp_path, [("Röda paprikor", [1, 2]), ("Grädde", [3])])
+    write_answer(tmp_path, file, 1, [entry("v01", ids=[2], byte="spetspaprika, inte vanlig röd paprika"),
+                                     entry("v02", ids=[3], byte=None)])
+    result = run(tmp_path, fake, pending)
+    assert result.outcomes["v01"].flags == ["byte: spetspaprika, inte vanlig röd paprika"]
+    assert result.outcomes["v02"].flags == []

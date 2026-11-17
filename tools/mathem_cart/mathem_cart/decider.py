@@ -46,7 +46,7 @@ class DecideDeps:
     now: datetime
     pending: list[Pending]
     candidates_for: Callable[[Item, str], list[Product]]
-    line_for: Callable[[Item, list[Product], str, str | None], PlanLine | Undecided]
+    line_for: Callable[..., PlanLine | Undecided]   # (item, accepted, source, reason, *, swap)
     undecided_for: Callable[[Item, str, Sequence[Product], str | None], Undecided]
 
 
@@ -143,7 +143,7 @@ def _resend(week_dir: Path, rnd: _Round, warnings: list[str]) -> list[Resend]:
 def _accept(deps: DecideDeps, item: Item, term: str, verdict: Verdict, source: str) -> PlanLine | Undecided | None:
     approved = set(verdict.approved)
     accepted = [p for p in deps.candidates_for(item, term) if p.id in approved]   # Mathem's search order
-    return deps.line_for(item, accepted, source, verdict.reason) if accepted else None
+    return deps.line_for(item, accepted, source, verdict.reason, swap=verdict.swap) if accepted else None
 
 
 def _second(deps: DecideDeps, rnd: _Round, p: Pending, term: str, source: str,
@@ -215,7 +215,7 @@ def decide(deps: DecideDeps) -> DecideResult:
                 outcomes[vid] = line
                 continue
             warnings.append(f"{p.item.name}: ingen godkänd produkt finns kvar i sökningen — räknas som osäker")
-            verdict = Verdict(vid, "osäker", (), verdict.reason)
+            verdict = Verdict(vid, "osäker", (), verdict.reason, swap=verdict.swap)
         if verdict.decision == "osäker":
             review.append(Review(p, list(verdict.approved), verdict.reason))
         elif verdict.new_term:

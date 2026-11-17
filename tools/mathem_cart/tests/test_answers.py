@@ -162,3 +162,23 @@ def test_fenced_json_and_bom_are_read(tmp_path):
 
 def test_labels():
     assert label(3) == "batch 3" and label("granskning") == "granskning"
+
+
+def test_byte_is_read_trimmed_and_dropped_without_approved_products():
+    part = {"varor": [{"vara_id": "v01", "vara": "gochujang", "kandidater": [{"produkt_id": 8669}]},
+                      {"vara_id": "v02", "vara": "kapris", "kandidater": [{"produkt_id": 1}]}]}
+    data = {"kandidat_id": "k", "omgång": 1, "batch": 1, "svar": [
+        {"vara_id": "v01", "beslut": "vald", "godkända": [8669], "motivering": "ok", "ny_sökterm": None,
+         "byte": "  chilisås,\n inte pasta "},
+        {"vara_id": "v02", "beslut": "ingen_passar", "godkända": [], "motivering": "nej", "ny_sökterm": None,
+         "byte": "ingen kapris"}]}
+    r = validate_answer(data, part, kandidat_id="k", round_no=1, batch=1)
+    assert r.verdicts["v01"].swap == "chilisås, inte pasta"
+    assert r.verdicts["v02"].swap is None
+
+
+def test_byte_must_be_a_string_or_null():
+    part = {"varor": [{"vara_id": "v01", "vara": "x", "kandidater": [{"produkt_id": 1}]}]}
+    data = {"kandidat_id": "k", "omgång": 1, "batch": 1, "svar": [
+        {"vara_id": "v01", "beslut": "vald", "godkända": [1], "motivering": "ok", "ny_sökterm": None, "byte": True}]}
+    assert validate_answer(data, part, kandidat_id="k", round_no=1, batch=1).status == "ogiltig"
