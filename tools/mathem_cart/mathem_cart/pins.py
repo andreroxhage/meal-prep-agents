@@ -10,6 +10,7 @@ from pathlib import Path
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap, CommentedSeq
 
+from .ids import norm_id
 from .shopping_list import normalize_key
 
 
@@ -35,8 +36,8 @@ class Pins:
         raw = self._data.get(normalize_key(name))
         if not raw:
             return None
-        return Pin(fixed=int(raw["fast"]) if raw.get("fast") is not None else None,
-                   approved=[int(x) for x in raw.get("godkända") or []],
+        return Pin(fixed=norm_id(raw["fast"]) if raw.get("fast") is not None else None,
+                   approved=[norm_id(x) for x in raw.get("godkända") or []],
                    search=str(raw["sök"]).strip() or None if raw.get("sök") else None)
 
     def _entry(self, name: str) -> CommentedMap:
@@ -54,11 +55,11 @@ class Pins:
             approved = CommentedSeq()
             approved.fa.set_flow_style()
             entry["godkända"] = approved
-        if int(product_id) not in [int(x) for x in approved]:
-            approved.append(int(product_id))
+        if norm_id(product_id) not in [norm_id(x) for x in approved]:
+            approved.append(norm_id(product_id))
 
     def set_fixed(self, name: str, product_id: int) -> None:
-        self._entry(name)["fast"] = int(product_id)
+        self._entry(name)["fast"] = norm_id(product_id)
 
     def set_search(self, name: str, term: str) -> None:
         self._entry(name)["sök"] = term.strip()

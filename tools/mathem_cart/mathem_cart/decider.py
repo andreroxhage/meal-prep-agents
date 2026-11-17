@@ -20,7 +20,8 @@ from pathlib import Path
 from typing import Any, Callable, Mapping, Sequence
 
 from .answers import REVIEW, PartResult, Verdict, load_answer
-from .candidates import (CANDIDATE_FILE, FROZEN_KEY, MATCH_DIR, CandidateFileError, Pending, Review, answer_path,
+from . import candidates
+from .candidates import (FROZEN_KEY, CandidateFileError, Pending, Review, answer_path,
                          build_candidate_file, digest, drop_warnings, parts_of, read_round, round_copy, round_dir,
                          write_round)
 from .mathem.models import Product
@@ -169,12 +170,12 @@ def _load(deps: DecideDeps) -> tuple[int, dict[str, Any], dict[str, Any] | None]
             raise DecideError(f"omgång {no} stöds inte — högst {MAX_MATCH_ROUNDS} omgångar; kör plan igen")
         first = read_round(deps.week_dir, 1)
         if read_round(deps.week_dir, no)["kandidat_id"] != current["kandidat_id"]:
-            raise DecideError(f"{deps.week_dir / CANDIDATE_FILE} stämmer inte med "
-                              f"{MATCH_DIR}/ — kör plan igen")
+            raise DecideError(f"{deps.week_dir / candidates.CANDIDATE_FILE} stämmer inte med "
+                              f"{candidates.MATCH_DIR}/ — kör plan igen")
         for later in range(no + 1, MAX_MATCH_ROUNDS + 1):
             if round_copy(deps.week_dir, later).exists():
-                raise DecideError(f"{deps.week_dir / CANDIDATE_FILE} hör till omgång {no}, men "
-                                  f"omgång {later} finns redan i {MATCH_DIR}/ — kör plan igen")
+                raise DecideError(f"{deps.week_dir / candidates.CANDIDATE_FILE} hör till omgång {no}, men "
+                                  f"omgång {later} finns redan i {candidates.MATCH_DIR}/ — kör plan igen")
     except CandidateFileError as err:
         raise DecideError(str(err)) from None
     return no, first, current if no == 2 else None

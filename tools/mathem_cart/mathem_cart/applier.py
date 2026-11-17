@@ -1,4 +1,4 @@
-"""Execute a saved plan verbatim against the Mathem cart, then verify it (spec §8, §11).
+"""Execute a saved plan verbatim against the store's cart, then verify it (spec §8, §11).
 
 `check_safety` needs no network and is called by the CLI before login; `apply_plan`
 calls it again, refuses a non-empty cart before any add, adds every planned line in
@@ -75,12 +75,12 @@ def _counts(cart: Cart) -> dict[int, int]:
 
 
 def apply_plan(plan: Plan, cart: CartLike, rules: Rules, *, now: datetime,
-               relogin: Callable[[], None] | None = None) -> ApplyResult:
+               relogin: Callable[[], None] | None = None, site: str = "mathem.se") -> ApplyResult:
     check_safety(plan, rules, now)
     before = cart.get()
     if not before.is_empty:
         raise SafetyAbort(f"varukorgen är inte tom ({len(before.lines)} rader) — töm den på "
-                          "mathem.se och kör apply igen")
+                          f"{site} och kör apply igen")
 
     expected: dict[int, int] = {}
     names: dict[int, str] = {}
@@ -124,7 +124,7 @@ def apply_plan(plan: Plan, cart: CartLike, rules: Rules, *, now: datetime,
     try:
         after = cart.get()
     except Exception as exc:  # noqa: BLE001 — best effort read-back
-        msg = f"varukorgen kunde inte läsas tillbaka ({exc}) — kontrollera den på mathem.se"
+        msg = f"varukorgen kunde inte läsas tillbaka ({exc}) — kontrollera den på {site}"
         error = msg if error is None else f"{error}; {msg}"
         return ApplyResult(now, expected, {}, differences, error)
 

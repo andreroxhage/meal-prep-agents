@@ -1,4 +1,4 @@
-"""`mathem-cart` — the command line (base spec §9, matching spec §8).
+"""`mathem-cart` — the command line (base spec §9, matching spec §8), for every store (`--butik`).
 
 `plan` searches, applies the rules and the pins and, when items need matching, writes the
 candidate file for the matcher agents and exits 4. `decide` validates the agents' answers
@@ -24,12 +24,12 @@ from dotenv import load_dotenv
 
 from .answers import label
 from .applier import SafetyAbort, apply_plan, check_safety
-from .candidates import (CANDIDATE_FILE, build_candidate_file, clear_matching, drop_warnings, part_path, parts_of,
+from . import candidates
+from .candidates import (build_candidate_file, clear_matching, drop_warnings, part_path, parts_of,
                          read_round, write_round)
 from .decider import DecideDeps, DecideError, DecideResult, decide
-from .mathem.cart import CartClient
 from .mathem.errors import MathemError
-from .mathem.products import ProductsClient, SearchCache
+from .mathem.products import SearchCache
 from .mathem.session import MathemSession
 from .pins import Pins, load_pins
 from .plan_model import Candidate, Need, Plan, PlanLine, Undecided
@@ -38,21 +38,18 @@ from .planner import (SHOWN_CANDIDATES, Answer, Planner, PlannerDeps, Settled, c
 from .report import fmt_counts, fmt_kr, fmt_need, fmt_unit_price, reason_counts, render_report, source_counts
 from .rules import Rules, RulesError, load_rules
 from .shopping_list import Item, ShoppingList, load_shopping_list, normalize_key
+from .ids import norm_id
+from .stores import MATHEM, STORES, WILLYS, Store, store_named
+from .willys.session import WillysSession
 
-PACKAGE_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_RULES = PACKAGE_ROOT / "mathem-regler.yaml"
-# Pins are personal choices, so they live in a gitignored file; mathem-pins.example.yaml documents the format.
-DEFAULT_PINS = PACKAGE_ROOT / "mathem-pins.local.yaml"
 SHOPPING_LIST = "03-handlingslista.md"
-PLAN_FILE = "06-mathem-plan.json"
-REPORT_FILE = "06-mathem-varukorg.md"
-CACHE_DIR = ".mathem-cache"
 WEEK_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 SEARCH_LIMIT = 10
 EXIT_OK, EXIT_ERROR, EXIT_UNDECIDED, EXIT_SAFETY, EXIT_MATCHING = 0, 1, 2, 3, 4
 
-CONTACT_MISSING = ("MATHEM_BOT_CONTACT saknas — sätt en kontaktadress (e-post eller URL) i .env; "
-                   "den skickas i User-Agent till Mathem")
+CONTACT_VARS = ("BOT_CONTACT", "MATHEM_BOT_CONTACT")   # either; MATHEM_BOT_CONTACT is the older name
+CONTACT_MISSING = ("MATHEM_BOT_CONTACT (eller BOT_CONTACT) saknas — sätt en kontaktadress (e-post eller URL) "
+                   "i .env; den skickas i User-Agent till butiken")
 
 
 class CliError(Exception):
@@ -63,6 +60,14 @@ class CliError(Exception):
 
 def make_session(contact: str) -> MathemSession:
     return MathemSession(contact)
+
+
+def make_willys_session(contact: str) -> WillysSession:
+    return WillysSession(contact)
+
+
+def _open(store: Store, contact: str) -> MathemSession:
+    return make_willys_session(contact) if store is WILLYS else make_session(contact)
 
 
 # --- paths and environment ---------------------------------------------------------
@@ -106,7 +111,7 @@ def _load_env(root: Path) -> None:
 
 
 def _contact() -> str:
-    contact = (os.environ.get("MATHEM_BOT_CONTACT") or "").strip()
+    contact = next((v for v in ((os.environ.get(var) or "").strip() for var in CONTACT_VARS) if v), "")
     if not contact:
         raise CliError(CONTACT_MISSING)
     return contact
@@ -116,8 +121,15 @@ def _warn(message: str) -> None:
     print(f"Varning: {message}", file=sys.stderr)
 
 
+def _store(args: argparse.Namespace) -> Store:
+    """The store, with its file names pointed at (candidates/match folder) for this run."""
+    store = store_named(args.butik)
+    candidates.use_store(store.name)
+    return store
+
+
 def _rules(args: argparse.Namespace) -> Rules:
-    rules = load_rules(Path(args.regler))
+    rules = load_rules(Path(args.regler or _store(args).rules_file))
     for warning in rules.warnings:
         _warn(warning)
     return rules
@@ -166,15 +178,20 @@ class TerminalAsker:
 
 # --- commands ------------------------------------------------------------------------
 
-def _planner(session: MathemSession, week: Path, rules: Rules, pins: Pins) -> Planner:
-    products = ProductsClient(session, SearchCache(week / CACHE_DIR))
+def _pins(args: argparse.Namespace) -> Pins:
+    return load_pins(Path(args.pins or _store(args).pins_file))
+
+
+def _planner(store: Store, session: MathemSession, week: Path, rules: Rules, pins: Pins) -> Planner:
+    products = store.products(session, SearchCache(week / store.cache_dir))
     return Planner(PlannerDeps(search=products.search, lookup=products.product, rules=rules, pins=pins,
                                warn=_warn))
 
 
-def _write_plan(week: Path, plan: Plan) -> int:
-    plan.write(week / PLAN_FILE)
-    report = week / REPORT_FILE
+def _write_plan(store: Store, week: Path, plan: Plan) -> int:
+    plan.store = store.name
+    plan.write(week / store.plan_file)
+    report = week / store.report_file
     report.write_text(render_report(plan), encoding="utf-8")
     print(f"Beslut: {fmt_counts(source_counts(plan.lines))}")
     if plan.undecided:
@@ -206,7 +223,8 @@ def _print_round(week: Path, result: DecideResult) -> int:
     if result.status == "skicka om":
         for r in result.resend:
             print(f"Skicka om: {label(r.part)} → {r.path} ({r.problem})", file=sys.stderr)
-        print(f"Omgång {result.round_no}: {len(result.resend)} svar behöver skickas om → {week / CANDIDATE_FILE}")
+        print(f"Omgång {result.round_no}: {len(result.resend)} svar behöver skickas om → "
+              f"{week / candidates.CANDIDATE_FILE}")
     else:
         file = read_round(week)
         review = len(file["granskning"]["varor"]) if file["granskning"] else 0
@@ -219,6 +237,7 @@ def _print_round(week: Path, result: DecideResult) -> int:
 class _Run:
     """What `plan` and `decide` both need before they search: the week, its list and the config."""
 
+    store: Store
     contact: str
     week: Path
     rules: Rules
@@ -228,23 +247,24 @@ class _Run:
 
 
 def _prepare(args: argparse.Namespace) -> _Run:
+    store = _store(args)
     root = _root(args)
     _load_env(root)
     contact = _contact()
     week = _week(root, args.vecka)
-    return _Run(contact=contact, week=week, rules=_rules(args), pins=load_pins(Path(args.pins)),
+    return _Run(store=store, contact=contact, week=week, rules=_rules(args), pins=_pins(args),
                 shopping=load_shopping_list(week / SHOPPING_LIST), now=datetime.now().astimezone())
 
 
 def cmd_plan(args: argparse.Namespace) -> int:
     run = _prepare(args)
     week, shopping, now = run.week, run.shopping, run.now
-    with make_session(run.contact) as session:
-        planner = _planner(session, week, run.rules, run.pins)
+    with _open(run.store, run.contact) as session:
+        planner = _planner(run.store, session, week, run.rules, run.pins)
         settled = settle_all(shopping, planner, args.hoppa)
     clear_matching(week)                                       # K11: old answers never leak
     if settled.pending:
-        (week / PLAN_FILE).unlink(missing_ok=True)
+        (week / run.store.plan_file).unlink(missing_ok=True)
         file, dropped = build_candidate_file(week.name, 1, settled.pending, now=now)
         path = write_round(week, file)
         for warning in drop_warnings(settled.pending, dropped):
@@ -254,20 +274,20 @@ def cmd_plan(args: argparse.Namespace) -> int:
         return EXIT_MATCHING
     plan = planner.finish(week=week.name, now=now, outcomes=[settled.decided[v] for v in settled.order],
                           skipped=settled.skipped, excluded=[*shopping.excluded, *settled.excluded])
-    return _write_plan(week, plan)
+    return _write_plan(run.store, week, plan)
 
 
 def cmd_decide(args: argparse.Namespace) -> int:
     run = _prepare(args)
     week, shopping, now = run.week, run.shopping, run.now
     asker = TerminalAsker() if sys.stdin.isatty() and not args.no_input else None
-    with make_session(run.contact) as session:
-        planner = _planner(session, week, run.rules, run.pins)
+    with _open(run.store, run.contact) as session:
+        planner = _planner(run.store, session, week, run.rules, run.pins)
         settled = settle_all(shopping, planner, args.hoppa)
         outcomes: dict[str, PlanLine | Undecided] = dict(settled.decided)
         if settled.pending:
-            if not (week / CANDIDATE_FILE).is_file():
-                raise CliError(f"hittar inte {week / CANDIDATE_FILE} — kör plan först")
+            if not (week / candidates.CANDIDATE_FILE).is_file():
+                raise CliError(f"hittar inte {week / candidates.CANDIDATE_FILE} — kör plan först")
             try:
                 result = decide(DecideDeps(week_dir=week, week=week.name, now=now, pending=settled.pending,
                                            candidates_for=planner.candidates_for, line_for=planner.line_for,
@@ -277,7 +297,7 @@ def cmd_decide(args: argparse.Namespace) -> int:
             for warning in result.warnings:
                 planner.warn(warning)
             if result.status != "klar":
-                (week / PLAN_FILE).unlink(missing_ok=True)
+                (week / run.store.plan_file).unlink(missing_ok=True)
                 return _print_round(week, result)
             outcomes.update(result.outcomes)
         skipped = list(settled.skipped)
@@ -285,19 +305,22 @@ def cmd_decide(args: argparse.Namespace) -> int:
             _ask_all(planner, settled, outcomes, skipped, asker)
     plan = planner.finish(week=week.name, now=now, outcomes=[outcomes[v] for v in settled.order if v in outcomes],
                           skipped=skipped, excluded=[*shopping.excluded, *settled.excluded])
-    return _write_plan(week, plan)
+    return _write_plan(run.store, week, plan)
 
 
 def cmd_apply(args: argparse.Namespace) -> int:
+    store = _store(args)
     root = _root(args)
     week = _week(root, args.vecka)
-    path = week / PLAN_FILE
+    path = week / store.plan_file
     if not path.is_file():
         raise CliError(f"hittar inte planen: {path} — kör plan först")
     try:
         plan = Plan.read(path)
     except (ValueError, KeyError, TypeError) as err:
         raise CliError(f"kunde inte läsa planen {path}: {err} — kör plan igen") from None
+    if plan.store != store.name:
+        raise CliError(f"planen {path} är gjord för {plan.store}, inte {store.name} — kör plan igen")
     if not plan.lines:
         print("Inget att lägga i varukorgen.")
         return EXIT_OK
@@ -306,26 +329,26 @@ def cmd_apply(args: argparse.Namespace) -> int:
     if plan.undecided:
         _warn(f"{len(plan.undecided)} varor behöver fortfarande beslut och läggs inte i varukorgen")
     _load_env(root)
-    missing = [var for var in ("MATHEM_EMAIL", "MATHEM_PASSWORD") if not os.environ.get(var)]
+    missing = [var for var in store.login_vars if not os.environ.get(var)]
     if missing:
         raise CliError(f"{' och '.join(missing)} saknas i miljön — lägg in i .env")
-    email, password = os.environ["MATHEM_EMAIL"], os.environ["MATHEM_PASSWORD"]
+    user, password = (os.environ[var] for var in store.login_vars)
     contact = _contact()
-    with make_session(contact) as session:
-        session.login(email, password)
-        result = apply_plan(plan, CartClient(session), rules, now=datetime.now(timezone.utc),
-                            relogin=lambda: session.login(email, password))
-    report = week / REPORT_FILE
+    with _open(store, contact) as session:
+        session.login(user, password)
+        result = apply_plan(plan, store.cart(session), rules, now=datetime.now(timezone.utc),
+                            relogin=lambda: session.login(user, password), site=store.site)
+    report = week / store.report_file
     report.write_text(render_report(plan, result), encoding="utf-8")
     for difference in result.differences:
         print(f"Avvikelse: {difference}", file=sys.stderr)
     if result.error:
         print(f"Fel: {result.error}", file=sys.stderr)
-        print(f"Se {report}. Töm varukorgen på mathem.se och kör apply igen.", file=sys.stderr)
+        print(f"Se {report}. Töm varukorgen på {store.site} och kör apply igen.", file=sys.stderr)
         return EXIT_ERROR
     in_cart = sum(result.actual.values())
     print(f"{in_cart} st av {len(result.actual)} produkter i varukorgen · {len(result.differences)} avvikelser → {report}")
-    print("Ingen beställning är gjord — kontrollera varukorgen och beställ själv i Mathem-appen.")
+    print(f"Ingen beställning är gjord — kontrollera varukorgen och beställ själv hos {store.label}.")
     return EXIT_OK
 
 
@@ -337,7 +360,7 @@ def cmd_pin(args: argparse.Namespace) -> int:
     key = normalize_key(args.ingrediens)
     if not key:
         raise CliError("tomt ingrediensnamn")
-    pins = load_pins(Path(args.pins))
+    pins = _pins(args)
     saved = []
     if args.produkt_id is not None:
         if args.fast:
@@ -357,9 +380,10 @@ def cmd_pin(args: argparse.Namespace) -> int:
 def cmd_sok(args: argparse.Namespace) -> int:
     root = _root(args)
     _load_env(root)
+    store = _store(args)
     contact = _contact()
-    with make_session(contact) as session:
-        results = ProductsClient(session).search(args.term, limit=SEARCH_LIMIT)
+    with _open(store, contact) as session:
+        results = store.products(session, None).search(args.term, limit=SEARCH_LIMIT)
     if not results:
         print(f"Inga träffar för “{args.term}”.")
         return EXIT_OK
@@ -384,11 +408,14 @@ class _Parser(argparse.ArgumentParser):
 def build_parser() -> argparse.ArgumentParser:
     shared = _Parser(add_help=False)
     shared.add_argument("--root", help="repo-roten (standard: sök uppåt, eller MATHEM_CART_ROOT)")
-    shared.add_argument("--regler", default=str(DEFAULT_RULES), help="regelfil (mathem-regler.yaml)")
-    shared.add_argument("--pins", default=str(DEFAULT_PINS), help="pin-fil (mathem-pins.local.yaml)")
+    shared.add_argument("--butik", default=MATHEM.name, choices=sorted(STORES),
+                        help="butik (standard: mathem)")
+    shared.add_argument("--regler", help="regelfil (standard: <butik>-regler.yaml)")
+    shared.add_argument("--pins", help="pin-fil (standard: <butik>-pins.local.yaml)")
 
     parser = _Parser(prog="mathem-cart",
-                     description="Fyll Mathem-varukorgen från veckans handlingslista. Lägger aldrig en beställning.")
+                     description="Fyll varukorgen hos Mathem eller Willys från veckans handlingslista. "
+                                 "Lägger aldrig en beställning.")
     sub = parser.add_subparsers(dest="command", required=True, metavar="kommando", parser_class=_Parser)
 
     p = sub.add_parser("plan", parents=[shared], help="gör en plan (loggar aldrig in)")
@@ -409,7 +436,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser("pin", parents=[shared], help="spara en produkt eller sökterm för en ingrediens")
     p.add_argument("ingrediens")
-    p.add_argument("produkt_id", nargs="?", type=int)
+    p.add_argument("produkt_id", nargs="?", type=norm_id)
     p.add_argument("--fast", action="store_true", help="alltid exakt den här produkten")
     p.add_argument("--sök", "--sok", dest="sok", metavar="TERM", help="egen sökterm")
     p.set_defaults(func=cmd_pin)

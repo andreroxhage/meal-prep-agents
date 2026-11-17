@@ -1,6 +1,6 @@
 ---
 name: mathem-matcher
-description: "Fas 6 (Mathem-varukorg): bedömer EN batch i 06-mathem-kandidater.json — vilka produkter som är rätt vara för varje post på handlingslistan — och skriver en svarsfil i JSON. Skickas ut av /mathem-cart, en per batch, parallellt. Ser aldrig priser."
+description: "Fas 6 (varukorg hos Mathem eller Willys): bedömer EN batch i 06-<butik>-kandidater.json — vilka produkter som är rätt vara för varje post på handlingslistan — och skriver en svarsfil i JSON. Skickas ut av /mathem-cart, en per batch, parallellt. Ser aldrig priser."
 model: haiku
 tools: Read, Write
 hooks:
@@ -11,7 +11,7 @@ hooks:
           command: "${CLAUDE_PROJECT_DIR}/.claude/hooks/mathem_answer_guard.sh"
 ---
 
-Du avgör vilka Mathem-produkter som är **rätt vara** för varje post på en handlingslista.
+Du avgör vilka produkter i butiken (Mathem eller Willys) som är **rätt vara** för varje post på en handlingslista.
 Du ser namn, förpackning och märkning — aldrig priser. Koden räknar pris, mängd och antal
 efter dig. Ditt enda jobb: säga vilka kandidater som är rätt vara.
 
@@ -20,7 +20,7 @@ efter dig. Ditt enda jobb: säga vilka kandidater som är rätt vara.
 Prompten innehåller tre rader:
 
 - `Kandidatfil:` sökväg till din del av kandidatfilen, t.ex.
-  `.mathem-matchning/omgang-1/batch-03-kandidater.json` — den innehåller bara din batch
+  `.mathem-matchning/omgang-1/batch-03-kandidater.json` (hos Willys `.willys-matchning/…`) — den innehåller bara din batch
 - `Batch:` ditt batchnummer, t.ex. `3`
 - `Svarsfil:` sökvägen du skriver ditt svar till
 
@@ -122,7 +122,9 @@ inget kodblock, ingen text före eller efter, inga kommentarer:
   `batch` är tal, inte strängar.
 - `svar`: exakt ett objekt per vara i batchen, i batchens ordning, med nycklarna
   `vara_id`, `beslut`, `godkända`, `motivering`, `ny_sökterm`, `byte`.
-- `godkända`: bara `produkt_id`-tal ur just den varans `kandidater`.
+- `godkända`: `produkt_id` ur just den varans `kandidater`, **kopierade exakt** som i filen:
+  ett tal hos Mathem (`6851`), en sträng hos Willys (`"101106287_ST"`, med citattecken och
+  hela koden — stryk aldrig `_ST` eller `_KG`).
 - `ny_sökterm`: en sträng bara vid `ingen_passar` i omgång 1, annars `null`.
 - `byte`: en kort sträng när `godkända` är ett byte, annars `null`.
 
@@ -132,3 +134,5 @@ gång, inga id:n från en annan varas lista. Skriv inga andra filer.
 ## Svar till den som skickade dig
 
 En rad: `batch <nr>: <n> varor · vald <a> · osäker <b> · ingen_passar <c> → <svarsfil>`.
+Stoppades Write: skriv `EJ SKRIVEN` i stället för sökvägen, och skriv aldrig svaret någon
+annanstans.

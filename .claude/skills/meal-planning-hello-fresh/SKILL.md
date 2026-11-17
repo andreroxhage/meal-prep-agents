@@ -211,8 +211,10 @@ aktiverat: avsluta utan att fråga.
   skapar en översiktssida i veckodatabasen med undersidor för handlingslista och meal
   prep-plan, plus genvägar till recepten i receptdatabasen (recept dupliceras aldrig).
   Se [export-to-notion](../export-to-notion/SKILL.md).
-- **Mathem** (`integrations.mathem`): fråga **"Vill du att jag fyller varukorgen på
-  Mathem (experimentellt)?"** Om ja: kör skillen `mathem-cart` i huvudkonversationen.
+- **Mathem / Willys** (`integrations.mathem`, `integrations.willys`): fråga **"Vill du att
+  jag fyller varukorgen på <Butik> (experimentellt)?"** med den butik som är på (är båda
+  på: "på Mathem eller Willys"). Om ja: kör skillen `mathem-cart` i huvudkonversationen,
+  med butiken som första argument.
   Den planerar varukorgen från `03-handlingslista.md`, frågar om osäkra varor och lägger
   in allt först efter ett uttryckligt ja. Den lägger aldrig en beställning. Se
   [mathem-cart](../mathem-cart/SKILL.md).
@@ -225,7 +227,7 @@ Klart! Ingen ytterligare stoppunkt efter detta.
 - `/create-recipe [rätt] [portioner]` — Skapa ett eget recept från grunden
 - `/verify-recipes [YYYY-MM-DD]` — Kontrollera receptstandarden och handlingslistan
 - `/export-to-notion [YYYY-MM-DD]` — Tillval: exportera en färdig vecka till Notion
-- `/mathem-cart [YYYY-MM-DD]` — Tillval, experimentellt: fyll Mathem-varukorgen
+- `/mathem-cart [mathem | willys] [YYYY-MM-DD]` — Tillval, experimentellt: fyll varukorgen hos Mathem eller Willys
 
 ## Referens
 

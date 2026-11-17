@@ -19,7 +19,7 @@ def sample_plan():
 
 def test_json_keys_match_spec():
     d = sample_plan().to_dict()
-    assert list(d) == ["vecka", "skapad", "rader", "undecided", "hoppade", "ej_med", "varningar", "total_kr"]
+    assert list(d) == ["vecka", "butik", "skapad", "rader", "undecided", "hoppade", "ej_med", "varningar", "total_kr"]
     assert d["skapad"] == "2026-09-24T18:02:11+02:00"
     assert d["rader"][0] == {"vara": "vispgrädde", "behov": {"mängd": 300, "enhet": "ml"},
                              "kategori": "Mejeri & Ägg", "produkt_id": 6851, "namn": "Garant Vispgrädde 36%",

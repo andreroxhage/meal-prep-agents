@@ -62,6 +62,13 @@ def check_allowed(method: str, url: str) -> None:
 
 
 class MathemSession:
+    # Overridden per store (WillysSession): the one gate every request passes, and the API base.
+    check = staticmethod(check_allowed)
+    base_url = BASE_URL
+    origin = ORIGIN
+    label = "Mathem"
+    credential_paths = CREDENTIAL_PATHS
+
     def __init__(self, contact: str, *, client: httpx.Client | None = None, min_interval: float = 1.0,
                  max_retries: int = 4, sleep: Callable[[float], None] = time.sleep,
                  clock: Callable[[], float] = time.monotonic,
@@ -96,7 +103,7 @@ class MathemSession:
 
     def _guard(self, request: httpx.Request) -> None:
         # httpx runs request hooks for the first request and for every redirect hop.
-        check_allowed(request.method, str(request.url))
+        self.check(request.method, str(request.url))
         self._wait_turn()
 
     def _wait_turn(self) -> None:
@@ -135,7 +142,7 @@ class MathemSession:
 
     def _rate_limited(self, method: str, path: str, seconds: float) -> MathemRequestError:
         return MathemRequestError(429, method, path,
-                                  hint=f"Mathem ber oss vänta {seconds:.0f} s — försök igen senare")
+                                  hint=f"{self.label} ber oss vänta {seconds:.0f} s — försök igen senare")
 
     @staticmethod
     def _retryable(method: str, code: int) -> bool:
@@ -147,7 +154,7 @@ class MathemSession:
               camel: bool = False, accept: str = "application/json") -> httpx.Response:
         method = method.upper()
         full = httpx.URL(url, params=params) if params else httpx.URL(url)
-        check_allowed(method, str(full))
+        self.check(method, str(full))
         path = full.path
         if self._blocked_until is not None:
             left = self._blocked_until - self._clock()
@@ -171,7 +178,7 @@ class MathemSession:
             if code in (401, 403):
                 raise MathemAuthError(f"{method} {path} -> HTTP {code}")
             if code >= 400:
-                body = None if path in CREDENTIAL_PATHS else resp.text[:300]
+                body = None if path in self.credential_paths else resp.text[:300]
                 raise MathemRequestError(code, method, path, body)
             return resp
         raise AssertionError("unreachable")
@@ -188,11 +195,11 @@ class MathemSession:
         return data
 
     def get_json(self, path: str, params: Mapping[str, Any] | None = None, *, camel: bool = False) -> Any:
-        return self._json(self._send("GET", BASE_URL + path, params=params, camel=camel), "GET")
+        return self._json(self._send("GET", self.base_url + path, params=params, camel=camel), "GET")
 
     def post_json(self, path: str, payload: Any, params: Mapping[str, Any] | None = None, *,
                   camel: bool = True) -> Any:
-        return self._json(self._send("POST", BASE_URL + path, params=params, json=payload, camel=camel), "POST")
+        return self._json(self._send("POST", self.base_url + path, params=params, json=payload, camel=camel), "POST")
 
     def login(self, email: str, password: str) -> None:
         """GET the login page to seed ``csrftoken``, then POST the credentials as JSON.

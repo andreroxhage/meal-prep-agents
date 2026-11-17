@@ -87,9 +87,9 @@ Användaren väljer 5 rätter → spawna 5 recipe-researcher-agenter parallellt:
 
 Följ avsnittet "Tillval efter Fas 5" i skillen `meal-planning-hello-fresh`: erbjud bara
 tillval med `integrations.<namn>.enabled: true`, och fråga inget om inget är aktiverat.
-Notion-exporten och Mathem-varukorgen körs som skills i huvudkonversationen. Kör du som
-subagent, be användaren köra `/export-to-notion [YYYY-MM-DD]` eller `/mathem-cart
-[YYYY-MM-DD]` själv.
+Notion-exporten och varukorgen (Mathem eller Willys) körs som skills i huvudkonversationen.
+Kör du som subagent, be användaren köra `/export-to-notion [YYYY-MM-DD]` eller
+`/mathem-cart [mathem | willys] [YYYY-MM-DD]` själv.
 
 Klart! Ingen stoppunkt efter detta.
 

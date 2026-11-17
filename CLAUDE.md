@@ -23,6 +23,7 @@ YYYY-MM-DD/                          # Date-based meal planning folders (gitigno
 ├── 04-alla-recept.md                # All recipes in standardized format (generated on request)
 ├── 05-meal-prep-plan.md             # Optimized prep timeline (generated on request)
 ├── 06-mathem-plan.json              # Mathem cart plan (mathem-cart plan, experimental)
+├── 06-willys-*.json/.md, .willys-*/ # Same files for Willys (mathem-cart --butik willys)
 ├── 06-mathem-varukorg.md            # Human-readable cart report (mathem-cart)
 ├── 06-mathem-kandidater.json        # Candidates for the matcher agents (mathem-cart, no prices)
 ├── .mathem-matchning/               # Per-part candidate files + matcher answers per round (mathem-cart)
@@ -32,13 +33,14 @@ meal-prep.example.yaml               # Household profile template + defaults (co
 meal-prep.local.yaml                 # The user's own profile, written by /setup (gitignored)
 .env.example                         # Template for .env (Mathem credentials; .env is gitignored)
 
-docs/design/                         # Design notes for the Mathem integration
+docs/design/                         # Design notes for the cart integration (Mathem, Willys)
 
-tools/mathem_cart/                   # Experimental Python CLI: shopping list → Mathem cart
+tools/mathem_cart/                   # Experimental Python CLI: shopping list → Mathem or Willys cart
 ├── README.md                        # Commands, .env variables, safety list
 ├── mathem-regler.yaml               # Committed rules (categories, limits, thresholds)
+├── willys-regler.yaml               # Same for Willys (started as a copy)
 ├── mathem-pins.example.yaml         # Pin file format; the user's pins go in mathem-pins.local.yaml (gitignored)
-├── mathem_cart/                     # Package: parser, planner, applier, Mathem client
+├── mathem_cart/                     # Package: parser, planner, applier; clients in mathem/ and willys/, chosen in stores.py
 └── tests/                           # pytest (offline, httpx.MockTransport)
 
 .claude/
@@ -118,7 +120,7 @@ User
   ├── Phase 4: recipe-compiler (sonnet)
   ├── Phase 5: meal-prep-optimizer (inherit)
   ├── (optional, off by default) export-to-notion
-  └── (optional, off by default, experimental) mathem-cart — Python CLI + mathem-matcher × N (haiku, PARALLEL) + mathem-granskare (sonnet)
+  └── (optional, off by default, experimental) mathem-cart (Mathem or Willys) — Python CLI + mathem-matcher × N (haiku, PARALLEL) + mathem-granskare (sonnet)
 ```
 
 ### Key Design Decisions
@@ -205,7 +207,7 @@ The workflow has **mandatory stop points** between phases. Never proceed to the 
 
 ### Optional integrations (off by default)
 
-Enabled per user with `/setup notion` / `/setup mathem`, which set
+Enabled per user with `/setup notion` / `/setup mathem` / `/setup willys`, which set
 `integrations.<name>.enabled: true` in `meal-prep.local.yaml`. After Phase 5, ask only
 about the enabled ones, in this order, and run each in the **main conversation**
 (Notion MCP isn't guaranteed in subagents; Mathem needs the user's explicit yes):
@@ -219,14 +221,17 @@ about the enabled ones, in this order, and run each in the **main conversation**
   character). Database IDs come only from `integrations.notion.*` in the profile. Prose
   written for Notion goes through `no-ai-slop`; content copied from `03`/`04`/`05` is
   published as is. Full procedure: `.claude/skills/export-to-notion/SKILL.md`.
-- **Mathem** (experimental, unofficial) — "Vill du att jag fyller varukorgen på Mathem
-  (experimentellt)?" → `mathem-cart` (`/mathem-cart [YYYY-MM-DD]`). Turns
-  `03-handlingslista.md` into a filled cart via the Python CLI in `tools/mathem_cart/`.
-  - **Never orders** — no checkout, delivery slot or order. The user checks the cart and orders in the Mathem app.
+- **Mathem / Willys** (experimental, unofficial) — "Vill du att jag fyller varukorgen på
+  <Butik> (experimentellt)?" → `mathem-cart` (`/mathem-cart [mathem | willys] [YYYY-MM-DD]`).
+  Turns `03-handlingslista.md` into a filled cart via the Python CLI in `tools/mathem_cart/`.
+  The store is `--butik mathem|willys` (default mathem); the skill takes it from its argument,
+  else the one enabled in the profile, and asks when both are on.
+  - **Never orders** — no checkout, delivery slot or order. The user checks the cart and orders in the store's app.
+  - **One road to the store**: the CLI's per-store allowlist. Never add a store MCP (e.g. cartway: its cart tools would bypass `apply`'s checks and the user's yes).
   - **Flow** (plan → matcher agents → `decide` → questions → `apply`): see `.claude/skills/mathem-cart/SKILL.md`. `apply` runs only on the user's explicit yes to the confirmation question in step 6 of that skill — subagents never run it.
-  - **Credentials**: `MATHEM_EMAIL`, `MATHEM_PASSWORD`, `MATHEM_BOT_CONTACT` (the user's own contact) in `.env` — gitignored, never committed, never printed, never written by Claude.
-  - Commands: `uv run --project tools/mathem_cart mathem-cart plan|decide|apply|pin|sök`.
-  - Design: `docs/design/mathem-varukorg.md`, matching: `docs/design/mathem-matchning.md`; usage: `tools/mathem_cart/README.md`.
+  - **Credentials**: `MATHEM_EMAIL`/`MATHEM_PASSWORD`, `WILLYS_USERNAME`/`WILLYS_PASSWORD`, `BOT_CONTACT` or `MATHEM_BOT_CONTACT` (the user's own contact) in `.env` — gitignored, never committed, never printed, never written by Claude.
+  - Commands: `uv run --project tools/mathem_cart mathem-cart plan|decide|apply|pin|sök [--butik willys]`.
+  - Design: `docs/design/mathem-varukorg.md`, matching: `docs/design/mathem-matchning.md`, stores: `docs/design/varukorg-butiker.md`; usage: `tools/mathem_cart/README.md`.
 
 ### Language & Units
 

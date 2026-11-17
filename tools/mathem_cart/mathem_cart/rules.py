@@ -46,7 +46,7 @@ class Rules:
     categories: Mapping[str, CategoryRule] = field(default_factory=dict)
     conversions: Conversions = field(default_factory=Conversions)
     warnings: tuple[str, ...] = ()   # load warnings (e.g. an old matchning block), printed by the CLI
-    elsewhere: Mapping[str, tuple[str, ...]] = field(default_factory=dict)   # place -> words (köps_inte_på_mathem)
+    elsewhere: Mapping[str, tuple[str, ...]] = field(default_factory=dict)   # place -> words (köps_inte_här / köps_inte_på_mathem)
     stock_up: StockUp = field(default_factory=StockUp)                       # storpack limits
     stock_up_words: tuple[str, ...] = ()                                     # storpack_varor
     frozen_ok_words: tuple[str, ...] = ()                                    # tillåt_fryst
@@ -54,10 +54,10 @@ class Rules:
     staple_exceptions: tuple[str, ...] = ()                                  # basvaror.utom, casefolded
 
     def bought_elsewhere(self, item_name: str) -> str | None:
-        """The place an item is bought instead of Mathem, when its head noun is a listed word.
+        """The place an item is bought instead of this store, when its head noun is a listed word.
 
         The head noun is the last word before any comma ("torrt vitt vin", "vin, torrt vitt"),
-        so "sherry vinäger" and "cider-vinäger" stay vinegar and are bought on Mathem.
+        so "sherry vinäger" and "cider-vinäger" stay vinegar and are bought in the store.
         """
         head = head_noun(item_name)
         for place, words in self.elsewhere.items():
@@ -196,6 +196,11 @@ def _staples(data: Any) -> tuple[dict[str, StockUp], tuple[str, ...]]:
     return staples, tuple(w.casefold() for w in exceptions)
 
 
+def ELSEWHERE_KEY(data: Mapping[str, Any]) -> str:  # noqa: N802 — reads like the key it returns
+    """`köps_inte_här` (new, any store) or the older `köps_inte_på_mathem`."""
+    return "köps_inte_här" if "köps_inte_här" in data else "köps_inte_på_mathem"
+
+
 def parse_rules(data: Mapping[str, Any]) -> Rules:
     data = _mapping(data, "regelfilen")
     matching = _mapping(data.get("matchning"), "matchning")
@@ -252,8 +257,8 @@ def parse_rules(data: Mapping[str, Any]) -> Rules:
         frozen_ok_words=_strings(data.get("tillåt_fryst"), "tillåt_fryst"),
         staples=staples,
         staple_exceptions=staple_exceptions,
-        elsewhere={str(place): _strings(words, f"köps_inte_på_mathem.{place}")
-                   for place, words in _mapping(data.get("köps_inte_på_mathem"), "köps_inte_på_mathem").items()},
+        elsewhere={str(place): _strings(words, f"{ELSEWHERE_KEY(data)}.{place}")
+                   for place, words in _mapping(data.get(ELSEWHERE_KEY(data)), ELSEWHERE_KEY(data)).items()},
     )
 
 

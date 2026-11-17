@@ -1,0 +1,224 @@
+{
+ "results": [
+  {
+   "code": "100149359_KG",
+   "name": "Paprika Röd Klass 1",
+   "manufacturer": null,
+   "displayVolume": "ca: 200g",
+   "productLine2": "ca: 200g",
+   "price": "59,90 kr",
+   "priceValue": 59.9,
+   "priceUnit": "kr/kg",
+   "comparePrice": "59,90 kr",
+   "comparePriceUnit": "kg",
+   "averageWeight": 0.2,
+   "potentialPromotions": [],
+   "labels": [
+    "keyhole"
+   ],
+   "outOfStock": false,
+   "addToCartDisabled": false,
+   "online": true,
+   "maxOrderQuantity": null
+  },
+  {
+   "code": "100816299_ST",
+   "name": "Paprika Mix Klass 1",
+   "manufacturer": null,
+   "displayVolume": "400g",
+   "productLine2": "400g",
+   "price": "29,90 kr",
+   "priceValue": 29.9,
+   "priceUnit": "kr/st",
+   "comparePrice": "74,75 kr",
+   "comparePriceUnit": "kg",
+   "averageWeight": null,
+   "potentialPromotions": [],
+   "labels": [
+    "keyhole"
+   ],
+   "outOfStock": false,
+   "addToCartDisabled": false,
+   "online": true,
+   "maxOrderQuantity": null
+  },
+  {
+   "code": "101667240_ST",
+   "name": "Paprikapulver Milt",
+   "manufacturer": "Eldorado",
+   "displayVolume": "70g",
+   "productLine2": "ELDORADO, 70g",
+   "price": "14,90 kr",
+   "priceValue": 14.9,
+   "priceUnit": "kr/st",
+   "comparePrice": "212,86 kr",
+   "comparePriceUnit": "kg",
+   "averageWeight": null,
+   "potentialPromotions": [
+    {
+     "qualifyingCount": 3,
+     "conditionLabel": "Välj & blanda! 3 för",
+     "rewardLabel": "35,00",
+     "redeemLimitLabel": "",
+     "campaignType": "GENERAL",
+     "comparePrice": "166,67 kr",
+     "price": {
+      "value": 11.666666666666666,
+      "formattedValue": "11,67 kr"
+     },
+     "promotionType": "MixMatchPricePromotion"
+    }
+   ],
+   "labels": [],
+   "outOfStock": false,
+   "addToCartDisabled": false,
+   "online": true,
+   "maxOrderQuantity": null
+  },
+  {
+   "code": "101203634_KG",
+   "name": "Nötfärs 12% Sverige",
+   "manufacturer": "Garant",
+   "displayVolume": "ca: 1kg",
+   "productLine2": "GARANT, ca: 1kg",
+   "price": "152,00 kr",
+   "priceValue": 152.0,
+   "priceUnit": "kr/kg",
+   "comparePrice": "152,00 kr",
+   "comparePriceUnit": "kg",
+   "averageWeight": 1.0,
+   "potentialPromotions": [],
+   "labels": [
+    "swedish_flag",
+    "meat_from_sweden"
+   ],
+   "outOfStock": false,
+   "addToCartDisabled": false,
+   "online": true,
+   "maxOrderQuantity": null
+  },
+  {
+   "code": "101106287_ST",
+   "name": "Nötfärs 12% Sverige",
+   "manufacturer": "Garant",
+   "displayVolume": "500g",
+   "productLine2": "GARANT, 500g",
+   "price": "78,90 kr",
+   "priceValue": 78.9,
+   "priceUnit": "kr/st",
+   "comparePrice": "157,80 kr",
+   "comparePriceUnit": "kg",
+   "averageWeight": null,
+   "potentialPromotions": [
+    {
+     "qualifyingCount": 1,
+     "conditionLabel": "Spara 9,00 kr/st",
+     "rewardLabel": "69,90/st",
+     "redeemLimitLabel": "Max 3 köp",
+     "campaignType": "LOYALTY",
+     "comparePrice": "139,80 kr",
+     "price": {
+      "value": 69.9,
+      "formattedValue": "69,90 kr"
+     },
+     "promotionType": "MixMatchPricePromotion"
+    }
+   ],
+   "labels": [
+    "swedish_flag",
+    "meat_from_sweden"
+   ],
+   "outOfStock": false,
+   "addToCartDisabled": false,
+   "online": true,
+   "maxOrderQuantity": null
+  },
+  {
+   "code": "101203622_KG",
+   "name": "Nötfärs 20% Irland",
+   "manufacturer": null,
+   "displayVolume": "ca: 1kg",
+   "productLine2": "ca: 1kg",
+   "price": "119,00 kr",
+   "priceValue": 119.0,
+   "priceUnit": "kr/kg",
+   "comparePrice": "119,00 kr",
+   "comparePriceUnit": "kg",
+   "averageWeight": 1.0,
+   "potentialPromotions": [],
+   "labels": [],
+   "outOfStock": false,
+   "addToCartDisabled": false,
+   "online": true,
+   "maxOrderQuantity": null
+  },
+  {
+   "code": "100269139_KG",
+   "name": "Lök Gul Klass 1",
+   "manufacturer": null,
+   "displayVolume": "ca: 175g",
+   "productLine2": "ca: 175g",
+   "price": "10,90 kr",
+   "priceValue": 10.9,
+   "priceUnit": "kr/kg",
+   "comparePrice": "10,90 kr",
+   "comparePriceUnit": "kg",
+   "averageWeight": 0.175,
+   "potentialPromotions": [],
+   "labels": [
+    "swedish_flag",
+    "keyhole"
+   ],
+   "outOfStock": false,
+   "addToCartDisabled": false,
+   "online": true,
+   "maxOrderQuantity": null
+  },
+  {
+   "code": "100930076_ST",
+   "name": "Lök Gul Eko Klass 1",
+   "manufacturer": "Garant Eko",
+   "displayVolume": "600g",
+   "productLine2": "GARANT EKO, 600g",
+   "price": "19,90 kr",
+   "priceValue": 19.9,
+   "priceUnit": "kr/st",
+   "comparePrice": "33,17 kr",
+   "comparePriceUnit": "kg",
+   "averageWeight": null,
+   "potentialPromotions": [
+    {
+     "qualifyingCount": 1,
+     "conditionLabel": "Spara 5,00 kr/st",
+     "rewardLabel": "14,90/st",
+     "redeemLimitLabel": "Max 5 köp",
+     "campaignType": "GENERAL",
+     "comparePrice": "24,83 kr",
+     "price": {
+      "value": 14.9,
+      "formattedValue": "14,90 kr"
+     },
+     "promotionType": "MixMatchPricePromotion"
+    }
+   ],
+   "labels": [
+    "ecological",
+    "krav",
+    "swedish_flag",
+    "eu_ecological",
+    "keyhole"
+   ],
+   "outOfStock": false,
+   "addToCartDisabled": false,
+   "online": true,
+   "maxOrderQuantity": null
+  }
+ ],
+ "pagination": {
+  "pageSize": 30,
+  "currentPage": 0,
+  "numberOfPages": 2,
+  "totalNumberOfResults": 49
+ },
+ "freeTextSearch": "paprika"
+}

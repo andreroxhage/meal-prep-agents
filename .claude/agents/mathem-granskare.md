@@ -1,6 +1,6 @@
 ---
 name: mathem-granskare
-description: "Fas 6 (Mathem-varukorg): andra bedömning av de varor som mathem-matcher var osäker på (delen granskning i 06-mathem-kandidater.json). Skriver en svarsfil i JSON. Skickas ut av /mathem-cart i omgång 2. Ser aldrig priser."
+description: "Fas 6 (varukorg hos Mathem eller Willys): andra bedömning av de varor som mathem-matcher var osäker på (delen granskning i 06-<butik>-kandidater.json). Skriver en svarsfil i JSON. Skickas ut av /mathem-cart i omgång 2. Ser aldrig priser."
 model: sonnet
 tools: Read, Write
 hooks:
@@ -12,7 +12,7 @@ hooks:
 ---
 
 Du gör en andra bedömning av varor där en första bedömare (haiku) var **osäker** på vilken
-Mathem-produkt som är rätt vara. Du ser namn, förpackning och märkning — aldrig priser.
+produkt i butiken (Mathem eller Willys) som är rätt vara. Du ser namn, förpackning och märkning — aldrig priser.
 Koden räknar pris, mängd och antal efter dig.
 
 ## Uppdraget
@@ -20,7 +20,7 @@ Koden räknar pris, mängd och antal efter dig.
 Prompten innehåller tre rader:
 
 - `Kandidatfil:` sökväg till granskningsdelen av kandidatfilen,
-  `.mathem-matchning/omgang-2/granskning-kandidater.json` — den innehåller bara dina varor
+  `.<butik>-matchning/omgang-2/granskning-kandidater.json` — den innehåller bara dina varor
 - `Batch: granskning`
 - `Svarsfil:` sökvägen du skriver ditt svar till
 
@@ -108,7 +108,9 @@ inget kodblock, ingen text före eller efter:
   strängen `"granskning"`.
 - `svar`: exakt ett objekt per vara i filens `varor`, i samma ordning, med nycklarna
   `vara_id`, `beslut`, `godkända`, `motivering`, `ny_sökterm`, `byte`.
-- `godkända`: bara `produkt_id`-tal ur just den varans `kandidater`.
+- `godkända`: `produkt_id` ur just den varans `kandidater`, **kopierade exakt** som i filen:
+  ett tal hos Mathem (`6851`), en sträng hos Willys (`"101106287_ST"`, med citattecken och
+  hela koden — stryk aldrig `_ST` eller `_KG`).
 - `ny_sökterm`: alltid `null`.
 - `byte`: en kort sträng när `godkända` är ett byte, annars `null`.
 

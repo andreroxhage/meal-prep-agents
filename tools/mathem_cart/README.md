@@ -1,9 +1,16 @@
-# mathem-cart (Fas 6, experimentell)
+# mathem-cart (Fas 6, experimentell) — Mathem och Willys
 
 Gör om veckans `03-handlingslista.md` till en granskad plan och, bara när du själv kör
 `apply`, en fylld varukorg på Mathem. **Verktyget lägger aldrig en beställning** — du
 kontrollerar och beställer i Mathem-appen. Design: [spec](../../docs/design/mathem-varukorg.md);
-matchningen: [matchningsspec](../../docs/design/mathem-matchning.md).
+matchningen: [matchningsspec](../../docs/design/mathem-matchning.md); fler butiker:
+[varukorg-butiker](../../docs/design/varukorg-butiker.md).
+
+**Butik:** `--butik mathem` (standard) eller `--butik willys` på varje kommando. Butiken
+styr filnamnen (`06-<butik>-plan.json`, `06-<butik>-varukorg.md`, `06-<butik>-kandidater.json`,
+`.<butik>-matchning/`, `.<butik>-cache/`), regelfilen (`<butik>-regler.yaml`) och pin-filen
+(`<butik>-pins.local.yaml`). Allt Mathem gjorde förut fungerar som förut utan flaggan.
+Willys `apply` är byggt efter cartways kartläggning men inte provkört mot ett riktigt konto.
 
 > **Inofficiellt.** Verktyget är inte knutet till eller godkänt av Mathem. Det använder
 > ditt eget konto och Mathems webb-API så som webbläsaren gör, och kan sluta fungera när
@@ -69,13 +76,17 @@ orsaken `matchning saknas`. Detaljer: [matchningsspec](../../docs/design/mathem-
 
 ## Miljövariabler (`.env` i repo-roten, gitignorerad)
 
-- `MATHEM_EMAIL`, `MATHEM_PASSWORD` — bara för `apply`. Skrivs aldrig ut, loggas eller sparas.
-- `MATHEM_BOT_CONTACT` — **din egen** kontaktadress (e-post eller URL) i User-Agent; krävs av
-  `plan`, `decide`, `sök` och `apply`. Mallen finns i `.env.example`.
+- `MATHEM_EMAIL`, `MATHEM_PASSWORD` — bara för `apply --butik mathem`. Skrivs aldrig ut, loggas eller sparas.
+- `WILLYS_USERNAME` (personnummer eller Willys Plus-nummer), `WILLYS_PASSWORD` — bara för
+  `apply --butik willys`. Samma regler.
+- `BOT_CONTACT` eller `MATHEM_BOT_CONTACT` — **din egen** kontaktadress (e-post eller URL) i
+  User-Agent; krävs av `plan`, `decide`, `sök` och `apply`. Mallen finns i `.env.example`.
 
 ## Säkerhet (spec §8)
 
-- Endast sex tillåtna anrop (sök, produkt, inloggning, läs/lägg i varukorg); allt annat stoppas före anropet.
+- Endast tillåtna anrop (Mathem sex, Willys sju: sök, produkt, inloggning, CSRF, läs/lägg i
+  varukorg); allt annat, och alla sökvägar med checkout, slot, order, payment, kassa eller
+  betal, stoppas före anropet och vid varje omdirigering.
 - `apply` kräver en tom varukorg och avbryter annars.
 - Gräns från `mathem-regler.yaml`: `max_antal_per_rad` (inget tak för varukorgens total).
 - Planen får vara högst `plan_max_ålder_h` gammal; `apply` fattar inga egna beslut.

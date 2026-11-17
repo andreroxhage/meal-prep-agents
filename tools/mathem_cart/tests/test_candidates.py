@@ -202,7 +202,7 @@ def test_frozen_digest_is_part_of_the_hash():
 def test_drop_warnings_name_a_few_items():
     items = pending(2)
     assert drop_warnings(items, {"v02": 8}) == [
-        "1 vara hade fler än 20 kandidater efter reglerna (Vara 2 +8); agenterna ser de 15 första i Mathems "
+        "1 vara hade fler än 20 kandidater efter reglerna (Vara 2 +8); agenterna ser de 15 första i butikens "
         "ordning och upp till 5 till med lägst jämförpris"]
     assert drop_warnings(items, {}) == []
 
@@ -212,4 +212,4 @@ def test_drop_warnings_summarise_many_items_in_one_line():
     items = pending(8)
     warnings = drop_warnings(items, {vara_id(i): i for i in range(1, 9)})
     assert warnings == ["8 varor hade fler än 20 kandidater efter reglerna (36 bortkapade); "
-                        "agenterna ser de 15 första i Mathems ordning och upp till 5 till med lägst jämförpris"]
+                        "agenterna ser de 15 första i butikens ordning och upp till 5 till med lägst jämförpris"]

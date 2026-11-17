@@ -68,3 +68,5 @@ integrations:
     recipes_data_source: null   # receptdatabasen
   mathem:
     enabled: false              # experimentellt; kräver uv, Python 3.11+ och .env
+  willys:
+    enabled: false              # experimentellt, som mathem; är båda på frågar /mathem-cart vilken butik

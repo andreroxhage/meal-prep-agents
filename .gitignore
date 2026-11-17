@@ -20,9 +20,11 @@ CLAUDE.local.md
 # Veckomappar (skapas per vecka). Exempel som ska committas ligger under examples/.
 /20??-??-??/
 
-# Mathem-cart: sökcache och matchningsfiler, var de än hamnar
+# mathem-cart (Mathem, Willys): sökcache och matchningsfiler, var de än hamnar
 .mathem-cache/
 .mathem-matchning/
+.willys-cache/
+.willys-matchning/
 
 # Python
 __pycache__/

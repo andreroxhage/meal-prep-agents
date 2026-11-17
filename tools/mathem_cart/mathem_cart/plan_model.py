@@ -1,7 +1,7 @@
 """Plan and apply-result data model, plus the `06-mathem-plan.json` format (spec §9).
 
 Python identifiers are English; the JSON keys are the Swedish keys from the spec.
-This module depends on nothing else in the package, so `report.py` can render a plan
+This module depends only on `ids.py` in the package, so `report.py` can render a plan
 without importing the planner or the client (plan deviation V6).
 """
 
@@ -12,6 +12,8 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+
+from .ids import ProductId, norm_id
 
 # Undecided reasons that more than one module sets.
 AMOUNT_MISSING = "mängd saknas"
@@ -49,7 +51,7 @@ class PlanLine:
     item: str
     need: Need
     category: str
-    product_id: int
+    product_id: ProductId
     name: str
     package: str
     count: int
@@ -85,7 +87,7 @@ class PlanLine:
             item=d["vara"],
             need=Need.from_dict(d["behov"]),
             category=d["kategori"],
-            product_id=int(d["produkt_id"]),
+            product_id=norm_id(d["produkt_id"]),
             name=d["namn"],
             package=d["förpackning"],
             count=int(d["antal"]),
@@ -103,7 +105,7 @@ class PlanLine:
 class Candidate:
     """A product offered to the user for an undecided item."""
 
-    product_id: int
+    product_id: ProductId
     name: str
     package: str
     price: float | None
@@ -124,7 +126,7 @@ class Candidate:
     def from_dict(cls, d: dict[str, Any]) -> Candidate:
         price = d.get("pris")   # an old "p" (model score) is ignored
         return cls(
-            product_id=int(d["produkt_id"]),
+            product_id=norm_id(d["produkt_id"]),
             name=d["namn"],
             package=d["förpackning"],
             price=None if price is None else float(price),
@@ -168,7 +170,7 @@ class Undecided:
 
 @dataclass
 class Plan:
-    """The whole reviewed plan, written to `06-mathem-plan.json`."""
+    """The whole reviewed plan, written to `06-<butik>-plan.json`."""
 
     week: str
     created: datetime
@@ -178,10 +180,12 @@ class Plan:
     excluded: list[str]
     warnings: list[str]
     total_kr: float  # round(sum(line.cost_kr), 2); set by the planner
+    store: str = "mathem"  # "butik"; plans written before Willys existed are Mathem plans
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "vecka": self.week,
+            "butik": self.store,
             "skapad": self.created.isoformat(),
             "rader": [line.to_dict() for line in self.lines],
             "undecided": [u.to_dict() for u in self.undecided],
@@ -205,6 +209,7 @@ class Plan:
             excluded=list(d.get("ej_med", [])),
             warnings=list(d.get("varningar", [])),
             total_kr=float(d["total_kr"]),
+            store=str(d.get("butik") or "mathem"),
         )
 
     def write(self, path: Path) -> None:
@@ -222,8 +227,8 @@ class ApplyResult:
     """What `apply` did: planned counts vs. counts read back from the cart."""
 
     applied_at: datetime
-    expected: dict[int, int]  # product_id -> planned count (summed)
-    actual: dict[int, int]  # product_id -> count in cart after apply
+    expected: dict[ProductId, int]  # product_id -> planned count (summed)
+    actual: dict[ProductId, int]  # product_id -> count in cart after apply
     differences: list[str]  # Swedish, one per problem
     error: str | None = None
 

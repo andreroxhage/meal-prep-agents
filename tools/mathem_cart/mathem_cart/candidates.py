@@ -22,11 +22,21 @@ from .mathem.models import Product
 from .shopping_list import Item
 
 BATCH_SIZE = 12
-SEARCH_ORDER_CANDIDATES = 15       # the first ones, in Mathem's search order
+SEARCH_ORDER_CANDIDATES = 15       # the first ones, in the store's search order
 EXTRA_UNIT_PRICE_CANDIDATES = 5    # then the planner's picks by jämförpris (planner.agent_order)
 MAX_AGENT_CANDIDATES = SEARCH_ORDER_CANDIDATES + EXTRA_UNIT_PRICE_CANDIDATES   # per item in the candidate file
 CANDIDATE_FILE = "06-mathem-kandidater.json"
 MATCH_DIR = ".mathem-matchning"
+
+
+def use_store(name: str) -> None:
+    """Point the candidate file and match folder at one store (``06-willys-kandidater.json``).
+
+    shortcut: module state set once per CLI run (one process = one store); pass the store
+    through the functions instead if one process ever handles two stores.
+    """
+    global CANDIDATE_FILE, MATCH_DIR
+    CANDIDATE_FILE, MATCH_DIR = f"06-{name}-kandidater.json", f".{name}-matchning"
 ROUND_COPY = "kandidater.json"
 REVIEW = "granskning"
 HASHED_KEYS = ("vecka", "omgång", "batcher", "granskning")
@@ -172,7 +182,7 @@ def drop_warnings(pending: Sequence[Pending], dropped: Mapping[str, int], cap: i
             else f"{sum(cut.values())} bortkapade")
     items = "1 vara" if len(cut) == 1 else f"{len(cut)} varor"
     return [f"{items} hade fler än {cap} kandidater efter reglerna ({what}); agenterna ser de "
-            f"{SEARCH_ORDER_CANDIDATES} första i Mathems ordning och upp till {EXTRA_UNIT_PRICE_CANDIDATES} till "
+            f"{SEARCH_ORDER_CANDIDATES} första i butikens ordning och upp till {EXTRA_UNIT_PRICE_CANDIDATES} till "
             "med lägst jämförpris"]
 
 

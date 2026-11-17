@@ -11,6 +11,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Mapping
 
+from ..ids import ProductId, norm_id
 from .errors import MathemProtocolError
 
 _CAMEL = re.compile(r"(?<!^)(?=[A-Z])")
@@ -39,7 +40,7 @@ def parse_price(value: Any) -> float | None:
 
 @dataclass(frozen=True, slots=True)
 class Product:
-    id: int
+    id: ProductId
     full_name: str
     brand: str | None
     name_extra: str | None
@@ -88,7 +89,7 @@ class Product:
 
 @dataclass(frozen=True, slots=True)
 class CartLine:
-    product_id: int
+    product_id: ProductId
     name: str
     quantity: int
     available: bool | None
@@ -102,8 +103,8 @@ class Cart:
     def is_empty(self) -> bool:
         return not self.lines
 
-    def quantity_of(self, product_id: int) -> int:
-        return sum(line.quantity for line in self.lines if line.product_id == int(product_id))
+    def quantity_of(self, product_id: ProductId) -> int:
+        return sum(line.quantity for line in self.lines if line.product_id == norm_id(product_id))
 
     @classmethod
     def from_api(cls, data: Mapping[str, Any]) -> "Cart":

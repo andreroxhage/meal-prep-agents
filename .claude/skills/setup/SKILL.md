@@ -1,7 +1,7 @@
 ---
 name: setup
-description: Kom igång — skapar eller ändrar hushållsprofilen (meal-prep.local.yaml) och slår på tillval som Notion-export och Mathem-varukorg. Använd första gången repot används, när användaren säger "setup", "kom igång", "konfigurera", "ändra portioner/allergier/utrustning", eller vill aktivera eller stänga av Notion eller Mathem.
-argument-hint: "[notion | mathem | visa]"
+description: Kom igång — skapar eller ändrar hushållsprofilen (meal-prep.local.yaml) och slår på tillval som Notion-export och varukorgen hos Mathem eller Willys. Använd första gången repot används, när användaren säger "setup", "kom igång", "konfigurera", "ändra portioner/allergier/utrustning", eller vill aktivera eller stänga av Notion, Mathem eller Willys.
+argument-hint: "[notion | mathem | willys | visa]"
 ---
 
 # Setup — hushållsprofil och tillval
@@ -20,6 +20,7 @@ behöver Notion-verktygen. Skriv allt till användaren på svenska.
 - `visa` → visa nuvarande profil (lokal fil, annars mallen) i en kort tabell och stanna
 - `notion` → bara steg 1 och Notion-delen av steg 4
 - `mathem` → bara steg 1 och Mathem-delen av steg 4
+- `willys` → bara steg 1 och Willys-delen av steg 4
 
 ## Regler
 
@@ -46,7 +47,7 @@ test -f meal-prep.local.yaml && echo "profil: finns" || echo "profil: saknas"
   säg det och ge installationstips (macOS: `brew install python`, Debian/Ubuntu:
   `sudo apt install python3`, Windows: kör i WSL).
 - `git` krävs: klona repot i stället för att ladda ner en zip.
-- `uv` behövs bara för Mathem.
+- `uv` behövs bara för Mathem och Willys.
 
 ### 2. Befintlig profil?
 
@@ -127,6 +128,24 @@ användaren väljer. Tillval som användaren väljer bort sätts till `enabled: 
 5. När `MATHEM_BOT_CONTACT` finns: testa sökningen med
    `uv run --project tools/mathem_cart mathem-cart sök mjölk` (loggar inte in).
 6. Skriv `integrations.mathem.enabled: true`.
+
+**Willys — fyll varukorgen (experimentellt)**
+1. Visa först, ordagrant: *"Willys-integrationen är inofficiell och inte knuten till
+   Willys. Den använder ditt eget konto (inloggning med personnummer eller Willys
+   Plus-nummer och lösenord), kan sluta fungera när Willys ändrar sin sajt, och lägger
+   aldrig en beställning — du granskar och beställer själv. Att lägga i varukorgen är
+   ännu inte provkört mot ett riktigt konto."* Fråga om användaren vill fortsätta.
+2. Kräv `uv` och Python 3.11+. Kör `uv sync --project tools/mathem_cart`.
+3. Be användaren fylla i `WILLYS_USERNAME`, `WILLYS_PASSWORD` och `BOT_CONTACT` (eller
+   befintlig `MATHEM_BOT_CONTACT`) själv i `.env` i en editor. Skriv aldrig värdena åt hen.
+4. Kontrollera nycklarna utan att visa värden:
+   ```bash
+   for v in WILLYS_USERNAME WILLYS_PASSWORD BOT_CONTACT MATHEM_BOT_CONTACT; do grep -q "^$v=." .env 2>/dev/null && echo "$v finns" || echo "$v saknas"; done
+   ```
+5. När en kontaktadress finns: testa sökningen med
+   `uv run --project tools/mathem_cart mathem-cart sök mjölk --butik willys` (loggar inte in).
+6. Skriv `integrations.willys.enabled: true`. Är Mathem också på frågar `/mathem-cart`
+   varje vecka vilken butik som gäller.
 
 ### 5. Skriv profilen och sammanfatta
 

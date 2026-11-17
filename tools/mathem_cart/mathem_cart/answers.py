@@ -8,11 +8,14 @@ that item's own candidates, so no answer can add a product. Pure apart from read
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Mapping, NamedTuple
 
 from .candidates import REVIEW
+
+_CODE_RE = re.compile(r"^\d+_[A-Z]+$")   # Willys product code, e.g. 101106287_ST
 
 DECISIONS = ("vald", "osäker", "ingen_passar")
 MAX_REASON = 160
@@ -57,6 +60,11 @@ def _is_int(value: Any) -> bool:
     return type(value) is int      # bool is an int subclass; True is not a product id
 
 
+def _is_id(value: Any) -> bool:
+    """A Mathem id (int) or a Willys code (``101106287_ST``); the candidate check decides the rest."""
+    return _is_int(value) or (isinstance(value, str) and bool(_CODE_RE.match(value)))
+
+
 def _unfence(text: str) -> tuple[str, bool]:
     stripped = text.strip()
     if stripped.startswith("```") and stripped.endswith("```") and "\n" in stripped:
@@ -67,7 +75,7 @@ def _unfence(text: str) -> tuple[str, bool]:
 class _Entry(NamedTuple):
     vara_id: str
     decision: str
-    ids: list[int]
+    ids: list[int | str]
     reason: str
     term: str | None
     swap: str | None
@@ -84,8 +92,8 @@ def _entry(index: int, raw: Any) -> _Entry:
     if not isinstance(decision, str) or decision not in DECISIONS:
         raise _Invalid(f"{where}.beslut måste vara vald, osäker eller ingen_passar, inte {decision!r}")
     ids = raw.get("godkända")
-    if not isinstance(ids, list) or not all(_is_int(x) for x in ids):
-        raise _Invalid(f"{where}.godkända måste vara en lista med produkt-id (heltal)")
+    if not isinstance(ids, list) or not all(_is_id(x) for x in ids):
+        raise _Invalid(f"{where}.godkända måste vara en lista med produkt-id (som i kandidatfilen)")
     reason = raw.get("motivering")
     if not isinstance(reason, str):
         raise _Invalid(f"{where}.motivering måste vara en sträng")

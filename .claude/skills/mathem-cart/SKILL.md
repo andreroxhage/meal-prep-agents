@@ -1,13 +1,13 @@
 ---
 name: mathem-cart
-description: Tillval, experimentellt (av som standard, aktiveras med /setup mathem). Fyller varukorgen på Mathem från veckans 03-handlingslista.md via mathem-cart (plan → matchning med agenter → decide → frågor → apply). Lägger aldrig en beställning. Använd som valfritt steg efter Fas 5 eller fristående på en veckomapp.
-argument-hint: "[YYYY-MM-DD]"
+description: Tillval, experimentellt (av som standard, aktiveras med /setup mathem eller /setup willys). Fyller varukorgen hos Mathem eller Willys från veckans 03-handlingslista.md via mathem-cart (plan → matchning med agenter → decide → frågor → apply). Lägger aldrig en beställning. Använd som valfritt steg efter Fas 5 eller fristående på en veckomapp.
+argument-hint: "[mathem | willys] [YYYY-MM-DD]"
 ---
 
-# Fyll Mathem-varukorgen (experimentell)
+# Fyll varukorgen hos Mathem eller Willys (experimentell)
 
 Gör om veckans `03-handlingslista.md` till en granskad plan och, efter användarens
-uttryckliga ja, en fylld varukorg på Mathem. Python-CLI:t `mathem-cart` i
+uttryckliga ja, en fylld varukorg hos butiken (`<butik>`: `mathem` eller `willys`). Python-CLI:t `mathem-cart` i
 `tools/mathem_cart/` söker, filtrerar, räknar mängder och validerar. Agenterna
 `mathem-matcher` (haiku, en per batch) och `mathem-granskare` (sonnet) bedömer vilka
 produkter som är rätt vara. Skillen kör kommandona, skickar ut agenterna, ställer frågorna
@@ -22,6 +22,8 @@ och visar resultatet. Den fattar inga egna köpbeslut.
 > - Läs, visa eller skriv **aldrig** innehållet i `.env`. Kontrollera bara att variablerna
 >   finns (steg 2). Skriv aldrig inloggningsuppgifter på kommandoraden
 >   (`MATHEM_PASSWORD=… mathem-cart apply`). CLI:t läser dem själv från `.env`.
+> - Använd aldrig någon annan väg till butiken (en MCP-server som cartway, webbläsaren,
+>   curl). Allt går genom CLI:t, där varje anrop kontrolleras mot en lista.
 > - Agenterna skriver bara sina svarsfiler. De kör aldrig mathem-cart, aldrig apply och
 >   läser aldrig .env.
 
@@ -31,23 +33,35 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
 
 ## Fasta värden
 
-- **Kommando:** `uv run --project tools/mathem_cart mathem-cart <kommando>`, från repo-roten.
-- **Filer i veckomappen:** `06-mathem-plan.json` (planen), `06-mathem-varukorg.md`
-  (rapporten), `06-mathem-kandidater.json` (vad agenterna bedömer, aktuell omgång — för stor
-  för en Read), `.mathem-matchning/` (en liten kandidatfil per del, svarsfiler och
-  omgångarnas kopior), `.mathem-cache/` (sökcache, 24 h).
-- **Regler och pins:** `tools/mathem_cart/mathem-regler.yaml`,
-  `tools/mathem_cart/mathem-pins.local.yaml` (gitignorerad, skapas vid första pin).
+- **Kommando:** `uv run --project tools/mathem_cart mathem-cart <kommando> --butik <butik>`, från
+  repo-roten. Skicka alltid med `--butik`; utan den gäller Mathem.
+- **Filer i veckomappen:** `06-<butik>-plan.json` (planen), `06-<butik>-varukorg.md`
+  (rapporten), `06-<butik>-kandidater.json` (vad agenterna bedömer, aktuell omgång — för stor
+  för en Read), `.<butik>-matchning/` (en liten kandidatfil per del, svarsfiler och
+  omgångarnas kopior), `.<butik>-cache/` (sökcache, 24 h).
+- **Regler och pins:** `tools/mathem_cart/<butik>-regler.yaml`,
+  `tools/mathem_cart/<butik>-pins.local.yaml` (gitignorerad, skapas vid första pin).
+- **Inloggning (bara `apply`):** Mathem `MATHEM_EMAIL`, `MATHEM_PASSWORD`; Willys
+  `WILLYS_USERNAME` (personnummer eller Willys Plus-nummer), `WILLYS_PASSWORD`. Kontaktadress i
+  User-Agent för båda: `BOT_CONTACT` eller `MATHEM_BOT_CONTACT`.
 - **Exitkoder:** `0` ok · `2` varor behöver beslut · `3` säkerhetsstopp · `4` matchning
   behövs · `1` övriga fel. Felmeddelanden går till stderr.
 
 ## Steg
 
-0. **Är Mathem aktiverat?** Läs `integrations.mathem.enabled` i `meal-prep.local.yaml`
-   (saknas filen gäller `meal-prep.example.yaml`, där Mathem är avstängt). Är det inte
-   `true`, eller saknas `uv` (`command -v uv`), eller saknas `.env` (`test -f .env`):
-   stoppa och säg åt användaren att köra `/setup mathem`. Mathem-integrationen är
-   inofficiell och inte knuten till Mathem; den körs på användarens eget konto.
+0. **Välj butik och kontrollera att den är på.**
+   - Butiken (`<butik>`) är `$ARGUMENTS[0]` om det är `mathem` eller `willys` (veckan är då
+     nästa argument). Annars: läs `integrations.mathem.enabled` och
+     `integrations.willys.enabled` i `meal-prep.local.yaml` (saknas filen gäller
+     `meal-prep.example.yaml`, där båda är av). Är bara en på: använd den. Är båda på: fråga
+     med `AskUserQuestion` vilken butik veckan ska handlas i.
+   - Är vald butik inte `true` i profilen, eller saknas `uv` (`command -v uv`), eller saknas
+     `.env` (`test -f .env`): stoppa och säg åt användaren att köra `/setup <butik>`.
+     Integrationerna är inofficiella och inte knutna till butikerna; de körs på
+     användarens eget konto.
+   - Willys `apply` är inte provkört mot ett riktigt konto (`docs/design/varukorg-butiker.md`
+     §4). Säg det i frågan i steg 6 första gången, och be användaren kontrollera varukorgen
+     extra noga.
 
 1. **Hitta veckomappen.**
    - Om `$ARGUMENTS[0]` angetts: använd `YYYY-MM-DD/`.
@@ -59,13 +73,13 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
 2. **Kontrollera att variablerna finns, utan att visa värden.**
 
    ```bash
-   for v in MATHEM_EMAIL MATHEM_PASSWORD MATHEM_BOT_CONTACT; do grep -q "^$v=." .env 2>/dev/null && echo "$v finns" || echo "$v saknas"; done
+   for v in BOT_CONTACT MATHEM_BOT_CONTACT MATHEM_EMAIL MATHEM_PASSWORD WILLYS_USERNAME WILLYS_PASSWORD; do grep -q "^$v=." .env 2>/dev/null && echo "$v finns" || echo "$v saknas"; done
    ```
 
-   - `MATHEM_BOT_CONTACT` (kontaktadress i User-Agent) krävs redan för `plan`, `decide`
-     och `sök`. Saknas den: be användaren lägga in den i `.env` och stoppa.
-   - `MATHEM_EMAIL` och `MATHEM_PASSWORD` behövs först för `apply`. Saknas de: fortsätt med
-     planen, men säg att de måste finnas i `.env` före steg 7.
+   - `BOT_CONTACT` eller `MATHEM_BOT_CONTACT` (kontaktadress i User-Agent) krävs redan för
+     `plan`, `decide` och `sök`. Saknas båda: be användaren lägga in en i `.env` och stoppa.
+   - Butikens inloggning (se Fasta värden) behövs först för `apply`. Saknas den: fortsätt
+     med planen, men säg att den måste finnas i `.env` före steg 7.
    - Variabler som är satta i skalets miljö räknas också (`.env` skriver aldrig över dem).
      Om kommandot säger "saknas" men användaren säger att de finns i miljön: lita på CLI:t,
      som namnger variabeln om den verkligen saknas.
@@ -73,12 +87,12 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
 3. **Gör planen.**
 
    ```bash
-   uv run --project tools/mathem_cart mathem-cart plan <vecka> --no-input [--hoppa "<vara>" …]
+   uv run --project tools/mathem_cart mathem-cart plan <vecka> --no-input --butik <butik> [--hoppa "<vara>" …]
    ```
 
    - `plan` söker, filtrerar med kategorireglerna och använder pins. Den loggar aldrig in,
      rör aldrig varukorgen och frågar aldrig. En ny `plan` kastar all tidigare matchning
-     (`06-mathem-kandidater.json` och `.mathem-matchning/`).
+     (`06-<butik>-kandidater.json` och `.<butik>-matchning/`).
    - `--hoppa` upprepas en gång per vara som användaren valt att hoppa över (steg 5). Håll
      listan över hela körningen och skicka med **alla** hoppade varor varje gång, både till
      `plan` och till `decide`.
@@ -89,13 +103,13 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
 
 4. **Matchningsloopen — högst två omgångar; `decide` nekar en tredje.**
 
-   a. **Läs inte `06-mathem-kandidater.json`** — den är för stor för en Read, och
+   a. **Läs inte `06-<butik>-kandidater.json`** — den är för stor för en Read, och
       produkterna är inte ditt jobb. `plan` och `decide` skriver i stället en rad per del på
       stdout, direkt efter sammanfattningsraden:
 
       ```
-        batch 1: <vecka>/.mathem-matchning/omgang-1/batch-01-kandidater.json → <vecka>/.mathem-matchning/omgang-1/batch-01.json
-        granskning: <vecka>/.mathem-matchning/omgang-2/granskning-kandidater.json → <vecka>/.mathem-matchning/omgang-2/granskning.json
+        batch 1: <vecka>/.<butik>-matchning/omgang-1/batch-01-kandidater.json → <vecka>/.<butik>-matchning/omgang-1/batch-01.json
+        granskning: <vecka>/.<butik>-matchning/omgang-2/granskning-kandidater.json → <vecka>/.<butik>-matchning/omgang-2/granskning.json
       ```
 
       Notera varje rad: delen (`batch N` eller `granskning`), dess kandidatfil (före pilen)
@@ -116,10 +130,10 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
    c. När alla har svarat:
 
       ```bash
-      uv run --project tools/mathem_cart mathem-cart decide <vecka> --no-input [--hoppa "<vara>" …]
+      uv run --project tools/mathem_cart mathem-cart decide <vecka> --no-input --butik <butik> [--hoppa "<vara>" …]
       ```
 
-      - stderr `Skicka om: batch 3 → .mathem-matchning/omgang-1/batch-03.json (saknas)` eller
+      - stderr `Skicka om: batch 3 → .<butik>-matchning/omgang-1/batch-03.json (saknas)` eller
         `(ogiltigt: <fel>)`, stdout `Omgång N: K svar behöver skickas om → …`, exit 4:
         skicka ut **bara** de delarna igen (`Skicka om: granskning → …` gäller granskaren),
         med samma tre rader som förra gången för den delen plus `Förra svaret var ogiltigt: <fel>. Skriv svarsfilen på
@@ -142,9 +156,9 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
 
 5. **Fråga om varje oavgjord vara.**
 
-   Läs `undecided` i `<vecka>/06-mathem-plan.json` (Read). Varje post har `vara`, `behov`
+   Läs `undecided` i `<vecka>/06-<butik>-plan.json` (Read). Varje post har `vara`, `behov`
    (`mängd`, `enhet`), `orsak`, `motivering` (modellens skäl, kan vara `null`) och upp till
-   fem `kandidater` i Mathems sökordning med `produkt_id`, `namn`, `förpackning`, `pris`,
+   fem `kandidater` i butikens sökordning med `produkt_id`, `namn`, `förpackning`, `pris`,
    `jämförpris` och `kampanj`.
 
    Per vara, ett `AskUserQuestion` (upp till fyra varor per anrop går bra):
@@ -163,16 +177,16 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
 
    Hantera svaret:
    - **En kandidat** →
-     `uv run --project tools/mathem_cart mathem-cart pin "<vara>" <produkt_id>`.
+     `uv run --project tools/mathem_cart mathem-cart pin "<vara>" <produkt_id> --butik <butik>`.
      Säger användaren att varan alltid ska vara exakt den produkten: lägg till `--fast`.
    - **Hoppa över** → lägg `--hoppa "<vara>"` till nästa `decide`-körning (och alla
      följande `plan`/`decide`). Varan hamnar under "Hoppade över" i rapporten och köps inte.
    - **Other (ny sökterm)** →
-     `uv run --project tools/mathem_cart mathem-cart sök "<term>"`. Utdata är en rubrikrad
+     `uv run --project tools/mathem_cart mathem-cart sök "<term>" --butik <butik>`. Utdata är en rubrikrad
      följt av en rad per träff: `id  namn  förpackning  pris  jämförpris  kampanj`.
      Ställ frågan igen med de tre första träffarna plus "Hoppa över". Spara både valet och
      söktermen i ett anrop:
-     `uv run --project tools/mathem_cart mathem-cart pin "<vara>" <produkt_id> --sök "<term>"`.
+     `uv run --project tools/mathem_cart mathem-cart pin "<vara>" <produkt_id> --sök "<term>" --butik <butik>`.
      Säger `sök` "Inga träffar": be om en annan term eller erbjud "Hoppa över".
    - Använd `vara` exakt som den står i planen. `pin` normaliserar namnet själv.
 
@@ -190,7 +204,7 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
    modellens val. Upprepa tills `decide` ger exit 0, det vill säga tills allt är avgjort
    eller hoppat över.
 
-6. **Visa sammanfattningen och fråga.** Läs `06-mathem-varukorg.md` (och vid behov planen)
+6. **Visa sammanfattningen och fråga.** Läs `06-<butik>-varukorg.md` (och vid behov planen)
    och visa:
    - total (`total_kr`) och antal rader,
    - raden `Beslut: pin … · fast … · haiku … · sonnet …` från senaste `plan`/`decide`,
@@ -201,18 +215,19 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
      frysbara varor och storpack, utom när `storpack` redan förklarar det), `ungefärlig`, `verifiera`,
      `storlek_osäker`, `ej föredragen` (inget svenskt fanns, så en importerad vara valdes),
      `storpack` (en större förpackning med lägre jämförpris valdes; den kostar mer nu — för
-     basvaror som potatis och ris är det en hel säck, se `basvaror` i `mathem-regler.yaml`),
+     basvaror som potatis och ris är det en hel säck, se `basvaror` i `<butik>-regler.yaml`),
      med modellens `motivering` för rader vars beslut är `haiku` eller `sonnet`,
    - hoppade varor (`hoppade`), varor som inte är med (`ej_med`, t.ex. salt och
      skafferivaror, och vin/öl markerade `köps på Systembolaget`) och eventuella varningar
      (`varningar`),
-   - en länk till `<vecka>/06-mathem-varukorg.md`.
+   - en länk till `<vecka>/06-<butik>-varukorg.md`.
 
    Har en rad flaggan `för_många` kommer `apply` att stoppa på gränsen
    `max_antal_per_rad`. Lös det först (välj en större förpackning med `pin`, eller hoppa
    över) och kör `decide` igen.
 
-   Fråga sedan exakt: **"Vill du att jag lägger allt i varukorgen på Mathem nu?"**
+   Fråga sedan exakt: **"Vill du att jag lägger allt i varukorgen på <Butik> nu?"** (`Mathem`
+   eller `Willys`).
 
    Bara ett tydligt ja kör vidare. Allt annat (nej, tvekan, en följdfråga, en ändring) →
    kör inte `apply`. Ändras planen efter frågan: kör `decide` igen (steg 5), visa
@@ -221,31 +236,31 @@ Agenterna skickas ut härifrån; en subagent kan inte skicka ut agenter.
 7. **Lägg i varukorgen.**
 
    ```bash
-   uv run --project tools/mathem_cart mathem-cart apply <vecka>
+   uv run --project tools/mathem_cart mathem-cart apply <vecka> --butik <butik>
    ```
 
    - `apply` läser planen, kontrollerar säkerhetsgränserna, loggar in, kräver en **tom**
      varukorg, lägger in planens rader precis som de står och läser tillbaka varukorgen.
    - `Inget att lägga i varukorgen.` (exit 0) → planen har inga rader. Säg det och stoppa.
    - **Exit 3** → säkerhetsstopp, ingenting är tillagt. Förklara orsaken från meddelandet:
-     - varukorgen är inte tom → användaren tömmer den på mathem.se och säger till, sedan
+     - varukorgen är inte tom → användaren tömmer den på mathem.se / willys.se och säger till, sedan
        körs `apply` igen (ingen ny fråga behövs om planen är oförändrad),
      - planen är äldre än `säkerhet.plan_max_ålder_h` i `tools/mathem_cart/mathem-regler.yaml` (meddelandet visar gränsen) → kör steg 3–6 igen,
      - en rad över `max_antal_per_rad` → visa gränsen och raden; ändra planen (steg 5)
-       eller låt användaren justera `mathem-regler.yaml`.
+       eller låt användaren justera `<butik>-regler.yaml`.
    - **Exit 1** →
      - saknad `MATHEM_EMAIL`/`MATHEM_PASSWORD`: meddelandet namnger variabeln (aldrig
        värdet). Be användaren lägga in den i `.env`.
      - `Inloggningen misslyckades`: ingenting är tillagt. Be användaren kontrollera
        e-post och lösenord i `.env`.
-     - fel mitt i (stderr säger `Töm varukorgen på mathem.se och kör apply igen`): visa
+     - fel mitt i (stderr säger `Töm varukorgen på <sajt> och kör apply igen`): visa
        rapportens avsnitt `## Resultat i varukorgen` (det som faktiskt kom in) och be
        användaren **tömma varukorgen** innan `apply` körs igen.
 
 8. **Visa verifieringen.** Visa stdout-raden (`N st av M produkter i varukorgen · K
    avvikelser`), varje `Avvikelse:`-rad från stderr och rapportens avsnitt
    `## Resultat i varukorgen`. Avsluta med:
-   **Ingen beställning är gjord — kontrollera varukorgen och beställ själv i Mathem-appen.**
+   **Ingen beställning är gjord — kontrollera varukorgen och beställ själv i <Butik>-appen.**
 
 ## Felsökning
 
@@ -257,5 +272,6 @@ Detta är det valfria, experimentella sista steget i matplaneringsworkflowet, ef
 `export-to-notion`. Det kan också köras fristående på en befintlig veckomapp via
 `/mathem-cart [YYYY-MM-DD]`. Design och säkerhetsregler:
 [spec](../../../docs/design/mathem-varukorg.md); matchningen med
-agenter: [matchningsspec](../../../docs/design/mathem-matchning.md).
+agenter: [matchningsspec](../../../docs/design/mathem-matchning.md); fler butiker:
+[varukorg-butiker](../../../docs/design/varukorg-butiker.md).
 Kommandon och miljövariabler: [tools/mathem_cart/README.md](../../../tools/mathem_cart/README.md).

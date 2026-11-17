@@ -124,5 +124,5 @@ def test_skill_never_dispatches_the_agents_as_general_purpose():
 
 def test_skill_does_not_read_the_whole_candidate_file():
     text = squash(SKILL.read_text(encoding="utf-8"))
-    assert "Läs `<vecka>/06-mathem-kandidater.json` med Read" not in text
-    assert "Läs inte `06-mathem-kandidater.json`" in text
+    assert "Läs `<vecka>/06-<butik>-kandidater.json` med Read" not in text
+    assert "Läs inte `06-<butik>-kandidater.json`" in text

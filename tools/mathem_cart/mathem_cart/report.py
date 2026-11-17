@@ -1,4 +1,4 @@
-"""Render `06-mathem-varukorg.md` from a Plan (and optionally an ApplyResult).
+"""Render `06-<butik>-varukorg.md` from a Plan (and optionally an ApplyResult).
 
 Depends only on `plan_model`. All text is Swedish, numbers use decimal comma.
 """
@@ -11,6 +11,8 @@ from .plan_model import SWAP, ApplyResult, Need, Plan, PlanLine, Undecided
 
 SOURCES = ("pin", "fast", "haiku", "sonnet")
 REASON_WIDTH = 80
+
+STORE_LABELS = {"mathem": "Mathem", "willys": "Willys"}   # report.py imports nothing else (V6)
 
 
 def fmt_num(x: float) -> str:
@@ -96,11 +98,12 @@ def _row(cells: list[str]) -> str:
 
 
 def render_report(plan: Plan, result: ApplyResult | None = None) -> str:
+    store = STORE_LABELS.get(plan.store, plan.store.capitalize())
     out: list[str] = [
-        "# Steg 6 — Mathem-varukorg (experimentell)",
+        f"# Steg 6 — {store}-varukorg (experimentell)",
         "",
         f"> Vecka {plan.week} · plan skapad {plan.created:%Y-%m-%d %H:%M}",
-        "> **Ingen beställning görs.** Kontrollera varukorgen och beställ själv i Mathem-appen.",
+        f"> **Ingen beställning görs.** Kontrollera varukorgen och beställ själv i {store}-appen.",
         "",
         f"**{len(plan.lines)} rader · totalt {fmt_kr(plan.total_kr)} · "
         f"{len(plan.undecided)} behöver beslut · {len(plan.skipped)} hoppade över**",
@@ -150,7 +153,8 @@ def render_report(plan: Plan, result: ApplyResult | None = None) -> str:
                     f"{i}. {c.name} (id {c.product_id}) · {c.package} · {fmt_kr(c.price)} · "
                     f"{fmt_unit_price(c.unit_price)} · {c.deal or '—'}"
                 )
-            out.append(f'Svara med `mathem-cart pin "{u.item}" <id>` eller kör `/mathem-cart`.')
+            flag = "" if plan.store == "mathem" else f" --butik {plan.store}"
+            out.append(f'Svara med `mathem-cart pin "{u.item}" <id>{flag}` eller kör `/mathem-cart`.')
 
     for heading, items in (
         ("Hoppade över", plan.skipped),
@@ -172,6 +176,6 @@ def render_report(plan: Plan, result: ApplyResult | None = None) -> str:
                 out.append("⚠️ Apply blev inte klar.")
             if result.error:
                 out.append(f"**Fel:** {result.error}")
-        out.append("Töm varukorgen i Mathem-appen och kör `apply` igen om något blev fel.")
+        out.append(f"Töm varukorgen i {store}-appen och kör `apply` igen om något blev fel.")
 
     return "\n".join(out) + "\n"

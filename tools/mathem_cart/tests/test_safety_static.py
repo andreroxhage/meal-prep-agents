@@ -33,11 +33,11 @@ IMPORTS = {n: imported_modules(t) for n, t in FILES.items()}
 
 
 def test_only_session_imports_httpx():
-    assert sorted(n for n, mods in IMPORTS.items() if "httpx" in mods) == ["mathem/session.py"]
+    assert sorted(n for n, mods in IMPORTS.items() if "httpx" in mods) == ["mathem/session.py", "willys/session.py"]
 
 
 def test_banned_words_only_in_session_ban_list():
-    offenders = [n for n, t in FILES.items() if n != "mathem/session.py"
+    offenders = [n for n, t in FILES.items() if n not in ("mathem/session.py", "willys/session.py")
                  and re.search(r"checkout|/slots?/|/orders?/", t, re.I)]
     assert offenders == []
 
@@ -52,8 +52,8 @@ def test_environment_only_read_in_cli():
     assert readers == ["cli.py"]
 
 
-CART_OR_LOGIN = {"login", "CartClient", "apply_plan", "post_json"}
-CART_OR_LOGIN_HOMES = {"mathem/session.py", "mathem/cart.py", "applier.py"}
+CART_OR_LOGIN = {"login", "CartClient", "WillysCart", "cart", "apply_plan", "post_json", "refresh_csrf"}
+CART_OR_LOGIN_HOMES = {"mathem/session.py", "mathem/cart.py", "willys/session.py", "willys/cart.py", "applier.py"}
 
 
 def cart_or_login_calls(name, text):
