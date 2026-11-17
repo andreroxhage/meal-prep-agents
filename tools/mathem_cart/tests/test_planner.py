@@ -446,3 +446,14 @@ def test_sesame_by_the_spoon_needs_two_small_bags(tmp_path):
     item = parse_shopping_list("## Skafferi\n- 5 msk sesamfrön\n").items[0]
     line = planner.line_for(item, [_pack(8068, "Santa Maria Sesamfrö", "38 g", 20)], "haiku")
     assert line.count == 2 and "överköp" in line.flags
+
+
+@pytest.mark.parametrize("line,term", [
+    ("- 1 l mjölk, laktosfri (Mac 7,5 dl)", "laktosfri mjölk"),
+    ("- 3 dl crème fraiche 32 %, laktosfri (Laxpasta)", "laktosfri crème fraiche 32 %"),
+    ("- 1 l laktosfri mjölk", "laktosfri mjölk"),
+    ("- 1 l mjölk (Mac)", "mjölk"),
+])
+def test_search_term_carries_laktosfri_from_the_note(tmp_path, line, term):
+    item = parse_shopping_list("## Mejeri & Ägg\n" + line + "\n").items[0]
+    assert Planner(deps(tmp_path)).term_for(item) == term

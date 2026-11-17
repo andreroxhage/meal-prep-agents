@@ -9,6 +9,7 @@ interactive questions and saves the answers as pins (base spec §6 "Asking").
 
 from __future__ import annotations
 
+import re
 from collections import Counter
 from dataclasses import dataclass, field, replace
 from datetime import datetime
@@ -28,6 +29,9 @@ MAX_QUESTIONS = 5     # interactive answers per item before giving up
 SHOWN_CANDIDATES = 5  # candidates shown for an undecided item
 SPICE_CATEGORY = "kryddor & såser"
 USER_DECISIONS = ("pin", "fast")
+# Requirements in a list note that go into the search term, so the top hits already meet them
+# ("1 l mjölk, laktosfri": a plain "mjölk" search buries the cheap laktosfri litres).
+SEARCH_QUALIFIERS = ("laktosfri", "glutenfri")
 
 
 @dataclass(frozen=True)
@@ -143,7 +147,12 @@ class Planner:
 
     def term_for(self, item: Item) -> str:
         pin = self.deps.pins.get(item.key)
-        return pin.search if pin and pin.search else item.key
+        if pin and pin.search:
+            return pin.search
+        have = set(re.findall(r"\w+", item.key))
+        wanted = set(re.findall(r"\w+", (item.note or "").casefold()))
+        extra = [q for q in SEARCH_QUALIFIERS if q in wanted and q not in have]
+        return " ".join([*extra, item.key])
 
     def candidates_for(self, item: Item, term: str) -> list[Product]:
         kept, _ = filter_candidates(self.deps.search(term), self.deps.rules.rule_for(item.name, item.category))
