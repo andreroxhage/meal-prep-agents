@@ -57,7 +57,7 @@ sjuder sedan i masalan tills bitarna delar sig mot skedkanten.
 
 ### 2) Rosta de hela kryddorna
 
-- Smält **4 msk** ghee i en vid gryta på medelhög värme.
+- Hetta upp **4 msk** ghee eller rapsolja i en vid gryta på medelhög värme.
 - Lägg i **2 tsk** spiskumminfrön, **1** kanelstång, **6 st** grön kardemumma (kapslarna lätt krossade), **4** nejlikor och **2** lagerblad. Fräs 45–60 sek tills spiskumminet fräser och doftar nötigt — kryddorna får inte mörkna, då blir de beska.
 
 ### 3) Bryn löken ordentligt

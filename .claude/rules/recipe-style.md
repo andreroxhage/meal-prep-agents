@@ -20,7 +20,7 @@ Ett recept läses i tre lägen, och standarden ska bära alla tre:
 |---|---|---|
 | Inköp | Hur mycket behöver jag totalt? | Regel 3, Regel 4a |
 | Planering | När börjar jag med vad? Hur lång tid tar det? | Regel 4b, Regel 7, Regel 9 |
-| Utförande | Vad gör jag nu, och gick det rätt? | Regel 1, Regel 5, Regel 6, Regel 8 |
+| Utförande | Vad gör jag nu, och gick det rätt? | Regel 1, 1a, Regel 5, Regel 6, Regel 8 |
 
 ## Regel 1 — mängden står i instruktionen (viktigast)
 
@@ -38,6 +38,24 @@ Undantag — ingrediensen behöver ingen mängd i steget om ingredienslistan ang
 `efter smak`, `valfritt`, `till servering`, `till stekning` eller `att servera till`.
 Behövs undantag i övriga fall: sätt `<!-- no-qty: [kort motivering] -->` sist på
 ingrediensraden.
+
+### 1a — alternativet står i steget
+
+Har ingrediensraden ett alternativ ska steget nämna båda, där varan används. Den som
+köpte äppelcider letar efter ordet "cider" i steget, inte "vin":
+
+- `- 1,5 dl torrt vitt vin (eller äppelcider)` →
+  ✅ `Häll i **1,5 dl** torrt vitt vin eller äppelcider och skrapa loss stekskorpan.`
+- ❌ `Häll i **1,5 dl** torrt vitt vin och skrapa loss stekskorpan.`
+
+Ett alternativ skrivs `X eller Y` i namnet eller som en parentes som börjar med `eller`:
+`(eller rapsolja)`, `(eller 2 tsk honung)`. Har alternativet en egen mängd står den
+också i steget: `**1–2 msk** socker (eller **2 tsk** honung)`. En parentes som bara
+preciserar sorten, `(kalv, nöt eller höns)` eller `(rivna eller strimlade)`, är inget
+alternativ och behöver inte upprepas.
+
+Ändrar alternativet hur steget utförs (en annan tid, en annan teknik) är det en variant:
+beskriv den i `## Noter` och peka dit från steget (Regel 7).
 
 ## Regel 2 — varje ingrediens används
 

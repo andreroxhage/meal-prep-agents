@@ -68,7 +68,7 @@ förblir klar, och varje skål toppas vid bordet med örter, lime, chili och bö
 ### 4) Sila och smaka av
 
 - Sila buljongen.
-- Smaka av med **5 tsk** fisksås, **1–2 msk** socker och **1,5 tsk** salt, lite i taget,
+- Smaka av med **5 tsk** fisksås, **1–2 msk** socker (eller **2 tsk** honung) och **1,5 tsk** salt, lite i taget,
   tills buljongen smakar varm, rund och lite söt och salt. Fisksåsen är resten av
   listans 2 msk; kryddade du inte köttet i steg 3 tar du alla 2 msk här.
 - Vill du ha kraftigare buljong, koka ner den 10–20 min till.
@@ -84,7 +84,7 @@ förblir klar, och varje skål toppas vid bordet med örter, lime, chili och bö
 - Fördela nudlarna och kycklingen i 6 skålar.
 - Koka upp buljongen och häll den kokhet över.
 - Toppa med **6** strimlade salladslökar, **1 knippe** koriander, **1 knippe** mynta,
-  **250–300 g** böngroddar, **2–3** lime i klyftor och **1–2** färska chilifrukter.
+  **250–300 g** böngroddar, **2–3** lime i klyftor och **1–2** färska chilifrukter eller chiliolja.
 - Ställ fram hoisinsås och sriracha vid sidan.
 
 ## Matlåda / förvaring

@@ -187,6 +187,17 @@ brödlik; över 85 % kollapsar degen i formen utan surdegens styrka.
 hon scrolla tillbaka till listan mitt i momentet. Detta är hela poängen med Regel 1 —
 mängden hör till handlingen, inte bara till inköpet.
 
+### Par 1a — alternativet i steget (Regel 1a)
+
+- ❌ Listan säger `- 1,5 dl torrt vitt vin (eller äppelcider)`, steget säger
+  `Häll i **1,5 dl** torrt vitt vin och skrapa loss stekskorpan.`
+- ✅ `Häll i **1,5 dl** torrt vitt vin eller äppelcider och skrapa loss stekskorpan.`
+
+*Varför:* den som handlade alternativet har en flaska cider på bänken och ett steg som
+talar om vin. Hon får gissa om cidern ska i här, eller om den hörde till ett annat
+steg. Alternativet skrevs för att det står i handlingslistan, så det ska stå där varan
+används också.
+
 ### Par 2 — ingrediensrad
 
 - ❌ `- Mjölk — 1,5 dl` / `- **1 dl**ströbröd` / `- 1.2 kg kycklingfilé`

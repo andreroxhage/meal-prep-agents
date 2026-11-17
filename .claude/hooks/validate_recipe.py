@@ -49,6 +49,7 @@ FILLER = {
     "pressat", "kokt", "kokta", "okokt", "nymalen", "malen", "benfri", "torkad",
     "torkade", "rostad", "rostade", "fryst", "frysta", "urkärnad", "valfritt",
     "gärna", "delad", "delade", "halverad", "halverade",
+    "mörk", "mörka", "mörkt", "torr", "torra", "torrt", "vitt",
 }
 
 # Ingredienser med dessa fraser behover ingen mangd i steget.
@@ -81,6 +82,9 @@ class Ingredient:
     skip_qty: bool
     skip_all: bool
     group: str = ""
+    # Utbytbara varor ('mjölk eller grädde', '(eller rapsolja)') som (visningsnamn,
+    # karnord). Tom nar raden inte har nagot alternativ.
+    options: list[tuple[str, str]] = field(default_factory=list)
 
 
 @dataclass
@@ -344,6 +348,7 @@ def parse_ingredients(lines: list[str], rep: Report) -> list[Ingredient]:
             rep.tip(f"rad {idx + 1}: kunde inte läsa ut något ingrediensnamn ur {body!r}.")
             continue
 
+        options = extract_options(name, body_clean[qty.end():] if qty else body_clean)
         headwords = extract_headwords(name)
         if not headwords:
             continue
@@ -363,6 +368,7 @@ def parse_ingredients(lines: list[str], rep: Report) -> list[Ingredient]:
                 skip_qty=skip_qty,
                 skip_all=skip_all,
                 group=groups.get(idx + 1, ""),
+                options=options if len(options) > 1 else [],
             )
         )
     return out
@@ -379,6 +385,37 @@ def extract_headwords(name: str) -> list[str]:
         elif words:
             heads.append(words[0])
     return [h for h in heads if h]
+
+
+ALTERNATIVE_SPLIT = re.compile(r"\s*/\s*|\s+eller\s+")
+
+
+def extract_options(name: str, rest: str) -> list[tuple[str, str]]:
+    """Utbytbara varor pa raden som (visningsnamn, karnord).
+
+    Ett alternativ ar 'X eller Y' (eller 'X/Y') i namnet, eller en parentes som
+    borjar med 'eller' ('(eller rapsolja)', '(1 liten; eller spetskål)'). En
+    parentes som bara preciserar sorten ('(kalv, nöt eller höns)') ar inget
+    alternativ och kraver inget i steget.
+    """
+    displays = [part.strip() for part in ALTERNATIVE_SPLIT.split(name) if part.strip()]
+    for inner in re.findall(r"\(([^)]*)\)", rest):
+        for part in inner.split(";"):
+            m = re.match(r"^\s*eller\s+(.+)$", part, re.IGNORECASE)
+            if not m:
+                continue
+            alt = m.group(1)
+            qty = QTY_RE.match(alt)
+            if qty and qty.group(0).strip():
+                alt = alt[qty.end():]
+            alt = re.split(r"[,+]", alt)[0]
+            displays += [a.strip(" ,.;:") for a in ALTERNATIVE_SPLIT.split(alt) if a.strip(" ,.;:")]
+    out: list[tuple[str, str]] = []
+    for display in displays:
+        heads = extract_headwords(display)
+        if heads and heads[0] not in [h for _, h in out]:
+            out.append((display, heads[0]))
+    return out
 
 
 def list_items(lines: list[str], bounds: tuple[int, int], marker: str) -> list[tuple[int, str]]:
@@ -453,6 +490,35 @@ def find_mention(step: str, headwords: list[str]) -> int | None:
     return None
 
 
+def names_option(step: str, headword: str) -> bool:
+    """Strangare an find_mention: 'fläskfilé' ska inte hittas i 'fläskytterfilé'.
+
+    Alternativ delar ofta forled med huvudvaran ('tomater' / 'tomatpuré'), sa ett
+    prefix racker inte. Ordet maste vara karnordet plus en bojningsandelse.
+    """
+    folded = fold(headword)
+    stems = {folded} | {
+        folded[: -len(e)] for e in INFLECTIONS if e and folded.endswith(e) and len(folded) - len(e) >= 3
+    }
+    for word in re.findall(r"[A-Za-zÀ-öø-ÿ]+", step):
+        fw = fold(word)
+        if any(fw.startswith(stem) and fw[len(stem):] in INFLECTIONS for stem in stems):
+            return True
+    return False
+
+
+def check_options(ing: Ingredient, line_no: int, step: str, rep: Report) -> None:
+    missing = [display for display, head in ing.options if not names_option(step, head)]
+    if missing:
+        both = " eller ".join(display for display, _ in ing.options)
+        rep.error(
+            f"rad {line_no}: steget nämner inte alternativet "
+            f"{' / '.join(repr(m) for m in missing)} från rad {ing.line_no}. Den som "
+            f"handlade alternativet letar efter det i steget — skriv '{both}' där "
+            "varan används (Regel 1a)."
+        )
+
+
 def check_amounts(ingredients: list[Ingredient], steps: list[tuple[int, str]], rep: Report) -> None:
     if not steps:
         rep.error("hittar inga instruktionssteg under '## Gör så här' (Regel 4).")
@@ -476,10 +542,20 @@ def check_amounts(ingredients: list[Ingredient], steps: list[tuple[int, str]], r
             )
             continue
 
+        line_no, step, pos = first
+        if ing.options:
+            # Prefixmatchningen kan hitta varan i fel steg ('körsbärstomater' i
+            # 'krossade tomater'). Kontrollera alternativen dar huvudvaran star utskriven.
+            main_head = ing.options[0][1]
+            alt_line, alt_step = next(
+                ((n, s) for n, s in steps if names_option(s, main_head)),
+                (line_no, step),
+            )
+            check_options(ing, alt_line, alt_step, rep)
+
         if ing.skip_qty or not ing.has_number:
             continue
 
-        line_no, step, pos = first
         present, bolded = qty_near(step, pos)
         example = f"**{ing.amount}** {ing.name}" if ing.amount else f"**mängd** {ing.name}"
         if not present:
