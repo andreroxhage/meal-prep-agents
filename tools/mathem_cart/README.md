@@ -49,7 +49,8 @@ orsaken `matchning saknas`. Detaljer: [matchningsspec](../../docs/design/mathem-
   lägst jämförpris för det som faktiskt köps (kampanjer inräknade) bland alternativen som
   kostar högst `storpack_max_merkostnad` (50 %) eller `storpack_max_merkostnad_kr` (100 kr),
   det som är minst, mer än det billigaste. Raden flaggas `storpack` när en större förpackning
-  valdes. Övriga varor: lägst totalkostnad inom `max_överköp`. Agenterna får också upp till 5
+  valdes. Övriga varor: lägst totalkostnad inom `max_överköp`, men en större förpackning som kostar
+  mindre totalt vinner ändå och flaggas `överköp`. Agenterna får också upp till 5
   extra kandidater med lägst jämförpris, så storpack hittar storförpackningar längre ner i sökningen.
 - `basvaror` (huvudord: potatis, lök, morötter, ris, pasta, couscous, linser, havregryn …):
   billiga baslivsmedel som köps i storpack. Storpackens 50 % räcker aldrig för en påse för

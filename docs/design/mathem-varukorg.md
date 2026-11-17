@@ -277,7 +277,8 @@ For each product in the accepted set:
 1. `n = ceil(need / package_size)`, respecting `max_antal`.
 2. `cost` = sum with multibuy deals applied.
 3. `överköp = (n × size − need) / need`.
-4. Drop if `överköp > max_överköp` for the category, unless the category is `frysbar`.
+4. Prefer options with `överköp ≤ max_överköp` for the category (no cap when `frysbar`), but an
+   option over the cap that costs less in total still wins and is flagged `överköp`.
 
 **Storpack** (2026-10-01): for an item in a `storpack: ja` category or whose head noun is in
 `storpack_varor`, step 4 is skipped and the pick is the lowest effective jämförpris

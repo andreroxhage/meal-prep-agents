@@ -160,8 +160,9 @@ def choose(need: Amount, offers: Sequence[Offer], *, max_overshoot: float | None
            stock_up: StockUp | None = None) -> Choice:
     """Cheapest option within the overshoot cap (None = frysbar, no cap).
 
-    Tie → lower jämförpris → smaller overshoot. If every option exceeds the cap, the
-    smallest overshoot wins and is flagged `överköp`. No usable offer → reason.
+    Tie → lower jämförpris → smaller overshoot. An option over the cap that costs less in
+    total than every option within it still wins, flagged `överköp`. If every option exceeds
+    the cap, the smallest overshoot wins and is flagged `överköp`. No usable offer → reason.
     `spoon_measure`: the need came from msk/tsk/krm, so an offer the need can't be
     converted to (a jar sold by weight) counts as one package (spec §7).
 
@@ -221,6 +222,10 @@ def choose(need: Amount, offers: Sequence[Offer], *, max_overshoot: float | None
         return Choice(best, None, ranked)
     within = [o for o in ranked if max_overshoot is None or o.overshoot <= max_overshoot + EPS]
     if within:
-        return Choice(within[0], None, ranked)
+        # A bigger pack that costs less in total is never rejected for overshoot, only flagged.
+        best = ranked[0] if ranked[0].cost < within[0].cost - EPS else within[0]
+        if best is not within[0]:
+            best = replace(best, flags=best.flags + ("överköp",))
+        return Choice(best, None, ranked)
     best = min(ranked, key=lambda o: (o.overshoot, *_sort_key(o)))
     return Choice(replace(best, flags=best.flags + ("överköp",)), None, ranked)

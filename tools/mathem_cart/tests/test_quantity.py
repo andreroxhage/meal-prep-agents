@@ -36,11 +36,18 @@ def test_max_count_drops_offer_that_cannot_cover_need():
     assert choice.option.offer.product_id == 2 and choice.option.count == 3
 
 
-def test_overshoot_cap_prefers_closer_package():
-    kilo, small = offer(1, 1000, 19.90), offer(2, 350, 22.00)
+def test_overshoot_cap_prefers_closer_package_at_equal_or_higher_cost():
+    kilo, small = offer(1, 1000, 22.00), offer(2, 350, 22.00)
     choice = choose(Amount(300, "g"), [kilo, small], max_overshoot=0.25)
     assert choice.option.offer.product_id == 2
     assert "överköp" not in choice.option.flags
+
+
+def test_cheaper_pack_over_the_cap_still_wins_and_is_flagged():
+    # 1 l laktosfri milk: 1,5 l for 19,50 kr beats 1 l for 19,95 kr despite 50 % overbuy.
+    big, exact = offer(5288, 1500, 19.50, dim="ml"), offer(5128, 1000, 19.95, dim="ml")
+    choice = choose(Amount(1000, "ml"), [exact, big], max_overshoot=0.25)
+    assert choice.option.offer.product_id == 5288 and "överköp" in choice.option.flags
 
 
 def test_frysbar_has_no_cap():
