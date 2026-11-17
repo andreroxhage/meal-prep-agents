@@ -65,7 +65,7 @@ def test_answer_example_has_the_contract_shape(name, batch):
         assert list(example) == ["kandidat_id", "omgång", "batch", "svar"]
         assert type(example["omgång"]) is int and example["batch"] == batch
         for entry in example["svar"]:
-            assert list(entry) == ["vara_id", "beslut", "godkända", "motivering", "ny_sökterm"]
+            assert list(entry) == ["vara_id", "beslut", "godkända", "motivering", "ny_sökterm", "byte"]
             assert entry["beslut"] in ("vald", "osäker", "ingen_passar")
             assert all(type(i) is int for i in entry["godkända"]) and len(entry["motivering"]) <= 160
             if entry["beslut"] != "ingen_passar" or batch == "granskning":

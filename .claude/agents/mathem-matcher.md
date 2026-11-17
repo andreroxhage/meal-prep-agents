@@ -99,7 +99,8 @@ Varan `v02` "Vispgrädde" (anteckning tom) har kandidaterna 6851 "Garant Vispgr�
 2380 "Arla Köket Vispgrädde 40%" och 7010 "Oatly iMat Visp". Varan `v05` "Högrev"
 (anteckning "i bit") har 2737 "Scan Högrev Bit" och 2741 "Högrevsburgare 4-pack". Varan
 `v06` "Laxfilé" (anteckning "benfri utan skinn") har bara 3300 "Laxfilé med skinn". Varan
-`v07` "Perillablad" har inga kandidater.
+`v07` "Perillablad" har inga kandidater. Varan `v08` "Röda paprikor" har bara 6833 "Paprika
+spetsig röd" och 4010 "Paprika mix 3-pack".
 
 ```json
 {"kandidat_id": "3f9a1c0e7b2d", "omgång": 1, "batch": 1,
@@ -107,7 +108,8 @@ Varan `v02` "Vispgrädde" (anteckning tom) har kandidaterna 6851 "Garant Vispgr�
   {"vara_id": "v02", "beslut": "vald", "godkända": [6851, 2380], "motivering": "Vanlig vispgrädde; iMat Visp är havrebaserad ersättning", "ny_sökterm": null, "byte": null},
   {"vara_id": "v05", "beslut": "vald", "godkända": [2737], "motivering": "Scan Högrev Bit är hel bit; burgare är fel form", "ny_sökterm": null, "byte": null},
   {"vara_id": "v06", "beslut": "ingen_passar", "godkända": [], "motivering": "Listan kräver utan skinn; enda kandidaten har skinn", "ny_sökterm": "laxfilé utan skinn", "byte": null},
-  {"vara_id": "v07", "beslut": "ingen_passar", "godkända": [], "motivering": "Inga kandidater", "ny_sökterm": "shiso", "byte": null}
+  {"vara_id": "v07", "beslut": "ingen_passar", "godkända": [], "motivering": "Inga kandidater", "ny_sökterm": "shiso", "byte": null},
+  {"vara_id": "v08", "beslut": "vald", "godkända": [6833], "motivering": "Ingen vanlig röd paprika; spetspaprika är närmast, mixen är fel färger", "ny_sökterm": null, "byte": "spetspaprika, inte vanlig röd paprika"}
  ]}
 ```
 
