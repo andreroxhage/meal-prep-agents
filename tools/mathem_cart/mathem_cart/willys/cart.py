@@ -21,10 +21,14 @@ def cart_from_willys(data: Mapping[str, Any]) -> Cart:
     """Fail closed: this parse feeds the empty-cart check, so an unknown shape raises."""
     if not isinstance(data, Mapping) or "products" not in data:
         raise MathemProtocolError(f"GET {CART_PATH} saknar fältet 'products'")
-    products = data["products"] or []
+    products = data["products"]
+    total = data.get("totalItems")
+    if products is None:   # only an explicit totalItems == 0 proves a null list means empty
+        if total != 0 or isinstance(total, bool):
+            raise MathemProtocolError(f"GET {CART_PATH}: 'products' är null och totalItems={total!r}")
+        products = []
     if not isinstance(products, list):
         raise MathemProtocolError(f"GET {CART_PATH}: 'products' är inte en lista")
-    total = data.get("totalItems")
     if not products and isinstance(total, (int, float)) and total > 0:
         raise MathemProtocolError(f"GET {CART_PATH}: tom 'products' men totalItems={total}")
     lines: list[CartLine] = []

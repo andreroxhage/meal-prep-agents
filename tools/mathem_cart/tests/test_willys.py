@@ -138,6 +138,30 @@ def test_unknown_product_code_is_none():
         assert WillysProducts(s).product("999_ST") is None
 
 
+def test_non_willys_code_is_none_without_a_request():
+    def handler(request):
+        raise AssertionError("no request expected")
+    with session_with(handler) as s:
+        for pin in (12345, "abc", "1_ST/../checkout"):
+            assert WillysProducts(s).product(pin) is None
+
+
+def test_lowercase_code_is_upper_cased():
+    seen = []
+    def handler(request):
+        seen.append(request.url.path)
+        return httpx.Response(400, json={})
+    with session_with(handler) as s:
+        WillysProducts(s).product("101106287_st")
+    assert seen == ["/axfood/rest/p/101106287_ST"]
+
+
+def test_reward_label_ending_in_kr_is_not_doubled():
+    raw = {"code": "1_ST", "name": "X", "priceValue": 30, "displayVolume": "1 st",
+           "potentialPromotions": [{"qualifyingCount": 2, "rewardLabel": "50,00 kr", "conditionLabel": "2 för"}]}
+    assert product_from_willys(raw).promotions == ("2 för 50,00 kr",)
+
+
 # --- allowlist ----------------------------------------------------------------------
 
 @pytest.mark.parametrize("method,url", [
@@ -166,6 +190,7 @@ def test_allowlisted(method, url):
     ("GET", f"{ORIGIN}/search?q=x&sort=price"),
     ("GET", "https://www.hemkop.se/search?q=x"),
     ("GET", "http://www.willys.se/search?q=x"),
+    ("GET", f"{ORIGIN}/axfood/rest/p/1_ST%0A"),          # $ alone would match before a newline
 ])
 def test_forbidden(method, url):
     with pytest.raises(ForbiddenEndpoint):
@@ -206,18 +231,23 @@ def test_normalize_username():
     assert normalize_username("198112189876") == "198112189876"
 
 
-def login_handler(success=True, sent=None):
+def login_handler(success=True, sent=None, flag="true"):
     def handler(request):
         if sent is not None:
             sent.append(request)
         if request.url.path == "/anvandare/inloggning":
             return httpx.Response(200, text="<html>", headers={"set-cookie": "JSESSIONID=anon; Path=/"})
         if request.url.path == "/login":
-            body = {"login_successful": "true"} if success else {"login_successful": "false",
+            body = {"login_successful": flag} if success else {"login_successful": "false",
                                                                   "message": "Bad credentials"}
             return httpx.Response(200, json=body, headers={"set-cookie": "JSESSIONID=auth; Path=/"})
         return httpx.Response(404)
     return handler
+
+
+def test_login_accepts_a_json_boolean():
+    with session_with(login_handler(flag=True)) as s:
+        s.login("user@example.com", "pw")
 
 
 def test_login_sends_encrypted_fields():
@@ -244,7 +274,8 @@ def test_cart_parse_fails_closed():
     assert cart_from_willys({"products": [], "totalItems": 0}).is_empty
     assert cart_from_willys({"products": None, "totalItems": 0}).is_empty
     for bad in ({}, {"products": [], "totalItems": 2}, {"products": [{"name": "x", "quantity": 1}]},
-                {"products": [{"code": "1_ST"}]}, {"products": "x"}):
+                {"products": [{"code": "1_ST"}]}, {"products": "x"},
+                {"products": None}, {"products": None, "totalItems": None}, {"products": None, "totalItems": False}):
         with pytest.raises(MathemProtocolError):
             cart_from_willys(bad)
 

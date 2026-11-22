@@ -54,7 +54,7 @@ def check_allowed(method: str, url: str) -> None:
     if any(word in path.lower() for word in BANNED_IN_PATH):
         raise ForbiddenEndpoint(f"otillåten sökväg: {path}")
     verb = method.upper()
-    if not any(m == verb and rx.match(path) for m, rx in ALLOWED):
+    if not any(m == verb and rx.fullmatch(path) for m, rx in ALLOWED):
         raise ForbiddenEndpoint(f"otillåtet anrop: {verb} {path}")
     unknown = set(u.params.keys()) - ALLOWED_QUERY_KEYS
     if unknown:

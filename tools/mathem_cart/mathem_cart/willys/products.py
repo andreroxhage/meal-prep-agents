@@ -14,6 +14,8 @@ from ..mathem.models import Product, parse_price
 from ..mathem.products import SearchCache, _norm_term
 from .session import WillysSession
 
+_CODE_RE = re.compile(r"\d+_[A-Z]+")
+
 PAGE_SIZE = 30
 # Willys label -> the Swedish label the rule files use (märkning:…), so one rule set fits both stores.
 LABELS = {
@@ -70,7 +72,8 @@ def product_from_willys(raw: Mapping[str, Any]) -> Product:
         member = " (Willys Plus)" if promo.get("campaignType") == "LOYALTY" else ""
         promo_price = _price_value(promo)
         if isinstance(count, int) and count > 1 and promo.get("rewardLabel"):
-            titles.append(f"{count} för {promo['rewardLabel']} kr")
+            reward = re.sub(r"\s*kr$", "", str(promo["rewardLabel"]).strip())
+            titles.append(f"{count} för {reward} kr")
             if member:
                 titles.append(f"{label} {promo['rewardLabel']}{member}")
         elif count == 1 and promo_price is not None and discount is None and regular is not None:
@@ -148,9 +151,12 @@ class WillysProducts:
 
     def product(self, product_id: int | str) -> Product | None:
         """Product detail; ``None`` when Willys answers 400/404 (an unknown code is a 400)."""
+        code = str(product_id).strip().upper()
+        if not _CODE_RE.fullmatch(code):   # e.g. a Mathem pin (int id): not a Willys product
+            return None
         missing = False
         try:
-            data = self._session.get_json(f"/axfood/rest/p/{product_id}")
+            data = self._session.get_json(f"/axfood/rest/p/{code}")
         except MathemRequestError as err:
             if err.status not in (400, 404):
                 raise

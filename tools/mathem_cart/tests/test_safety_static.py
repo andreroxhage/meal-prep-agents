@@ -38,7 +38,7 @@ def test_only_session_imports_httpx():
 
 def test_banned_words_only_in_session_ban_list():
     offenders = [n for n, t in FILES.items() if n not in ("mathem/session.py", "willys/session.py")
-                 and re.search(r"checkout|/slots?/|/orders?/", t, re.I)]
+                 and re.search(r"checkout|/slots?/|/orders?/|/payments?/|kassa|betal", t, re.I)]
     assert offenders == []
 
 
