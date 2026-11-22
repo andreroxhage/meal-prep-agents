@@ -270,3 +270,26 @@ def test_special_ingredient_notes_for_listed_items_are_not_excluded():
         "- **Perilla** — valfritt.\n- **Förkokta kastanjer** — delikatessdisk.\n- **Yuzu** — asiatisk butik.\n")
     assert [i.key for i in parsed.items] == ["perillablad", "kastanjer", "gochugaru"]
     assert parsed.excluded == ["Yuzu"]
+
+
+def test_har_hemma_section_and_references_are_not_bought():
+    parsed = parse_shopping_list(
+        "## Grönsaker\n- 1,2 kg broccoli\n- Morötter: se \"Har hemma\", ev. underskott köps\n"
+        "## Har hemma (dras av)\n- 1 kg kycklingfilé, fryst: Cashew (receptet använder 1 kg). Tina i kyl.\n"
+        "- Parmesan, 150 g (Mac) + ca 1 dl riven (Laxpasta): all parmesan i veckan.\n"
+        "- 1 kg morötter (Bowl: 450 g pickel). Köp eventuellt underskott.\n")
+    assert [i.key for i in parsed.items] == ["broccoli"]
+    assert parsed.excluded == ["Morötter", "kycklingfilé", "Parmesan", "morötter"]
+
+
+def test_excluded_amounts_and_qualifiers_do_not_split_names():
+    parsed = parse_shopping_list(
+        "## Skafferi-antaganden\n- [ ] 4,5 msk rapsolja (Bowl 2 msk)\n"
+        "- [ ] Pastavatten, sparas från kokningen (Laxpasta)\n- [ ] Salt, svartpeppar\n")
+    assert parsed.excluded == ["rapsolja", "Pastavatten", "Salt", "svartpeppar"]
+
+
+def test_trailing_sentence_is_a_note_not_the_name():
+    item = parse_shopping_list("## Grönsaker\n- 1 kg morötter. Köp eventuellt underskott.\n").items[0]
+    assert (item.key, item.amount, item.unit) == ("morötter", 1.0, "kg")
+    assert item.note == "Köp eventuellt underskott."

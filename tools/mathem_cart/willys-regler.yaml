@@ -115,4 +115,4 @@ omräkning:
                  sötpotatis: 300, fänkål: 300, banan: 170,
                  pak choi: 200, spetskål: 1100, rotselleri: 1100, pepparrot: 160 }
   # Gram per dl. Pluralformen behövs när den inte går att gissa ("frön" → "frö").
-  densitet_g_per_dl: { vetemjöl: 60, strösocker: 85, jasminris: 85, sesamfrö: 60, sesamfrön: 60 }
+  densitet_g_per_dl: { vetemjöl: 60, strösocker: 85, jasminris: 85, sesamfrö: 60, sesamfrön: 60, farinsocker: 60 }

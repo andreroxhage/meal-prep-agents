@@ -34,12 +34,13 @@ UNIT_ALIASES = {"förpackningar": "förp", "förpackning": "förp", "burkar": "b
 FRACTIONS = {"½": 0.5, "¼": 0.25, "¾": 0.75, "⅓": 1 / 3, "⅔": 2 / 3}
 # Sections whose entries are listed under "Ej med" in the report (assumed at home or bought elsewhere).
 EXCLUDED_SECTIONS = ("skafferi-antaganden", "skafferiantaganden", "specialingredienser", "pantry",
-                     "finns hemma", "redan inköpt")
+                     "finns hemma", "har hemma", "redan inköpt")
 # Sections that are commentary, not shopping (seen in real lists): ignored entirely.
 IGNORED_SECTIONS = ("att verifiera", "verifiera", "ungefärlig kostnad", "kostnad", "poolning", "noteringar",
                     "inköpsstrategi", "inkoepsstrategi", "hållbarhet")
 # Anywhere in a heading: "## Skafferi — kontrollera hemma", "### Finns hemma — köp inte".
-EXCLUDED_KEYWORDS = ("kontrollera hemma", "köp inte", "köps inte", "finns hemma", "antas hemma", "ingår ej")
+EXCLUDED_KEYWORDS = ("kontrollera hemma", "köp inte", "köps inte", "finns hemma", "antas hemma", "ingår ej",
+                     "dras av")
 SKIPPED_SECTIONS = EXCLUDED_SECTIONS  # kept for callers of the old name
 NAME_HEADERS = ("vara", "ingrediens", "produkt")
 AMOUNT_HEADERS = ("mängd", "antal")
@@ -66,6 +67,10 @@ _NAME_DASH_RE = re.compile(r"\s+[—–]\s+")
 _BULLET_RE = re.compile(r"^\s*[-*]\s+(?:\[[ xX]\]\s+)?(?P<body>.+?)\s*$")
 _HEADING_RE = re.compile(r"^##\s+(?P<title>.+?)\s*$")
 _SUBHEADING_RE = re.compile(r"^###\s+(?P<title>.+?)\s*$")
+# "Morötter: se "Har hemma"": a line pointing at the at-home section is not a purchase.
+_AT_HOME_REF_RE = re.compile(r"\bse\s+[\"”']?(?:har|finns)\s+hemma", re.IGNORECASE)
+# ". Tina i kyl dagen innan." after a name: a new sentence is a note, not part of the name.
+_SENTENCE_RE = re.compile(r"\s*\.\s+(?=[A-ZÅÄÖ])")
 _ROW_RE = re.compile(r"^\s*\|(?P<cells>.*)\|\s*$")
 _SEPARATOR_CELL = re.compile(r"^:?-{2,}:?$")
 
@@ -126,7 +131,15 @@ def _excluded_names(body: str) -> list[str]:
     text = parts[0]
     if len(parts) == 2:  # "Laxfilé, fryst — 500 g": the comma qualifies the name
         return [n] if (n := text.split(",")[0].strip(" -–—;.")) else []
-    names = (n.strip(" -–—;.") for n in text.split(":")[0].split(","))
+    text = _SENTENCE_RE.split(text, maxsplit=1)[0].split(":")[0]
+    amount, _, rest = _parse_amount(text.strip())
+    if amount is not None:  # "4,5 msk rapsolja", "1 kg kycklingfilé, fryst": one item, comma qualifies
+        return [n] if (n := rest.split(",")[0].strip(" -–—;.")) else []
+    first, *others = (n.strip(" -–—;.") for n in text.split(","))
+    # A list "Salt, svartpeppar" names items; "Pastavatten, sparas från kokningen" or
+    # "Parmesan, 150 g …" qualifies the first one.
+    # shortcut: ">2 words or starts with a digit = a qualifier", revisit if a real list breaks it.
+    names = [first] + [n for n in others if n and len(n.split()) <= 2 and not n[0].isdigit()]
     return [n for n in names if n]
 
 
@@ -171,6 +184,8 @@ def parse_line(body: str, category: str, line_no: int = 0, raw: str = "") -> Ite
         return _item(name, amount, unit, notes, category, line_no, raw)
     text, notes = _parentheticals(body)
     amount, unit, text = _parse_amount(text)
+    text, *sentence = _SENTENCE_RE.split(text, maxsplit=1)
+    notes += [s.strip() for s in sentence if s.strip()]
     name, _, tail = text.partition(",")
     if tail.strip():
         notes.append(tail.strip())
@@ -245,7 +260,7 @@ def parse_shopping_list(text: str) -> ShoppingList:
         bullet = _BULLET_RE.match(line)
         if not bullet or category is None or section == "ignored":
             continue
-        if section == "excluded":
+        if section == "excluded" or _AT_HOME_REF_RE.search(bullet.group("body")):
             _exclude(result, special, _excluded_names(bullet.group("body")), category)
             continue
         item = parse_line(bullet.group("body"), category, line_no, line)
